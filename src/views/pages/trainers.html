@@ -4,17 +4,16 @@
       <meta charset="utf-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <title>New Page</title>
-      <meta
-         name="viewport"
-         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-      />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       @@include("../../blocks/parts/favicon.html")
       <link rel="stylesheet" href="../styles/main.css" />
    </head>
    <body>
       @@include("../../blocks/modules/header/header.html")
-      <h1>New Page</h1>
+      @@include("../../blocks/modules/trainers/trainers.html")
       @@include("../../blocks/modules/footer/footer.html")
+      @@include("../../blocks/parts/svgs.html")
+
       <script src="../js/pageB.js"></script>
       <script src="../js/vendor.js"></script>
    </body>
