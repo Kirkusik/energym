@@ -1,0 +1,318 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+a,
+h2,
+h3,
+button,
+input,
+label,
+p {
+   text-decoration: none !important;
+}
+
+header {
+   margin: 16px auto;
+   max-width: 1440px;
+}
+.logo svg {
+   @include mq(tbLG, true) {
+      width: 118px;
+      height: 24px;
+   }
+}
+.header {
+   margin: 0 16px;
+   display: flex;
+   justify-content: space-between;
+
+   &__header-container {
+      display: flex;
+
+      &-item {
+         padding-right: 19px;
+         display: flex;
+
+         & svg {
+            @include mq(tbLG, true) {
+               width: 19px;
+               height: 19px;
+            }
+         }
+
+         @include mq(tbLG, true) {
+            padding-right: 42px;
+         }
+      }
+      &-item:nth-child(3) {
+         padding-right: 27px;
+
+         @include mq(tbLG, true) {
+            padding-right: 0px;
+         }
+      }
+      &-item:nth-child(4) {
+         padding-right: 0px;
+      }
+   }
+   // &__pages {
+   //   font-family: "Roboto";
+   //   font-style: normal;
+   //   font-size: 15px;
+   //   color: clr(black);
+   //   border: none;
+   //   outline: none;
+   // }
+   &__ukr-page {
+      color: clr(pink);
+      font-family: "Roboto";
+      font-style: normal;
+      font-size: 15px;
+      padding-right: 6px;
+   }
+   &__ukr-page::after {
+      content: "";
+      margin-left: 3px;
+      position: absolute;
+      width: 2px;
+      height: 15px;
+      background-color: clr(purple);
+   }
+   &__rus-page {
+      color: clr(black);
+      font-family: "Roboto";
+      font-style: normal;
+      font-size: 15px;
+   }
+   &__menu-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+   }
+}
+.location {
+   display: none;
+   margin-left: 14px;
+   border-radius: 4px;
+   border: none;
+   width: 200px;
+   height: 24px;
+   background: clr(secondaryBG);
+   @include text(16px, 400, $secondaryFont);
+   line-height: 20px;
+   color: #7a7979;
+   padding-left: 16px;
+   outline: none;
+
+   &:active {
+      outline: none;
+   }
+
+   @include mq(tbLG, true) {
+      display: block;
+   }
+}
+
+.search {
+   display: none;
+   margin-left: 12px;
+   border-radius: 4px;
+   border: none;
+   width: 200px;
+   height: 24px;
+   background: clr(secondaryBG);
+
+   &:active {
+      outline: none;
+   }
+
+   &::placeholder {
+      @include text(16px, 400, $secondaryFont);
+      line-height: 20px;
+      color: #7a7979;
+      padding-left: 16px;
+   }
+
+   @include mq(tbLG, true) {
+      display: block;
+   }
+}
+
+.burger-menu {
+   @include mq(tbLG, true) {
+      display: none;
+   }
+
+   &__button {
+      position: sticky;
+      top: 23px;
+      right: 15px;
+      z-index: 30;
+      -webkit-transition: 0.4s;
+      -moz-transition: 0.4s;
+      -o-transition: 0.4s;
+      transition: 0.4s;
+   }
+
+   &__lines::before,
+   &__lines::after,
+   &__lines {
+      position: absolute;
+      width: 18px;
+      height: 2px;
+      background-color: clr(purple);
+      -webkit-transition: 0.4s;
+      -moz-transition: 0.4s;
+      -o-transition: 0.4s;
+      transition: 0.4s;
+   }
+   &__lines {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+   }
+   &__lines::before {
+      content: "";
+      top: -3px;
+   }
+   &__lines::after {
+      content: "";
+      top: 3px;
+   }
+}
+
+.active,
+.menu--active {
+   display: block;
+}
+
+.active .burger-menu__lines,
+.active .burger-menu__lines::before,
+.active .burger-menu__lines::after {
+   background-color: transparent;
+}
+.square-btn {
+   width: 40px;
+   height: 40px;
+   background-color: clr(purple50);
+
+   @include mq(tbLG, true) {
+      display: none;
+   }
+}
+
+.menu {
+   margin: 0 16px;
+   display: none;
+   position: absolute;
+   z-index: 10;
+   right: 5px;
+   top: 16px;
+   width: 216px;
+   background-color: clr(white);
+   color: clr(purpleDark);
+
+   @include mq(tb, true) {
+      width: 316px;
+   }
+
+   @include mq(tbLG, true) {
+      display: block;
+      position: static;
+      width: 97%;
+      z-index: 0;
+      left: 0;
+      top: 0;
+   }
+
+   &__title {
+      color: clr(purple);
+      @include text(24px, 400, $primaryFont);
+      line-height: 29px;
+
+      @include mq(tbLG, true) {
+         display: none;
+      }
+   }
+
+   &__tabs {
+      @include mq(tbLG, true) {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         width: 100%;
+         margin: 58px 0px 31px;
+      }
+   }
+
+   &.menu--active {
+      display: block;
+   }
+
+   &__tab-link,
+   &__item-link {
+      @include text(15px, 500, $secondaryFont);
+      line-height: 18px;
+
+      @include mq(tb, true) {
+         display: flex;
+         justify-content: space-between;
+
+         &::after {
+            content: url("../img/arrow-right.svg");
+            width: 21px;
+            height: 14px;
+
+            @include mq(tbLG, true) {
+               display: none;
+            }
+         }
+      }
+
+      @include mq(tbLG, true) {
+         padding-bottom: 24px;
+      }
+   }
+
+   &__tab-link {
+      &--active {
+         border-bottom: 1px solid clr(red);
+      }
+   }
+
+   &__tab {
+      padding-bottom: 20px;
+
+      @include mq(tbLG, true) {
+         padding-bottom: 0px;
+      }
+   }
+
+   &__item-link {
+      @include mq(tbLG, true) {
+         @include text(14px, 400, $primaryFont);
+         line-height: 17px;
+         padding-bottom: 15px;
+      }
+   }
+   &__sub-item-link {
+      @include mq(tbLG, true) {
+         @include text(14px, 400, $secondaryFont);
+         line-height: 17px;
+         padding-bottom: 15px;
+         display: block;
+      }
+   }
+   &__item {
+      display: none;
+   }
+
+   &__item--active {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+      row-gap: 32px;
+   }
+   &__contact {
+      grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+   }
+}
