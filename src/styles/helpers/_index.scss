@@ -1,0 +1,236 @@
+@import 'variable';
+@import 'mixins';
+@import 'fonts';
+@import "reset";
+
+.section {
+  &-title {
+    &__h1 {
+      @include text(48px);
+    }
+
+    &__h2 {
+      @include text(32px);
+    }
+
+    &__h3 {
+      @include text(25px);
+    }
+
+    &__h4 {
+      @include text(20px);
+    }
+
+    &__h5 {
+      @include text(16px);
+    }
+  }
+
+  &-text {
+    &__h1 {
+      @include text(18px, 400, "Montserrat");
+    }
+
+    &__h2 {
+      @include text(16px, 400, "Montserrat");
+    }
+
+    &__h3 {
+      @include text(14px, 400, "Montserrat");
+    }
+  }
+
+  &-highlight {
+    @extend .section-title__h1;
+    width: max-content;
+    padding: 40px;
+    background-color: clr(purple);
+    color: clr(white);
+
+    &--inversed {
+        background-color: clr(purple30);
+      display: flex;
+      flex-direction: column;
+
+      & > .section-highlight__title {
+        color: transparent;
+        -webkit-text-stroke: 2px clr(white);
+        @include text(72px);
+      }
+
+      & > .section-highlight__subtitle {
+        -webkit-text-stroke: initial;
+        color: clr(white);
+        @include text(36px, 600, $secondaryFont);
+      }
+    }
+
+  }
+}
+
+.primary-btn {
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 24px 46px;
+  @include text(18px);
+  color: clr(red);
+  border: 1px solid clr(red);
+  box-sizing: border-box;
+  border-radius: 4px;
+  background: none;
+  transition: opacity 0.2s;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.secondary-btn {
+  @extend .primary-btn;
+  color: clr(purpleDark);
+  border-color: clr(purpleDark);
+  transition: opacity 0.2s, color 0.2s, border-color 0.2s;
+
+  &:hover {
+    color: clr(black);
+    border-color: clr(black);
+    opacity: 1;
+  }
+}
+
+.goto-btn {
+  display: inline-block;
+  padding: 24px;
+  @include text(24px, 600, $secondaryFont);
+  color: clr(white);
+  background-color: clr(purple);
+  text-decoration: none;
+  outline: none;
+  border: none;
+
+  @include pseudo(after, url(../../../assets/img/goto__arrow.svg), relative) {
+    margin-left: 24px;
+    width: 16px;
+    height: 16px;
+    transition: bottom 0.4s;
+    bottom: 0;
+  }
+
+  &:hover::after {
+    bottom: 5px;
+  }
+}
+
+.more-btn {
+  @extend .goto-btn;
+  position: relative;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 56px;
+  padding: 18px;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+  transition: width 0.3s, color 0.3s, background-color 0.3s;
+  white-space: nowrap;
+  background-color: clr(red);
+  color: transparent;
+
+  &::after {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 16px;
+    top: 50%;
+    transform: translate(0, -50%);
+    margin-left: 0;
+    transition: transform 0.3s, left 0.3s, right 0.3s;
+  }
+
+  &:hover {
+    width: 220px;
+    color: clr(white);
+
+    &::after {
+      left: calc(100% - 16px);
+      transform: translate(-100%, -50%);
+      bottom: 0;
+    }
+  }
+}
+
+.contact-us-btn {
+  @extend .more-btn;
+  width: 70px;
+  padding: 19px;
+  font-family: #{'Russo One'};
+  font-weight: 400;
+  background-color: clr(pink);
+
+  @include pseudo(before, url(../../../assets/img/msg-dialog.svg), static) {
+    height: 32px;
+    margin-right: 20px;
+    transition: margin-right 0.3s;
+  }
+
+  @include pseudo(after, none);
+
+  &:hover {
+    width: 200px;
+    color: clr(white);
+    background-color: clr(red);
+
+    &::before {
+      margin-right: 12px;
+    }
+  }
+}
+
+.square-btn {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: clr(pink);
+  transition: background-color 0.3s;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &:hover {
+    background-color: clr(red);
+  }
+
+  &--bigger {
+    width: 90px;
+    height: 90px;
+  }
+
+  &--cross {
+    background-image: url("../../../assets/img/cross.svg");
+  }
+
+  &--left {
+    background-image: url("../../../assets/img/arrow-left.svg");
+  }
+
+  &--right {
+    background-image: url("../../../assets/img/arrow-right.svg");
+  }
+
+  &--up {
+    background-image: url("../../../assets/img/arrow-up.svg");
+  }
+
+  &--down {
+    background-image: url("../../../assets/img/arrow-down.svg");
+  }
+}
