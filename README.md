@@ -21,9 +21,6 @@
 -  используется транспайлер [Babel](https://babeljs.io/) для поддержки
    современного JavaScript (ES6) в браузерах
 -  используется [Webpack](https://webpack.js.org/) для сборки JavaScript-модулей
--  используется CSS-сетка
-   [smart-grid](https://github.com/dmitry-lavrik/smart-grid) на основе Bootstrap
-   для быстрой адаптивной вёрстки
 -  используется жёсткий кодгайд
 
 ## Установка
