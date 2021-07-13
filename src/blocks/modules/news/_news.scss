@@ -15,8 +15,8 @@
 .news-banner__title {
   @include font-face("Russo One", "../fonts/Z9XUDmZRWg6M1LvRYsHOy8mJvLuL9BLT");
   position: absolute;
-  top: 58px;
-  left: 16px;
+  top: 34%;
+  left: 4.5%;
   z-index: 1;
   color: clr(white);
   width: 190px;
@@ -33,16 +33,16 @@
   }
 
   @include mq(tb, tb) {
-    top: 118px;
-    left: 23px;
+    top: 44%;
+    left: 3.59%;
     width: 466px;
     font-size: 24px;
     line-height: 29px;
     text-transform: lowercase;
   }
   @include mq(dt, dt) {
-    top: 140px;
-    left: 40px;
+    top: 28%;
+    left: 3.37%;
     width: 525px;
     font-size: 61px;
     line-height: 74px;
