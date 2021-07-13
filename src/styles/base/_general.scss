@@ -107,7 +107,7 @@
    outline: none;
    border: none;
 
-   @include pseudo(after, url(../assets/img/svg/goto__arrow.svg), relative) {
+   @include pseudo(after, url(../img/svg/goto__arrow.svg), relative) {
       margin-left: 24px;
       width: 16px;
       height: 16px;
@@ -170,7 +170,7 @@
    font-weight: 400;
    background-color: clr(pink);
 
-   @include pseudo(before, url(../assets/img/svg/msg-dialog.svg), static) {
+   @include pseudo(before, url(../img/svg/msg-dialog.svg), static) {
       height: 32px;
       margin-right: 20px;
       transition: margin-right 0.3s;
@@ -213,22 +213,22 @@
    }
 
    &--cross {
-      background-image: url("../assets/img/svg/cross.svg");
+      background-image: url("../img/svg/cross.svg");
    }
 
    &--left {
-      background-image: url("../assets/img/svg/arrow-left.svg");
+      background-image: url("../img/svg/arrow-left.svg");
    }
 
    &--right {
-      background-image: url("../assets/img/svg/arrow-right.svg");
+      background-image: url("../img/svg/arrow-right.svg");
    }
 
    &--up {
-      background-image: url("../assets/img/svg/arrow-up.svg");
+      background-image: url("../img/svg/arrow-up.svg");
    }
 
    &--down {
-      background-image: url("../assets/img/svg/arrow-down.svg");
+      background-image: url("../img/svg/arrow-down.svg");
    }
 }
