@@ -103,9 +103,15 @@ li > a {
 
 .news-list__items {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: stretch;
   align-items: center;
   flex-wrap: wrap;
+  @include mq(mb, mb) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .news-list__item {
@@ -167,6 +173,8 @@ li > a {
     @include mq(tb, tb) {
       display: block;
       width: 278px;
+      height: 80px;
+      overflow: hidden;
       margin: 0px 16px 24px 16px;
       font-family: Montserrat;
       font-size: 16px;
@@ -178,12 +186,14 @@ li > a {
     }
     @include mq(tbLG, tbLG) {
       width: 232px;
+      height: 72px;
       margin: 0px 8px 24px 16px;
       font-size: 15px;
       line-height: 18.29px;
     }
     @include mq(dt, dt) {
       width: 352px;
+      height: 60px;
       margin: 0px 16px 24px 16px;
       font-size: 16px;
       line-height: 19.5px;
