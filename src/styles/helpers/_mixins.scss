@@ -1,4 +1,4 @@
-@mixin mq($screen, $min) {
+@mixin mq($screen, $min: true) {
   @if ($min) {
     @media (min-width: map-get($resolutions, $screen)) {
       @content
@@ -29,7 +29,7 @@
   @if (unitless($context)) {
     $context: $context * 1px;
   }
-  @return $pixels / $context * 1rem;
+  @return ($pixels / $context) * 1rem;
 }
 
 // Simple usage FLEXBOX
