@@ -1,15 +1,12 @@
-.container {
-	max-width: calc(95% - 1em);
-	margin: 0 auto;
-	padding: 0 10px;
-}
-
 .hero {
 	padding: 88px 60px 40px;
 	position: relative;
 	transition: padding 0.5s ease-in-out;
+	@include mq(tb) {
+		padding: 253px 53px 65px;
+	}
 	@include mq(tbLG) {
-		padding: 350px 330px 100px;
+		padding: 350px 151px 100px;
 	}
 	&__info {
 		display: grid;
@@ -31,28 +28,42 @@
 			transition: all 0.5s ease-in-out;
 
 			@include mq(tb) {
-				max-width: 190px;
+				font-size: rem(24);
+				line-height: 29px;
 			}
 			@include mq(tbLG) {
-				transform: translateY(30%);
+				font-size: rem(61);
+				line-height: 74px;
 			}
 		}
 		&-link {
+			// ! Только для демонстрации, потом буду рефакторить сейчас нету на это времени((
+			cursor: pointer;
 			// opacity: 0;
 			// ! Need fix to anim this shit
 			display: none;
 			font-size: rem(22);
 			line-height: 27px;
 			color: clr(white);
-			font-family: $primaryFont;
+			font-family: Russo One, sans-serif;
+			font-weight: 400;
 			transition: all 0.5s ease-in-out;
+			@include mq(tb) {
+				font-size: rem(24);
+				line-height: 29px;
+			}
 			@include mq(tbLG) {
 				font-size: rem(48);
-				line-height: rem(58);
+				line-height: 58px;
+				color: transparent;
+				-webkit-text-stroke: 1px #ffffff;
 			}
 		}
 		&-link:nth-child(2) {
 			grid-column: 1/3;
+			@include mq(tb) {
+				justify-self: flex-start;
+			}
 		}
 		&-link:nth-child(3) {
 			grid-column: 3/5;
@@ -96,13 +107,18 @@
 		right: rem(8);
 		bottom: rem(8);
 
-		@include pseudo(before, url(../../../img/svg/msg-dialog-mobile.svg), static) {
-		}
+		@include pseudo(before, url(../../../img/svg/msg-dialog-mobile.svg), static);
 
 		@include pseudo(after, none);
 
 		@include mq(tb) {
-			display: none;
+			width: 42px;
+			height: 42px;
+		}
+		@include mq(tbLG) {
+			width: 70px;
+			height: 70px;
+			@include pseudo(before, url(../../../img/svg/msg-dialog.svg), static);
 		}
 	}
 	&__arrow {
@@ -118,11 +134,19 @@
 		@include mq(tb) {
 			bottom: rem(16);
 		}
+		@include mq(tbLG) {
+			background-image: url('../../../img/svg/arrow-down.svg');
+			width: 70px;
+			height: 70px;
+		}
 	}
 }
 
 .hero.active {
 	padding-top: 50px;
+	@include mq(tb) {
+		padding-top: 215px;
+	}
 }
 
 .hero__info-title.active {
@@ -150,10 +174,13 @@
 	text-align: center;
 	background-color: #faf7fb;
 
+	@include mq(tb) {
+		padding-top: 53px;
+		padding-bottom: 53px;
+	}
 	@include mq(tbLG) {
 		padding-top: 115px;
-		padding-bottom: 115px;
-		column-gap: 90px;
+		justify-content: space-evenly;
 	}
 
 	&__bgi {
@@ -170,20 +197,117 @@
 		&-subtitle {
 			font-size: rem(13);
 			color: clr(black);
-			font-family: $primaryFont;
+			font-family: #{'Russo One'};
+			@include mq(tb) {
+				font-size: rem(24);
+				line-height: 29px;
+				margin-bottom: 4px;
+			}
 			@include mq(tbLG) {
 				font-size: rem(48);
+				line-height: 58px;
 				margin-bottom: 8px;
 			}
 		}
 		&-subtitle {
 			font-size: rem(9);
 			line-height: rem(11);
+			@include mq(tb) {
+				font-size: rem(15);
+				line-height: 18px;
+				max-width: 150px;
+			}
 			@include mq(tbLG) {
 				font-size: rem(20);
-				line-height: rem(24);
-				max-width: 174px;
+				line-height: 24px;
+				max-width: 173px;
 			}
 		}
+	}
+}
+
+.advantages {
+	background: #faf7fb;
+	padding-top: 16px;
+	padding-bottom: 50px;
+	padding-left: 0;
+	border: 1px solid #C4C4C4;
+	transform: rotate(0.05deg);
+	@include mq(tbLG) {
+		display: none;
+	}
+	@include mq(tb) {
+		padding-top: 101px;
+		padding-bottom: 166px;
+	}
+	&__wrapper {
+		@include flex(center, space-between);
+	}
+	&__title {
+		font-size: rem(22);
+		line-height: 27px;
+		padding: 16px;
+		margin-bottom: 24px;
+		@include mq(tb) {
+			font-size: rem(24);
+			line-height: 29px;
+			padding: 16px 24px;
+		}
+	}
+	&__phone {
+		display: none;
+		@include mq(tb) {
+			display: inline-block;
+		}
+	}
+}
+
+.advantages__list {
+	margin-left: 37px;
+	margin-bottom: 24px;
+	@include mq(tb) {
+		margin-bottom: 0;
+		margin-left: 48px;
+		max-width: 300px;
+	}
+	&-item {
+		margin-bottom: 8px;
+		font-family: $secondaryFont;
+		font-weight: 500;
+		font-size: rem(15);
+		line-height: 18px;
+		color: #000000;
+		@include mq(tb) {
+			margin-bottom: 16px;
+		}
+		@include pseudo(before, '', absolute) {
+			display: inline-block;
+			background-color: clr(pink);
+			width: 8px;
+			height: 8px;
+			left: -23px;
+			top: 4px;
+
+			@include mq(tb) {
+				width: 12px;
+				height: 12px;
+				left: -26px;
+			}
+		}
+	}
+}
+
+.advantages__subscribe {
+	@include flex();
+}
+
+.advantages__subscribe--store:first-child {
+	margin-bottom: 1em;
+}
+
+.advantages__subscribe--store,
+.advantages__semiphone {
+	@include mq(tb) {
+		display: none;
 	}
 }

@@ -196,9 +196,9 @@ header {
    height: 40px;
    background-color: clr(purple50);
 
-   @include mq(tbLG, true) {
-      display: none;
-   }
+   // @include mq(tbLG, true) {
+   //    display: none;
+   // }
 }
 
 .menu {
