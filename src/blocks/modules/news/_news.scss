@@ -20,10 +20,13 @@ li > a {
   }
 }
 
+.news-banner__container {
+  position: relative;
+}
 .news-banner__title {
   position: absolute;
   top: 58px;
-  left: 16px;
+  left: 36px;
   z-index: 1;
   width: 190px;
   font-family: Russo One;
@@ -308,6 +311,7 @@ li > a {
       height: 48px;
     }
     @include mq(tbLG, tbLG) {
+      display: block;
       width: 56px;
       height: 56px;
     }
