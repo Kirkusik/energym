@@ -1,29 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
-
-a,
-h2,
-h3,
-button,
-input,
-label,
-p {
-   text-decoration: none !important;
+a {
+   text-decoration: none;
 }
+.logo {
+   margin-right: auto;
 
-header {
-   margin: 16px auto;
-   max-width: 1440px;
-}
-.logo svg {
    @include mq(tbLG, true) {
       width: 118px;
       height: 24px;
    }
 }
 .header {
-   margin: 0 16px;
+   margin: 16px;
+   max-width: 1440px;
    display: flex;
-   justify-content: space-between;
+   flex-wrap: wrap;
 
    &__header-container {
       display: flex;
@@ -64,9 +54,7 @@ header {
    // }
    &__ukr-page {
       color: clr(pink);
-      font-family: "Roboto";
-      font-style: normal;
-      font-size: 15px;
+      @include text(15px, 700, $secondaryFont);
       padding-right: 6px;
    }
    &__ukr-page::after {
@@ -79,9 +67,8 @@ header {
    }
    &__rus-page {
       color: clr(black);
-      font-family: "Roboto";
-      font-style: normal;
-      font-size: 15px;
+      @include text(15px, 700, $secondaryFont);
+      text-decoration: none;
    }
    &__menu-title {
       display: flex;
@@ -122,7 +109,7 @@ header {
    height: 24px;
    background: clr(secondaryBG);
 
-   &:active {
+   &:focus {
       outline: none;
    }
 
@@ -200,14 +187,71 @@ header {
       display: none;
    }
 }
-
-.menu {
-   margin: 0 16px;
+.navigation {
    display: none;
    position: absolute;
    z-index: 10;
-   right: 5px;
-   top: 16px;
+   right: 16px;
+   top: 5px;
+   width: 216px;
+   background-color: clr(white);
+   color: clr(purpleDark);
+
+   &--active {
+      display: grid;
+   }
+
+   @include mq(tb, true) {
+      width: 316px;
+   }
+
+   @include mq(tbLG, true) {
+      position: relative;
+      width: 530%;
+      z-index: 0;
+      left: 0;
+      top: 0;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+   }
+}
+.contact_link {
+
+   @include mq(tbLG, true) {
+      width: 78px;
+      margin-left: 100px;
+   }
+}
+.contact_block {
+   display: none;
+   width: 216px;
+   background-color: clr(white);
+   color: clr(purpleDark);
+
+   &--active {
+      display: block;
+   }
+
+   @include mq(tb, true) {
+      width: 316px;
+   }
+
+   @include mq(tbLG, true) {
+      display: block;
+      // position: static;
+      z-index: 0;
+      // left: 0;
+      // top: 0;
+   }
+   
+}
+.menu {
+   display: none;
+   // position: absolute;
+   // z-index: 10;
+   // right: 0;
+   // top: 0;
    width: 216px;
    background-color: clr(white);
    color: clr(purpleDark);
@@ -218,8 +262,8 @@ header {
 
    @include mq(tbLG, true) {
       display: block;
-      position: static;
-      width: 97%;
+      position: relative;
+      width: 530%;
       z-index: 0;
       left: 0;
       top: 0;
@@ -253,13 +297,37 @@ header {
    &__item-link {
       @include text(15px, 500, $secondaryFont);
       line-height: 18px;
+      display: flex;
+      justify-content: space-between;
 
       @include mq(tb, true) {
-         display: flex;
-         justify-content: space-between;
+         
+         @include text(16px, 500, $secondaryFont);
+         line-height: 20px;  
+      }
 
+      @include mq(tbLG, true) {
+         padding-bottom: 24px;
+      }
+   }
+
+   &__item-link {
+      padding-bottom: 10px;
+
+      &:last-child {
+         padding-bottom: 0;
+      }
+      @include mq(tbLG, true) {
+         @include text(14px, 400, $primaryFont);
+         line-height: 17px;
+         padding-bottom: 15px;
+      }
+   }
+
+   &__tab-link {
+      @include mq(tb, true) {
          &::after {
-            content: url("../img/arrow-right.svg");
+            content: url("../../../img/svg/menu-arrow-right.svg");
             width: 21px;
             height: 14px;
 
@@ -269,14 +337,12 @@ header {
          }
       }
 
-      @include mq(tbLG, true) {
-         padding-bottom: 24px;
-      }
-   }
-
-   &__tab-link {
       &--active {
-         border-bottom: 1px solid clr(red);
+         color: clr(red);
+
+         @include mq(tbLG, true) {
+            border-bottom: 1px solid clr(red);
+         }
       }
    }
 
@@ -288,31 +354,186 @@ header {
       }
    }
 
-   &__item-link {
+   &__sub-items {
+      display: none;
+      margin: 16px 16px 16px 0;
+
+      &--active {
+         display: block;
+      }
       @include mq(tbLG, true) {
-         @include text(14px, 400, $primaryFont);
-         line-height: 17px;
-         padding-bottom: 15px;
+         display: block;
+         margin: 0;
       }
    }
+   &__sub-title-link {
+      &:checked {
+         color: clr(red)
+      }
+      &::after {
+        content: url("../../../img/svg/menu_arrow_down.svg");
+        width: 8px;
+        height: 16px;
+        margin-right: 64px;
+
+        @include mq(tbLG, true) {
+           content: "";
+        }
+      }
+
+   }
    &__sub-item-link {
+      @include text(15px, 500, $secondaryFont);
+         line-height: 18px;
+         padding-bottom: 15px;
+         padding-left: 5px;
+         color: clr(purpleDark);
+         display: block;
+          
       @include mq(tbLG, true) {
          @include text(14px, 400, $secondaryFont);
          line-height: 17px;
          padding-bottom: 15px;
+         padding-left: 0;
          display: block;
       }
    }
-   &__item {
+   &__contact {
       display: none;
+      // position: absolute;
+      &--active {
+         @include mq(tb, true) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+         }
+      }
+         @include mq(tbLG, true) {
+            padding-left: 0;
+            position: absolute;
+            top: 134px;
+            left: 0;
+            width: calc(100vw - 32px);
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+         }
+      }
+   
+   &__items {
+      display: none;
+      margin: 23px 0 0 15px;
+
+      @include mq(tbLG, true) {
+         margin: 0;
+      }
+   }
+   &__item-img {
+      display: none;
+
+      @include mq(tbLG, true) {
+         display: block;
+      }
    }
 
-   &__item--active {
+   &__items--active {
+      display: block;
+
+      @include mq(tbLG, true) {
+      padding-left: 0;
+      position: absolute;
+      top: 134px;
+      left: 0;
+      width: calc(100vw - 32px);
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
       row-gap: 32px;
+      }
    }
-   &__contact {
-      grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+   
+   &__contact-item {
+      margin: 0 16px 32px 0;
+      display: flex;
+      justify-content: flex-start;
+
+      @include mq(tbLG, true) {
+         margin: 0 0 25px;
+         
+         &:last-child{
+            margin-bottom: 0;
+         }
+      }
+   }
+   &__contact-link {
+      display: none;
+
+      @include mq(tbLG, true) {
+         display: block;
+         margin-left: 16px;
+         color: clr(black);
+         @include text(14px, 500, $secondaryFont);
+         line-height: 17px;
+         padding-left: 16px;
+      }
+   }
+   &__location-block {
+      @include mq(tb, true) {
+         display: block;
+         text-align: center;
+      }
+      @include mq(tbLG, true) {
+         display: flex;
+         justify-content: flex-start;
+      }
+   }
+
+}
+.tel_desk {
+   display: none;
+
+   @include mq(tbLG, true) {
+      display: block;
+   }
+}
+.location_desk {
+   margin-right: 15px;
+
+   @include mq(tb, true) {
+      margin-bottom: 18px;
+   }
+   @include mq(tbLG, true) {
+      margin-right: 0;
+      margin-bottom: 0;
+   }
+}
+.black {
+   color: clr(black);
+
+   @include mq(tbLG, true) {
+      margin-left: 20px;
+   }
+   
+}
+.social_networks {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   
+      @include mq(tbLG, true) {
+         display: grid;
+         justify-content: start;
+      }
+}
+.contact_info {
+   display: flex;
+   flex-direction: column-reverse;
+
+   @include mq(tb, true) {
+      align-items: center;
+      justify-content: center;
+   }
+   @include mq(tbLG, true) {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
    }
 }
