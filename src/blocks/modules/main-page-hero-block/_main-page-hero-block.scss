@@ -1,0 +1,326 @@
+.hero {
+    @include mq(tb, true) {
+        padding: 253px 53px 65px;
+    }
+    @include mq(tbLG, true) {
+        padding: 350px 151px 100px;
+    }
+    position: relative;
+    padding: 88px 60px 40px;
+    transition: padding 0.5s ease-in-out;
+}
+// images
+.hero__bgi-left,
+.hero__bgi-right {
+    position: absolute;
+    top: 0;
+    width: 67%;
+    height: 100%;
+}
+
+.hero__bgi-right {
+    z-index: -2;
+    right: 0;
+}
+.hero__bgi-left {
+    z-index: -1;
+    left: 0;
+}
+
+// title and links block
+.hero__info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    row-gap: 20px;
+}
+
+.hero__info-title {
+    @include mq(tb, true) {
+        font-size: rem(24);
+        line-height: 29px;
+    }
+    @include mq(tbLG, true) {
+        font-size: rem(61);
+        line-height: 74px;
+    }
+    color: transparent;
+    -webkit-text-stroke: 1px #ffffff;
+    font-family: $primaryFont, sans-serif;
+    font-weight: 00;
+    text-transform: uppercase;
+    // max-width: 593px;
+    font-size: rem(22);
+    line-height: 27px;
+    grid-column: 1/-1;
+    justify-self: center;
+    // transform: translateY(90%);
+    transition: all 0.5s ease-in-out;
+}
+
+.hero__info-link {
+    @include mq(tb, true) {
+        font-size: rem(24);
+        line-height: 29px;
+    }
+    @include mq(tbLG, true) {
+        font-size: rem(48);
+        line-height: 58px;
+        color: transparent;
+        -webkit-text-stroke: 1px #ffffff;
+    }
+    // ! Только для демонстрации, потом буду рефакторить сейчас нету на это времени((
+    cursor: pointer;
+    // opacity: 0;
+    // ! Need fix to anim this shit
+    display: none;
+    font-size: rem(22);
+    line-height: 27px;
+    color: clr(white);
+    font-family: $primaryFont, sans-serif;
+    font-weight: 400;
+    transition: all 0.5s ease-in-out;
+
+    &:nth-child(2) {
+        @include mq(tb, true) {
+            justify-self: flex-start;
+        }
+        grid-column: 1/3;
+    }
+    &:nth-child(3) {
+        grid-column: 3/5;
+        justify-self: end;
+    }
+}
+
+//button
+.hero__contact {
+    @include mq(tb, true) {
+        background-color: clr(purple30);
+        position: absolute;
+        right: rem(16);
+        bottom: rem(16);
+    }
+    display: none;
+}
+//  combine this with button above
+.hero__contact-mobile {
+    @include pseudo(before, url(../../../img/svg/msg-dialog-mobile.svg), static);
+
+    @include pseudo(after, none);
+
+    @include mq(tb, true) {
+        width: 42px;
+        height: 42px;
+    }
+    @include mq(tbLG, true) {
+        @include pseudo(before, url(../../../img/svg/msg-dialog.svg), static);
+        width: 70px;
+        height: 70px;
+    }
+    justify-content: center;
+    position: absolute;
+    right: rem(8);
+    bottom: rem(8);
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    font-family: $primaryFont;
+    font-weight: 400;
+    background-color: clr(purple30);
+    @extend .more-btn;
+}
+
+// arrow btn
+.hero__arrow {
+    @include mq(tb, true) {
+        bottom: rem(16);
+    }
+    @include mq(tbLG, true) {
+        width: 70px;
+        height: 70px;
+        background-image: url("../../../img/svg/arrow-down.svg");
+    }
+    position: absolute;
+    bottom: rem(8);
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    transform: translateX(-50%);
+    transition: all 0.5s ease-in-out;
+    background-color: clr(purple30);
+    background-image: url("../../../img/svg/arrow-down-mobile.svg");
+}
+
+//------------------- Class active---------------------------
+//change this class to reduce specificity
+.hero.active {
+    @include mq(tb, true) {
+        padding-top: 215px;
+    }
+    padding-top: 50px;
+}
+
+.hero__info-title.active {
+    // transform: translateY(0);
+    @include mq(tbLG, true) {
+        transform: translateY(-70%);
+    }
+}
+
+.hero__info-link.active {
+    // opacity: 1;
+    display: inline-block;
+}
+
+.hero__arrow.active {
+    opacity: 0;
+    pointer-events: none;
+}
+
+// --------------------Facts Section--------------------------
+.info {
+    @include flex();
+
+    @include mq(tb, true) {
+        padding-top: 53px;
+        padding-bottom: 53px;
+    }
+    @include mq(tbLG, true) {
+        padding-top: 115px;
+        justify-content: space-evenly;
+    }
+    column-gap: 1.1em;
+    position: relative;
+    padding: 27px 0 34px;
+    text-align: center;
+    background-color: #faf7fb;
+}
+
+.info__bgi {
+    @include mq(tbLG, true) {
+        top: 4em;
+    }
+    position: absolute;
+    top: 1em;
+    left: 0;
+}
+
+.info__content-title,
+.info__content-subtitle {
+    @include mq(tb, true) {
+        font-size: rem(24);
+        line-height: 29px;
+        margin-bottom: 4px;
+    }
+
+    @include mq(tbLG, true) {
+        font-size: rem(48);
+        line-height: 58px;
+        margin-bottom: 8px;
+    }
+    font-size: rem(13);
+    color: clr(black);
+    font-family: $primaryFont;
+}
+
+.info__content-subtitle {
+    @include mq(tb, true) {
+        font-size: rem(15);
+        line-height: 18px;
+        max-width: 150px;
+    }
+    @include mq(tbLG, true) {
+        font-size: rem(20);
+        line-height: 24px;
+        max-width: 173px;
+    }
+    font-size: rem(9);
+    line-height: rem(11);
+}
+// -----------------Advantages section-------------------
+.advantages {
+    @include mq(tbLG, true) {
+        display: none;
+    }
+    @include mq(tb, true) {
+        padding-top: 101px;
+        padding-bottom: 166px;
+    }
+    background: #faf7fb;
+    padding-top: 16px;
+    padding-bottom: 50px;
+    padding-left: 0;
+    border: 1px solid #c4c4c4;
+    transform: rotate(0.05deg);
+}
+
+.advantages__wrapper {
+    @include flex(center, space-between);
+}
+.advantages__title {
+    @include mq(tb, true) {
+        font-size: rem(24);
+        line-height: 29px;
+        padding: 16px 24px;
+    }
+    font-size: rem(22);
+    line-height: 27px;
+    padding: 16px;
+    margin-bottom: 24px;
+}
+.advantages__phone {
+    @include mq(tb, true) {
+        display: inline-block;
+    }
+    display: none;
+}
+
+.advantages__list {
+    @include mq(tb, true) {
+        margin-bottom: 0;
+        margin-left: 48px;
+        max-width: 300px;
+    }
+    margin-left: 37px;
+    margin-bottom: 24px;
+}
+.advantages__list-item {
+    @include mq(tb, true) {
+        margin-bottom: 16px;
+    }
+    @include pseudo(before, "", absolute) {
+        @include mq(tb, true) {
+            left: -26px;
+            width: 12px;
+            height: 12px;
+        }
+        display: inline-block;
+        top: 4px;
+        left: -23px;
+        width: 8px;
+        height: 8px;
+        background-color: clr(pink);
+    }
+    margin-bottom: 8px;
+    font-family: $secondaryFont;
+    font-weight: 500;
+    font-size: rem(15);
+    line-height: 18px;
+    color: #000000;
+}
+
+.advantages__subscribe {
+    @include flex();
+}
+
+.advantages__subscribe--store:first-child {
+    margin-bottom: 1em;
+}
+
+.advantages__subscribe--store,
+.advantages__semiphone {
+    @include mq(tb, true) {
+        display: none;
+    }
+}
