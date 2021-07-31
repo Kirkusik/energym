@@ -38,11 +38,7 @@
         top: 30%;
     }
     &--position {
-        // transition: 0.3s;
         top: 30%;
-        // left: 0;
-        // right: 0;
-        // bottom: 0;
     }
 }
 .hero__info--position {
@@ -51,10 +47,10 @@
     left: 50%;
     transform: translateX(-50%);
 
+    //forced media due to container rebuilding in general.scss
     @media (min-width: 320px) {
         top: 40%;
     }
-
     @media (min-width: 480px) {
         top: 60%;
     }
@@ -89,10 +85,6 @@
         right: 0;
         bottom: 20%;
     }
-    // @include mq(mbLG, true) {
-    //     justify-content: space-around;
-    //     transform: translateY(40px);
-    // }
 }
 
 .hero__info-title {
@@ -106,16 +98,12 @@
     margin-left: auto;
     margin-right: auto;
 
-    // margin-bottom: 8px -> on 1 line with btn
-    margin-bottom: 16px;
-
     @include text(rem(22));
 
     @include mq(tb, true) {
         font-size: rem(24);
         line-height: 29px;
         max-width: 522px;
-        margin-bottom: 24px;
     }
     @include mq(tbLG, true) {
         font-size: rem(61);
