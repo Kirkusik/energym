@@ -47,7 +47,7 @@
     color: transparent;
     -webkit-text-stroke: 1px #ffffff;
     font-family: $primaryFont, sans-serif;
-    font-weight: 00;
+    font-weight: 400;
     text-transform: uppercase;
     // max-width: 593px;
     font-size: rem(22);
@@ -70,7 +70,6 @@
         -webkit-text-stroke: 1px #ffffff;
     }
     // ! Только для демонстрации, потом буду рефакторить сейчас нету на это времени((
-    cursor: pointer;
     // opacity: 0;
     // ! Need fix to anim this shit
     display: none;
@@ -95,40 +94,50 @@
 
 //button
 .hero__contact {
-    @include mq(tb, true) {
-        background-color: clr(purple30);
-        position: absolute;
-        right: rem(16);
-        bottom: rem(16);
-    }
-    display: none;
-}
-//  combine this with button above
-.hero__contact-mobile {
-    @include pseudo(before, url(../../../img/svg/msg-dialog-mobile.svg), static);
-
-    @include pseudo(after, none);
-
-    @include mq(tb, true) {
-        width: 42px;
-        height: 42px;
-    }
-    @include mq(tbLG, true) {
-        @include pseudo(before, url(../../../img/svg/msg-dialog.svg), static);
-        width: 70px;
-        height: 70px;
-    }
-    justify-content: center;
     position: absolute;
-    right: rem(8);
+    right: 0;
     bottom: rem(8);
-    width: 32px;
-    height: 32px;
     padding: 0;
-    font-family: $primaryFont;
-    font-weight: 400;
+    width: 32px;
     background-color: clr(purple30);
-    @extend .more-btn;
+    &--text {
+        display: none;
+    }
+    &:hover {
+        width: 32px;
+    }
+    //decrease picture in btn
+    &::before {
+        transform: scale(0.7);
+    }
+
+    //Important!!! Need for overrides styles for btn from general.scss
+    //prevents the button from moving in mob and tablet version
+    @media (max-width: 768px) {
+        width: 32px;
+    }
+
+    @include mq(tb, true) {
+        &::before {
+            transform: scale(0.85);
+        }
+    }
+
+    @include mq(tbLG, true) {
+        width: 70px;
+        padding: 19px;
+        bottom: rem(16);
+
+        &:hover {
+            width: 200px;
+        }
+        &--text {
+            display: block;
+        }
+        &::before {
+            transform: scale(1);
+        }
+    }
 }
 
 // arrow btn
@@ -179,9 +188,8 @@
 }
 
 // --------------------Facts Section--------------------------
-.info {
-    @include flex();
 
+.info {
     @include mq(tb, true) {
         padding-top: 53px;
         padding-bottom: 53px;
@@ -190,13 +198,18 @@
         padding-top: 115px;
         justify-content: space-evenly;
     }
-    column-gap: 1.1em;
+
     position: relative;
     padding: 27px 0 34px;
     text-align: center;
     background-color: #faf7fb;
 }
 
+// Зменить отступ колонок
+.info__content-list {
+    @include flex();
+    column-gap: 1.1em;
+}
 .info__bgi {
     @include mq(tbLG, true) {
         top: 4em;
