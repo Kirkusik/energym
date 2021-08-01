@@ -51,9 +51,9 @@
     </ul>
 </section>
 
-<!-- <section class="advantages container">
-    <p class="advantages__title section-highlight section-title__h1">ENERGYM в телефоні</p>
+<section class="advantages container">
     <div class="advantages__wrapper">
+        <h2 class="advantages__title section-highlight section-title__h1">ENERGYM в телефоні</h2>
         <ul class="advantages__list">
             <li class="advantages__list-item">
                 Подовження своє картки, та придбання нової для своїх рідних;
@@ -72,24 +72,25 @@
             </li>
             <li class="advantages__list-item">Приєднання картки вашої дитини</li>
         </ul>
-        <picture>
-            <img class="advantages__phone" src="./img/main-page-hero-block/phone-m.png"
+        <picture class="advantages__phone-pic">
+            <source media="(min-width: 1000px)" srcset="./img/main-page-hero-block/phone-l.webp" />
+            <source media="(min-width: 1000px)" srcset="./img/main-page-hero-block/phone-l.png" />
+            <source media="(min-width: 768px)" srcset="./img/main-page-hero-block/phone-m.webp" />
+            <source media="(min-width: 768px)" srcset="./img/main-page-hero-block/phone-m.png" />
+            <source media="(min-width: 320px)" srcset="./img/main-page-hero-block/phone-s.webp" />
+            <source media="(min-width: 320px)" srcset="./img/main-page-hero-block/phone-s.png" />
+            <img class="advantages__phone" src="./img/main-page-hero-block/phone-l.png"
                 alt="iphone with energym card" />
         </picture>
-    </div>
-    <div class="advantages__subscribe">
         <div class="advantages__subscribe--services">
-            <svg class="advantages__subscribe--store" width="154" height="45">
-                <use href="#appstore_light-s"></use>
-            </svg>
-            <svg class="advantages__subscribe--store" width="154" height="45" aria-hidden="true">
-                <use href="#googleplay_light-s"></use>
-            </svg>
+            <a class="advantages__subscribe-link advantages__subscribe--appstore advantages__subscribe-link--vh"
+                href="#" alt="App Store" title="App Store"></a>
+            <a class="advantages__subscribe-link advantages__subscribe--googleplay advantages__subscribe-link--vh"
+                href="#" alt="Google Play" title="Google Play"></a>
         </div>
-        <picture>
-            <img class="advantages__semiphone" src="./img/main-page-hero-block/phone-s.png"
-                alt="iphone with energym card" />
-        </picture>
     </div>
-
-</section> -->
+    <div class="advantages__linkout-block">
+        <a class="advantages__linkout" href="#">Новини</a>
+        <button class="square-btn square-btn--right advantages__linkout-icon"></button>
+    </div>
+</section>

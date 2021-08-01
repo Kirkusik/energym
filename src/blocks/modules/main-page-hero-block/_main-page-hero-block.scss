@@ -310,55 +310,77 @@
 }
 // -----------------Advantages section-------------------
 .advantages {
-    @include mq(tbLG, true) {
-        display: none;
-    }
-    @include mq(tb, true) {
-        padding-top: 101px;
-        padding-bottom: 166px;
-    }
     background: #faf7fb;
     padding-top: 16px;
-    padding-bottom: 50px;
     padding-left: 0;
-    border: 1px solid #c4c4c4;
-    transform: rotate(0.05deg);
+
+    @include mq(tb, true) {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    @include mq(dt, true) {
+        display: none;
+    }
 }
 
 .advantages__wrapper {
-    @include flex(center, space-between);
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    grid-template-rows: 1fr minmax(min-content, max-content) 170px;
+    row-gap: 24px;
+    grid-template-areas: "title title" "list list" "buttons phone";
+    @include mq(tb, false) {
+        margin-bottom: 32px;
+    }
+    @include mq(tb, true) {
+        grid-template-areas: "title title" "list phone" "buttons buttons ";
+        grid-template-rows: 1fr minmax(min-content, max-content) 30px;
+    }
+    @include mq(tbLG, true) {
+        row-gap: 40px;
+        grid-template-areas: "title phone" "list phone" "buttons phone";
+        grid-template-rows: 91px minmax(322px, max-content) 118px;
+    }
 }
 .advantages__title {
+    grid-area: title;
+    font-size: rem(22);
+    line-height: 27px;
+    padding: 16px;
+
     @include mq(tb, true) {
         font-size: rem(24);
         line-height: 29px;
         padding: 16px 24px;
     }
-    font-size: rem(22);
-    line-height: 27px;
-    padding: 16px;
-    margin-bottom: 24px;
+    @include mq(tbLG, true) {
+        font-size: rem(36);
+        padding: 32px 24px;
+    }
 }
 .advantages__phone {
+    grid-area: phone;
     @include mq(tb, true) {
-        display: inline-block;
+        // justify-self: end;
+        align-self: end;
     }
-    display: none;
 }
-
-.advantages__list {
+.advantages__phone-pic {
     @include mq(tb, true) {
-        margin-bottom: 0;
-        margin-left: 48px;
-        max-width: 300px;
+        justify-self: center;
+        // align-self: end;
     }
+}
+.advantages__list {
+    grid-area: list;
     margin-left: 37px;
-    margin-bottom: 24px;
+
+    @include mq(tb, true) {
+        margin-left: 48px;
+        max-width: 504px;
+    }
 }
 .advantages__list-item {
-    @include mq(tb, true) {
-        margin-bottom: 16px;
-    }
     @include pseudo(before, "", absolute) {
         @include mq(tb, true) {
             left: -26px;
@@ -378,19 +400,90 @@
     font-size: rem(15);
     line-height: 18px;
     color: #000000;
+    @include mq(tbLG, true) {
+        font-size: rem(18);
+        line-height: 21px;
+    }
+    @include mq(tb, true) {
+        margin-bottom: 16px;
+    }
 }
 
 .advantages__subscribe {
-    @include flex();
+    &--services {
+        grid-area: buttons;
+        @include flex();
+        flex-direction: column;
+
+        @include mq(tb, true) {
+            flex-direction: row;
+            justify-self: start;
+            margin-left: 24px;
+        }
+
+        @include mq(tbLG, true) {
+            flex-direction: row;
+            justify-self: start;
+            align-self: start;
+            margin-left: 24px;
+        }
+    }
+    &--appstore {
+        margin-bottom: 16px;
+        background-image: url(../../../img/main-page-hero-block/appstore_light.svg);
+
+        @include mq(tb, true) {
+            margin-bottom: 0;
+            margin-right: 40px;
+            background-image: url(../../../img/main-page-hero-block/appstore_dark.svg);
+        }
+    }
+    &--googleplay {
+        margin-bottom: 0;
+        background-image: url(../../../img/main-page-hero-block/googleplay_light.svg);
+
+        @include mq(tb, true) {
+            background-image: url(../../../img/main-page-hero-block/googleplay_dark.svg);
+        }
+    }
+}
+.advantages__subscribe-link {
+    background-repeat: no-repeat;
+    width: 154px;
+    height: 45px;
+    background-size: contain;
+    @include mq(tb, true) {
+        width: 90px;
+        height: 26px;
+    }
+    @include mq(tbLG, true) {
+        width: 180px;
+        height: 52px;
+    }
 }
 
-.advantages__subscribe--store:first-child {
-    margin-bottom: 1em;
-}
-
-.advantages__subscribe--store,
-.advantages__semiphone {
+// Button to news page
+.advantages__linkout-block {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 50px;
     @include mq(tb, true) {
         display: none;
+    }
+}
+.advantages__linkout {
+    @include mq(tb, false) {
+        @include text(rem(22));
+        line-height: 27px;
+        color: clr(purple50);
+        margin-right: 12px;
+    }
+}
+
+.advantages__linkout-icon {
+    @include mq(tb, false) {
+        width: 40px;
+        height: 40px;
     }
 }
