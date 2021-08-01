@@ -1,12 +1,9 @@
 .header {
-    margin-top: 60px;
-    margin-bottom: 16px;
-}
-
-.header__wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding-top: 60px;
+    margin-bottom: 16px;
 }
 
 .logo {
@@ -14,6 +11,7 @@
         width: 118px;
         height: 24px;
     }
+    padding-left: 12px;
 }
 
 .header__header-container {
@@ -22,21 +20,16 @@
 
 .header__header-container-item {
     @include mq(tbLG, true) {
-        padding-right: 42px;
+        margin-right: 42px;
     }
     display: flex;
-    padding-right: 19px;
-}
-
-.header__header-container-item:nth-child(3) {
-    @include mq(tbLG, true) {
-        padding-right: 0;
+    margin-right: 19px;
+    &:nth-child(3) {
+        @include mq(tbLG, true) {
+            margin-right: 0;
+        }
+        margin-right: 27px;
     }
-    padding-right: 27px;
-}
-
-.header__header-container-item:nth-child(4) {
-    padding-right: 0;
 }
 
 .header__header-container-svg {
@@ -54,7 +47,7 @@
 
 .header__ukr-page {
     color: clr(pink);
-    padding-right: 6px;
+    margin-right: 6px;
     &::after {
         content: "";
         margin-left: 3px;
@@ -90,7 +83,6 @@
     background: clr(secondaryBG);
     line-height: 20px;
     color: #7a7979;
-    padding-left: 16px;
     outline: none;
     &:active {
         outline: none;
@@ -123,44 +115,15 @@
     @include mq(tbLG, true) {
         display: none;
     }
+    margin-right: 12px;
 }
 
 .burger-menu__button {
-    position: sticky;
-    z-index: 30;
-    top: 60px;
-    right: 15px;
-    -webkit-transition: 0.4s;
-    -moz-transition: 0.4s;
-    -o-transition: 0.4s;
-    transition: 0.4s;
-}
-
-.burger-menu__lines::before,
-.burger-menu__lines::after,
-.burger-menu__lines {
-    position: absolute;
-    width: 18px;
-    height: 2px;
-    background-color: clr(purple);
-    -webkit-transition: 0.4s;
-    -moz-transition: 0.4s;
-    -o-transition: 0.4s;
-    transition: 0.4s;
-}
-
-.burger-menu__lines {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    &::before {
-        content: "";
-        top: -3px;
-    }
-    &::after {
-        content: "";
-        top: 3px;
-    }
+    margin-top: -3px; //спросить
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background: none;
 }
 
 .active,
@@ -168,11 +131,6 @@
     display: block;
 }
 
-.active .burger-menu__lines,
-.active .burger-menu__lines::before,
-.active .burger-menu__lines::after {
-    background-color: transparent;
-}
 .square-btn {
     @include mq(tbLG, true) {
         display: none;
@@ -198,13 +156,14 @@
     display: none;
     position: absolute;
     z-index: 10;
-    top: 5px;
+    top: 50px;
     right: 16px;
     width: 216px;
     background-color: clr(white);
     color: clr(purpleDark);
     &--active {
         display: grid;
+        margin-bottom: 24px;
     }
 }
 
@@ -245,13 +204,10 @@
         left: 0;
         width: 530%;
     }
-    display: none;
+    display: block;
     width: 216px;
     background-color: clr(white);
     color: clr(purpleDark);
-    &.menu--active {
-        display: block;
-    }
 }
 
 .menu__title {
@@ -271,7 +227,9 @@
         margin: 58px 0 31px;
     }
 }
-
+.menu__item:not(:last-child) {
+    margin-bottom: 20px;
+}
 .menu__tab-link,
 .menu__item-link {
     @include mq(tb, true) {
@@ -284,7 +242,6 @@
     }
 
     @include text(15px, 500, $secondaryFont);
-
     line-height: 18px;
     display: flex;
     justify-content: space-between;
@@ -305,27 +262,32 @@
         @include mq(tbLG, true) {
             border-bottom: 1px solid clr(red);
         }
-        color: clr(red);
+        @include text(18px, 400, $primaryFont);
+        color: clr(purple);
+        line-height: 22px;
     }
 }
 
 .menu__item-link {
-    padding-bottom: 10px;
-}
-.menu__item-link:last-child {
-    @include mq(tbLG, true) {
-        @include text(14px, 400, $primaryFont);
-        line-height: 17px;
-        padding-bottom: 15px;
+    &:last-child {
+        @include mq(tbLG, true) {
+            @include text(14px, 400, $primaryFont);
+            line-height: 17px;
+            margin-bottom: 15px;
+        }
+        margin-bottom: 0;
     }
-    padding-bottom: 0;
+
+    &--active {
+        color: clr(red);
+    }
 }
 
 .menu__tab {
     @include mq(tbLG, true) {
-        padding-bottom: 0;
+        margin-bottom: 0;
     }
-    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .menu__sub-items {
@@ -352,20 +314,27 @@
         height: 16px;
         margin-right: 64px;
     }
+    &--active::after {
+        content: url("../../../img/svg/menu_arrow_up.svg");
+        width: 8px;
+        height: 16px;
+        margin-right: 64px;
+    }
+}
+
+.menu__sub-item {
+    margin-bottom: 15px;
 }
 .menu__sub-item-link {
     @include text(15px, 500, $secondaryFont);
     @include mq(tbLG, true) {
         @include text(14px, 400, $secondaryFont);
         line-height: 17px;
-        padding-bottom: 15px;
         padding-left: 0;
         display: block;
     }
     line-height: 18px;
-    padding-bottom: 15px;
     padding-left: 5px;
-    color: clr(purpleDark);
     display: block;
 }
 
@@ -423,12 +392,14 @@
     }
     display: flex;
     justify-content: flex-start;
-    margin: 0 16px 32px 0;
+    margin-right: 16px;
+    margin-bottom: 0;
+    &:last-child {
+        margin-right: 0;
+        align-self: center;
+    }
 }
 
-.menu__contact-item:last-child {
-    margin-bottom: 0;
-}
 .menu__contact-link {
     @include mq(tbLG, true) {
         @include text(14px, 500, $secondaryFont);
@@ -481,13 +452,14 @@
         justify-content: start;
     }
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 32px;
 }
 .contact_info {
     @include mq(tb, true) {
-        align-items: center;
-        justify-content: center;
+        // align-items: center;
+        // justify-content: center;
     }
     @include mq(tbLG, true) {
         flex-direction: column;
@@ -495,5 +467,16 @@
         justify-content: flex-start;
     }
     display: flex;
+    justify-content: start;
+    align-items: start;
     flex-direction: column-reverse;
+}
+.menu__contact-adress {
+    @include text(15px, 500, $secondaryFont);
+    line-height: 19px;
+}
+.menu__contact-tel {
+    @include text(17px, 400, $primaryFont);
+    margin-bottom: 32px;
+    line-height: 20px;
 }
