@@ -1,10 +1,11 @@
 .hero {
     position: relative;
 
-    //getting dynamic height apr. 53-54% (190/350) img propotion
+    //getting dynamic height apr. 53% (190/350) img propotion
+    //decrease in 1 % becouse of white gap before facts section
     @include pseudo($location: after) {
         display: block;
-        padding-bottom: 53%;
+        padding-bottom: 52%;
     }
 }
 // images
@@ -229,24 +230,22 @@
 // --------------------Facts Section--------------------------
 
 .info {
-    @include mq(tb, true) {
-        padding-top: 53px;
-        padding-bottom: 53px;
-    }
-    @include mq(tbLG, true) {
-        padding-top: 115px;
-    }
-
     position: relative;
     padding: 27px 0 34px;
     text-align: center;
-    background-color: #faf7fb;
+    background-color: clr(secondaryBG);
+    padding-bottom: 8%;
+    padding-top: 8%;
 }
 
-// Зменить отступ колонок
 .info__content-list {
-    @include flex();
-    column-gap: 1.1em;
+    @include flex(center, space-evenly);
+    margin: 0 auto;
+
+    @include mq(mb, true) {
+        justify-content: space-between;
+        max-width: 80%;
+    }
 }
 .info__bgi {
     @include mq(tbLG, true) {
@@ -259,6 +258,10 @@
 
 .info__content-title,
 .info__content-subtitle {
+    font-size: rem(13);
+    color: clr(black);
+    font-family: $primaryFont;
+
     @include mq(tb, true) {
         font-size: rem(24);
         line-height: 29px;
@@ -270,12 +273,28 @@
         line-height: 58px;
         margin-bottom: 8px;
     }
-    font-size: rem(13);
-    color: clr(black);
-    font-family: $primaryFont;
 }
 
+.info__content-title {
+    &--degree {
+        vertical-align: super;
+        font-size: rem(10);
+        position: relative;
+
+        @include mq(tb, true) {
+            font-size: rem(15);
+        }
+        @include mq(tbLG, true) {
+            font-size: rem(25);
+        }
+    }
+}
 .info__content-subtitle {
+    &--part {
+        @media (min-width: 320px) {
+            display: block;
+        }
+    }
     @include mq(tb, true) {
         font-size: rem(15);
         line-height: 18px;
