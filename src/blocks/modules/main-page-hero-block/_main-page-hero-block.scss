@@ -71,9 +71,7 @@
         top: 60%;
     }
 }
-.hero__info-title--part {
-    white-space: nowrap;
-}
+
 .hero__links-box {
     display: flex;
     justify-content: space-evenly;
@@ -99,6 +97,9 @@
     margin-left: auto;
     margin-right: auto;
 
+    &--part {
+        white-space: nowrap;
+    }
     @include text(rem(22));
 
     @include mq(tb, true) {
@@ -233,9 +234,11 @@
     position: relative;
     padding: 27px 0 34px;
     text-align: center;
-    background-color: clr(secondaryBG);
     padding-bottom: 8%;
     padding-top: 8%;
+    background: clr(secondaryBG) url(../../../img/main-page-hero-block/facts-text.svg) no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 .info__content-list {
@@ -313,6 +316,7 @@
     background: #faf7fb;
     padding-top: 16px;
     padding-left: 0;
+    padding-bottom: 50px;
 
     @include mq(tb, true) {
         padding-top: 100px;
@@ -463,21 +467,21 @@
 }
 
 // Button to news page
-.advantages__linkout-block {
+
+.advantages__linkout {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    padding-bottom: 50px;
+    margin-left: auto;
+    max-width: 140px;
+
     @include mq(tb, true) {
         display: none;
     }
-}
-.advantages__linkout {
+
     @include mq(tb, false) {
         @include text(rem(22));
         line-height: 27px;
         color: clr(purple50);
-        margin-right: 12px;
     }
 }
 
@@ -485,5 +489,6 @@
     @include mq(tb, false) {
         width: 40px;
         height: 40px;
+        margin-left: 12px;
     }
 }
