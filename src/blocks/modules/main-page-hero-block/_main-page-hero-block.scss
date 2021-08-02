@@ -38,37 +38,35 @@
     &--active {
         top: 30%;
     }
-    &--position {
-        top: 30%;
-    }
-}
-.hero__info--position {
-    top: 60%;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
 
-    //forced media due to container rebuilding in general.scss
-    @media (min-width: 320px) {
-        top: 40%;
-    }
-    @media (min-width: 480px) {
+    &--position {
         top: 60%;
-    }
-    @media (min-width: 576px) {
-        top: 65%;
-    }
-    @media (min-width: 768px) {
-        top: 77%;
-    }
-    @media (min-width: 992px) {
-        top: 82%;
-    }
-    @media (min-width: 1000px) {
-        top: 55%;
-    }
-    @media (min-width: 1200px) {
-        top: 60%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+        //forced media due to container rebuilding in general.scss
+        @media (min-width: 320px) {
+            top: 40%;
+        }
+        @media (min-width: 480px) {
+            top: 60%;
+        }
+        @media (min-width: 576px) {
+            top: 65%;
+        }
+        @media (min-width: 768px) {
+            top: 77%;
+        }
+        @media (min-width: 992px) {
+            top: 82%;
+        }
+        @media (min-width: 1000px) {
+            top: 55%;
+        }
+        @media (min-width: 1200px) {
+            top: 60%;
+        }
     }
 }
 
@@ -473,6 +471,13 @@
     align-items: center;
     margin-left: auto;
     max-width: 140px;
+
+    &:hover {
+        //used a nested selector, because the square button is a child of the link
+        .advantages__linkout-icon {
+            background-color: clr(red);
+        }
+    }
 
     @include mq(tb, true) {
         display: none;
