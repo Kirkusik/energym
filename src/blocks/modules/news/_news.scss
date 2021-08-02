@@ -1,9 +1,11 @@
 .news-banner {
   position: relative;
 }
+
 .news-banner__img {
   width: 100%;
   height: 170px;
+
   @include mq(tb, true) {
     height: 266px;
   }
@@ -48,7 +50,6 @@
     width: 549px;
     font-size: 36px;
     line-height: 43px;
-    //text-transform: lowercase;
   }
 
   @include mq(dt, dt) {
@@ -57,68 +58,89 @@
     width: 525px;
     font-size: 61px;
     line-height: 74px;
-    //text-transform: lowercase;
     color: clr(white);
   }
+}
 
-  &-span {
-    display: none;
-    color: clr(white);
-    font-family: Russo One;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 27px;
-    letter-spacing: 0em;
-    text-align: center;
-    @supports (-webkit-text-stroke: 4px white) {
-      color: transparent;
-      -webkit-text-stroke: 2px white;
-    }
-
-    @include mq(tb, tb) {
-      display: inline-block;
-      padding-right: 8px;
-      text-transform: capitalize;
-      font-size: 24px;
-      line-height: 29px;
-    }
-    @include mq(tbLG, tbLG) {
-      display: inline-block;
-      padding-right: 8px;
-      text-transform: capitalize;
-      font-size: 36px;
-      line-height: 43px;
-    }
-    @include mq(dt, dt) {
-      font-size: 61px;
-      line-height: 74px;
-      color: clr(white);
-    }
+.news-banner__title-span {
+  display: none;
+  color: clr(white);
+  font-family: Russo One;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: center;
+  @supports (-webkit-text-stroke: 4px white) {
+    color: transparent;
+    -webkit-text-stroke: 2px white;
   }
 
+  @include mq(tb, tb) {
+    display: inline-block;
+    padding-right: 8px;
+    text-transform: capitalize;
+    font-size: 24px;
+    line-height: 29px;
+  }
+  @include mq(tbLG, tbLG) {
+    display: inline-block;
+    padding-right: 8px;
+    text-transform: capitalize;
+    font-size: 36px;
+    line-height: 43px;
+  }
+  @include mq(dt, dt) {
+    font-size: 61px;
+    line-height: 74px;
+    color: clr(white);
+  }
 }
 
 .news-list__items {
+  margin-top: 24px;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
   align-items: center;
   flex-wrap: wrap;
-  @include mq(mb, mb) {
+  @media (min-width: 576px) {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
 }
 
+.news-list__item-link {
+  color: clr(black);
+}
+
+.news-list__item--enerkid {
+  display: none;
+  @media (min-width: 576px) {
+    display: block;
+  }
+}
+.news-list__item--asan {
+  display: none;
+  @media (min-width: 576px) {
+    display: block;
+  }
+}
 .news-list__item {
-  width: 167px;
+  align-self: start;
+  width: 100%;
+  height: 450px;
   margin-bottom: 16px;
   background-color: clr(purple40);
   color: #000000;
-  &-link {
-    color: clr(black);
+
+  @media (min-width: 576px) {
+    width: 45%;
+    &:nth-child(n + 5) {
+      display: none;
+    }
   }
 
   @include mq(tb, tb) {
@@ -128,16 +150,19 @@
   @include mq(tbLG, tbLG) {
     width: 256px;
     margin-bottom: 32px;
+    display: block;
+    &:nth-child(n + 7) {
+      display: none;
+    }
   }
   @include mq(dt, dt) {
     width: 384px;
     margin-bottom: 40px;
   }
-    }
+}
 
 .news-list__item-img {
-  width: 167px;
-  height: 100px;
+  width: 100%;
   @include mq(tb, tb) {
     width: 310px;
     height: 218px;
@@ -242,7 +267,7 @@
   align-items: center;
 }
 
-.secondary-btn {
+.secondary-btn--loadmore-news {
   width: 327px;
   height: 58px;
   font-size: 13px;
@@ -258,65 +283,65 @@
     margin-bottom: 80px;
   }
 }
+
 .about-us__container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 40px;
-    margin-bottom: 32px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 40px;
+  margin-bottom: 32px;
 
-    @include mq(tb, tb) {
-      height: 48px;
-      margin-bottom: 92px;
-    }
-    @include mq(tbLG, tbLG) {
-      height: 56px;
-      margin-bottom: 114px;
-    }
-    @include mq(dt, dt) {
-      height: 70px;
-      margin-bottom: 50px;
-    }
+  @include mq(tb, tb) {
+    height: 48px;
+    margin-bottom: 92px;
   }
-
-.about-us-title {
-    font-family: Russo One;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 27px;
-    letter-spacing: 0em;
-    text-align: center;
-    margin-right: 12px;
-    color: clr(purple);
-    opacity: 0.6;
-
-    @include mq(tb, tb) {
-      font-size: 16px;
-      line-height: 19.28px;
-    }
-    @include mq(tbLG, tbLG) {
-      font-size: 32px;
-      line-height: 38.56px;
-    }
+  @include mq(tbLG, tbLG) {
+    height: 56px;
+    margin-bottom: 114px;
   }
-
-
-  .square-btn {
-    width: 40px;
-    height: 40px;
-
-    @include mq(tb, tb) {
-      width: 48px;
-      height: 48px;
-    }
-    @include mq(tbLG, tbLG) {
-      display: block;
-      width: 56px;
-      height: 56px;
-    }
-    @include mq(dt, dt) {
-      width: 56px;
-      height: 56px;
-    }
+  @include mq(dt, dt) {
+    height: 70px;
+    margin-bottom: 50px;
   }
+}
+
+.about-us__title {
+  font-family: Russo One;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-right: 12px;
+  color: clr(purple);
+  opacity: 0.6;
+
+  @include mq(tb, tb) {
+    font-size: 16px;
+    line-height: 19.28px;
+  }
+  @include mq(tbLG, tbLG) {
+    font-size: 32px;
+    line-height: 38.56px;
+  }
+}
+
+.square-btn {
+  width: 40px;
+  height: 40px;
+
+  @include mq(tb, tb) {
+    width: 48px;
+    height: 48px;
+  }
+  @include mq(tbLG, tbLG) {
+    display: block;
+    width: 56px;
+    height: 56px;
+  }
+  @include mq(dt, dt) {
+    width: 56px;
+    height: 56px;
+  }
+}
