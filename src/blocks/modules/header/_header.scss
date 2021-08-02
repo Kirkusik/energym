@@ -1,29 +1,51 @@
+@import "./components/svg";
+
 .header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    @include mq(tb, true) {
+        padding-top: 9px;
+        margin-bottom: 9px;
+    }
+    @include mq(tbLG, true) {
+        padding-top: 29px;
+        margin-bottom: 31px;
+    }
     padding-top: 60px;
     margin-bottom: 16px;
 }
-
-.logo {
-    @include mq(tbLG, true) {
-        width: 118px;
-        height: 24px;
+.header__wrapper {
+    @include mq(tb, true) {
+        padding: 0 24px;
     }
-    padding-left: 12px;
+    @include mq(tbLG, true) {
+        margin-bottom: 56px;
+        padding: 0 31px 0 40px;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
 }
 
 .header__header-container {
     display: flex;
+    margin-left: auto;
 }
 
 .header__header-container-item {
-    @include mq(tbLG, true) {
-        margin-right: 42px;
-    }
     display: flex;
     margin-right: 19px;
+    &:first-child {
+        @include mq(tbLG, true) {
+            margin-right: 46px;
+        }
+    }
+    &:nth-child(2) {
+        @include mq(tbLG, true) {
+            margin-right: 14px;
+        }
+    }
+
     &:nth-child(3) {
         @include mq(tbLG, true) {
             margin-right: 0;
@@ -32,19 +54,12 @@
     }
 }
 
-.header__header-container-svg {
-    @include mq(tbLG, true) {
-        width: 19px;
-        height: 19px;
-    }
-}
 .header__ukr-page,
 .header__rus-page {
     @include text(15px, 700, $secondaryFont);
     line-height: 18px;
     text-decoration: none;
 }
-
 .header__ukr-page {
     color: clr(pink);
     margin-right: 6px;
@@ -57,12 +72,13 @@
         background-color: clr(purple);
     }
 }
-
 .header__rus-page {
     color: clr(black);
 }
-
 .header__menu-title {
+    @include mq(tbLG, true) {
+        display: none;
+    }
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -70,15 +86,20 @@
 }
 
 .location {
-    @include text(16px, 400, $secondaryFont);
+    margin-right: 42px;
+}
+
+.location,
+.search__input {
+    @include text(16px, 300, $secondaryFont);
     @include mq(tbLG, true) {
         display: block;
     }
     display: none;
-    margin-left: 14px;
     width: 200px;
     height: 24px;
     border-radius: 4px;
+    padding-left: 16px;
     border: none;
     background: clr(secondaryBG);
     line-height: 20px;
@@ -86,6 +107,12 @@
     outline: none;
     &:active {
         outline: none;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus {
+        outline: auto;
     }
 }
 
@@ -111,19 +138,14 @@
     }
 }
 
+.search__form {
+    display: flex;
+}
+
 .burger-menu {
     @include mq(tbLG, true) {
         display: none;
     }
-    margin-right: 12px;
-}
-
-.burger-menu__button {
-    margin-top: -3px; //спросить
-    border: none;
-    cursor: pointer;
-    outline: none;
-    background: none;
 }
 
 .active,
@@ -141,57 +163,41 @@
 }
 .navigation {
     @include mq(tb, true) {
-        width: 316px;
+        top: 9px;
+        width: 340px;
     }
+
     @include mq(tbLG, true) {
         display: flex;
         flex-direction: row;
         align-items: flex-end;
         position: relative;
         z-index: 0;
-        top: 0;
-        left: 0;
-        width: 530%;
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 20px;
     }
     display: none;
     position: absolute;
     z-index: 10;
-    top: 50px;
+    margin-bottom: 24px;
+    top: 52px;
     right: 16px;
     width: 216px;
     background-color: clr(white);
     color: clr(purpleDark);
     &--active {
         display: grid;
-        margin-bottom: 24px;
     }
 }
 
 .contact_link {
     @include mq(tbLG, true) {
-        width: 78px;
-        margin-left: 100px;
+        margin-bottom: 0;
     }
+    margin-bottom: 24px;
 }
-.contact_block {
-    @include mq(tb, true) {
-        width: 316px;
-    }
-    @include mq(tbLG, true) {
-        display: block;
-        // position: static;
-        z-index: 0;
-        // left: 0;
-        // top: 0;
-    }
-    display: none;
-    width: 216px;
-    background-color: clr(white);
-    color: clr(purpleDark);
-    &--active {
-        display: block;
-    }
-}
+
 .menu {
     @include mq(tb, true) {
         width: 316px;
@@ -200,9 +206,7 @@
         display: block;
         position: relative;
         z-index: 0;
-        top: 0;
-        left: 0;
-        width: 530%;
+        width: 100%;
     }
     display: block;
     width: 216px;
@@ -223,28 +227,23 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 100%;
-        margin: 58px 0 31px;
     }
 }
-.menu__item:not(:last-child) {
+.menu__item {
     margin-bottom: 20px;
-}
-.menu__tab-link,
-.menu__item-link {
-    @include mq(tb, true) {
-        @include text(16px, 500, $secondaryFont);
-        line-height: 20px;
+    &--cards {
+        @include mq(tbLG, true) {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
     }
 
-    @include mq(tbLG, true) {
-        padding-bottom: 24px;
+    &--trainers {
+        @include mq(tbLG, true) {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
     }
-
-    @include text(15px, 500, $secondaryFont);
-    line-height: 18px;
-    display: flex;
-    justify-content: space-between;
 }
 
 .menu__tab-link {
@@ -258,9 +257,19 @@
             height: 14px;
         }
     }
+    @include mq(tbLG, true) {
+        padding-bottom: 24px;
+    }
+    @include text(15px, 500, $secondaryFont);
+    line-height: 18px;
+    display: flex;
+    justify-content: space-between;
+    color: clr(purpleDark);
     &--active {
         @include mq(tbLG, true) {
+            @include text(16px, 500, $secondaryFont);
             border-bottom: 1px solid clr(red);
+            color: clr(purpleDark);
         }
         @include text(18px, 400, $primaryFont);
         color: clr(purple);
@@ -269,18 +278,39 @@
 }
 
 .menu__item-link {
-    &:last-child {
-        @include mq(tbLG, true) {
-            @include text(14px, 400, $primaryFont);
-            line-height: 17px;
-            margin-bottom: 15px;
-        }
-        margin-bottom: 0;
-    }
+    @include text(15px, 500, $secondaryFont);
 
+    @include mq(tbLG, true) {
+        @include text(16px, 400, $primaryFont);
+        color: clr(black);
+        line-height: 20px;
+        display: block;
+        padding-bottom: 12px;
+    }
+    line-height: 18px;
+    display: flex;
+    justify-content: space-between;
     &--active {
         color: clr(red);
     }
+
+    &--cards {
+        @include mq(tbLG, true) {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+    }
+    &--trainers {
+        @include mq(tbLG, true) {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+    }
+}
+
+.menu__item-text {
+    display: block;
+    margin-bottom: 16px;
 }
 
 .menu__tab {
@@ -302,13 +332,13 @@
     }
 }
 .menu__sub-title-link {
-    @include mq(tbLG, true) {
-        content: "";
-    }
     &:checked {
         color: clr(red);
     }
     &::after {
+        @include mq(tbLG, true) {
+            content: "";
+        }
         content: url("../../../img/svg/menu_arrow_down.svg");
         width: 8px;
         height: 16px;
@@ -329,10 +359,11 @@
     @include text(15px, 500, $secondaryFont);
     @include mq(tbLG, true) {
         @include text(14px, 400, $secondaryFont);
-        line-height: 17px;
+        color: clr(black);
         padding-left: 0;
         display: block;
     }
+    color: clr(purpleDark);
     line-height: 18px;
     padding-left: 5px;
     display: block;
@@ -340,19 +371,22 @@
 
 .menu__contact {
     @include mq(tbLG, true) {
-        display: grid;
         padding-left: 0;
         position: absolute;
-        top: 134px;
+        top: 87px;
         left: 0;
-        width: calc(100vw - 32px);
+        width: 100%;
         grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
     }
     display: none;
-    // position: absolute;
     &--active {
         @include mq(tb, true) {
             display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        @include mq(tbLG, true) {
+            display: grid;
             flex-direction: column;
             align-items: center;
         }
@@ -361,27 +395,41 @@
 
 .menu__items {
     @include mq(tbLG, true) {
+        position: absolute;
+        top: 87px;
+        left: 0;
+        width: 100%;
         margin: 0;
+        grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
     }
     display: none;
     margin: 23px 0 0 15px;
+
+    &--cards {
+        @include mq(tbLG, true) {
+            column-gap: 60px;
+            row-gap: 32px;
+        }
+    }
+    &--trainers {
+        @include mq(tbLG, true) {
+            justify-items: center;
+            grid-template-columns: repeat(auto-fill, minmax(14%, 1fr));
+            column-gap: 60px;
+        }
+    }
     &--active {
         @include mq(tbLG, true) {
             display: grid;
-            padding-left: 0;
-            position: absolute;
-            top: 134px;
-            left: 0;
-            width: calc(100vw - 32px);
-            grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
-            row-gap: 32px;
         }
+
         display: block;
     }
 }
+
 .menu__item-img {
     @include mq(tbLG, true) {
-        display: block;
+        display: inline-block;
     }
     display: none;
 }
@@ -392,11 +440,28 @@
     }
     display: flex;
     justify-content: flex-start;
-    margin-right: 16px;
     margin-bottom: 0;
-    &:last-child {
-        margin-right: 0;
+    &--youtube {
         align-self: center;
+    }
+    &--facebook {
+        margin-right: 16px;
+    }
+    &--instagram {
+        margin-right: 16px;
+    }
+    &--map {
+        @include mq(tbLG, true) {
+            display: block;
+            grid-area: image;
+        }
+        display: none;
+    }
+    &--tel {
+        @include mq(tbLG, true) {
+            align-self: start;
+            grid-area: telephone;
+        }
     }
 }
 
@@ -407,7 +472,6 @@
         margin-left: 16px;
         color: clr(black);
         line-height: 17px;
-        padding-left: 16px;
     }
     display: none;
 }
@@ -419,27 +483,12 @@
     }
     @include mq(tbLG, true) {
         display: flex;
+        align-self: start;
         justify-content: flex-start;
+        grid-area: adress;
     }
 }
 
-.tel_desk {
-    @include mq(tbLG, true) {
-        display: block;
-    }
-    display: none;
-}
-
-.location_desk {
-    @include mq(tb, true) {
-        margin-bottom: 18px;
-    }
-    @include mq(tbLG, true) {
-        margin-right: 0;
-        margin-bottom: 0;
-    }
-    margin-right: 15px;
-}
 .black {
     @include mq(tbLG, true) {
         margin-left: 20px;
@@ -451,6 +500,9 @@
         display: grid;
         justify-content: start;
     }
+    @include mq(tb, true) {
+        justify-content: center;
+    }
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -458,25 +510,40 @@
 }
 .contact_info {
     @include mq(tb, true) {
-        // align-items: center;
-        // justify-content: center;
+        align-items: center;
+        justify-content: center;
     }
     @include mq(tbLG, true) {
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
+        display: grid;
+        grid-template-columns: 1fr 159px;
+        grid-template-rows: 56px 1fr;
+        grid-template-areas:
+            "adress image"
+            "telephone image";
     }
     display: flex;
-    justify-content: start;
-    align-items: start;
     flex-direction: column-reverse;
+    align-items: start;
+    justify-content: start;
 }
 .menu__contact-adress {
     @include text(15px, 500, $secondaryFont);
+    @include mq(tbLG, true) {
+        @include text(14px, 500, $secondaryFont);
+        text-align: left;
+        line-height: 17px;
+    }
     line-height: 19px;
 }
 .menu__contact-tel {
     @include text(17px, 400, $primaryFont);
+    @include mq(tb, true) {
+        margin-bottom: 17px;
+    }
+    @include mq(tbLG, true) {
+        @include text(32px, 400, $primaryFont);
+        line-height: 32px;
+    }
     margin-bottom: 32px;
     line-height: 20px;
 }
