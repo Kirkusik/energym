@@ -162,9 +162,24 @@
     background-color: clr(purple50);
 }
 .navigation {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    margin-bottom: 24px;
+    top: 52px;
+    right: 16px;
+    width: 216px;
+    background-color: clr(white);
+    color: clr(purpleDark);
+    @include mq(mb, true) {
+        width: 250px;
+    }
+    @media (min-width: 758px) and(max-width:767px) {
+        width: 260px;
+    }
     @include mq(tb, true) {
         top: 9px;
-        width: 340px;
+        width: 326px;
     }
 
     @include mq(tbLG, true) {
@@ -177,15 +192,7 @@
         padding-left: 50px;
         padding-right: 20px;
     }
-    display: none;
-    position: absolute;
-    z-index: 10;
-    margin-bottom: 24px;
-    top: 52px;
-    right: 16px;
-    width: 216px;
-    background-color: clr(white);
-    color: clr(purpleDark);
+
     &--active {
         display: grid;
     }
@@ -258,28 +265,27 @@
         }
     }
     @include mq(tbLG, true) {
+        @include text(16px, 500, $secondaryFont);
+        border-bottom: 1px solid transparent;
         padding-bottom: 24px;
     }
     @include text(15px, 500, $secondaryFont);
-    line-height: 18px;
     display: flex;
     justify-content: space-between;
     color: clr(purpleDark);
     &--active {
         @include mq(tbLG, true) {
-            @include text(16px, 500, $secondaryFont);
             border-bottom: 1px solid clr(red);
             color: clr(purpleDark);
         }
         @include text(18px, 400, $primaryFont);
         color: clr(purple);
-        line-height: 22px;
     }
 }
 
 .menu__item-link {
     @include text(15px, 500, $secondaryFont);
-
+    color: clr(purpleDark);
     @include mq(tbLG, true) {
         @include text(16px, 400, $primaryFont);
         color: clr(black);
@@ -309,8 +315,10 @@
 }
 
 .menu__item-text {
-    display: block;
-    margin-bottom: 16px;
+    @include mq(tbLG, true) {
+        display: block;
+        margin-bottom: 16px;
+    }
 }
 
 .menu__tab {
