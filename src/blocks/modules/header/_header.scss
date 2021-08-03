@@ -445,6 +445,7 @@
 .menu__contact-item {
     @include mq(tbLG, true) {
         margin: 0 0 25px;
+        align-items: center;
     }
     display: flex;
     justify-content: flex-start;
@@ -472,11 +473,14 @@
         }
     }
 }
-
 .menu__contact-link {
+    display: flex;
+    align-items: center;
+}
+.menu__contact-ref {
     @include mq(tbLG, true) {
         @include text(14px, 500, $secondaryFont);
-        display: block;
+        display: inline-block;
         margin-left: 16px;
         color: clr(black);
         line-height: 17px;
@@ -534,14 +538,16 @@
     align-items: start;
     justify-content: start;
 }
-.menu__contact-adress {
+.menu__contact-address {
     @include text(15px, 500, $secondaryFont);
+
     @include mq(tbLG, true) {
         @include text(14px, 500, $secondaryFont);
         text-align: left;
         line-height: 17px;
     }
     line-height: 19px;
+    font-style: normal;
 }
 .menu__contact-tel {
     @include text(17px, 400, $primaryFont);

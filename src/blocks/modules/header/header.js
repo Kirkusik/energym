@@ -13,6 +13,15 @@ const menuItem = document.querySelectorAll(".menu__item-link");
 // const menuSubTitle = document.querySelectorAll(".menu__sub-title-link");
 // const divContact = document.querySelector("menu__contact");
 
+function deleteActiveClass() {
+    const desktopDesk = window.matchMedia("(min-width: 1000px)");
+    if (desktopDesk.matches) {
+        [...menuTitle].forEach((item) => {
+            item.classList.remove("menu__tab-link--active");
+        });
+    }
+}
+
 function toggleMenu(e) {
     e.preventDefault();
     navigation.classList.toggle("navigation--active");
@@ -25,16 +34,35 @@ function onMenuClick(e) {
     e.preventDefault();
     activeItem = e.target.closest(".menu__tab-link");
     activeSubItem = e.target.closest(".menu__item-link");
+    const desktopDesk = window.matchMedia("(min-width: 1000px)");
     //on item click
     if (activeItem) {
-        [...menuTitle].forEach((item) => {
-            if (item === activeItem) {
-                item.classList.toggle("menu__tab-link--active");
-                item.nextElementSibling.classList.toggle("menu__items--active");
-            }
-        });
+        if (!desktopDesk.matches) {
+            [...menuTitle].forEach((item) => {
+                if (item === activeItem) {
+                    item.classList.toggle("menu__tab-link--active");
+                    item.nextElementSibling.classList.toggle(
+                        "menu__items--active"
+                    );
+                }
+            });
+        } else if (desktopDesk.matches) {
+            [...menuTitle].forEach((item) => {
+                if (item === activeItem) {
+                    item.classList.add("menu__tab-link--active");
+                    item.nextElementSibling.classList.add(
+                        "menu__items--active"
+                    );
+                } else {
+                    item.classList.remove("menu__tab-link--active");
+                    item.nextElementSibling.classList.remove(
+                        "menu__items--active"
+                    );
+                }
+            });
+        }
         // on subItem click
-    } else if (activeSubItem) {
+    } else if (activeSubItem && !desktopDesk.matches) {
         [...menuItem].forEach((item) => {
             if (
                 item === activeSubItem &&
@@ -56,6 +84,7 @@ function onMenuClick(e) {
 menuButton.addEventListener("click", (e) => toggleMenu(e));
 closeButton.addEventListener("click", (e) => toggleMenu(e));
 navigation.addEventListener("click", onMenuClick);
+window.addEventListener("load", deleteActiveClass);
 
 // tabs.addEventListener("click", function (event) {
 //     let target = event.target;
