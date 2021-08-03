@@ -9,8 +9,8 @@
         padding-top: 29px;
         margin-bottom: 31px;
     }
-    padding-top: 60px;
-    margin-bottom: 16px;
+    padding-top: 15px;
+    margin-bottom: 15px;
 }
 .header__wrapper {
     @include mq(tb, true) {
@@ -114,6 +114,9 @@
     &:focus {
         outline: auto;
     }
+    &--active {
+        display: block;
+    }
 }
 
 .search {
@@ -164,9 +167,10 @@
 .navigation {
     display: none;
     position: absolute;
+    padding-top: 8px; // задано меньший padding чтобы выстроить в одну линию с logo
     z-index: 10;
     margin-bottom: 24px;
-    top: 52px;
+    top: 0;
     right: 16px;
     width: 216px;
     background-color: clr(white);
@@ -174,11 +178,9 @@
     @include mq(mb, true) {
         width: 250px;
     }
-    @media (min-width: 758px) and(max-width:767px) {
-        width: 260px;
-    }
+
     @include mq(tb, true) {
-        top: 9px;
+        padding-top: 2px; // задано меньший padding чтобы выстроить в одну линию с logo
         width: 326px;
     }
 
@@ -191,6 +193,7 @@
         width: 100%;
         padding-left: 50px;
         padding-right: 20px;
+        padding-top: 0;
     }
 
     &--active {
@@ -336,6 +339,9 @@
     display: none;
     margin: 16px 16px 16px 0;
     &--active {
+        @include mq(tbLG, true) {
+            display: grid;
+        }
         display: block;
     }
 }
@@ -415,17 +421,17 @@
 
     &--cards {
         @include mq(tbLG, true) {
-            column-gap: 60px;
+            grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
             row-gap: 32px;
         }
     }
-    &--trainers {
-        @include mq(tbLG, true) {
-            justify-items: center;
-            grid-template-columns: repeat(auto-fill, minmax(14%, 1fr));
-            column-gap: 60px;
-        }
-    }
+    // &--trainers {
+    //     @include mq(tbLG, true) {
+    //         justify-items: center;
+    //         grid-template-columns: repeat(auto-fill, minmax(14%, 1fr));
+    //         column-gap: 60px;
+    //     }
+    // }
     &--active {
         @include mq(tbLG, true) {
             display: grid;

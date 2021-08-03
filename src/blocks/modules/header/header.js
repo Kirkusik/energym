@@ -1,174 +1,126 @@
-const navigation = document.querySelector(".navigation");
-const menu = document.querySelector(".menu");
-const menuContact = document.querySelector(".contact_block");
-const burgerMenu = document.querySelector(".burger-menu");
-const menuButton = document.querySelector(".burger-menu__button");
-const closeButton = document.querySelector(".square-btn");
-const menuTitle = document.querySelectorAll(".menu__tab-link");
-const menuItem = document.querySelectorAll(".menu__item-link");
+const burger = {
+    menu: document.querySelector(".burger-menu"),
+    button: document.querySelector(".burger-menu__button"),
+};
 
-// const menuItems = document.querySelectorAll(".menu__items");
-// const tabs = document.querySelector(".menu__tabs");
-// const menuSubItems = document.querySelectorAll(".menu__sub-items");
-// const menuSubTitle = document.querySelectorAll(".menu__sub-title-link");
-// const divContact = document.querySelector("menu__contact");
+const menu = {
+    navigation: document.querySelector(".navigation"),
+    box: document.querySelector(".menu"),
+    button: document.querySelector(".square-btn"),
+};
 
-function deleteActiveClass() {
-    const desktopDesk = window.matchMedia("(min-width: 1000px)");
-    if (desktopDesk.matches) {
-        [...menuTitle].forEach((item) => {
-            item.classList.remove("menu__tab-link--active");
-        });
-    }
+const title = {
+    links: [...document.querySelectorAll(".menu__tab-link")],
+    activeClass: "menu__tab-link--active",
+    subListsActiveClass: "menu__items--active",
+};
+
+const subtitle = {
+    links: [...document.querySelectorAll(".menu__item-link")],
+    activeClass: "menu__item-link--active",
+    subListsActiveClass: "menu__sub-items--active",
+    subListsClass: "menu__sub-items",
+    activeArrowClass: "menu__sub-title-link--active",
+};
+
+const location = {
+    btn: document.getElementById("location__btn"),
+    list: document.getElementById("location"),
+    activeClass: "location--active",
+};
+
+const search = {
+    btn: document.getElementById("search__btn"),
+    input: document.getElementById("search"),
+    activeClass: "search__input--active",
+};
+//---------to show/hide menu links---------
+function onMenuLinkClick(activeLink) {
+    title.links.forEach((link) => {
+        if (
+            link === activeLink &&
+            //close link in case second click
+            !link.classList.contains(title.activeClass)
+        ) {
+            link.classList.add(title.activeClass);
+            link.nextElementSibling.classList.add(title.subListsActiveClass);
+        } else {
+            link.classList.remove(title.activeClass);
+            link.nextElementSibling.classList.remove(title.subListsActiveClass);
+        }
+    });
 }
 
-function toggleMenu(e) {
-    e.preventDefault();
-    navigation.classList.toggle("navigation--active");
-    menu.classList.toggle("menu--active");
-    menuContact.classList.toggle("contact_block--active");
-    burgerMenu.classList.toggle("active");
-}
-
-function onMenuClick(e) {
-    e.preventDefault();
-    activeItem = e.target.closest(".menu__tab-link");
-    activeSubItem = e.target.closest(".menu__item-link");
-    const desktopDesk = window.matchMedia("(min-width: 1000px)");
-    //on item click
-    if (activeItem) {
-        if (!desktopDesk.matches) {
-            [...menuTitle].forEach((item) => {
-                if (item === activeItem) {
-                    item.classList.toggle("menu__tab-link--active");
-                    item.nextElementSibling.classList.toggle(
-                        "menu__items--active"
-                    );
-                }
-            });
-        } else if (desktopDesk.matches) {
-            [...menuTitle].forEach((item) => {
-                if (item === activeItem) {
-                    item.classList.add("menu__tab-link--active");
-                    item.nextElementSibling.classList.add(
-                        "menu__items--active"
-                    );
-                } else {
-                    item.classList.remove("menu__tab-link--active");
-                    item.nextElementSibling.classList.remove(
-                        "menu__items--active"
-                    );
+function onMenuSublinkClick(activeSublink) {
+    const activeSubLists = document.querySelectorAll(
+        ".menu__sub-items--active"
+    );
+    subtitle.links.forEach((link) => {
+        if (
+            link === activeSublink &&
+            //set active class only if subItem contains child items
+            activeSublink.nextElementSibling.classList.contains(
+                subtitle.subListsClass
+            ) &&
+            //close link in case second click
+            !link.classList.contains(subtitle.activeClass)
+        ) {
+            link.classList.add(subtitle.activeClass);
+            link.classList.add(subtitle.activeArrowClass);
+            link.nextElementSibling.classList.add(subtitle.subListsActiveClass);
+        } else {
+            link.classList.remove(subtitle.activeClass);
+            link.classList.remove(subtitle.activeArrowClass);
+            activeSubLists.forEach((list) => {
+                if (
+                    //to prevent hide list in active sublinks
+                    !list.previousElementSibling.classList.contains(
+                        subtitle.activeClass
+                    )
+                ) {
+                    list.classList.remove(subtitle.subListsActiveClass);
                 }
             });
         }
-        // on subItem click
-    } else if (activeSubItem && !desktopDesk.matches) {
-        [...menuItem].forEach((item) => {
-            if (
-                item === activeSubItem &&
-                //only if subItem contains child items
-                activeSubItem.nextElementSibling.classList.contains(
-                    "menu__sub-items"
-                )
-            ) {
-                item.classList.toggle("menu__item-link--active");
-                item.classList.toggle("menu__sub-title-link--active");
-                item.nextElementSibling.classList.toggle("menu__items--active");
-            } else {
-                return;
-            }
-        });
-    }
+    });
 }
 
-menuButton.addEventListener("click", (e) => toggleMenu(e));
-closeButton.addEventListener("click", (e) => toggleMenu(e));
-navigation.addEventListener("click", onMenuClick);
-window.addEventListener("load", deleteActiveClass);
+function onMenuClick(e) {
+    activeItem = e.target.closest(".menu__tab-link");
+    activeSubItem = e.target.closest(".menu__item-link");
+    //on item click
+    if (activeItem) {
+        onMenuLinkClick(activeItem);
+    }
+    // on subItem click
+    else if (activeSubItem) {
+        onMenuSublinkClick(activeSubItem);
+    } else {
+        return;
+    }
+}
+//---------to show/hide menu---------
+function toggleMenu(e) {
+    e.preventDefault();
+    menu.navigation.classList.toggle("navigation--active");
+    menu.box.classList.toggle("menu--active");
+    burger.menu.classList.toggle("active");
+}
 
-// tabs.addEventListener("click", function (event) {
-//     let target = event.target;
-//     const mediaDesk = window.matchMedia("(min-width: 1000px)");
-//     if (mediaDesk.matches) {
-//         menuTitle.forEach(function (el) {
-//             if (target.closest(".menu__tab-link") === el) {
-//                 target.classList.toggle("menu__tab-link--active");
-//                 target.nextElementSibling.classList.toggle(
-//                     "menu__items--active"
-//                 );
-//             } else {
-//                 el.classList.remove("menu__tab-link--active");
-//                 el.nextElementSibling.classList.remove("menu__items--active");
-//             }
-//         });
-//     } else {
-//         menuTitle.forEach((link) => {
-//             if (target.closest(".menu__tab-link") === link) {
-//                 target.classList.toggle("menu__tab-link--active");
-//                 target.nextElementSibling.classList.toggle(
-//                     "menu__items--active"
-//                 );
-//             }
-//             openSubMenu(target);
-//             // else {
-//             //     link.classList.remove('menu__tab-link--active');
-//             //     link.nextElementSibling.classList.remove('menu__items--active')
-//             // }
-//         });
-//     }
-// });
+//---------to show/hide location and search forms---------
 
-// menuContact.addEventListener("click", function (event) {
-//     let target = event.target;
-//     const mediaDesk = window.matchMedia("(min-width: 1000px)");
-//     if (mediaDesk.matches) {
-//         menuTitle.forEach(function (el) {
-//             if (target.closest(".menu__tab-link") === el) {
-//                 target.classList.toggle("menu__tab-link--active");
-//                 target.nextElementSibling.classList.toggle(
-//                     "menu__items--active"
-//                 );
-//             } else {
-//                 el.classList.remove("menu__tab-link--active");
-//                 el.nextElementSibling.classList.remove("menu__items--active");
-//             }
-//         });
-//     } else {
-//         menuTitle.forEach((link) => {
-//             if (target.closest(".menu__tab-link") === link) {
-//                 target.classList.toggle("menu__tab-link--active");
-//                 target.nextElementSibling.classList.toggle(
-//                     "menu__items--active"
-//                 );
-//                 target.nextElementSibling.classList.toggle(
-//                     "menu__contact--active"
-//                 );
-//                 // divContact.classList.toggle('menu__contact--active')
-//             }
-//             openSubMenu(target);
-//             // else {
-//             //     link.classList.remove('menu__tab-link--active');
-//             //     link.nextElementSibling.classList.remove('menu__items--active')
-//             // }
-//         });
-//     }
-// });
+function onFormBtnClick(element, activeClass) {
+    !element.classList.contains(activeClass)
+        ? element.classList.add(activeClass)
+        : element.classList.remove(activeClass);
+}
 
-// const openSubMenu = function (target) {
-//     menuSubTitle.forEach((activeNestedLink) => {
-//         if (target.closest(".menu__sub-title-link") === activeNestedLink) {
-//             target.classList.add("menu__tab-link--active");
-//             target.nextElementSibling.classList.add("menu__sub-items--active");
-//             // if(target.nextElementSibling.className === "menu__sub-items menu__sub-items--active") {
-//             //     target.nextElementSibling.className = "menu__sub-items"
-//             // } else {
-//             //     target.nextElementSibling.className = "menu__sub-items menu__sub-items--active"
-//             // }
-//         } else {
-//             activeNestedLink.classList.remove("menu__tab-link--active");
-//             activeNestedLink.nextElementSibling.classList.remove(
-//                 "menu__sub-items--active"
-//             );
-//         }
-//     });
-// };
+burger.button.addEventListener("click", (e) => toggleMenu(e));
+menu.button.addEventListener("click", (e) => toggleMenu(e));
+menu.navigation.addEventListener("click", onMenuClick);
+location.btn.addEventListener("click", () =>
+    onFormBtnClick(location.list, location.activeClass)
+);
+search.btn.addEventListener("click", () =>
+    onFormBtnClick(search.input, search.activeClass)
+);
