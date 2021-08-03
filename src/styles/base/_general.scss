@@ -32,66 +32,60 @@
    }
 }
 
-.section {
-   &-title {
-      &__h1 {
-         @include text(48px);
+.section-title__h1 {
+   @include text(48px);
+}
+
+.section-title__h2 {
+   @include text(32px);
+}
+
+.section-title__h3 {
+   @include text(25px);
+}
+
+.section-title__h4 {
+   @include text(20px);
+}
+
+.section-title__h5 {
+   @include text(16px);
+}
+
+.section-text__h1 {
+   @include text(18px, 400, "Montserrat");
+}
+
+.section-text__h2 {
+   @include text(16px, 400, "Montserrat");
+}
+
+.section-text__h3 {
+   @include text(14px, 400, "Montserrat");
+}
+
+.section-highlight {
+   @extend .section-title__h1;
+   width: max-content;
+   padding: 40px;
+   background-color: clr(purple);
+   color: clr(white);
+
+   &--inversed {
+      background-color: clr(purple30);
+      display: flex;
+      flex-direction: column;
+
+      & > .section-highlight__title {
+         color: transparent;
+         -webkit-text-stroke: 2px clr(white);
+         @include text(72px);
       }
 
-      &__h2 {
-         @include text(32px);
-      }
-
-      &__h3 {
-         @include text(25px);
-      }
-
-      &__h4 {
-         @include text(20px);
-      }
-
-      &__h5 {
-         @include text(16px);
-      }
-   }
-
-   &-text {
-      &__h1 {
-         @include text(18px, 400, "Montserrat");
-      }
-
-      &__h2 {
-         @include text(16px, 400, "Montserrat");
-      }
-
-      &__h3 {
-         @include text(14px, 400, "Montserrat");
-      }
-   }
-
-   &-highlight {
-      @extend .section-title__h1;
-      width: max-content;
-      padding: 40px;
-      background-color: clr(purple);
-      color: clr(white);
-
-      &--inversed {
-         background-color: clr(purple30);
-         display: flex;
-         flex-direction: column;
-
-         & > .section-highlight__title {
-            color: transparent;
-            -webkit-text-stroke: 2px clr(white);
-            @include text(72px);
-         }
-
-         & > .section-highlight__subtitle {
-            -webkit-text-stroke: initial;
-            color: clr(white);
-            @include text(36px, 600, $secondaryFont);
-         }
+      & > .section-highlight__subtitle {
+         -webkit-text-stroke: initial;
+         color: clr(white);
+         @include text(36px, 600, $secondaryFont);
       }
    }
 }
@@ -171,16 +165,14 @@
 
    &::after {
       position: absolute;
-      width: 24px;
-      height: 24px;
+      width: 100%;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      left: 16px;
-      top: 50%;
-      transform: translate(0, -50%);
+      right: 0;
+      top: 0;
       margin-left: 0;
-      transition: transform 0.3s, left 0.3s, right 0.3s;
    }
 
    &:hover {
@@ -188,9 +180,9 @@
       color: clr(white);
 
       &::after {
-         left: calc(100% - 16px);
-         transform: translate(-100%, -50%);
-         bottom: 0;
+         width: 52px;
+         background-position: right 20px center;
+         background-color: clr(red);
       }
    }
 
@@ -246,6 +238,7 @@
    transition: background-color 0.3s;
    background-position: center;
    background-repeat: no-repeat;
+   background-size: 24px 24px;
 
    &:hover {
       background-color: clr(red);
