@@ -181,7 +181,6 @@
 
       &::after {
          width: 52px;
-         background-position: right 20px center;
          background-color: clr(red);
       }
    }
@@ -191,9 +190,12 @@
       color: clr(white);
 
       &::after {
-         left: calc(100% - 16px);
-         transform: translate(-100%, -50%);
-         bottom: 0;
+         width: 52px;
+      }
+      &:hover {
+         &::after {
+            width: 52px;
+         }
       }
    }
 }
