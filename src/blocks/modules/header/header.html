@@ -6,22 +6,40 @@
             </svg>
         </a>
         <div class="header__header-container">
-            <ul class="header__header-container-item">
-                <li><a href="#" class="header__ukr-page">УК</a></li>
-                <li><a href="#" class="header__rus-page">РУС</a></li>
+            <ul class="header__lang-list">
+                <li>
+                    <a href="#" class="header__lang-item header__lang-item--ukr"
+                        >УК</a
+                    >
+                </li>
+                <li>
+                    <a href="#" class="header__lang-item header__lang-item--rus"
+                        >РУС</a
+                    >
+                </li>
             </ul>
-            <a href="#" class="header__header-container-item" id = "location__btn">
+            <a href="#" class="location__btn" id="location__btn">
                 <svg width="10" height="16" fill="none" class="location_small">
                     <use href="#location_small"></use>
                 </svg>
             </a>
-            <select id="location" class="location">
-                <option value="Березняки">Березняки</option>
-                <option value="Дніпровський р-н">Дніпровський р-н</option>
-            </select>
+            <div class="location" id="location">
+                <div class="location__header">
+                    <span class="location__default-item">Березняки</span>
+                    <button class="location__arrow" id="location__arrow">
+                        <svg width="10" height="6" fill="none">
+                            <use href="#location__down-arrow"></use>
+                        </svg>
+                    </button>
+                </div>
+                <ul class="location__list">
+                    <li class="location__item">Березняки</li>
+                    <li class="location__item">Дніпровський р-н</li>
+                </ul>
+            </div>
             <label for="search">
                 <form class="search__form">
-                    <a href="#" id="search__btn">
+                    <button id="search__btn" class="search__btn">
                         <svg
                             width="16"
                             height="16"
@@ -30,7 +48,7 @@
                         >
                             <use href="#search_desk"></use>
                         </svg>
-                    </a>
+                    </button>
                     <input
                         type="search"
                         name="search"
@@ -66,7 +84,7 @@
                             >
                                 <p class="menu__item-text">Special one</p>
                                 <img
-                                    src="../../../img/card_special-one.png"
+                                    src="../../../img/card_special-one.jpg"
                                     alt="card_special"
                                     width="132"
                                     height="85"
@@ -82,7 +100,7 @@
                             >
                                 <p class="menu__item-text">Life Style</p>
                                 <img
-                                    src="../../../img/card_lifestyle.png"
+                                    src="../../../img/card_lifestyle.jpg"
                                     alt="card_lifestyle"
                                     width="132"
                                     height="85"
@@ -98,7 +116,7 @@
                             >
                                 <p class="menu__item-text">Just Fitness</p>
                                 <img
-                                    src="../../../img/card_justfitnes.png"
+                                    src="../../../img/card_justfitnes.jpg"
                                     alt="card_justfitnes"
                                     width="132"
                                     height="85"
@@ -114,7 +132,7 @@
                             >
                                 <p class="menu__item-text">Дитяча</p>
                                 <img
-                                    src="../../../img/card_children.png"
+                                    src="../../../img/card_children.jpg"
                                     alt="card_children"
                                     width="132"
                                     height="85"
@@ -132,7 +150,7 @@
                                     Special one ранкова
                                 </p>
                                 <img
-                                    src="../../../img/card_special-one.png"
+                                    src="../../../img/card_special-one.jpg"
                                     alt="card_spesial"
                                     width="132"
                                     height="85"
@@ -150,7 +168,7 @@
                                 </p>
 
                                 <img
-                                    src="../../../img/card_lifestyle.png"
+                                    src="../../../img/card_lifestyle.jpg"
                                     alt="card_lifestyle"
                                     width="132"
                                     height="85"
@@ -165,7 +183,7 @@
                                     Just Fitness ранкова
                                 </p>
                                 <img
-                                    src="../../../img/card_justfitnes.png"
+                                    src="../../../img/card_justfitnes.jpg"
                                     alt="card_justfitnes"
                                     width="132"
                                     height="85"
@@ -319,7 +337,7 @@
                                 <p class="menu__item-text">Зал</p>
 
                                 <img
-                                    src="../../../img/gym.png"
+                                    src="../../../img/gym.jpg"
                                     alt="gym_zone"
                                     width="132"
                                     height="132"
@@ -338,7 +356,7 @@
                                 <p class="menu__item-text">Басейн</p>
 
                                 <img
-                                    src="../../../img/swimmingpoll.png"
+                                    src="../../../img/swimmingpoll.jpg"
                                     alt="swim_zone"
                                     width="132"
                                     height="132"
@@ -357,7 +375,7 @@
                                 <p class="menu__item-text">Групові заняття</p>
 
                                 <img
-                                    src="../../../img/groups.png"
+                                    src="../../../img/groups.jpg"
                                     alt="group_zone"
                                     width="132"
                                     height="132"
@@ -375,7 +393,7 @@
                                 <p class="menu__item-text">Файт зона</p>
 
                                 <img
-                                    src="../../../img/fight_zone.png"
+                                    src="../../../img/fight_zone.jpg"
                                     alt="fight_zone"
                                     width="132"
                                     height="132"
@@ -393,7 +411,7 @@
                                 <p class="menu__item-text">Дитячі заняття</p>
 
                                 <img
-                                    src="../../../img/child_zone.png"
+                                    src="../../../img/child_zone.jpg"
                                     alt="child_zone"
                                     width="132"
                                     height="132"

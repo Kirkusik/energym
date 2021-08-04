@@ -1,0 +1,41 @@
+.search__form {
+    display: flex;
+}
+.search__btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.search__input {
+    @include text(16px, 300, $secondaryFont);
+    @include mq(tbLG, true) {
+        display: block;
+    }
+    @include mq(tbLG, false) {
+        position: absolute;
+        top: 38px;
+        right: -22px;
+    }
+    display: none;
+    width: 200px;
+    height: 24px;
+    border-radius: 4px;
+    padding-left: 16px;
+    border: none;
+    background: clr(secondaryBG);
+    line-height: 20px;
+    color: #7a7979;
+    outline: none;
+    &:active {
+        outline: none;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus {
+        outline: auto;
+    }
+    &--active {
+        display: block;
+    }
+}

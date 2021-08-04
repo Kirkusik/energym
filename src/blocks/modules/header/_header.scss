@@ -1,4 +1,7 @@
 @import "./components/svg";
+@import "./components/location";
+@import "./components/search";
+@import "./components/langLinks";
 
 .header {
     @include mq(tb, true) {
@@ -30,51 +33,9 @@
 .header__header-container {
     display: flex;
     margin-left: auto;
+    position: relative;
 }
 
-.header__header-container-item {
-    display: flex;
-    margin-right: 19px;
-    &:first-child {
-        @include mq(tbLG, true) {
-            margin-right: 46px;
-        }
-    }
-    &:nth-child(2) {
-        @include mq(tbLG, true) {
-            margin-right: 14px;
-        }
-    }
-
-    &:nth-child(3) {
-        @include mq(tbLG, true) {
-            margin-right: 0;
-        }
-        margin-right: 27px;
-    }
-}
-
-.header__ukr-page,
-.header__rus-page {
-    @include text(15px, 700, $secondaryFont);
-    line-height: 18px;
-    text-decoration: none;
-}
-.header__ukr-page {
-    color: clr(pink);
-    margin-right: 6px;
-    &::after {
-        content: "";
-        margin-left: 3px;
-        position: absolute;
-        width: 2px;
-        height: 15px;
-        background-color: clr(purple);
-    }
-}
-.header__rus-page {
-    color: clr(black);
-}
 .header__menu-title {
     @include mq(tbLG, true) {
         display: none;
@@ -85,67 +46,8 @@
     margin-bottom: 24px;
 }
 
-.location {
-    margin-right: 42px;
-}
-
-.location,
-.search__input {
-    @include text(16px, 300, $secondaryFont);
-    @include mq(tbLG, true) {
-        display: block;
-    }
-    display: none;
-    width: 200px;
-    height: 24px;
-    border-radius: 4px;
-    padding-left: 16px;
-    border: none;
-    background: clr(secondaryBG);
-    line-height: 20px;
-    color: #7a7979;
-    outline: none;
-    &:active {
-        outline: none;
-    }
-    &:hover {
-        cursor: pointer;
-    }
-    &:focus {
-        outline: auto;
-    }
-    &--active {
-        display: block;
-    }
-}
-
-.search {
-    display: none;
-    margin-left: 12px;
-    width: 200px;
-    height: 24px;
-    border-radius: 4px;
-    border: none;
-    background: clr(secondaryBG);
-    &:focus {
-        outline: none;
-    }
-    &::placeholder {
-        @include text(16px, 400, $secondaryFont);
-        @include mq(tbLG, true) {
-            display: block;
-        }
-        line-height: 20px;
-        color: #7a7979;
-        padding-left: 16px;
-    }
-}
-
-.search__form {
-    display: flex;
-}
-
 .burger-menu {
+    cursor: pointer;
     @include mq(tbLG, true) {
         display: none;
     }
@@ -276,6 +178,7 @@
     display: flex;
     justify-content: space-between;
     color: clr(purpleDark);
+    cursor: pointer;
     &--active {
         @include mq(tbLG, true) {
             border-bottom: 1px solid clr(red);
@@ -425,13 +328,6 @@
             row-gap: 32px;
         }
     }
-    // &--trainers {
-    //     @include mq(tbLG, true) {
-    //         justify-items: center;
-    //         grid-template-columns: repeat(auto-fill, minmax(14%, 1fr));
-    //         column-gap: 60px;
-    //     }
-    // }
     &--active {
         @include mq(tbLG, true) {
             display: grid;
