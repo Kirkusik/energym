@@ -1,11 +1,11 @@
 @mixin mq($screen, $min) {
   @if ($min) {
     @media (min-width: map-get($resolutions, $screen)) {
-      @content
+      @content;
     }
   } @else {
     @media (max-width: map-get($resolutions, $screen)) {
-      @content
+      @content;
     }
   }
 }
@@ -19,7 +19,6 @@
   font-weight: $weight;
   font-size: $size;
 }
-
 
 // px to rem
 @function rem($pixels, $context: $mainFontSize) {
@@ -40,7 +39,7 @@
 }
 
 // Pseudo-elem
-@mixin pseudo($location: after, $content: '', $position: static) {
+@mixin pseudo($location: after, $content: "", $position: static) {
   @if ($position == absolute) {
     position: relative;
   }
@@ -66,7 +65,8 @@
     font-weight: $weight;
     font-style: $style;
     font-display: $font-display;
-    src: url('#{$file-path}.woff') format('woff'), url('#{$file-path}.woff2') format('woff2');
+    src: url("#{$file-path}.woff") format("woff"),
+      url("#{$file-path}.woff2") format("woff2");
   }
 }
 

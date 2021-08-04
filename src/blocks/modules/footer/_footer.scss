@@ -1,7 +1,7 @@
 .footer__container {
-  padding-top: 24px;
   display: flex;
   position: relative;
+  margin-top: 24px;
   margin-bottom: 12px;
   justify-content: space-between;
   &::after {
@@ -15,6 +15,40 @@
     left: 10px;
   }
 
+  &::before {
+    //проверить ширину линий +
+    content: " ";
+    display: block;
+    // width: calc(100% - 20px);
+    width: 100%;
+    height: 1px;
+    background-color: #c4c4c4;
+    position: absolute;
+    // left: 10px;
+    left: 0;
+    top: -24px;
+
+    @include mq(dt, true) {
+      background: rgb(255, 255, 255);
+      background: -moz-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 14%,
+        rgba(196, 196, 196, 1) 63%
+      );
+      background: -webkit-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 14%,
+        rgba(196, 196, 196, 1) 63%
+      );
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 14%,
+        rgba(196, 196, 196, 1) 63%
+      );
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#c4c4c4",GradientType=1);
+    }
+  }
+
   @include mq(mbLG, true) {
     margin-bottom: 4px;
   }
@@ -26,18 +60,13 @@
 
 .footer-information__item {
   padding-bottom: 16px;
-  &:last-child {
-    padding-bottom: 0;
-  }
 
-  @include text(16px, 300, $secondaryFont);
+  @include text(15px, 300, $secondaryFont);
   line-height: 18px;
   color: #5c3668;
   display: flex;
 
   @include mq(mbLG, true) {
-    @include text(15px, 300, $secondaryFont);
-    line-height: 18px;
     color: #000;
   }
 
@@ -67,8 +96,6 @@
 }
 
 .footer-information__content {
-  padding-bottom: 16px;
-
   @include mq(mbLG, true) {
     padding-left: 46px;
   }
@@ -80,6 +107,7 @@
   @include mq(mbLG, true) {
     color: #000;
   }
+
   @include mq(dt, true) {
     color: #5c3668;
   }
@@ -88,7 +116,7 @@
 .footer__buttons {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
   padding-left: 59px;
 
@@ -99,8 +127,21 @@
   }
 }
 
+.footer-buttons__link {
+  &--to-top {
+    position: absolute;
+    right: 12px;
+    top: 0;
+    @include mq(mbLG, true) {
+      //кнопка стартует на 50% экрана +++
+      left: calc(50% + 10px);
+      top: -18px;
+    }
+  }
+}
+
 .footer-buttons__item {
-  padding-top: 16px;
+  padding-bottom: 14px;
 
   @include mq(mbLG, true) {
     padding-top: 0;
@@ -108,16 +149,6 @@
   }
 
   &:first-child {
-    padding-top: 0;
-    padding-bottom: 18px;
-
-    @include mq(mbLG, true) {
-      position: absolute;
-      left: 50%;
-    }
-  }
-
-  &:nth-child(2) {
     position: relative;
   }
 }
