@@ -11,19 +11,19 @@
     @include mq(tbLG, true) {
         display: block;
     }
-    @include mq(tbLG, false) {
+    @media (max-width: 999px) {
         position: absolute;
-        top: 38px;
+        top: 35px;
         right: -22px;
     }
+    z-index: 10;
     display: none;
     width: 200px;
-    height: 24px;
-    border-radius: 4px;
+      border-radius: 4px;
     padding-left: 16px;
     border: none;
     background: clr(secondaryBG);
-    line-height: 20px;
+    line-height: 24px;
     color: #7a7979;
     outline: none;
     &:active {
