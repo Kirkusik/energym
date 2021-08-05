@@ -132,6 +132,7 @@
         background-size: contain;
         background-position: right;
         z-index: 1;
+        cursor: pointer;
 
         @include mq(dt, true) {
             width: 100px;
