@@ -144,12 +144,13 @@
         // propotions for tablet and more
         padding-bottom: 73.61%;
         // for decrease and replace video as in design
-        transform: scale(0.9);
-        transform-origin: right bottom;
+        transform: scale(0.83);
+        transform-origin: right center;
     }
     @include mq(dt, true) {
         margin-top: 4%;
         transform: scale(0.94);
+        transform-origin: right bottom;
     }
 }
 .codex__video-link {
