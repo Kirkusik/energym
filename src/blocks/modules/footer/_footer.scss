@@ -16,15 +16,12 @@
   }
 
   &::before {
-    //проверить ширину линий +
     content: " ";
     display: block;
-    // width: calc(100% - 20px);
     width: 100%;
     height: 1px;
     background-color: #c4c4c4;
     position: absolute;
-    // left: 10px;
     left: 0;
     top: -24px;
 
@@ -133,7 +130,6 @@
     right: 12px;
     top: 0;
     @include mq(mbLG, true) {
-      //кнопка стартует на 50% экрана +++
       left: calc(50% + 10px);
       top: -18px;
     }
