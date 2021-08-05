@@ -16,7 +16,7 @@
     }
     @include mq(tbLG, true) {
         row-gap: 40px;
-        grid-template-rows: 91px min-content;
+        grid-template-rows: 91px minmax(min-content, 266px);
     }
     @include mq(dt, true) {
         grid-template-rows: 138px min-content 70px;
@@ -147,9 +147,13 @@
         transform: scale(0.83);
         transform-origin: right center;
     }
+    @include mq(tbLG, true) {
+        transform: scale(0.88);
+        transform-origin: right bottom;
+    }
     @include mq(dt, true) {
         margin-top: 4%;
-        transform: scale(0.94);
+        transform: scale(0.9);
         transform-origin: right bottom;
     }
 }
