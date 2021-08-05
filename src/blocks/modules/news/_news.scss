@@ -103,15 +103,49 @@
   display: flex;
   flex-direction: column;
   justify-content: stretch;
-  align-items: center;
+  // align-content: stretch;
+  align-items: stretch;
   flex-wrap: wrap;
   @media (min-width: 576px) {
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    // align-items: center;
   }
 }
 
+.news-list__item {
+  // align-self: start;
+
+  width: 100%;
+  margin-bottom: 16px;
+  color: #000000;
+
+  @media (max-width: 576px) {
+    &:nth-child(n + 4) {
+      display: none;
+    }
+  }
+  @media (min-width: 576px) {
+    width: 47%;
+    &:nth-child(n + 7) {
+      display: none;
+    }
+  }
+
+  @include mq(tb, tb) {
+    width: 48%;
+    margin-bottom: 24px;
+  }
+  @include mq(tbLG, tbLG) {
+    width: 31%;
+    margin-bottom: 32px;
+    display: block;
+  }
+  @include mq(dt, dt) {
+    width: 32%;
+    margin-bottom: 40px;
+  }
+}
 .news-list__item-link {
   color: clr(black);
   background-color: clr(purple40);
@@ -120,51 +154,6 @@
   flex-direction: column;
   padding: 0;
   justify-content: space-between;
-}
-
-.news-list__item--enerkid {
-  display: none;
-  @media (min-width: 576px) {
-    display: block;
-  }
-}
-.news-list__item--asan {
-  display: none;
-  @media (min-width: 576px) {
-    display: block;
-  }
-}
-.news-list__item {
-  align-self: start;
-  width: 100%;
-
-  margin-bottom: 16px;
-
-  color: #000000;
-
-  @media (min-width: 576px) {
-    width: 47%;
-    height: 350px;
-    &:nth-child(n + 7) {
-      display: none;
-    }
-  }
-
-  @include mq(tb, tb) {
-    width: 47%;
-    margin-bottom: 24px;
-    height: 450px;
-  }
-  @include mq(tbLG, tbLG) {
-    width: 30%;
-    margin-bottom: 32px;
-    display: block;
-  }
-  @include mq(dt, dt) {
-    width: 30%;
-    height: 500px;
-    margin-bottom: 40px;
-  }
 }
 
 .news-list__item-img {
@@ -179,10 +168,14 @@
   line-height: 18px;
   letter-spacing: 0em;
   text-align: left;
+  margin-top: 12px;
+  margin-bottom: 16px;
   padding: 0 16px;
   @include mq(tb, tb) {
     font-size: 17px;
     line-height: 20px;
+    margin-top: 24px;
+    margin-bottom: 12px;
   }
   @include mq(dt, dt) {
     font-size: 20px;
