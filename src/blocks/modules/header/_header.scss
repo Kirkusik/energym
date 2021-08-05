@@ -482,6 +482,8 @@
     line-height: 20px;
 }
 
+// Hover still not works!!!
+
 .menu__tab:hover .menu__items {
     @include mq(tbLG, true) {
         display: grid;
