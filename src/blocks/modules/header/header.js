@@ -38,7 +38,7 @@ const search = {
     input: document.getElementById("search"),
     activeClass: "search__input--active",
 };
-//---------to show/hide menu links---------
+//---------to show/hide menu links on tablet/mb ---------
 function onMenuLinkClick(activeLink) {
     title.links.forEach((link) => {
         if (
@@ -90,19 +90,50 @@ function onMenuSublinkClick(activeSublink) {
 }
 
 function onMenuClick(e) {
+    const tabletDesk = window.matchMedia("(max-width: 999px)");
     activeItem = e.target.closest(".menu__tab-link");
     activeSubItem = e.target.closest(".menu__item-link");
     //on item click
-    if (activeItem) {
+    if (activeItem && tabletDesk.matches) {
         onMenuLinkClick(activeItem);
     }
     // on subItem click
-    else if (activeSubItem) {
+    else if (activeSubItem && tabletDesk.matches) {
         onMenuSublinkClick(activeSubItem);
     } else {
         return;
     }
 }
+//---------to show/hide menu on desktop---------
+function onMenuLinkHover(e) {
+    console.log(e.target);
+}
+
+// function onMenuLinkHover(e) {
+//     link = e.target.closest(".menu__tab-link");
+//     list = e.target.closest(".menu__items");
+//     if (link) {
+//         activelist = link.nextElementSibling;
+//         document.querySelectorAll(".menu__items").forEach((element) => {
+//             element === activelist
+//                 ? element.classList.add("menu__items--selected")
+//                 : element.classList.remove("menu__items--selected");
+//         });
+//     } else if (list) {
+//         document.querySelectorAll(".menu__items").forEach((element) => {
+//             element === list
+//                 ? element.classList.add("menu__items--selected")
+//                 : element.classList.remove("menu__items--selected");
+//         });
+//     } else {
+//         return;
+//     }
+// }
+// function onMenuLinkLeave(e) {
+//     document
+//         .querySelector(".menu__items--selected")
+//         .remove("menu__items--selected");
+// }
 //---------to show/hide menu---------
 function toggleMenu(e) {
     e.preventDefault();
@@ -114,7 +145,7 @@ function toggleMenu(e) {
 //---------to show/hide location and search forms on mb and tablet---------
 function onFormBtnClick(element, activeClass) {
     const tabletDesk = window.matchMedia("(max-width: 999px)");
-    if (tabletDesk) {
+    if (tabletDesk.matches) {
         element.classList.toggle(activeClass);
     }
 }
@@ -143,3 +174,7 @@ search.btn.addEventListener("click", () =>
     onFormBtnClick(search.input, search.activeClass)
 );
 location.list.addEventListener("click", onLocationItemClick);
+document.addEventListener("mouseover", onMenuLinkHover);
+// document
+//     .querySelector(".menu__items--selected")
+//     .addEventListener("mouseleave", onMenuLinkLeave);

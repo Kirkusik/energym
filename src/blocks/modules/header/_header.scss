@@ -69,7 +69,7 @@
 .navigation {
     display: none;
     position: absolute;
-    padding-top: 8px; // задано меньший padding чтобы выстроить в одну линию с logo
+    padding-top: 8px;
     z-index: 10;
     margin-bottom: 24px;
     top: 0;
@@ -83,7 +83,7 @@
     }
 
     @include mq(tb, true) {
-        padding-top: 2px; // задано меньший padding чтобы выстроить в одну линию с logo
+        padding-top: 2px;
         width: 326px;
     }
 
@@ -149,6 +149,7 @@
         margin-bottom: 0;
         padding-bottom: 0;
     }
+    cursor: pointer;
 }
 
 .menu__tab-link {
@@ -174,11 +175,17 @@
     cursor: pointer;
     &--active {
         @include mq(tbLG, true) {
-            border-bottom: 1px solid clr(red);
+            // border-bottom: 1px solid clr(red);
             color: clr(purpleDark);
         }
         @include text(18px, 400, $primaryFont);
         color: clr(purple);
+    }
+
+    &:hover {
+        @include mq(tbLG, true) {
+            border-bottom: 1px solid clr(red);
+        }
     }
 }
 
@@ -236,7 +243,7 @@
     margin: 16px 16px 16px 0;
     &--active {
         @include mq(tbLG, true) {
-            display: grid;
+            display: none;
         }
         display: block;
     }
@@ -264,7 +271,12 @@
 
 .menu__sub-item {
     margin-bottom: 15px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
+
 .menu__sub-item-link {
     @include text(15px, 500, $secondaryFont);
     @include mq(tbLG, true) {
@@ -309,16 +321,17 @@
 .menu__items {
     @include mq(tbLG, true) {
         position: absolute;
-        top: 72px;
+        // top: 72px;
         left: 0;
-        padding-top: 15px;
+        padding-top: 87px;
         padding-left: 40px;
         width: 100%;
         margin: 0;
         padding-bottom: 40px;
-        grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+        grid-template-columns: repeat(5, 1fr);
         justify-content: space-between;
         background-color: clr(white);
+        // display: none;
     }
     display: none;
     margin: 23px 0 0 15px;
@@ -331,10 +344,14 @@
     }
     &--active {
         @include mq(tbLG, true) {
-            display: grid;
+            display: none;
         }
 
         display: block;
+    }
+
+    &--selected {
+        display: grid;
     }
 }
 
@@ -463,4 +480,26 @@
     }
     margin-bottom: 32px;
     line-height: 20px;
+}
+
+.menu__tab:hover .menu__items {
+    @include mq(tbLG, true) {
+        display: grid;
+        z-index: 100;
+    }
+}
+
+.menu__tab:hover .menu__contact {
+    @include mq(tbLG, true) {
+        display: grid;
+        z-index: 100;
+    }
+}
+
+.menu__items:hover,
+.menu__contact:hover {
+    @include mq(tbLG, true) {
+        display: grid;
+        z-index: 100;
+    }
 }
