@@ -118,10 +118,7 @@
     height: 0;
     grid-area: video;
 
-    // propotions for mobile
-    padding-bottom: 48.43%;
-
-    @include pseudo(after, "", absolute) {
+    @include pseudo(after, none, absolute) {
         width: 50px;
         height: 50px;
         top: 50%;
@@ -132,13 +129,14 @@
         background-size: contain;
         background-position: right;
         z-index: 1;
-        cursor: pointer;
 
         @include mq(dt, true) {
             width: 100px;
             height: 100px;
         }
     }
+    // propotions for mobile
+    padding-bottom: 48.43%;
 
     @include mq(tb, true) {
         // propotions for tablet and more
@@ -155,6 +153,16 @@
         margin-top: 4%;
         transform: scale(0.9);
         transform-origin: right bottom;
+    }
+
+    &--enabled {
+        cursor: pointer;
+    }
+}
+// codex__video-wrapper additional class for interact with pseudo-element from js
+.codex__video--icon {
+    &::after {
+        content: "";
     }
 }
 .codex__video-link {
