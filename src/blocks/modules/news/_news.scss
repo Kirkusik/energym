@@ -5,6 +5,7 @@
 .news-banner__img {
    width: 100%;
    height: 170px;
+
    @include mq(tb, true) {
       height: 266px;
    }
@@ -26,7 +27,7 @@
    left: 36px;
    z-index: 1;
    width: 190px;
-   font-family: Russo One;
+   font-family: $primaryFont, Arial, sans-serif;
    font-size: 22px;
    font-style: normal;
    font-weight: 400;
@@ -50,7 +51,6 @@
       width: 549px;
       font-size: 36px;
       line-height: 43px;
-      //text-transform: lowercase;
    }
 
    @include mq(dt, dt) {
@@ -59,7 +59,6 @@
       width: 525px;
       font-size: 61px;
       line-height: 74px;
-      //text-transform: lowercase;
       color: clr(white);
    }
 }
@@ -67,7 +66,7 @@
 .news-banner__title-span {
    display: none;
    color: clr(white);
-   font-family: Russo One;
+   font-family: $primaryFont, Arial, sans-serif;
    font-size: 22px;
    font-style: normal;
    font-weight: 400;
@@ -100,71 +99,93 @@
    }
 }
 .news-list__items {
+   margin-top: 24px;
    display: flex;
    flex-direction: column;
    justify-content: stretch;
-   align-items: center;
+   align-items: stretch;
    flex-wrap: wrap;
-   @include mq(mb, mb) {
+   @media (min-width: 576px) {
       flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
    }
 }
 
 .news-list__item {
-   width: 167px;
+   width: 100%;
    margin-bottom: 16px;
-   background-color: clr(purple40);
    color: #000000;
-   &-link {
-      color: clr(black);
+
+   @media (min-width: 576px) {
+      width: 47%;
+   }
+   @media (max-width: 767px) {
+      margin-right: 6%;
+      &:nth-child(2n) {
+         margin-right: 0;
+      }
    }
 
    @include mq(tb, tb) {
-      width: 310px;
+      width: 48%;
       margin-bottom: 24px;
    }
+   @media (min-width: 768px) and (max-width: 999px) {
+      margin-right: 4%;
+      &:nth-child(2n) {
+         margin-right: 0;
+      }
+   }
+
    @include mq(tbLG, tbLG) {
-      width: 256px;
+      width: 31%;
       margin-bottom: 32px;
    }
+
+   @media (min-width: 1000px) and (max-width: 1439px) {
+      margin-right: 3.5%;
+      &:nth-child(3n) {
+         margin-right: 0;
+      }
+   }
+
    @include mq(dt, dt) {
-      width: 384px;
+      width: 32%;
       margin-bottom: 40px;
    }
+   @media (min-width: 1440px) {
+      margin-right: 2%;
+      &:nth-child(3n) {
+         margin-right: 0;
+      }
+   }
+}
+.news-list__item-link {
+   color: clr(black);
+   background-color: clr(purple40);
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   padding: 0;
+   justify-content: space-between;
 }
 
 .news-list__item-img {
-   width: 167px;
-   height: 100px;
-   @include mq(tb, tb) {
-      width: 310px;
-      height: 218px;
-   }
-   @include mq(tbLG, tbLG) {
-      width: 256px;
-      height: 180px;
-   }
-   @include mq(dt, dt) {
-      width: 384px;
-      height: 270px;
-   }
+   width: 100%;
 }
 
 .news-list__item-title {
-   margin: 12px 8px 12px;
-   font-family: Russo One;
-   font-size: 15px;
-   font-style: normal;
-   font-weight: 400;
-   line-height: 18px;
-   letter-spacing: 0em;
-   text-align: left;
+   font-family: $primaryFont, Arial, sans-serif;
+   font-size: 18px;
+   line-height: 1.2;
+   margin-top: 12px;
+   margin-bottom: 16px;
+   padding: 0 16px;
+
    @include mq(tb, tb) {
-      margin: 24px 39px 12px 16px;
       font-size: 17px;
       line-height: 20px;
+      margin-top: 24px;
+      margin-bottom: 12px;
    }
    @include mq(dt, dt) {
       font-size: 20px;
@@ -174,31 +195,20 @@
 
 .news-list__item-desc {
    display: none;
+   padding: 0 16px;
    @include mq(tb, tb) {
       display: block;
-      width: 278px;
-      height: 80px;
-      overflow: hidden;
-      margin: 0px 16px 24px 16px;
-      font-family: Montserrat;
+      font-family: $secondaryFont, Arial, sans-serif;
       font-size: 16px;
-      font-style: normal;
-      font-weight: 400;
       line-height: 20px;
       letter-spacing: 0em;
       text-align: left;
    }
    @include mq(tbLG, tbLG) {
-      width: 232px;
-      height: 72px;
-      margin: 0px 8px 24px 16px;
       font-size: 15px;
       line-height: 18.29px;
    }
    @include mq(dt, dt) {
-      width: 352px;
-      height: 60px;
-      margin: 0px 16px 24px 16px;
       font-size: 16px;
       line-height: 19.5px;
    }
@@ -206,55 +216,48 @@
 
 .news-list__item-info {
    display: flex;
-   margin: 0px 0px 12px 12px;
+   padding-bottom: 12px;
    justify-content: space-between;
-   align-items: center;
+
    @include mq(tb, tb) {
-      margin: 0px 0px 30px 15px;
+      margin-top: 24px;
+      padding-bottom: 0;
    }
    @include mq(tbLG, tbLG) {
-      margin: 0px 0px 34px 16px;
+      margin-top: 80px;
    }
    @include mq(dt, dt) {
-      margin: 0px 0px 37px 24px;
+      padding-bottom: 20px;
+      margin-top: 44px;
    }
 }
 
 .news-list__item-info-date {
-   font-size: 9px;
-   font-family: Montserrat;
-   font-style: normal;
+   font-size: 16px;
+   font-family: $secondaryFont, Arial, sans-serif;
    font-weight: 500;
-   line-height: 11px;
-   letter-spacing: 0em;
-   text-align: left;
-   width: 23px;
+   line-height: 16px;
+   padding-left: 16px;
+
    @include mq(tb, tb) {
       font-size: 18px;
       line-height: 22px;
-      width: 93px;
+      width: 110px;
    }
 }
 
-.secondary-btn__container {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-
-.secondary-btn {
-   width: 327px;
-   height: 58px;
-   font-size: 13px;
-   line-height: 15.67px;
+.secondary-btn--loadmore-news {
+   width: 100%;
+   font-size: 16px;
+   line-height: 16px;
    text-decoration: none;
-   margin-bottom: 32px;
+   display: block;
+   margin: 20px auto 40px;
 
    @include mq(tbLG, tbLG) {
       width: 277px;
-      height: 70px;
       font-size: 18px;
-      line-height: 21.69px;
+      line-height: 22px;
       margin-bottom: 80px;
    }
 }
@@ -281,17 +284,18 @@
 }
 
 .about-us__title {
-   font-family: Russo One;
+   font-family: $primaryFont, Arial, sans-serif;
    font-size: 22px;
-   font-style: normal;
    font-weight: 400;
    line-height: 27px;
-   letter-spacing: 0em;
    text-align: center;
    margin-right: 12px;
    color: clr(purple);
    opacity: 0.6;
 
+   &:hover {
+      opacity: 1;
+   }
    @include mq(tb, tb) {
       font-size: 16px;
       line-height: 19.28px;
@@ -302,21 +306,21 @@
    }
 }
 
-// .square-btn {
-//   width: 40px;
-//   height: 40px;
+.square-btn {
+   width: 40px;
+   height: 40px;
 
-//   @include mq(tb, tb) {
-//     width: 48px;
-//     height: 48px;
-//   }
-//   @include mq(tbLG, tbLG) {
-//     display: block;
-//     width: 56px;
-//     height: 56px;
-//   }
-//   @include mq(dt, dt) {
-//     width: 56px;
-//     height: 56px;
-//   }
-// }
+   @include mq(tb, tb) {
+      width: 48px;
+      height: 48px;
+   }
+   @include mq(tbLG, tbLG) {
+      display: block;
+      width: 56px;
+      height: 56px;
+   }
+   @include mq(dt, dt) {
+      width: 56px;
+      height: 56px;
+   }
+}
