@@ -71,7 +71,7 @@
     position: absolute;
     padding-top: 8px;
     z-index: 10;
-    margin-bottom: 24px;
+    padding-bottom: 24px;
     top: 0;
     right: 0;
     width: 216px;
@@ -118,13 +118,19 @@
         position: relative;
         z-index: 0;
         width: 100%;
+        // height: 500px;
     }
     display: block;
     width: 216px;
     background-color: clr(white);
     color: clr(purpleDark);
 }
-
+.menu__dropdown {
+    @include mq(tbLG, true) {
+        height: 500px;
+        position: absolute;
+    }
+}
 .menu__title {
     @include text(24px, 400, $primaryFont);
     @include mq(tbLG, true) {
@@ -173,7 +179,7 @@
     @include mq(tbLG, true) {
         @include text(16px, 500, $secondaryFont);
         border-bottom: 1px solid transparent;
-        padding-bottom: 24px;
+        padding-bottom: 23px;
         position: relative;
     }
     @include text(15px, 500, $secondaryFont);
@@ -220,10 +226,20 @@
             padding-bottom: 0;
         }
     }
+    &--cards:hover {
+        @include mq(tbLG, true) {
+            filter: brightness(150%);
+        }
+    }
     &--trainers {
         @include mq(tbLG, true) {
             margin-bottom: 0;
             padding-bottom: 0;
+        }
+    }
+    &--trainers:hover {
+        @include mq(tbLG, true) {
+            filter: brightness(120%);
         }
     }
 }
@@ -293,12 +309,25 @@
         padding-left: 0;
         display: block;
     }
+    &:hover {
+        @include mq(tbLG, true) {
+            color: clr(purple);
+        }
+    }
     color: clr(purpleDark);
     line-height: 18px;
     padding-left: 5px;
     display: block;
+    transition: all 200ms linear;
+    // &:hover {
+    //
+    // }
 }
-
+.menu__sub-item-link:hover {
+    @include mq(tbLG, true) {
+        color: clr(purple);
+    }
+}
 .menu__contact {
     @include mq(tbLG, true) {
         padding-top: 15px;
@@ -329,9 +358,9 @@
 .menu__items {
     @include mq(tbLG, true) {
         position: absolute;
-        // top: 72px;
+        top: 23;
         left: 0;
-        padding-top: 87px;
+        padding-top: 23px;
         padding-left: 40px;
         width: 100%;
         margin: 0;
@@ -339,7 +368,6 @@
         grid-template-columns: repeat(5, 1fr);
         justify-content: space-between;
         background-color: clr(white);
-        // display: none;
     }
     display: none;
     margin: 23px 0 0 15px;
@@ -351,11 +379,6 @@
         }
     }
 
-    &--cards:hover {
-        @include mq(tbLG, true) {
-            filter: brightness(150%);
-        }
-    }
     &--active {
         @include mq(tbLG, true) {
             display: none;
@@ -501,14 +524,17 @@
 .menu__tab:hover .menu__items {
     @include mq(tbLG, true) {
         display: grid;
-        z-index: 100;
     }
 }
-
 .menu__tab:hover .menu__contact {
     @include mq(tbLG, true) {
         display: grid;
-        z-index: 100;
+    }
+}
+
+.menu__dropdown:hover .menu__contact {
+    @include mq(tbLG, true) {
+        display: grid;
     }
 }
 
@@ -516,6 +542,18 @@
 .menu__contact:hover {
     @include mq(tbLG, true) {
         display: grid;
-        z-index: 100;
     }
 }
+
+.menu__item:hover .menu__items {
+    @include mq(tbLG, true) {
+        display: grid;
+    }
+}
+
+.menu__item:hover .menu__contact {
+    @include mq(tbLG, true) {
+        display: grid;
+    }
+}
+// поменять верхний паддинг у линков 55-20=30пикселей

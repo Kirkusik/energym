@@ -104,36 +104,7 @@ function onMenuClick(e) {
         return;
     }
 }
-//---------to show/hide menu on desktop---------
-function onMenuLinkHover(e) {
-    console.log(e.target);
-}
 
-// function onMenuLinkHover(e) {
-//     link = e.target.closest(".menu__tab-link");
-//     list = e.target.closest(".menu__items");
-//     if (link) {
-//         activelist = link.nextElementSibling;
-//         document.querySelectorAll(".menu__items").forEach((element) => {
-//             element === activelist
-//                 ? element.classList.add("menu__items--selected")
-//                 : element.classList.remove("menu__items--selected");
-//         });
-//     } else if (list) {
-//         document.querySelectorAll(".menu__items").forEach((element) => {
-//             element === list
-//                 ? element.classList.add("menu__items--selected")
-//                 : element.classList.remove("menu__items--selected");
-//         });
-//     } else {
-//         return;
-//     }
-// }
-// function onMenuLinkLeave(e) {
-//     document
-//         .querySelector(".menu__items--selected")
-//         .remove("menu__items--selected");
-// }
 //---------to show/hide menu---------
 function toggleMenu(e) {
     e.preventDefault();
@@ -174,7 +145,3 @@ search.btn.addEventListener("click", () =>
     onFormBtnClick(search.input, search.activeClass)
 );
 location.list.addEventListener("click", onLocationItemClick);
-document.addEventListener("mouseover", onMenuLinkHover);
-// document
-//     .querySelector(".menu__items--selected")
-//     .addEventListener("mouseleave", onMenuLinkLeave);
