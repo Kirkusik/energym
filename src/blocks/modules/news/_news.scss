@@ -103,19 +103,15 @@
   display: flex;
   flex-direction: column;
   justify-content: stretch;
-  // align-content: stretch;
   align-items: stretch;
   flex-wrap: wrap;
   @media (min-width: 576px) {
     flex-direction: row;
     justify-content: space-between;
-    // align-items: center;
   }
 }
 
 .news-list__item {
-  // align-self: start;
-
   width: 100%;
   margin-bottom: 16px;
   color: #000000;
