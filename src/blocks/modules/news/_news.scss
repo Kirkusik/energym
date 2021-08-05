@@ -107,7 +107,6 @@
   flex-wrap: wrap;
   @media (min-width: 576px) {
     flex-direction: row;
-    // justify-content: space-between;
   }
 }
 
@@ -118,6 +117,8 @@
 
   @media (min-width: 576px) {
     width: 47%;
+  }
+  @media (max-width: 767px) {
     margin-right: 6%;
     &:nth-child(2n) {
       margin-right: 0;
@@ -127,22 +128,31 @@
   @include mq(tb, tb) {
     width: 48%;
     margin-bottom: 24px;
+  }
+  @media (min-width: 768px) and (max-width: 999px) {
     margin-right: 4%;
     &:nth-child(2n) {
       margin-right: 0;
     }
   }
+
   @include mq(tbLG, tbLG) {
     width: 31%;
     margin-bottom: 32px;
+  }
+
+  @media (min-width: 1000px) and (max-width: 1439px) {
     margin-right: 3.5%;
     &:nth-child(3n) {
       margin-right: 0;
     }
   }
+
   @include mq(dt, dt) {
     width: 32%;
     margin-bottom: 40px;
+  }
+  @media (min-width: 1440px) {
     margin-right: 2%;
     &:nth-child(3n) {
       margin-right: 0;
@@ -215,10 +225,15 @@
   justify-content: space-between;
 
   @include mq(tb, tb) {
+    margin-top: 24px;
     padding-bottom: 0;
+  }
+  @include mq(tbLG, tbLG) {
+    margin-top: 80px;
   }
   @include mq(dt, dt) {
     padding-bottom: 20px;
+    margin-top: 44px;
   }
 }
 
