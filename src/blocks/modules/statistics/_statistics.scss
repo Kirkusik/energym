@@ -1,0 +1,81 @@
+.info {
+    position: relative;
+    padding: 27px 0 34px;
+    text-align: center;
+    padding-bottom: 8%;
+    padding-top: 8%;
+    background: clr(secondaryBG) url(../../../img/main-page-hero-block/facts-text.svg) no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.info__content-list {
+    @include flex(center, space-evenly);
+    margin: 0 auto;
+
+    @include mq(mb, true) {
+        justify-content: space-between;
+        max-width: 80%;
+    }
+}
+.info__bgi {
+    @include mq(tbLG, true) {
+        top: 4em;
+    }
+    position: absolute;
+    top: 1em;
+    left: 0;
+}
+
+.info__content-title,
+.info__content-subtitle {
+    font-size: rem(13);
+    color: clr(black);
+    font-family: $primaryFont;
+
+    @include mq(tb, true) {
+        font-size: rem(24);
+        line-height: 29px;
+        margin-bottom: 4px;
+    }
+
+    @include mq(tbLG, true) {
+        font-size: rem(48);
+        line-height: 58px;
+        margin-bottom: 8px;
+    }
+}
+
+.info__content-title {
+    &--degree {
+        vertical-align: super;
+        font-size: rem(10);
+        position: relative;
+
+        @include mq(tb, true) {
+            font-size: rem(15);
+        }
+        @include mq(tbLG, true) {
+            font-size: rem(25);
+        }
+    }
+}
+.info__content-subtitle {
+    &--part {
+        @media (min-width: 320px) {
+            display: block;
+        }
+    }
+    @include mq(tb, true) {
+        font-size: rem(15);
+        line-height: 18px;
+        max-width: 150px;
+    }
+    @include mq(tbLG, true) {
+        font-size: rem(20);
+        line-height: 24px;
+        max-width: 173px;
+    }
+    font-size: rem(9);
+    line-height: rem(11);
+}
