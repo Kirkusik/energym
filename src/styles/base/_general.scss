@@ -9,11 +9,8 @@
    margin-left: auto;
    margin-right: auto;
 
-   @media (min-width: 360px) {
-      max-width: 360px;
-   }
-   @media (min-width: 480px) {
-      max-width: 480px;
+   @media (min-width: 400px) {
+      max-width: 400px;
    }
    @media (min-width: 576px) {
       max-width: 576px;
@@ -181,7 +178,6 @@
 
       &::after {
          width: 52px;
-         background-position: right 20px center;
          background-color: clr(red);
       }
    }
@@ -191,9 +187,12 @@
       color: clr(white);
 
       &::after {
-         left: calc(100% - 16px);
-         transform: translate(-100%, -50%);
-         bottom: 0;
+         width: 52px;
+      }
+      &:hover {
+         &::after {
+            width: 52px;
+         }
       }
    }
 }
