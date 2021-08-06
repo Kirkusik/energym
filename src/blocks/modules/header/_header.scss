@@ -38,7 +38,6 @@
 .header__header-container {
     display: flex;
     margin-left: auto;
-    // position: relative;
 }
 
 .header__menu-title {
@@ -82,7 +81,6 @@
     width: 216px;
     background-color: clr(white);
     color: clr(purpleDark);
-    // padding-left: 24px;
     @include mq(mb, true) {
         width: 250px;
     }
@@ -125,7 +123,6 @@
         z-index: 0;
         width: 100%;
         padding-left: 0;
-        // height: 500px;
     }
     display: block;
     width: 216px;
@@ -133,12 +130,7 @@
     color: clr(purpleDark);
     padding-left: 24px;
 }
-// .menu__dropdown {
-//     @include mq(tbLG, true) {
-//         height: 500px;
-//         position: absolute;
-//     }
-// }
+
 .menu__title {
     @include text(24px, 400, $primaryFont);
     @include mq(tbLG, true) {
@@ -154,14 +146,13 @@
         padding-left: 40px;
         padding-right: 33px;
         position: absolute;
-        // top: 23px;
         left: 0;
         width: 100%;
         grid-template-columns: repeat(2, minmax(50%, 1fr));
         justify-content: space-between;
         background-color: clr(white);
     }
-    z-index: 11;
+
     display: none;
     &--active {
         @include mq(tb, true) {
@@ -217,6 +208,9 @@
         margin-left: 16px;
         color: clr(black);
         line-height: 17px;
+    }
+    &:hover {
+        color: clr(purple);
     }
     display: none;
 }
@@ -294,7 +288,7 @@
     margin-bottom: 32px;
     line-height: 20px;
 }
-
+//hover
 .menu__tab:hover .menu__items {
     @include mq(tbLG, true) {
         display: grid;
@@ -310,6 +304,7 @@
 .menu__contact:hover {
     @include mq(tbLG, true) {
         display: grid;
+        
     }
 }
 
@@ -327,6 +322,5 @@
 
 .menu__tabs:hover {
     @include mq(tbLG, true) {
-        // padding-bottom: 30%;
     }
 }

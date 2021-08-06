@@ -9,8 +9,7 @@
 .header__lang-item {
     @include text(15px, 700, $secondaryFont);
     line-height: 18px;
-    text-decoration: none;
-    &--ukr {
+       &--ukr {
         color: clr(pink);
         margin-right: 6px;
         &::after {

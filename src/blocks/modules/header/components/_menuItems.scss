@@ -1,7 +1,6 @@
 .menu__items {
     @include mq(tbLG, true) {
         position: absolute;
-        top: 23;
         left: 0;
         padding-top: 23px;
         padding-left: 40px;
@@ -11,7 +10,6 @@
         grid-template-columns: repeat(5, 1fr);
         justify-content: space-between;
         background-color: clr(white);
-        z-index: 5;
     }
     display: none;
     margin: 23px 0 0 15px;
@@ -89,19 +87,13 @@
 .menu__item-img {
     @include mq(tbLG, true) {
         display: inline-block;
+        border: 1px solid transparent;
+    }
+
+    &:hover {
+        @include mq(tbLG, true) {
+            border: 1px solid clr(pink);
+        }
     }
     display: none;
 }
-
-// .menu__items-dropbox {
-//     display: block;
-//     position: absolute;
-//     background-color: red;
-//     // width: 100%;
-//     height: 368px;
-//     transform: translateX(-40px);
-// }
-
-// .menu__items-dropbox:hover .menu__items {
-//     display: grid;
-// }
