@@ -1,0 +1,174 @@
+.footer__container {
+   display: flex;
+   position: relative;
+   padding-top: 40px;
+   padding-bottom: 12px;
+   justify-content: space-between;
+   &::after {
+      content: " ";
+      display: block;
+      width: calc(100% - 20px);
+      height: 1px;
+      background-color: #ffa6c4;
+      position: absolute;
+      bottom: 0px;
+      left: 10px;
+   }
+
+   &::before {
+      content: " ";
+      display: block;
+      width: calc(100% - 20px);
+      height: 1px;
+      background-color: #c4c4c4;
+      position: absolute;
+      left: 10px;
+      top: 0;
+
+      @include mq(dt, true) {
+         background: rgb(255, 255, 255);
+         background: -moz-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0) 14%,
+            rgba(196, 196, 196, 1) 63%
+         );
+         background: -webkit-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0) 14%,
+            rgba(196, 196, 196, 1) 63%
+         );
+         background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0) 14%,
+            rgba(196, 196, 196, 1) 63%
+         );
+         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#c4c4c4",GradientType=1);
+      }
+   }
+
+   @include mq(mbLG, true) {
+      margin-bottom: 4px;
+   }
+
+   @include mq(dt, true) {
+      margin-bottom: 8px;
+   }
+}
+
+.footer-information__item {
+   padding-bottom: 16px;
+
+   @include text(15px, 300, $secondaryFont);
+   line-height: 18px;
+   color: #5c3668;
+   display: flex;
+
+   @include mq(mbLG, true) {
+      color: #000;
+   }
+
+   @include mq(dt, true) {
+      color: #5c3668;
+      @include text(16px, 300, $secondaryFont);
+      line-height: 20px;
+   }
+}
+
+.footer-information__title {
+   @include text(15px, 400, $primaryFont);
+   line-height: 15px;
+   color: #000;
+   padding-right: 38px;
+   width: 100px;
+
+   @include mq(mbLG, true) {
+      @include text(17px, 400, $primaryFont);
+      line-height: 17px;
+   }
+
+   @include mq(dt, true) {
+      @include text(18px, 400, $primaryFont);
+      line-height: 19px;
+   }
+}
+
+.footer-information__content {
+   @include mq(mbLG, true) {
+      padding-left: 46px;
+   }
+}
+
+.footer-information__link {
+   color: #5c3668;
+
+   @include mq(mbLG, true) {
+      color: #000;
+   }
+
+   @include mq(dt, true) {
+      color: #5c3668;
+   }
+}
+
+.footer__buttons {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   padding-left: 59px;
+
+   @include mq(mbLG, true) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding-left: 0;
+      align-self: flex-start;
+   }
+}
+
+.footer-buttons__link {
+   &--to-top {
+      position: absolute;
+      right: 12px;
+      top: 10px;
+
+      @include mq(mbLG, true) {
+         right: 50%;
+         transform: translateX(50%);
+      }
+   }
+}
+
+.footer-buttons__item {
+   padding-bottom: 14px;
+
+   @include mq(mbLG, true) {
+      padding-top: 0;
+      padding-left: 16px;
+   }
+
+   &:first-child {
+      position: relative;
+   }
+}
+
+.footer__location {
+   @include text(9px, 300, $secondaryFont);
+   padding-bottom: 12px;
+
+   @include mq(mbLG, true) {
+      @include text(12px, 300, $secondaryFont);
+      line-height: 15px;
+      padding-bottom: 16px;
+   }
+
+   @include mq(dt, true) {
+      padding-bottom: 19px;
+   }
+}
+
+.footer-buttons__svg {
+   @include mq(dt, true) {
+      width: 32px;
+      height: 32px;
+   }
+}
