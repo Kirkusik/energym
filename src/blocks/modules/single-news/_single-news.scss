@@ -138,3 +138,19 @@
     font-weight: 400;
   }
 }
+
+.single-news__list {
+  grid-area: list;
+  margin-left: 37px;
+  @include mq(tb, true) {
+    margin-left: 100px;
+  }
+
+  @include mq(tbLG, true) {
+    margin-left: 108px;
+    max-width: 500px;
+  }
+}
+.single-news__item {
+  font-weight: 400;
+}
