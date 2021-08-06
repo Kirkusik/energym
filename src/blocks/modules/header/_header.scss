@@ -17,6 +17,7 @@
     }
     padding-top: 15px;
     margin-bottom: 15px;
+    position: relative;
 }
 .header__wrapper {
     @include mq(tb, true) {
@@ -36,7 +37,7 @@
 .header__header-container {
     display: flex;
     margin-left: auto;
-    position: relative;
+    // position: relative;
 }
 
 .header__menu-title {
@@ -80,7 +81,7 @@
     width: 216px;
     background-color: clr(white);
     color: clr(purpleDark);
-    padding-left: 24px;
+    // padding-left: 24px;
     @include mq(mb, true) {
         width: 250px;
     }
@@ -127,6 +128,7 @@
     width: 216px;
     background-color: clr(white);
     color: clr(purpleDark);
+    padding-left: 24px;
 }
 .menu__dropdown {
     @include mq(tbLG, true) {
