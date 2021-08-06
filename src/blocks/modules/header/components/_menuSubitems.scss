@@ -55,12 +55,13 @@
         content: url("../../../img/svg/menu_arrow_down.svg");
         width: 8px;
         height: 16px;
-        // margin-right: 64px;
+        text-align: center;
+        // margin-right: 40px;
     }
     &--active::after {
         content: url("../../../img/svg/menu_arrow_up.svg");
         width: 8px;
         height: 16px;
-        // margin-right: 64px;
+        // margin-right: 40px;
     }
 }
