@@ -2,6 +2,9 @@
 @import "./components/location";
 @import "./components/search";
 @import "./components/langLinks";
+@import "./components/menuTabs";
+@import "./components/menuItems";
+@import "./components/menuSubitems";
 
 .header {
     @include mq(tb, true) {
@@ -139,202 +142,14 @@
     color: clr(purple);
     line-height: 29px;
 }
-.menu__tabs {
-    @include mq(tbLG, true) {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-left: 40px;
-        padding-right: 33px;
-    }
-}
-.menu__item {
-    margin-bottom: 20px;
 
-    @include mq(tbLG, true) {
-        margin-bottom: 0;
-        padding-bottom: 0;
-    }
-    cursor: pointer;
-}
-
-.menu__tab-link {
-    @include mq(tb, true) {
-        &::after {
-            @include mq(tbLG, true) {
-                content: "";
-                position: absolute;
-                width: 100%;
-                height: 1px;
-                background-color: transparent;
-                transform: translate(-50px);
-                transition: all 0.3s linear;
-                bottom: 0;
-            }
-            content: url("../../../img/svg/menu-arrow-right.svg");
-            width: 21px;
-            height: 14px;
-        }
-    }
-    @include mq(tbLG, true) {
-        @include text(16px, 500, $secondaryFont);
-        border-bottom: 1px solid transparent;
-        padding-bottom: 23px;
-        position: relative;
-    }
-    @include text(15px, 500, $secondaryFont);
-    display: flex;
-    justify-content: space-between;
-    color: clr(purpleDark);
-    cursor: pointer;
-    &--active {
-        @include mq(tbLG, true) {
-            color: clr(purpleDark);
-        }
-        @include text(18px, 400, $primaryFont);
-        color: clr(purple);
-    }
-
-    &:hover::after {
-        @include mq(tbLG, true) {
-            transform: translate(0);
-            background-color: clr(red);
-        }
-    }
-}
-
-.menu__item-link {
-    @include text(15px, 500, $secondaryFont);
-    color: clr(purpleDark);
-    @include mq(tbLG, true) {
-        @include text(16px, 400, $primaryFont);
-        color: clr(black);
-        line-height: 20px;
-        display: block;
-        padding-bottom: 12px;
-    }
-    line-height: 18px;
-    display: flex;
-    justify-content: space-between;
-    &--active {
-        color: clr(red);
-    }
-
-    &--cards {
-        @include mq(tbLG, true) {
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-    }
-    &--cards:hover {
-        @include mq(tbLG, true) {
-            filter: brightness(150%);
-        }
-    }
-    &--trainers {
-        @include mq(tbLG, true) {
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-    }
-    &--trainers:hover {
-        @include mq(tbLG, true) {
-            filter: brightness(120%);
-        }
-    }
-}
-
-.menu__item-text {
-    @include mq(tbLG, true) {
-        display: block;
-        margin-bottom: 16px;
-    }
-}
-
-.menu__tab {
-    @include mq(tbLG, true) {
-        margin-bottom: 0;
-    }
-    margin-bottom: 20px;
-}
-
-.menu__sub-items {
-    @include mq(tbLG, true) {
-        display: block;
-        margin: 0;
-    }
-    display: none;
-    margin: 16px 16px 16px 0;
-    &--active {
-        @include mq(tbLG, true) {
-            display: none;
-        }
-        display: block;
-    }
-}
-.menu__sub-title-link {
-    &:checked {
-        color: clr(red);
-    }
-    &::after {
-        @include mq(tbLG, true) {
-            content: "";
-        }
-        content: url("../../../img/svg/menu_arrow_down.svg");
-        width: 8px;
-        height: 16px;
-        margin-right: 64px;
-    }
-    &--active::after {
-        content: url("../../../img/svg/menu_arrow_up.svg");
-        width: 8px;
-        height: 16px;
-        margin-right: 64px;
-    }
-}
-
-.menu__sub-item {
-    margin-bottom: 15px;
-
-    &:last-child {
-        margin-bottom: 0;
-    }
-}
-
-.menu__sub-item-link {
-    @include text(15px, 500, $secondaryFont);
-    @include mq(tbLG, true) {
-        @include text(14px, 400, $secondaryFont);
-        color: clr(black);
-        padding-left: 0;
-        display: block;
-    }
-    &:hover {
-        @include mq(tbLG, true) {
-            color: clr(purple);
-        }
-    }
-    color: clr(purpleDark);
-    line-height: 18px;
-    padding-left: 5px;
-    display: block;
-    transition: all 200ms linear;
-    // &:hover {
-    //
-    // }
-}
-.menu__sub-item-link:hover {
-    @include mq(tbLG, true) {
-        color: clr(purple);
-    }
-}
 .menu__contact {
     @include mq(tbLG, true) {
-        padding-top: 15px;
+        padding-top: 23px;
         padding-left: 40px;
         padding-right: 33px;
         position: absolute;
-        top: 72px;
+        top: 23px;
         left: 0;
         width: 100%;
         grid-template-columns: repeat(2, minmax(50%, 1fr));
@@ -353,50 +168,6 @@
             display: grid;
         }
     }
-}
-
-.menu__items {
-    @include mq(tbLG, true) {
-        position: absolute;
-        top: 23;
-        left: 0;
-        padding-top: 23px;
-        padding-left: 40px;
-        width: 100%;
-        margin: 0;
-        padding-bottom: 40px;
-        grid-template-columns: repeat(5, 1fr);
-        justify-content: space-between;
-        background-color: clr(white);
-    }
-    display: none;
-    margin: 23px 0 0 15px;
-    z-index: 11;
-    &--cards {
-        @include mq(tbLG, true) {
-            grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
-            row-gap: 32px;
-        }
-    }
-
-    &--active {
-        @include mq(tbLG, true) {
-            display: none;
-        }
-
-        display: block;
-    }
-
-    &--selected {
-        display: grid;
-    }
-}
-
-.menu__item-img {
-    @include mq(tbLG, true) {
-        display: inline-block;
-    }
-    display: none;
 }
 
 .menu__contact-item {
@@ -532,12 +303,6 @@
     }
 }
 
-.menu__dropdown:hover .menu__contact {
-    @include mq(tbLG, true) {
-        display: grid;
-    }
-}
-
 .menu__items:hover,
 .menu__contact:hover {
     @include mq(tbLG, true) {
@@ -556,4 +321,9 @@
         display: grid;
     }
 }
-// поменять верхний паддинг у линков 55-20=30пикселей
+
+.menu__tabs:hover {
+    @include mq(tbLG, true) {
+        // padding-bottom: 30%;
+    }
+}

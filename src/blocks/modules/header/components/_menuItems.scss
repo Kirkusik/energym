@@ -1,0 +1,107 @@
+.menu__items {
+    @include mq(tbLG, true) {
+        position: absolute;
+        top: 23;
+        left: 0;
+        padding-top: 23px;
+        padding-left: 40px;
+        width: 100%;
+        margin: 0;
+        padding-bottom: 40px;
+        grid-template-columns: repeat(5, 1fr);
+        justify-content: space-between;
+        background-color: clr(white);
+        z-index: 5;
+    }
+    display: none;
+    margin: 23px 0 0 15px;
+    &--cards {
+        @include mq(tbLG, true) {
+            grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+            row-gap: 32px;
+        }
+    }
+    &--active {
+        @include mq(tbLG, true) {
+            display: none;
+        }
+        display: block;
+    }
+}
+
+.menu__item {
+    margin-bottom: 20px;
+    @include mq(tbLG, true) {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    cursor: pointer;
+}
+
+.menu__item-link {
+    @include text(15px, 500, $secondaryFont);
+    color: clr(purpleDark);
+    @include mq(tbLG, true) {
+        @include text(16px, 400, $primaryFont);
+        color: clr(black);
+        line-height: 20px;
+        display: block;
+        padding-bottom: 12px;
+    }
+    line-height: 18px;
+    display: flex;
+    justify-content: space-between;
+    &--active {
+        color: clr(red);
+    }
+
+    &--cards {
+        @include mq(tbLG, true) {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+    }
+    &--cards:hover {
+        @include mq(tbLG, true) {
+            filter: brightness(150%);
+        }
+    }
+    &--trainers {
+        @include mq(tbLG, true) {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+    }
+    &--trainers:hover {
+        @include mq(tbLG, true) {
+            filter: brightness(120%);
+        }
+    }
+}
+
+.menu__item-text {
+    @include mq(tbLG, true) {
+        display: block;
+        margin-bottom: 16px;
+    }
+}
+
+.menu__item-img {
+    @include mq(tbLG, true) {
+        display: inline-block;
+    }
+    display: none;
+}
+
+// .menu__items-dropbox {
+//     display: block;
+//     position: absolute;
+//     background-color: red;
+//     // width: 100%;
+//     height: 368px;
+//     transform: translateX(-40px);
+// }
+
+// .menu__items-dropbox:hover .menu__items {
+//     display: grid;
+// }

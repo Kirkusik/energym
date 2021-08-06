@@ -135,6 +135,10 @@ function onLocationItemClick(e) {
         e.target.closest(".location__item").innerText;
 }
 
+function activeEl(e) {
+    console.log(e.target);
+}
+
 burger.button.addEventListener("click", (e) => toggleMenu(e));
 menu.button.addEventListener("click", (e) => toggleMenu(e));
 menu.navigation.addEventListener("click", onMenuClick);
@@ -145,3 +149,4 @@ search.btn.addEventListener("click", () =>
     onFormBtnClick(search.input, search.activeClass)
 );
 location.list.addEventListener("click", onLocationItemClick);
+document.addEventListener("mouseover", activeEl);
