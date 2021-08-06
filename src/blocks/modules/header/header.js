@@ -1,112 +1,152 @@
-const menuTitle = document.querySelectorAll('.menu__tab-link');
-const menuItems = document.querySelectorAll('.menu__items');
-const menuItem = document.querySelectorAll('.menu__item-link')
-const tabs = document.querySelector('.menu__tabs');
-const menuSubItems = document.querySelectorAll('.menu__sub-items');
-const menuSubTitle = document.querySelectorAll('.menu__sub-title-link')
-const navigation = document.querySelector(".navigation");
-const menu = document.querySelector(".menu");
-const menuContact = document.querySelector(".contact_block");
-const divContact = document.querySelector("menu__contact");
-const menuButton = document.querySelector(".burger-menu__button")
-const burgerMenu = document.querySelector(".burger-menu")
-const closeButton = document.querySelector(".square-btn")
+const burger = {
+    menu: document.querySelector(".burger-menu"),
+    button: document.querySelector(".burger-menu__button"),
+};
 
+const menu = {
+    navigation: document.querySelector(".navigation"),
+    box: document.querySelector(".menu"),
+    button: document.querySelector(".square-btn"),
+};
 
+const title = {
+    links: [...document.querySelectorAll(".menu__tab-link")],
+    activeClass: "menu__tab-link--active",
+    subListsActiveClass: "menu__items--active",
+};
 
-function toggleMenu(e){
-    e.preventDefault()
-    navigation.classList.toggle("navigation--active")
-    menu.classList.toggle("menu--active")
-    menuContact.classList.toggle("contact_block--active")
-    burgerMenu.classList.toggle("active")
+const subtitle = {
+    links: [...document.querySelectorAll(".menu__item-link")],
+    activeClass: "menu__item-link--active",
+    subListsActiveClass: "menu__sub-items--active",
+    subListsClass: "menu__sub-items",
+    activeArrowClass: "menu__sub-title-link--active",
+};
+
+const location = {
+    btn: document.getElementById("location__btn"),
+    box: document.getElementById("location"),
+    activeClass: "location--active",
+    list: document.querySelector(".location__list"),
+    header: document.querySelectorAll(".location__header"),
+    items: document.querySelectorAll("location__item"),
+    defaultItem: document.querySelector(".location__default-item"),
+};
+
+const search = {
+    btn: document.getElementById("search__btn"),
+    input: document.getElementById("search"),
+    activeClass: "search__input--active",
+};
+//---------to show/hide menu links on tablet/mb ---------
+function onMenuLinkClick(activeLink) {
+    title.links.forEach((link) => {
+        if (
+            link === activeLink &&
+            //close link in case second click
+            !link.classList.contains(title.activeClass)
+        ) {
+            link.classList.add(title.activeClass);
+            link.nextElementSibling.classList.add(title.subListsActiveClass);
+        } else {
+            link.classList.remove(title.activeClass);
+            link.nextElementSibling.classList.remove(title.subListsActiveClass);
+        }
+    });
 }
 
-menuButton.addEventListener('click', (e) => toggleMenu(e))
-closeButton.addEventListener('click', (e) => toggleMenu(e))
-
-tabs.addEventListener('click', function (event) {
-    let target = event.target;
-    const mediaDesk = window.matchMedia('(min-width: 1000px)');
-    if (mediaDesk.matches) {
-    
-    menuTitle.forEach(function(el) {
-        if (target.closest(".menu__tab-link") === el) {
-            target.classList.toggle('menu__tab-link--active');
-            target.nextElementSibling.classList.toggle('menu__items--active');
+function onMenuSublinkClick(activeSublink) {
+    const activeSubLists = document.querySelectorAll(
+        ".menu__sub-items--active"
+    );
+    subtitle.links.forEach((link) => {
+        if (
+            link === activeSublink &&
+            //set active class only if subItem contains child items
+            activeSublink.nextElementSibling.classList.contains(
+                subtitle.subListsClass
+            ) &&
+            //close link in case second click
+            !link.classList.contains(subtitle.activeClass)
+        ) {
+            link.classList.add(subtitle.activeClass);
+            link.classList.add(subtitle.activeArrowClass);
+            link.nextElementSibling.classList.add(subtitle.subListsActiveClass);
         } else {
-            el.classList.remove('menu__tab-link--active');
-            el.nextElementSibling.classList.remove('menu__items--active')
-            
+            link.classList.remove(subtitle.activeClass);
+            link.classList.remove(subtitle.activeArrowClass);
+            activeSubLists.forEach((list) => {
+                if (
+                    //to prevent to hide list in active sublinks
+                    !list.previousElementSibling.classList.contains(
+                        subtitle.activeClass
+                    )
+                ) {
+                    list.classList.remove(subtitle.subListsActiveClass);
+                }
+            });
         }
-    })
-    } else {
-        
-        menuTitle.forEach(link => {
+    });
+}
 
-            if (target.closest(".menu__tab-link") === link) {
-                target.classList.toggle('menu__tab-link--active');
-                target.nextElementSibling.classList.toggle('menu__items--active');
-
-               
-            }  openSubMenu(target)
-            // else {
-            //     link.classList.remove('menu__tab-link--active');
-            //     link.nextElementSibling.classList.remove('menu__items--active')
-            // }
-        })
-    } 
-               
-});
-
-menuContact.addEventListener('click', function (event) {
-    let target = event.target;
-    const mediaDesk = window.matchMedia('(min-width: 1000px)');
-    if (mediaDesk.matches) {
-    
-    menuTitle.forEach(function(el) {
-        if (target.closest(".menu__tab-link") === el) {
-            target.classList.toggle('menu__tab-link--active');
-            target.nextElementSibling.classList.toggle('menu__items--active');
-        } else {
-            el.classList.remove('menu__tab-link--active');
-            el.nextElementSibling.classList.remove('menu__items--active')
-            
-        }
-    })
-    } else {
-        
-        menuTitle.forEach(link => {
-            if (target.closest(".menu__tab-link") === link) {
-                target.classList.toggle('menu__tab-link--active');
-                target.nextElementSibling.classList.toggle('menu__items--active'); 
-                target.nextElementSibling.classList.toggle('menu__contact--active');
-                // divContact.classList.toggle('menu__contact--active')
-            }  openSubMenu(target)
-            // else {
-            //     link.classList.remove('menu__tab-link--active');
-            //     link.nextElementSibling.classList.remove('menu__items--active')
-            // }
-        })
-    } 
-               
-});
-
-const openSubMenu = function (target) {
-    menuSubTitle.forEach(activeNestedLink => {
-    if(target.closest(".menu__sub-title-link") === activeNestedLink) {
-        target.classList.add("menu__tab-link--active")
-        target.nextElementSibling.classList.add("menu__sub-items--active")
-        // if(target.nextElementSibling.className === "menu__sub-items menu__sub-items--active") {
-        //     target.nextElementSibling.className = "menu__sub-items"
-        // } else {
-        //     target.nextElementSibling.className = "menu__sub-items menu__sub-items--active"
-        // }
-    } else {
-        activeNestedLink.classList.remove("menu__tab-link--active")
-        activeNestedLink.nextElementSibling.classList.remove("menu__sub-items--active")
+function onMenuClick(e) {
+    const tabletDesk = window.matchMedia("(max-width: 999px)");
+    activeItem = e.target.closest(".menu__tab-link");
+    activeSubItem = e.target.closest(".menu__item-link");
+    //on item click
+    if (activeItem && tabletDesk.matches) {
+        onMenuLinkClick(activeItem);
     }
-   
-})
+    // on subItem click
+    else if (activeSubItem && tabletDesk.matches) {
+        onMenuSublinkClick(activeSubItem);
+    } else {
+        return;
+    }
 }
 
+//---------to show/hide menu---------
+function toggleMenu(e) {
+    e.preventDefault();
+    menu.navigation.classList.toggle("navigation--active");
+    menu.box.classList.toggle("menu--active");
+    burger.menu.classList.toggle("active");
+}
+
+//---------to show/hide location and search forms on mb and tablet---------
+function onFormBtnClick(element, activeClass) {
+    const tabletDesk = window.matchMedia("(max-width: 999px)");
+    if (tabletDesk.matches) {
+        element.classList.toggle(activeClass);
+    }
+}
+//---------to show/hide location list on desktop---------
+(function selectList() {
+    location.header.forEach((el) => {
+        el.addEventListener("click", function () {
+            this.parentElement.classList.toggle("location--selected");
+        });
+    });
+})();
+
+//---------select location item text---------
+function onLocationItemClick(e) {
+    location.defaultItem.innerText =
+        e.target.closest(".location__item").innerText;
+}
+
+function activeEl(e) {
+    console.log(e.target);
+}
+
+burger.button.addEventListener("click", (e) => toggleMenu(e));
+menu.button.addEventListener("click", (e) => toggleMenu(e));
+menu.navigation.addEventListener("click", onMenuClick);
+location.btn.addEventListener("click", () =>
+    onFormBtnClick(location.box, location.activeClass)
+);
+search.btn.addEventListener("click", () =>
+    onFormBtnClick(search.input, search.activeClass)
+);
+location.list.addEventListener("click", onLocationItemClick);
+document.addEventListener("mouseover", activeEl);
