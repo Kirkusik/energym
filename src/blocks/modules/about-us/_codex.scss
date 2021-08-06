@@ -72,24 +72,23 @@
 }
 
 .codex__text {
-    @include text(rem(15), 500, $secondaryFont);
+    @include text(rem(16), 500, $secondaryFont);
     line-height: 18px;
     color: clr(black);
 
     grid-area: text;
 
     &:not(:last-child) {
-        margin-bottom: 4px;
+        margin-bottom: 5px;
 
         @include mq(tb, true) {
             margin-bottom: 16px;
         }
-        @include mq(dt, true) {
+        @media (min-width: 1200px) {
             margin-bottom: 12px;
         }
     }
-
-    @include mq(dt, true) {
+    @media (min-width: 1200px) {
         font-size: rem(18);
         line-height: 22px;
     }
@@ -171,7 +170,7 @@
     }
 }
 // codex__video-wrapper additional class for interact with pseudo-element from js
-.codex__video--icon {
+.codex__video-icon {
     &::after {
         content: "";
     }
