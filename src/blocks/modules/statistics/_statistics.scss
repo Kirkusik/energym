@@ -49,7 +49,6 @@
     &--degree {
         vertical-align: super;
         font-size: rem(10);
-        position: relative;
 
         @include mq(tb, true) {
             font-size: rem(15);
