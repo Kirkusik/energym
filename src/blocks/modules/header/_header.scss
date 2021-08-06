@@ -1,536 +1,329 @@
-header {
-   margin: 16px auto;
-   max-width: 1440px;
-}
-
-.logo {
-   margin-right: auto;
-
-   @include mq(tbLG, true) {
-      width: 118px;
-      height: 24px;
-   }
-}
+@import "./components/svg";
+@import "./components/location";
+@import "./components/search";
+@import "./components/langLinks";
+@import "./components/menuTabs";
+@import "./components/menuItems";
+@import "./components/menuSubitems";
 
 .header {
-   margin: 16px;
-   max-width: 1440px;
-   display: flex;
-   flex-wrap: wrap;
-
-   &__header-container {
-      display: flex;
-
-      &-item {
-         padding-right: 19px;
-         display: flex;
-
-         & svg {
-            @include mq(tbLG, true) {
-               width: 19px;
-               height: 19px;
-            }
-         }
-
-         @include mq(tbLG, true) {
-            padding-right: 42px;
-         }
-      }
-      &-item:nth-child(3) {
-         padding-right: 27px;
-
-         @include mq(tbLG, true) {
-            padding-right: 0px;
-         }
-      }
-      &-item:nth-child(4) {
-         padding-right: 0px;
-      }
-   }
-   // &__pages {
-   //   font-family: "Roboto";
-   //   font-style: normal;
-   //   font-size: 15px;
-   //   color: clr(black);
-   //   border: none;
-   //   outline: none;
-   // }
-   &__ukr-page {
-      color: clr(pink);
-      @include text(15px, 700, $secondaryFont);
-      padding-right: 6px;
-   }
-   &__ukr-page::after {
-      content: "";
-      margin-left: 3px;
-      position: absolute;
-      width: 2px;
-      height: 15px;
-      background-color: clr(purple);
-   }
-   &__rus-page {
-      color: clr(black);
-      @include text(15px, 700, $secondaryFont);
-      text-decoration: none;
-   }
-   &__menu-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 24px;
-   }
+    @include mq(tb, true) {
+        padding-top: 9px;
+        margin-bottom: 9px;
+    }
+    @include mq(tbLG, true) {
+        padding-top: 29px;
+        margin-bottom: 31px;
+    }
+    padding-top: 15px;
+    margin-bottom: 15px;
 }
-.location {
-   display: none;
-   margin-left: 14px;
-   border-radius: 4px;
-   border: none;
-   width: 200px;
-   height: 24px;
-   background: clr(secondaryBG);
-   @include text(16px, 400, $secondaryFont);
-   line-height: 20px;
-   color: #7a7979;
-   padding-left: 16px;
-   outline: none;
-
-   &:active {
-      outline: none;
-   }
-
-   @include mq(tbLG, true) {
-      display: block;
-   }
+.header__wrapper {
+    @include mq(tb, true) {
+        padding: 0 24px;
+    }
+    @include mq(tbLG, true) {
+        margin-bottom: 56px;
+        padding: 0 31px 0 40px;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
 }
 
-.search {
-   display: none;
-   margin-left: 12px;
-   border-radius: 4px;
-   border: none;
-   width: 200px;
-   height: 24px;
-   background: clr(secondaryBG);
+.header__header-container {
+    display: flex;
+    margin-left: auto;
+    position: relative;
+}
 
-   &:focus {
-      outline: none;
-   }
-
-   &::placeholder {
-      @include text(16px, 400, $secondaryFont);
-      line-height: 20px;
-      color: #7a7979;
-      padding-left: 16px;
-   }
-
-   @include mq(tbLG, true) {
-      display: block;
-   }
+.header__menu-title {
+    @include mq(tbLG, true) {
+        display: none;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
 }
 
 .burger-menu {
-   @include mq(tbLG, true) {
-      display: none;
-   }
-
-   &__button {
-      position: sticky;
-      top: 23px;
-      right: 15px;
-      z-index: 30;
-      -webkit-transition: 0.4s;
-      -moz-transition: 0.4s;
-      -o-transition: 0.4s;
-      transition: 0.4s;
-   }
-
-   &__lines::before,
-   &__lines::after,
-   &__lines {
-      position: absolute;
-      width: 18px;
-      height: 2px;
-      background-color: clr(purple);
-      -webkit-transition: 0.4s;
-      -moz-transition: 0.4s;
-      -o-transition: 0.4s;
-      transition: 0.4s;
-   }
-   &__lines {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-   }
-   &__lines::before {
-      content: "";
-      top: -3px;
-   }
-   &__lines::after {
-      content: "";
-      top: 3px;
-   }
+    cursor: pointer;
+    @include mq(tbLG, true) {
+        display: none;
+    }
 }
 
 .active,
 .menu--active {
-   display: block;
+    display: block;
 }
 
-.active .burger-menu__lines,
-.active .burger-menu__lines::before,
-.active .burger-menu__lines::after {
-   background-color: transparent;
-}
 .square-btn {
-   width: 40px;
-   height: 40px;
-   background-color: clr(purple50);
-
-   @include mq(tbLG, true) {
-      display: none;
-   }
+    @include mq(tbLG, true) {
+        display: none;
+    }
+    width: 40px;
+    height: 40px;
+    background-color: clr(purple50);
 }
 .navigation {
-   display: none;
-   position: absolute;
-   z-index: 10;
-   right: 16px;
-   top: 5px;
-   width: 216px;
-   background-color: clr(white);
-   color: clr(purpleDark);
+    display: none;
+    position: absolute;
+    padding-top: 8px;
+    z-index: 10;
+    padding-bottom: 24px;
+    top: 0;
+    right: 0;
+    width: 216px;
+    background-color: clr(white);
+    color: clr(purpleDark);
+    padding-left: 24px;
+    @include mq(mb, true) {
+        width: 250px;
+    }
 
-   &--active {
-      display: grid;
-   }
+    @include mq(tb, true) {
+        padding-top: 2px;
+        width: 326px;
+    }
 
-   @include mq(tb, true) {
-      width: 316px;
-   }
+    @include mq(tbLG, true) {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        position: relative;
+        z-index: 0;
+        width: 100%;
+        padding: 0;
+    }
 
-   @include mq(tbLG, true) {
-      position: relative;
-      width: 530%;
-      z-index: 0;
-      left: 0;
-      top: 0;
-      display: flex;
-      flex-direction: row;
-      align-items: flex-end;
-   }
+    &--active {
+        display: grid;
+    }
 }
+
 .contact_link {
-   @include mq(tbLG, true) {
-      width: 78px;
-      margin-left: 100px;
-   }
+    @include mq(tbLG, true) {
+        margin-bottom: 0;
+    }
+    margin-bottom: 24px;
 }
-.contact_block {
-   display: none;
-   width: 216px;
-   background-color: clr(white);
-   color: clr(purpleDark);
 
-   &--active {
-      display: block;
-   }
-
-   @include mq(tb, true) {
-      width: 316px;
-   }
-
-   @include mq(tbLG, true) {
-      display: block;
-      // position: static;
-      z-index: 0;
-      // left: 0;
-      // top: 0;
-   }
-}
 .menu {
-   display: none;
-   // position: absolute;
-   // z-index: 10;
-   // right: 0;
-   // top: 0;
-   width: 216px;
-   background-color: clr(white);
-   color: clr(purpleDark);
+    @include mq(tb, true) {
+        width: 316px;
+    }
+    @include mq(tbLG, true) {
+        display: block;
+        position: relative;
+        z-index: 0;
+        width: 100%;
+        // height: 500px;
+    }
+    display: block;
+    width: 216px;
+    background-color: clr(white);
+    color: clr(purpleDark);
+}
+.menu__dropdown {
+    @include mq(tbLG, true) {
+        height: 500px;
+        position: absolute;
+    }
+}
+.menu__title {
+    @include text(24px, 400, $primaryFont);
+    @include mq(tbLG, true) {
+        display: none;
+    }
+    color: clr(purple);
+    line-height: 29px;
+}
 
-   @include mq(tb, true) {
-      width: 316px;
-   }
-
-   @include mq(tbLG, true) {
-      display: block;
-      position: relative;
-      width: 530%;
-      z-index: 0;
-      left: 0;
-      top: 0;
-   }
-
-   &__title {
-      color: clr(purple);
-      @include text(24px, 400, $primaryFont);
-      line-height: 29px;
-
-      @include mq(tbLG, true) {
-         display: none;
-      }
-   }
-
-   &__tabs {
-      @include mq(tbLG, true) {
-         display: flex;
-         justify-content: space-between;
-         align-items: center;
-         width: 100%;
-         margin: 58px 0px 31px;
-      }
-   }
-
-   &.menu--active {
-      display: block;
-   }
-
-   &__tab-link,
-   &__item-link {
-      @include text(15px, 500, $secondaryFont);
-      line-height: 18px;
-      display: flex;
-      justify-content: space-between;
-
-      @include mq(tb, true) {
-         @include text(16px, 500, $secondaryFont);
-         line-height: 20px;
-      }
-
-      @include mq(tbLG, true) {
-         padding-bottom: 24px;
-      }
-   }
-
-   &__item-link {
-      padding-bottom: 10px;
-
-      &:last-child {
-         padding-bottom: 0;
-      }
-      @include mq(tbLG, true) {
-         @include text(14px, 400, $primaryFont);
-         line-height: 17px;
-         padding-bottom: 15px;
-      }
-   }
-
-   &__tab-link {
-      @include mq(tb, true) {
-         &::after {
-            content: url("../../../img/svg/menu-arrow-right.svg");
-            width: 21px;
-            height: 14px;
-
-            @include mq(tbLG, true) {
-               display: none;
-            }
-         }
-      }
-
-      &--active {
-         color: clr(red);
-
-         @include mq(tbLG, true) {
-            border-bottom: 1px solid clr(red);
-         }
-      }
-   }
-
-   &__tab {
-      padding-bottom: 20px;
-
-      @include mq(tbLG, true) {
-         padding-bottom: 0px;
-      }
-   }
-
-   &__sub-items {
-      display: none;
-      margin: 16px 16px 16px 0;
-
-      &--active {
-         display: block;
-      }
-      @include mq(tbLG, true) {
-         display: block;
-         margin: 0;
-      }
-   }
-   &__sub-title-link {
-      &:checked {
-         color: clr(red);
-      }
-      &::after {
-         content: url("../../../img/svg/menu_arrow_down.svg");
-         width: 8px;
-         height: 16px;
-         margin-right: 64px;
-
-         @include mq(tbLG, true) {
-            content: "";
-         }
-      }
-   }
-   &__sub-item-link {
-      @include text(15px, 500, $secondaryFont);
-      line-height: 18px;
-      padding-bottom: 15px;
-      padding-left: 5px;
-      color: clr(purpleDark);
-      display: block;
-
-      @include mq(tbLG, true) {
-         @include text(14px, 400, $secondaryFont);
-         line-height: 17px;
-         padding-bottom: 15px;
-         padding-left: 0;
-         display: block;
-      }
-   }
-   &__contact {
-      display: none;
-      // position: absolute;
-      &--active {
-         @include mq(tb, true) {
+.menu__contact {
+    @include mq(tbLG, true) {
+        padding-top: 23px;
+        padding-left: 40px;
+        padding-right: 33px;
+        position: absolute;
+        top: 23px;
+        left: 0;
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(50%, 1fr));
+        justify-content: space-between;
+        background-color: clr(white);
+    }
+    z-index: 11;
+    display: none;
+    &--active {
+        @include mq(tb, true) {
             display: flex;
             flex-direction: column;
             align-items: center;
-         }
-      }
-      @include mq(tbLG, true) {
-         padding-left: 0;
-         position: absolute;
-         top: 134px;
-         left: 0;
-         width: calc(100vw - 32px);
-         display: grid;
-         grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
-      }
-   }
-
-   &__items {
-      display: none;
-      margin: 23px 0 0 15px;
-
-      @include mq(tbLG, true) {
-         margin: 0;
-      }
-   }
-   &__item-img {
-      display: none;
-
-      @include mq(tbLG, true) {
-         display: block;
-      }
-   }
-
-   &__items--active {
-      display: block;
-
-      @include mq(tbLG, true) {
-         padding-left: 0;
-         position: absolute;
-         top: 134px;
-         left: 0;
-         width: calc(100vw - 32px);
-         display: grid;
-         grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
-         row-gap: 32px;
-      }
-   }
-
-   &__contact-item {
-      margin: 0 16px 32px 0;
-      display: flex;
-      justify-content: flex-start;
-
-      @include mq(tbLG, true) {
-         margin: 0 0 25px;
-
-         &:last-child {
-            margin-bottom: 0;
-         }
-      }
-   }
-   &__contact-link {
-      display: none;
-
-      @include mq(tbLG, true) {
-         display: block;
-         margin-left: 16px;
-         color: clr(black);
-         @include text(14px, 500, $secondaryFont);
-         line-height: 17px;
-         padding-left: 16px;
-      }
-   }
-   &__location-block {
-      @include mq(tb, true) {
-         display: block;
-         text-align: center;
-      }
-      @include mq(tbLG, true) {
-         display: flex;
-         justify-content: flex-start;
-      }
-   }
+        }
+        @include mq(tbLG, true) {
+            display: grid;
+        }
+    }
 }
-.tel_desk {
-   display: none;
 
-   @include mq(tbLG, true) {
-      display: block;
-   }
+.menu__contact-item {
+    @include mq(tbLG, true) {
+        margin: 0 0 25px;
+        align-items: center;
+    }
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 0;
+    &--youtube {
+        align-self: center;
+    }
+    &--facebook {
+        margin-right: 16px;
+    }
+    &--instagram {
+        margin-right: 16px;
+    }
+    &--map {
+        @include mq(tbLG, true) {
+            display: block;
+            grid-area: image;
+        }
+        display: none;
+    }
+    &--tel {
+        @include mq(tbLG, true) {
+            align-self: start;
+            grid-area: telephone;
+        }
+    }
 }
-.location_desk {
-   margin-right: 15px;
+.menu__contact-link {
+    display: flex;
+    align-items: center;
+}
+.menu__contact-ref {
+    @include mq(tbLG, true) {
+        @include text(14px, 500, $secondaryFont);
+        display: inline-block;
+        margin-left: 16px;
+        color: clr(black);
+        line-height: 17px;
+    }
+    display: none;
+}
 
-   @include mq(tb, true) {
-      margin-bottom: 18px;
-   }
-   @include mq(tbLG, true) {
-      margin-right: 0;
-      margin-bottom: 0;
-   }
+.menu__location-block {
+    @include mq(tb, true) {
+        display: block;
+        text-align: center;
+    }
+    @include mq(tbLG, true) {
+        display: flex;
+        align-self: start;
+        justify-content: flex-start;
+        grid-area: adress;
+    }
 }
+
 .black {
-   color: clr(black);
-
-   @include mq(tbLG, true) {
-      margin-left: 20px;
-   }
+    @include mq(tbLG, true) {
+        margin-left: 20px;
+    }
+    color: clr(black);
 }
 .social_networks {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-
-   @include mq(tbLG, true) {
-      display: grid;
-      justify-content: start;
-   }
+    @include mq(tbLG, true) {
+        display: grid;
+        justify-content: start;
+    }
+    @include mq(tb, true) {
+        justify-content: center;
+    }
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 32px;
 }
 .contact_info {
-   display: flex;
-   flex-direction: column-reverse;
+    @include mq(tb, true) {
+        align-items: center;
+        justify-content: center;
+    }
+    @include mq(tbLG, true) {
+        display: grid;
+        grid-template-columns: 1fr 159px;
+        grid-template-rows: 56px 1fr;
+        grid-template-areas:
+            "adress image"
+            "telephone image";
+    }
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: start;
+    justify-content: start;
+}
+.menu__contact-address {
+    @include text(15px, 500, $secondaryFont);
 
-   @include mq(tb, true) {
-      align-items: center;
-      justify-content: center;
-   }
-   @include mq(tbLG, true) {
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-   }
+    @include mq(tbLG, true) {
+        @include text(14px, 500, $secondaryFont);
+        text-align: left;
+        line-height: 17px;
+    }
+    line-height: 19px;
+    font-style: normal;
+}
+.menu__contact-tel {
+    @include text(17px, 400, $primaryFont);
+    @include mq(tb, true) {
+        margin-bottom: 17px;
+    }
+    @include mq(tbLG, true) {
+        @include text(32px, 400, $primaryFont);
+        line-height: 32px;
+    }
+    margin-bottom: 32px;
+    line-height: 20px;
+}
+
+// Hover still not works------------------
+
+.menu__tab:hover .menu__items {
+    @include mq(tbLG, true) {
+        display: grid;
+    }
+}
+.menu__tab:hover .menu__contact {
+    @include mq(tbLG, true) {
+        display: grid;
+    }
+}
+
+.menu__items:hover,
+.menu__contact:hover {
+    @include mq(tbLG, true) {
+        display: grid;
+    }
+}
+
+.menu__item:hover .menu__items {
+    @include mq(tbLG, true) {
+        display: grid;
+    }
+}
+
+.menu__item:hover .menu__contact {
+    @include mq(tbLG, true) {
+        display: grid;
+    }
+}
+
+.menu__tabs:hover {
+    @include mq(tbLG, true) {
+        // padding-bottom: 30%;
+    }
 }

@@ -1,0 +1,29 @@
+.header__lang-list {
+    display: flex;
+    margin-right: 19px;
+    @include mq(tbLG, true) {
+        margin-right: 46px;
+    }
+}
+
+.header__lang-item {
+    @include text(15px, 700, $secondaryFont);
+    line-height: 18px;
+    text-decoration: none;
+    &--ukr {
+        color: clr(pink);
+        margin-right: 6px;
+        &::after {
+            content: "";
+            margin-left: 3px;
+            position: absolute;
+            width: 2px;
+            height: 15px;
+            background-color: clr(purple);
+        }
+    }
+
+    &--rus {
+        color: clr(black);
+    }
+}
