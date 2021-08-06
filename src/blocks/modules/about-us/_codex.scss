@@ -54,6 +54,9 @@
 }
 
 .codex__info {
+    @include mq(tb, false) {
+        padding: 0 12px;
+    }
     @include mq(tb, true) {
         margin-left: 24px;
         max-width: 314px;
