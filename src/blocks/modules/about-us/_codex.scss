@@ -11,12 +11,15 @@
 
     @include mq(tb, true) {
         grid-template-columns: 1fr 1.2fr;
-        grid-template-rows: 61px min-content;
-        grid-template-areas: "title video" "text video";
+        grid-template-rows: 61px min-content min-content;
+        grid-template-areas: "title video" "text video" "btn video";
     }
     @include mq(tbLG, true) {
         row-gap: 40px;
-        grid-template-rows: 91px minmax(min-content, 266px);
+        grid-template-rows: 91px minmax(min-content, max-content) min-content;
+    }
+    @media (min-width: 1200px) {
+        grid-template-rows: 91px minmax(min-content, max-content) 70px;
     }
     @include mq(dt, true) {
         grid-template-rows: 138px min-content 70px;
@@ -96,17 +99,22 @@
     text-align: center;
     padding-top: 16px;
     padding-bottom: 16px;
+    margin: 0 auto;
 
     @include mq(tb, true) {
-        display: none;
+        font-size: rem(15);
+        margin: 0 auto 0 24px;
+        padding: 12px 46px;
     }
+    @media (min-width: 1200px) {
+        line-height: 46px;
+    }
+
     @include mq(dt, true) {
-        display: block;
         font-size: rem(18);
-        line-height: 36px;
-        display: flex;
-        justify-self: flex-start;
+        line-height: 26px;
         margin-left: 40px;
+        padding: 24px 46px;
     }
 }
 
