@@ -49,6 +49,9 @@
         @include mq(tbLG, true) {
             content: "";
         }
+        @include mq(tb, true) {
+            margin-right: 64px;
+        }
         content: url("../../../img/svg/menu_arrow_down.svg");
         width: 8px;
         height: 16px;
