@@ -1,5 +1,4 @@
 .info-inner {
-    position: relative;
     padding: 27px 0 34px;
     text-align: center;
     padding-bottom: 8%;
@@ -50,7 +49,6 @@
     &--degree {
         vertical-align: super;
         font-size: rem(10);
-        position: relative;
 
         @include mq(tb, true) {
             font-size: rem(15);
