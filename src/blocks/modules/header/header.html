@@ -1,625 +1,818 @@
-<header class="header">
-   <!-- <div class="header"> -->
-      <a class="logo">
-         <!-- <img src="../assets/img/energym-logo.svg" alt="logo" width = 79px height = 16px> -->
-         <svg
-            width="79px"
-            height="16px"
-            viewbox="0 0 235 48"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-         >
-            <g filter="url(#filter0_d)">
-               <path
-                  d="M111.491 20.1528C112.185 19.4378 113.013 18.8927 113.966 18.4816C114.918 18.0705 115.924 17.8738 116.992 17.8738H127.033L127.015 13.0658H116.992C115.381 13.0658 113.85 13.3518 112.417 13.9148C110.984 14.4778 109.693 15.2643 108.562 16.2741L107.548 17.293C106.577 18.4369 105.812 19.7059 105.251 21.109C104.681 22.521 104.396 24.0492 104.396 25.7026C104.396 27.2218 104.699 28.7232 105.296 30.1978C105.892 31.6724 106.64 32.9593 107.548 34.0585C107.841 34.4518 108.197 34.8271 108.616 35.1756C109.746 36.0515 111.046 36.7932 112.515 37.4188C113.983 38.0354 115.47 38.3393 116.992 38.3393H127.015V23.2628H117.571L122.226 28.1244V33.4687H117.001C115.933 33.4687 114.927 33.2542 113.974 32.8431C113.022 32.4142 112.194 31.869 111.5 31.163C110.814 30.4659 110.254 29.6437 109.826 28.7053C109.408 27.758 109.203 26.7571 109.203 25.6936C109.203 24.6212 109.408 23.6024 109.826 22.6461C110.236 21.6988 110.797 20.8588 111.491 20.1528ZM170.908 24.0403L159.488 12.5117V38.3214H164.33V24.9519L170.908 31.0289L177.451 24.9161V38.3304H182.293V12.5117L170.908 24.0403ZM132.677 13.0569L132.694 20.1706L141.151 28.6517V38.3214H145.94V28.6607L154.289 20.1885V13.0569L143.527 23.9867L132.677 13.0569Z"
-                  fill="#5C3668"
-               />
-               <path
-                  d="M0 23.263L4.71779 28.1246H0V38.3306H17.625V33.4689H4.84242V28.1246H14.3848V23.263H4.84242V17.8651H17.625V13.057H0V23.263ZM54.0321 23.263L58.7499 28.1246H54.0321V38.3306H71.6571V33.4689H58.8656V28.1246H68.408V23.263H58.8656V17.8651H71.6482V13.057H54.0321V23.263ZM94.0176 27.6331C95.3084 27.088 96.3854 26.2747 97.2578 25.2112H97.2133C98.2815 23.8528 98.8066 22.3067 98.8066 20.5908C98.8066 19.5542 98.6197 18.5711 98.228 17.6506C97.8453 16.7301 97.3112 15.9258 96.6347 15.2376C95.9493 14.5584 95.1481 14.0222 94.2313 13.6379C93.3144 13.2447 92.3353 13.0481 91.3027 13.0481H78.4845L78.4667 17.8115V23.254L83.3091 28.1157V28.1068H88.1783V28.1157H88.7925L93.9731 38.3216H99.59L94.0176 27.6331ZM93.1898 22.4855C92.6735 23.0038 92.0415 23.263 91.3027 23.263H89.9051V23.2362H83.3002V17.8651H91.3027C92.0415 17.8651 92.6735 18.1332 93.1898 18.6694C93.7061 19.1967 93.9731 19.8401 93.9731 20.5908C93.9731 21.3415 93.7061 21.9671 93.1898 22.4855ZM78.4578 38.2859L83.3002 38.3484V28.1246H78.4578V38.2859ZM42.3622 28.3927L42.3533 28.4017L24.4257 10.4385V38.3216H29.2859V22.4944L29.2503 22.5033L29.2681 22.4765L47.2225 40.4397V13.057H42.3622V28.3927Z"
-                  fill="#E5004F"
-               />
-               <path
-                  d="M208.312 31.8869L199.153 22.6909L195.717 26.1405L204.885 35.3366L208.312 31.8869ZM229.124 11.0014L219.965 1.80539L216.52 5.25503L225.679 14.46L229.124 11.0014ZM201.44 38.7862L210.609 47.9912L214.045 44.5416L204.876 35.3366L201.44 38.7862ZM225.688 14.46L222.243 17.9007L231.412 27.1146L234.848 23.665L225.688 14.46Z"
-                  fill="#E5004F"
-               />
-               <path
-                  d="M214.678 22.6819L219.218 14.8442L208.705 25.3897L206.996 27.1145L215.853 27.1056L211.367 34.9611L221.871 24.4067L223.589 22.6908L214.678 22.6819Z"
-                  fill="white"
-               />
-               <path
-                  d="M228.795 31.3598L232.222 27.9191L226.81 22.4854L225.296 20.9662L222.635 18.294V18.2762L222.252 17.8919L223.961 16.176L225.679 14.4512L220.383 9.13373L219.163 7.90938L215.718 4.44186L212.282 7.88256L215.736 11.3411L205.224 21.8956L201.779 18.4281L198.352 21.8777L208.312 31.887L207.298 32.9058L204.876 35.3367L214.864 45.3639L218.3 41.8695L216.511 40.0732L214.846 38.4646L214.828 38.4467L225.332 27.8922L228.795 31.3598ZM206.995 27.1147L207.983 26.1227L208.704 25.3989L219.208 14.8533L214.677 22.691L223.578 22.6999L211.366 34.9613L213.787 30.7252L215.852 27.1147H206.995Z"
-                  fill="#5C3668"
-               />
-               <path
-                  d="M4.28122 1.71622C3.65811 1.12638 3.05281 0.947645 2.56323 0.947645C1.88672 0.947645 1.39713 1.30512 1.39713 1.82346C1.39713 3.23549 4.57497 3.21761 4.57497 5.55908C4.57497 6.71194 3.70262 7.56094 2.51872 7.56094C1.72649 7.56094 1.07668 7.34645 0.462476 6.88174V5.5412C0.996566 6.22934 1.68198 6.61363 2.403 6.61363C3.22194 6.61363 3.5958 6.09529 3.5958 5.68419C3.5958 4.16492 0.417969 3.98619 0.417969 1.96645C0.417969 0.768908 1.29922 0.000335693 2.64334 0.000335693C3.20414 0.000335693 3.76493 0.170136 4.28122 0.518675V1.71622Z"
-                  fill="#5C3668"
-               />
-               <path
-                  d="M8.77596 0.0985413C10.3782 0.0985413 11.1082 1.04585 11.1082 2.21658C11.1082 3.36944 10.3337 4.281 8.63354 4.281H7.54756V7.47147H6.48828V0.0985413H8.77596ZM7.54756 3.32476H8.74036C9.52369 3.32476 10.0311 2.90472 10.0311 2.1719C10.0311 1.63569 9.73733 1.04585 8.78487 1.04585H7.54756V3.32476Z"
-                  fill="#5C3668"
-               />
-               <path
-                  d="M16.3954 0C18.8166 0 20.3477 1.72482 20.3477 3.7803C20.3477 5.76429 18.8612 7.5606 16.3776 7.5606C13.9831 7.5606 12.461 5.78216 12.461 3.7803C12.4521 1.74269 14.0187 0 16.3954 0ZM16.3954 6.58648C18.0422 6.58648 19.2528 5.38894 19.2528 3.7803C19.2528 2.16273 18.0333 0.97412 16.3954 0.97412C14.7576 0.97412 13.547 2.16273 13.547 3.7803C13.5381 5.38894 14.7576 6.58648 16.3954 6.58648Z"
-                  fill="#5C3668"
-               />
-               <path
-                  d="M24.2109 0.0985413C25.6974 0.0985413 26.6232 0.884987 26.6232 2.16296C26.6232 3.01197 26.1781 3.65542 25.3948 3.96821C26.0624 4.41506 26.4719 5.09426 27.0327 6.00582C27.3442 6.51522 27.5311 6.76546 28.0296 7.46253H26.7745L25.8043 5.9522C24.834 4.44187 24.3889 4.26313 23.8548 4.26313H23.4098V7.46253H22.3594V0.0985413H24.2109ZM23.4098 3.31582H24.0863C25.2168 3.31582 25.5283 2.74386 25.5283 2.11828C25.5283 1.43907 25.1099 1.0101 24.0863 1.0101H23.4098V3.31582Z"
-                  fill="#5C3668"
-               />
-               <path
-                  d="M34.5637 1.04585H32.0268V7.46253H30.9764V1.04585H28.4395V0.0985413H34.5726V1.04585H34.5637Z"
-                  fill="#5C3668"
-               />
-               <path
-                  d="M40.4044 4.18255H34.832V3.49442H40.4044V4.18255Z"
-                  fill="#5C3668"
-               />
-               <path
-                  d="M48.5845 1.74284C47.6765 1.21556 46.9021 0.974268 46.0565 0.974268C44.3741 0.974268 43.1279 2.17181 43.1279 3.78939C43.1279 5.44271 44.3296 6.58663 46.101 6.58663C46.9288 6.58663 47.8368 6.29171 48.6646 5.7555V6.90836C47.9436 7.28371 47.1602 7.55181 46.0119 7.55181C43.2614 7.55181 42.0508 5.42484 42.0508 3.87876C42.0508 1.6356 43.7421 -0.00878906 46.0743 -0.00878906C46.8309 -0.00878906 47.5875 0.178885 48.5934 0.598919V1.74284H48.5845Z"
-                  fill="#5C3668"
-               />
-               <path
-                  d="M51.7448 6.51522H55.0562V7.46253H50.6855V0.0985413H51.7359V6.51522H51.7448Z"
-                  fill="#5C3668"
-               />
-               <path
-                  d="M62.6217 4.56683C62.6217 6.37208 61.5446 7.56068 59.3638 7.56068C57.8149 7.56068 56.3105 6.68487 56.3105 4.67407V0.0983839H57.3609V4.45065C57.3609 5.28178 57.4677 5.63032 57.806 5.96098C58.2244 6.38101 58.7496 6.58656 59.3905 6.58656C60.2005 6.58656 60.7791 6.32739 61.1085 5.98779C61.4823 5.61244 61.5713 5.06729 61.5713 4.37915V0.089447H62.6217V4.56683Z"
-                  fill="#5C3668"
-               />
-               <path
-                  d="M64.8926 0.0985413H67.02C68.6045 0.0985413 69.281 1.04585 69.281 1.97529C69.281 2.74386 68.925 3.23539 68.1594 3.54818V3.57499C69.2543 3.78054 69.9219 4.50442 69.9219 5.49642C69.9219 6.39904 69.2454 7.46253 67.4028 7.46253H64.8926V0.0985413ZM65.943 3.25326H66.6462C67.6877 3.25326 68.195 2.86004 68.195 2.07359C68.195 1.51951 67.8835 1.04585 66.9132 1.04585H65.943V3.25326ZM65.943 6.51522H67.2693C68.5066 6.51522 68.836 5.89858 68.836 5.35343C68.836 4.68316 68.3197 4.20951 67.2159 4.20951H65.943V6.51522Z"
-                  fill="#5C3668"
-               />
-            </g>
-            <defs>
-               <filter
-                  id="filter0_d"
-                  x="-4"
-                  y="-0.00878906"
-                  width="242.848"
-                  height="56"
-                  filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
-               >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                  <feColorMatrix
-                     in="SourceAlpha"
-                     type="matrix"
-                     values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                  />
-                  <feOffset dy="4" />
-                  <feGaussianBlur stdDeviation="2" />
-                  <feColorMatrix
-                     type="matrix"
-                     values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-                  />
-                  <feBlend
-                     mode="normal"
-                     in2="BackgroundImageFix"
-                     result="effect1_dropShadow"
-                  />
-                  <feBlend
-                     mode="normal"
-                     in="SourceGraphic"
-                     in2="effect1_dropShadow"
-                     result="shape"
-                  />
-               </filter>
-            </defs>
-         </svg>
-      </a>
-      <div class="header__header-container">
-         <ul class="header__header-container-item">
-            <li><a class="header__ukr-page">УК</a></li>
-            <li><a href="" class="header__rus-page">РУС</a></li>
-         </ul>
-         <div class="header__header-container-item">
-            <!-- <img src="../assets/img/location-mob.svg" alt="location" width = 10px height = 16px> -->
-            <svg
-               width="10"
-               height="16"
-               viewBox="0 0 10 16"
-               fill="none"
-               xmlns="http://www.w3.org/2000/svg"
-            >
-               <path
-                  d="M5 0C2.238 0 0 2.23039 0 4.99312C0 9.77011 5 16 5 16C5 16 10 9.7691 10 4.99312C10 2.23139 7.762 0 5 0ZM5 7.75585C4.28392 7.75585 3.59716 7.47121 3.09081 6.96454C2.58446 6.45788 2.3 5.77069 2.3 5.05416C2.3 4.33763 2.58446 3.65044 3.09081 3.14378C3.59716 2.63711 4.28392 2.35247 5 2.35247C5.71608 2.35247 6.40284 2.63711 6.90919 3.14378C7.41554 3.65044 7.7 4.33763 7.7 5.05416C7.7 5.77069 7.41554 6.45788 6.90919 6.96454C6.40284 7.47121 5.71608 7.75585 5 7.75585Z"
-                  fill="#FFA6C4"
-               />
+<header class="header container">
+    <div class="header__wrapper">
+        <a href="#" class="logo">
+            <svg width="79" height="16" fill="none" class="logo_desk">
+                <use href="#logo_desk"></use>
             </svg>
-            <ul class="location">
-               <li>Березняки</li>
-               <!-- <li>Дніпровський р-н</li> -->
+        </a>
+        <div class="header__header-container">
+            <ul class="header__lang-list">
+                <li>
+                    <a href="#" class="header__lang-item header__lang-item--ukr"
+                        >УК</a
+                    >
+                </li>
+                <li>
+                    <a href="#" class="header__lang-item header__lang-item--rus"
+                        >РУС</a
+                    >
+                </li>
             </ul>
-         </div>
-         <div class="header__header-container-item">
-            <!-- <img src="../assets/img/search-mob.svg" alt="search" width = 16px height = 16px> -->
-            <svg
-               width="16"
-               height="16"
-               viewBox="0 0 16 16"
-               fill="none"
-               xmlns="http://www.w3.org/2000/svg"
-            >
-               <path
-                  d="M6.84199 0C3.06949 0 0 3.06949 0 6.84199C0 10.6145 3.06949 13.684 6.84199 13.684C8.36004 13.6837 9.83434 13.1755 11.0301 12.2403L14.7898 16L15.9991 14.7907L12.2395 11.031C13.1751 9.83508 13.6836 8.36043 13.684 6.84199C13.684 3.06949 10.6145 0 6.84199 0Z"
-                  fill="#FFA6C4"
-               />
-            </svg>
-            <input placeholder="Пошук" class="search" />
-         </div>
-         <div class="header__header-container-item">
-            <div class="burger-menu">
-               <a href="" class="burger-menu__button">
-                  <span class="burger-menu__lines"></span>
-               </a>
+            <a href="#" class="location__btn" id="location__btn">
+                <svg width="10" height="16" fill="none" class="location_small">
+                    <use href="#location_small"></use>
+                </svg>
+            </a>
+            <div class="location" id="location">
+                <div class="location__header">
+                    <span class="location__default-item">Березняки</span>
+                    <button class="location__arrow" id="location__arrow">
+                        <svg width="10" height="6" fill="none">
+                            <use href="#location__down-arrow"></use>
+                        </svg>
+                    </button>
+                </div>
+                <ul class="location__list">
+                    <li class="location__item">Березняки</li>
+                    <li class="location__item">Дніпровський р-н</li>
+                </ul>
             </div>
-         </div>
-      </div>
-   <!-- </div> -->
-   <div class="navigation">
-      <nav class="menu">
-         <div class="header__menu-title">
-            <p class="menu__title">Меню</p>
-            <button class="square-btn square-btn--cross"></button>
-         </div>
-         <ul class="menu__tabs">
-            <li class="menu__tab">
-               <a class="menu__tab-link" href="#">Клубні картки</a>
-               <ul class="menu__items">
-                  <li class="menu__item">
-                     <a class="menu__item-link" href="#">Special one</a>
-                     <img
-                        src="../../../img/card_special-one.png"
-                        alt="card_spesial"
-                        width="132px"
-                        height="85px"
-                        class="menu__item-img"
-                     />
-                  </li>
-                  <li class="menu__item">
-                     <a class="menu__item-link" href="#">Life Style</a>
-                     <img
-                        src="../../../img/card_lifestyle.png"
-                        alt="card_lifestyle"
-                        width="132px"
-                        height="85px"
-                        class="menu__item-img"
-                     />
-                  </li>
-                  <li class="menu__item">
-                     <a class="menu__item-link" href="#">Just Fitness</a>
-                     <img
-                        src="../../../img/card_justfitnes.png"
-                        alt="card_justfitnes"
-                        width="132px"
-                        height="85px"
-                        class="menu__item-img"
-                     />
-                  </li>
-                  <li class="menu__item">
-                     <a class="menu__item-link" href="#">Дитяча</a>
-                     <img
-                        src="../../../img/card_children.png"
-                        alt="card_children"
-                        width="132px"
-                        height="85px"
-                        class="menu__item-img"
-                     />
-                  </li>
-                  <li class="menu__item">
-                     <a class="menu__item-link" href="#">Special one ранкова</a>
-                     <img
-                        src="../../../img/card_special-one.png"
-                        alt="card_spesial"
-                        width="132px"
-                        height="85px"
-                        class="menu__item-img"
-                     />
-                  </li>
-                  <li class="menu__item">
-                     <a class="menu__item-link" href="#">Life Style ранкова</a>
-                     <img
-                        src="../../../img/card_lifestyle.png"
-                        alt="card_lifestyle"
-                        width="132px"
-                        height="85px"
-                        class="menu__item-img"
-                     />
-                  </li>
-                  <li class="menu__item">
-                     <a class="menu__item-link" href="#">Just Fitness ранкова</a>
-                     <img
-                        src="../../../img/card_justfitnes.png"
-                        alt="card_justfitnes"
-                        width="132px"
-                        height="85px"
-                        class="menu__item-img"
-                     />
-                  </li>
-               </ul>
-            </li>
-            <li class="menu__tab">
-               <a class="menu__tab-link" href="#">Послуги</a>
-               <ul class="menu__items">
-                  <li class="menu__item">
-                     <a class="menu__item-link menu__sub-title-link">Зал</a>
-                     <ul class="menu__sub-items">
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Hardcore</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Advanced</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Base</a>
-                        </li>
-                     </ul>
-                  </li>
-                  <li class="menu__item">
-                     <a class="menu__item-link menu__sub-title-link">Басейн</a>
-                     <ul class="menu__sub-items">
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Для дорослих</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Для дітей</a>
-                        </li>
-                     </ul>
-                  </li>
-                  <li class="menu__item">
-                     <a class="menu__item-link menu__sub-title-link">Групові заняття</a>
-                     <ul class="menu__sub-items">
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Студія груповых программ</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Студія йоги</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Авторская студія</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Студія скайл</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Online студія</a>
-                        </li>
-                     </ul>
-                  </li>
-                  <li class="menu__item">
-                     <a class="menu__item-link menu__sub-title-link">Файн зона</a>
-                     <ul class="menu__sub-items">
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Ринг</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Тотамі</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Октагон</a>
-                        </li>
-                     </ul>
-                  </li>
-                  <li class="menu__item">
-                     <a class="menu__item-link menu__sub-title-link">Дитячі заняття</a>
-                     <ul class="menu__sub-items">
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Единоборства</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Фітнес</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Розвиваючі</a>
-                        </li>
-                     </ul>
-                  </li>
-               </ul>
-            </li>
-            <li class="menu__tab">
-               <a class="menu__tab-link" href="#">Тренерський склад</a>
-               <ul class="menu__items">
-                  <li class="menu__item">
-                     <a class="menu__item-link" href="#">Зал</a>
-                     <img
-                        src="../../../img/gym.png"
-                        alt="gym_zone"
-                        width="132px"
-                        height="132px"
-                        class="menu__item-img"
-                     />
-                  </li>
-                  <li class="menu__item">
-                     <a class="menu__item-link" href="#">Басейн</a>
-                     <img
-                        src="../../../img/swimmingpoll.png"
-                        alt="swim_zone"
-                        width="132px"
-                        height="132px"
-                        class="menu__item-img"
-                     />
-                  </li>
-                  <li class="menu__item">
-                     <a class="menu__item-link" href="#">Групові заняття</a>
-                     <img
-                        src="../../../img/groups.png"
-                        alt="group_zone"
-                        width="132px"
-                        height="132px"
-                        class="menu__item-img"
-                     />
-                  </li>
-                  <li class="menu__item">
-                     <a class="menu__item-link" href="#">Файт зона</a>
-                     <img
-                        src="../../../img/fight_zone.png"
-                        alt="fight_zone"
-                        width="132px"
-                        height="132px"
-                        class="menu__item-img"
-                     />
-                  </li>
-                  <li class="menu__item">
-                     <a class="menu__item-link" href="#">Дитячі заняття</a>
-                     <img
-                        src="../../../img/child_zone.png"
-                        alt="child_zone"
-                        width="132px"
-                        height="132px"
-                        class="menu__item-img"
-                     />
-                  </li>
-               </ul>
-            </li>
-            <li class="menu__tab">
-               <a class="menu__tab-link" href="#">Для дітей</a>
-               <ul class="menu__items">
-                  <li class="menu__item">
-                     <a class="menu__item-link menu__sub-title-link">Танцювальні</a>
-                     <ul class="menu__sub-items">
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Черлідинг-гімнастика</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Dance mix</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Mix dance style</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Choreography</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Break dance basic</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Break dance advanced</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Break dance acro</a>
-                        </li>
-                     </ul>
-                  </li>
-                  <li class="menu__item">
-                     <a class="menu__item-link  menu__sub-title-link">Фітнес</a>
-                     <ul class="menu__sub-items">
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Fitnes game</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Кувиркалки</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Active streaching</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Baby yoga</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Junior fit</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Пяточки-носочки</a>
-                        </li>
-                     </ul>
-                  </li>
-                  <li class="menu__item">
-                     <a class="menu__item-link menu__sub-title-link">Єдиноборства</a>
-                     <ul class="menu__sub-items">
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Айкідо</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Кіокушинкай</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Куміте карате Family</a>
-                        </li>
-                     </ul>
-                  </li>
-                  <li class="menu__item">
-                     <a class="menu__item-link menu__sub-title-link">Розвиваючі</a>
-                     <ul class="menu__sub-items">
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Всезнайка</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">АВС клуб</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Творча студія</a>
-                        </li>
-                     </ul>
-                  </li>
-                  <li class="menu__item">
-                     <a class="menu__item-link menu__sub-title-link">Специалізовані</a>
-                     <ul class="menu__sub-items">
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Настільний теніс</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Cycling</a>
-                        </li>
-                     </ul>
-                  </li>
-               </ul>
-            </li>
-            <li class="menu__tab">
-               <a class="menu__tab-link" href="#">Розклад</a>
-               <ul class="menu__items">
-                  <li class="menu__item">
-                     <a class="menu__item-link menu__sub-title-link">Зал</a>
-                     <ul class="menu__sub-items">
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Hardcore</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Advanced</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Base</a>
-                        </li>
-                     </ul>
-                  </li>
-                  <li class="menu__item">
-                     <a class="menu__item-link menu__sub-title-link">Басейн</a>
-                     <ul class="menu__sub-items">
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Для дорослих</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Для дітей</a>
-                        </li>
-                     </ul>
-                  </li>
-                  <li class="menu__item">
-                     <a class="menu__item-link menu__sub-title-link">Групові заняття</a>
-                     <ul class="menu__sub-items">
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Студія груповых программ</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Студія йоги</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Авторская студія</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Студія скайл</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Online студія</a>
-                        </li>
-                     </ul>
-                  </li>
-                  <li class="menu__item">
-                     <a class="menu__item-link menu__sub-title-link">Файн зона</a>
-                     <ul class="menu__sub-items">
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Ринг</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Тотамі</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Октагон</a>
-                        </li>
-                     </ul>
-                  </li>
-                  <li class="menu__item">
-                     <a class="menu__item-link menu__sub-title-link">Дитячі заняття</a>
-                     <ul class="menu__sub-items">
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Единоборства</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Фітнес</a>
-                        </li>
-                        <li class="menu__sub-item">
-                           <a class="menu__sub-item-link">Розвиваючі</a>
-                        </li>
-                     </ul>
-                  </li>
-               </ul>
-            </li>
-            
-         </ul>
-      </nav>
-      <div class="menu__tabs contact_block">
-         <a class="menu__tab-link contact_link" href="#">Контакти</a>
-            <div class="menu__items menu__contact">
-                  <ul class="social_networks ">
-                     <li class="menu__item menu__contact-item">
-                        <svg 
-                           width="32" 
-                           height="32" 
-                           fill="none">
-                           <use href="#facebook_desk"></use>
-                        </svg>
-                        <a
-                           target="blank"
-                           class="menu__contact-link"
-                           href="https://www.facebook.com/energym.sport.kiev"
-                           >https://www.facebook.com/energym.sport.kiev</a
+            <label for="search">
+                <form class="search__form">
+                    <button id="search__btn" class="search__btn">
+                        <svg
+                            width="16"
+                            height="16"
+                            fill="none"
+                            class="search_desk"
                         >
-                     </li>
-                     <li class="menu__item menu__contact-item">
-                        <svg 
-                           width="32" 
-                           height="32" 
-                           fill="none">
-                           <use href="#insta_desk"></use>
+                            <use href="#search_desk"></use>
                         </svg>
-                        <a
-                           target="blank"
-                           class="menu__contact-link"
-                           href="https://www.instagram.com/energym_sport/"
-                           >https://www.instagram.com/energym_sport/</a
-                        >
-                     </li>
-                     <li class="menu__item menu__contact-item">
-                        <svg 
-                           width="32" 
-                           height="25" 
-                           fill="none">
-                           <use href="#youtube_desk"></use>
-                        </svg>
-                        <a
-                           target="blank"
-                           class="menu__contact-link"
-                           href="https://www.youtube.com/channel/UCYS1vd76QOZY7PNV4aCu5DA"
-                           >https://www.youtube.com/channel/UCYS1vd76QOZY7PNV4aCu5DA</a
-                        >
-                     </li>
-                  </ul>
-                  <ul class='contact_info'>
-                     <li class="menu__item menu__contact-item menu__location-block">
-                        <svg 
-                           width="24" 
-                           height="29" 
-                           fill="none"
-                           class="location_desk">
-                           <use href="#location_desk"></use>
-                        </svg>
-                        <p class="section-text__h3 black">
-                           ТРЦ SilverBreeze, пр. Павла Тичини, 1В
-                        </p>
-                     </li>
-                     <li class="menu__item menu__contact-item">
-                        <svg 
-                           width="32" 
-                           height="32" 
-                           fill="none"
-                           class="tel_desk">
-                           <use href="#tel_desk"></use>
-                        </svg>
-                        <h3 class="section-title__h3">
-                           <a class="black" href="tel:+380445931515">044-593-15-15</a>
-                        </h3>
-                     </li>
-                  </ul>
+                    </button>
+                    <input
+                        type="search"
+                        name="search"
+                        id="search"
+                        placeholder="Пошук"
+                        class="search__input"
+                    />
+                </form>
+            </label>
+        </div>
+        <div class="burger-menu">
+            <a class="burger-menu__button">
+                <svg width="24" height="24" fill="none">
+                    <use href="#menu__open-svg"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="navigation">
+        <nav class="menu">
+            <div class="header__menu-title">
+                <p class="menu__title">Меню</p>
+                <button class="square-btn square-btn--cross"></button>
             </div>
-      </div>
-   </div>
+            <ul class="menu__tabs">
+                <li class="menu__tab">
+                    <a class="menu__tab-link">Клубні картки</a>
+                    <ul class="menu__items menu__items--cards">
+                        <li class="menu__item menu__item--cards">
+                            <a
+                                class="menu__item-link menu__item-link--cards"
+                                href="#"
+                            >
+                                <p class="menu__item-text">Special one</p>
+                                <img
+                                    src="../../../img/card_special-one.jpg"
+                                    alt="card_special"
+                                    width="132"
+                                    height="85"
+                                    class="menu__item-img"
+                                    loading="lazy"
+                                />
+                            </a>
+                        </li>
+                        <li class="menu__item menu__item--cards">
+                            <a
+                                class="menu__item-link menu__item-link--cards"
+                                href="#"
+                            >
+                                <p class="menu__item-text">Life Style</p>
+                                <img
+                                    src="../../../img/card_lifestyle.jpg"
+                                    alt="card_lifestyle"
+                                    width="132"
+                                    height="85"
+                                    class="menu__item-img"
+                                    loading="lazy"
+                                />
+                            </a>
+                        </li>
+                        <li class="menu__item menu__item--cards">
+                            <a
+                                class="menu__item-link menu__item-link--cards"
+                                href="#"
+                            >
+                                <p class="menu__item-text">Just Fitness</p>
+                                <img
+                                    src="../../../img/card_justfitnes.jpg"
+                                    alt="card_justfitnes"
+                                    width="132"
+                                    height="85"
+                                    class="menu__item-img"
+                                    loading="lazy"
+                                />
+                            </a>
+                        </li>
+                        <li class="menu__item menu__item--cards">
+                            <a
+                                class="menu__item-link menu__item-link--cards"
+                                href="#"
+                            >
+                                <p class="menu__item-text">Дитяча</p>
+                                <img
+                                    src="../../../img/card_children.jpg"
+                                    alt="card_children"
+                                    width="132"
+                                    height="85"
+                                    class="menu__item-img"
+                                    loading="lazy"
+                                />
+                            </a>
+                        </li>
+                        <li class="menu__item menu__item--cards">
+                            <a
+                                class="menu__item-link menu__item-link--cards"
+                                href="#"
+                            >
+                                <p class="menu__item-text">
+                                    Special one ранкова
+                                </p>
+                                <img
+                                    src="../../../img/card_special-one.jpg"
+                                    alt="card_spesial"
+                                    width="132"
+                                    height="85"
+                                    class="menu__item-img"
+                                    loading="lazy"
+                                />
+                            </a>
+                        </li>
+                        <li class="menu__item menu__item--cards">
+                            <a
+                                class="menu__item-link menu__item-link--cards"
+                                href="#"
+                                ><p class="menu__item-text">
+                                    Life Style ранкова
+                                </p>
+
+                                <img
+                                    src="../../../img/card_lifestyle.jpg"
+                                    alt="card_lifestyle"
+                                    width="132"
+                                    height="85"
+                                    class="menu__item-img"
+                                    loading="lazy"
+                                />
+                            </a>
+                        </li>
+                        <li class="menu__item menu__item--cards">
+                            <a
+                                class="menu__item-link menu__item-link--cards"
+                                href="#"
+                                ><p class="menu__item-text">
+                                    Just Fitness ранкова
+                                </p>
+                                <img
+                                    src="../../../img/card_justfitnes.jpg"
+                                    alt="card_justfitnes"
+                                    width="132"
+                                    height="85"
+                                    class="menu__item-img"
+                                    loading="lazy"
+                                />
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="menu__items-dropbox"></div>
+                </li>
+                <li class="menu__tab">
+                    <a class="menu__tab-link">Послуги</a>
+                    <ul class="menu__items">
+                        <li class="menu__item">
+                            <a class="menu__item-link menu__sub-title-link"
+                                >Зал</a
+                            >
+                            <ul class="menu__sub-items">
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-item-link"
+                                        >Hardcore</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-item-link"
+                                        >Advanced</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-item-link"
+                                        >Base</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__item-link menu__sub-title-link"
+                                >Басейн</a
+                            >
+                            <ul class="menu__sub-items">
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-item-link"
+                                        >Для дорослих</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-item-link"
+                                        >Для дітей</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__item-link menu__sub-title-link"
+                                >Групові заняття</a
+                            >
+                            <ul class="menu__sub-items">
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-item-link"
+                                        >Студія груповых программ</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-item-link"
+                                        >Студія йоги</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-item-link"
+                                        >Авторская студія</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-item-link"
+                                        >Студія скайл</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-item-link"
+                                        >Online студія</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__item-link menu__sub-title-link"
+                                >Файн зона</a
+                            >
+                            <ul class="menu__sub-items">
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-item-link"
+                                        >Ринг</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-item-link"
+                                        >Тотамі</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-item-link"
+                                        >Октагон</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__item-link menu__sub-title-link"
+                                >Дитячі заняття</a
+                            >
+                            <ul class="menu__sub-items">
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-item-link"
+                                        >Единоборства</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-item-link"
+                                        >Фітнес</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-item-link"
+                                        >Розвиваючі</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu__tab">
+                    <a class="menu__tab-link">Тренерський склад</a>
+                    <ul class="menu__items menu__items--trainers">
+                        <li class="menu__item menu__item--trainers">
+                            <a
+                                class="
+                                    menu__item-link menu__item-link--trainers
+                                "
+                                href="#"
+                            >
+                                <p class="menu__item-text">Зал</p>
+
+                                <img
+                                    src="../../../img/gym.jpg"
+                                    alt="gym_zone"
+                                    width="132"
+                                    height="132"
+                                    class="menu__item-img"
+                                    loading="lazy"
+                                />
+                            </a>
+                        </li>
+                        <li class="menu__item menu__item--trainers">
+                            <a
+                                class="
+                                    menu__item-link menu__item-link--trainers
+                                "
+                                href="#"
+                            >
+                                <p class="menu__item-text">Басейн</p>
+
+                                <img
+                                    src="../../../img/swimmingpoll.jpg"
+                                    alt="swim_zone"
+                                    width="132"
+                                    height="132"
+                                    class="menu__item-img"
+                                    loading="lazy"
+                                />
+                            </a>
+                        </li>
+                        <li class="menu__item menu__item--trainers">
+                            <a
+                                class="
+                                    menu__item-link menu__item-link--trainers
+                                "
+                                href="#"
+                            >
+                                <p class="menu__item-text">Групові заняття</p>
+
+                                <img
+                                    src="../../../img/groups.jpg"
+                                    alt="group_zone"
+                                    width="132"
+                                    height="132"
+                                    class="menu__item-img"
+                                />
+                            </a>
+                        </li>
+                        <li class="menu__item menu__item--trainers">
+                            <a
+                                class="
+                                    menu__item-link menu__item-link--trainers
+                                "
+                                href="#"
+                            >
+                                <p class="menu__item-text">Файт зона</p>
+
+                                <img
+                                    src="../../../img/fight_zone.jpg"
+                                    alt="fight_zone"
+                                    width="132"
+                                    height="132"
+                                    class="menu__item-img"
+                                    loading="lazy"
+                            /></a>
+                        </li>
+                        <li class="menu__item menu__item--trainers">
+                            <a
+                                class="
+                                    menu__item-link menu__item-link--trainers
+                                "
+                                href="#"
+                            >
+                                <p class="menu__item-text">Дитячі заняття</p>
+
+                                <img
+                                    src="../../../img/child_zone.jpg"
+                                    alt="child_zone"
+                                    width="132"
+                                    height="132"
+                                    class="menu__item-img"
+                                    loading="lazy"
+                                />
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu__tab">
+                    <a class="menu__tab-link">Для дітей</a>
+                    <ul class="menu__items">
+                        <li class="menu__item">
+                            <a class="menu__item-link menu__sub-title-link"
+                                >Танцювальні</a
+                            >
+                            <ul class="menu__sub-items">
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link"
+                                        >Черлідинг-гімнастика</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link">Dance mix</a>
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link"
+                                        >Mix dance style</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link"
+                                        >Choreography</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link"
+                                        >Break dance basic</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link"
+                                        >Break dance advanced</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link"
+                                        >Break dance acro</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__item-link menu__sub-title-link"
+                                >Фітнес</a
+                            >
+                            <ul class="menu__sub-items">
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Fitnes game</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Кувиркалки</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Active streaching</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Baby yoga</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Junior fit</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Пяточки-носочки</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__item-link menu__sub-title-link"
+                                >Єдиноборства</a
+                            >
+                            <ul class="menu__sub-items">
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Айкідо</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Кіокушинкай</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Куміте карате Family</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__item-link menu__sub-title-link"
+                                >Розвиваючі</a
+                            >
+                            <ul class="menu__sub-items">
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Всезнайка</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >АВС клуб</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Творча студія</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__item-link menu__sub-title-link"
+                                >Спеціалізовані</a
+                            >
+                            <ul class="menu__sub-items">
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Настільний теніс</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Cycling</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu__tab">
+                    <a class="menu__tab-link">Розклад</a>
+                    <ul class="menu__items">
+                        <li class="menu__item">
+                            <a class="menu__item-link menu__sub-title-link"
+                                >Зал</a
+                            >
+                            <ul class="menu__sub-items">
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Hardcore</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Advanced</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Base</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__item-link menu__sub-title-link"
+                                >Басейн</a
+                            >
+                            <ul class="menu__sub-items">
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Для дорослих</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Для дітей</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__item-link menu__sub-title-link"
+                                >Групові заняття</a
+                            >
+                            <ul class="menu__sub-items">
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Студія груповых программ</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Студія йоги</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Авторская студія</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Студія скайл</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Online студія</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__item-link menu__sub-title-link"
+                                >Файн зона</a
+                            >
+                            <ul class="menu__sub-items">
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Ринг</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Тотамі</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Октагон</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__item-link menu__sub-title-link"
+                                >Дитячі заняття</a
+                            >
+                            <ul class="menu__sub-items">
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Единоборства</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Фітнес</a
+                                    >
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a class="menu__sub-item-link" href="#"
+                                        >Розвиваючі</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu__tab">
+                    <a class="menu__tab-link contact_link">Контакти</a>
+                    <div class="menu__contact">
+                        <ul class="social_networks">
+                            <li
+                                class="
+                                    menu__contact-item
+                                    menu__contact-item--facebook
+                                "
+                            >
+                                <a
+                                    target="blank"
+                                    href="https://www.facebook.com/energym.sport.kiev"
+                                    class="menu__contact-link"
+                                >
+                                    <svg
+                                        width="24"
+                                        height="24"
+                                        fill="none"
+                                        class="facebook_desk"
+                                    >
+                                        <use href="#facebook_desk"></use>
+                                    </svg>
+                                    <span class="menu__contact-ref">
+                                        https://www.facebook.com/energym.sport.kiev</span
+                                    >
+                                </a>
+                            </li>
+                            <li
+                                class="
+                                    menu__contact-item
+                                    menu__contact-item--instagram
+                                "
+                            >
+                                <a
+                                    target="blank"
+                                    href="https://www.instagram.com/energym_sport/"
+                                    class="menu__contact-link"
+                                    ><svg
+                                        width="24"
+                                        height="24"
+                                        fill="none"
+                                        class="insta_desk"
+                                    >
+                                        <use href="#insta_desk"></use>
+                                    </svg>
+                                    <span class="menu__contact-ref"
+                                        >https://www.instagram.com/energym_sport/</span
+                                    >
+                                </a>
+                            </li>
+                            <li
+                                class="
+                                    menu__item
+                                    menu__contact-item
+                                    menu__contact-item--youtube
+                                "
+                            >
+                                <a
+                                    target="blank"
+                                    href="https://www.youtube.com/channel/UCYS1vd76QOZY7PNV4aCu5DA"
+                                    class="menu__contact-link"
+                                    ><svg
+                                        width="24"
+                                        height="18"
+                                        fill="none"
+                                        class="youtube_desk"
+                                    >
+                                        <use href="#youtube_desk"></use>
+                                    </svg>
+                                    <span class="menu__contact-ref">
+                                        https://www.youtube.com/channel/UCYS1vd76QOZY7PNV4aCu5DA</span
+                                    >
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="contact_info">
+                            <li
+                                class="
+                                    menu__contact-item menu__contact-item--map
+                                "
+                            >
+                                <img
+                                    src="../../../img/contacts-map.jpg"
+                                    alt="map"
+                                    width="159"
+                                    height="159"
+                                    class="menu__contact-img"
+                                    loading="lazy"
+                                />
+                            </li>
+                            <li
+                                class="
+                                    menu__item
+                                    menu__contact-item
+                                    menu__location-block
+                                "
+                            >
+                                <svg
+                                    width="21"
+                                    height="18"
+                                    fill="none"
+                                    class="location_desk"
+                                >
+                                    <use href="#location_desk"></use>
+                                </svg>
+                                <address class="menu__contact-address black">
+                                    ТРЦ SilverBreeze, пр. Павла Тичини, 1В
+                                </address>
+                            </li>
+                            <li
+                                class="
+                                    menu__item
+                                    menu__contact-item
+                                    menu__contact-item--tel
+                                "
+                            >
+                                <svg
+                                    width="32"
+                                    height="32"
+                                    fill="none"
+                                    class="tel_desk"
+                                >
+                                    <use href="#tel_desk"></use>
+                                </svg>
+                                <h3 class="menu__contact-tel">
+                                    <a class="black" href="tel:+380445931515"
+                                        >044-593-15-15</a
+                                    >
+                                </h3>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </header>
