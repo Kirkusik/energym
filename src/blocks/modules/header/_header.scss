@@ -14,6 +14,7 @@
     @include mq(tbLG, true) {
         padding-top: 29px;
         margin-bottom: 31px;
+        z-index: 2;
     }
     padding-top: 15px;
     margin-bottom: 15px;
@@ -77,7 +78,7 @@
     z-index: 10;
     padding-bottom: 24px;
     top: 0;
-    right: 10px;
+    right: 9px;
     width: 216px;
     background-color: clr(white);
     color: clr(purpleDark);

@@ -13,13 +13,19 @@
     }
     @media (max-width: 999px) {
         position: absolute;
-        top: 35px;
-        right: -22px;
+        top: 56px;
+        right: 10px;
     }
-    z-index: 10;
+    @media (max-width: 999px) {
+        position: absolute;
+        top: 44px;
+        right: 9px;
+        z-index: 2;
+    }
+    // z-index: 10;
     display: none;
     width: 200px;
-      border-radius: 4px;
+    border-radius: 4px;
     padding-left: 16px;
     border: none;
     background: clr(secondaryBG);

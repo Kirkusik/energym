@@ -5,12 +5,19 @@
         margin-right: 42px;
         position: relative;
     }
+    @media (max-width: 767px) {
+        position: absolute;
+        top: 56px;
+        right: 10px;
+        z-index: 2;
+    }
     @media (max-width: 999px) {
         position: absolute;
-        top: 35px;
-        right: -22px;
-        z-index: 10;
+        top: 44px;
+        right: 9px;
+        z-index: 2;
     }
+
     display: none;
     width: 200px;
     border-top-left-radius: 4px;
