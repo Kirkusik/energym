@@ -11,7 +11,7 @@
     @include mq(tbLG, true) {
         display: block;
     }
-    @media (max-width: 999px) {
+    @media (max-width: 767px) {
         position: absolute;
         top: 56px;
         right: 10px;
