@@ -1,8 +1,6 @@
 .codex__wrapper {
     padding-top: 16px;
     background-color: clr(secondaryBG);
-}
-.codex__wrapper {
     display: grid;
     grid-template-columns: 1.2fr;
     grid-template-rows: 59px min-content min-content 48px;
