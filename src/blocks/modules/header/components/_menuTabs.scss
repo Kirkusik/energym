@@ -14,8 +14,14 @@
     }
     &:not(:last-child) {
         @include mq(tbLG, true) {
-            padding-right: 9%;
-            padding-left: 4px;
+            padding-right: 6%;
+            padding-left: 9px;
+        }
+        &:not(:last-child) {
+            @media (min-width: 1200px) {
+                padding-right: 9%;
+                padding-left: 4px;
+            }
         }
     }
 
