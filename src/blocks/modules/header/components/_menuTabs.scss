@@ -36,7 +36,7 @@
     @include mq(tbLG, true) {
         @include text(16px, 500, $secondaryFont);
         border-bottom: 1px solid transparent;
-        padding-bottom: 23px;
+        padding-bottom: 24px;
         position: relative;
     }
     @include text(15px, 500, $secondaryFont);
@@ -56,6 +56,39 @@
         @include mq(tbLG, true) {
             transform: translate(0);
             background-color: clr(red);
+        }
+    }
+
+    &--contact {
+        @include mq(tbLG, true) {
+            margin-bottom: 0;
+        }
+        margin-bottom: 24px;
+    }
+}
+//-------contacts
+.menu__contact {
+    @include mq(tbLG, true) {
+        padding-top: 28px;
+        padding-left: 40px;
+        padding-right: 33px;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(50%, 1fr));
+        justify-content: space-between;
+        background-color: clr(white);
+    }
+
+    display: none;
+    &--active {
+        @include mq(tb, true) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        @include mq(tbLG, true) {
+            display: grid;
         }
     }
 }

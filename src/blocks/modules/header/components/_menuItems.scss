@@ -1,18 +1,16 @@
 .menu__items {
     @include mq(tbLG, true) {
         position: absolute;
-        left: 0;
-        padding-top: 23px;
-        padding-left: 40px;
-        width: 100%;
-        margin: 0;
-        padding-bottom: 40px;
         grid-template-columns: repeat(5, 1fr);
         justify-content: space-between;
+        left: 0;
+        padding: 32px 0 40px 40px;
+        width: 100%;
+        margin: 0;
         background-color: clr(white);
     }
     display: none;
-    margin: 23px 0 0 15px;
+    margin: 32px 0 0 15px;
     &--cards {
         @include mq(tbLG, true) {
             grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
@@ -53,23 +51,14 @@
         color: clr(red);
     }
 
-    &--cards {
-        @include mq(tbLG, true) {
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-    }
-    &--cards:hover {
-        @include mq(tbLG, true) {
-            filter: brightness(150%);
-        }
-    }
+    &--cards,
     &--trainers {
         @include mq(tbLG, true) {
             margin-bottom: 0;
             padding-bottom: 0;
         }
     }
+    &--cards:hover,
     &--trainers:hover {
         @include mq(tbLG, true) {
             filter: brightness(120%);
@@ -96,4 +85,129 @@
         }
     }
     display: none;
+}
+//-----hover-------
+.menu__tab:hover .menu__items,
+.menu__tab:hover .menu__contact,
+.menu__items:hover,
+.menu__contact:hover,
+.menu__item:hover .menu__items,
+.menu__item:hover .menu__contact {
+    @include mq(tbLG, true) {
+        display: grid;
+    }
+}
+
+//----contacts items
+.menu__social_networks {
+    @include mq(tbLG, true) {
+        display: grid;
+        justify-content: start;
+    }
+    @include mq(tb, true) {
+        justify-content: center;
+    }
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 32px;
+}
+.menu__contact-item {
+    @include mq(tbLG, true) {
+        margin: 0 0 25px;
+        align-items: center;
+    }
+    display: flex;
+    justify-content: flex-start;
+    &--youtube {
+        align-self: center;
+    }
+    &--facebook,
+    &--instagram {
+        margin-right: 16px;
+    }
+    &--map {
+        @include mq(tbLG, true) {
+            opacity: 1;
+            grid-area: image;
+        }
+        display: block;
+        opacity: 0;
+    }
+    &--tel {
+        @include mq(tbLG, true) {
+            align-self: start;
+            grid-area: telephone;
+        }
+    }
+}
+.menu__contact-link {
+    display: flex;
+    align-items: center;
+}
+.menu__contact-ref {
+    @include mq(tbLG, true) {
+        @include text(14px, 500, $secondaryFont);
+        display: inline-block;
+        margin-left: 16px;
+        color: clr(black);
+        line-height: 17px;
+        transition: color 200ms linear;
+    }
+    &:hover {
+        color: clr(purple);
+    }
+    display: none;
+}
+.menu__contact-info {
+    @include mq(tb, true) {
+        align-items: center;
+        justify-content: center;
+    }
+    @include mq(tbLG, true) {
+        display: grid;
+        grid-template-columns: 1fr 159px;
+        grid-template-rows: 62px 1fr;
+        grid-template-areas:
+            "adress image"
+            "telephone image";
+    }
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: start;
+    justify-content: start;
+}
+.menu__location-block {
+    @include mq(tb, true) {
+        display: block;
+        text-align: center;
+    }
+    @include mq(tbLG, true) {
+        display: flex;
+        align-self: start;
+        justify-content: flex-start;
+        grid-area: adress;
+    }
+}
+.menu__contact-address {
+    @include text(15px, 500, $secondaryFont);
+    @include mq(tbLG, true) {
+        @include text(14px, 500, $secondaryFont);
+        text-align: left;
+        line-height: 17px;
+    }
+    line-height: 19px;
+    font-style: normal;
+}
+.menu__contact-tel {
+    @include text(17px, 400, $primaryFont);
+    @include mq(tb, true) {
+        margin-bottom: 17px;
+    }
+    @include mq(tbLG, true) {
+        @include text(32px, 400, $primaryFont);
+        line-height: 32px;
+    }
+    margin-bottom: 32px;
+    line-height: 20px;
 }

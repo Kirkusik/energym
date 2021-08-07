@@ -2,20 +2,20 @@
     display: flex;
     margin-right: 19px;
     @include mq(tbLG, true) {
-        margin-right: 46px;
+        margin-right: 43px;
     }
 }
 
 .header__lang-item {
     @include text(15px, 700, $secondaryFont);
     line-height: 18px;
-       &--ukr {
+    &--ukr {
         color: clr(pink);
         margin-right: 6px;
         &::after {
             content: "";
-            margin-left: 3px;
             position: absolute;
+            margin-left: 3px;
             width: 2px;
             height: 15px;
             background-color: clr(purple);

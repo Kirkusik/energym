@@ -1,3 +1,4 @@
+@import "./components/menu";
 @import "./components/svg";
 @import "./components/location";
 @import "./components/search";
@@ -6,21 +7,27 @@
 @import "./components/menuItems";
 @import "./components/menuSubitems";
 
+//----containers------
+
 .header {
+    z-index: 10;
     @include mq(tb, true) {
         padding-top: 9px;
         margin-bottom: 9px;
     }
     @include mq(tbLG, true) {
         padding-top: 29px;
-        margin-bottom: 31px;
-        z-index: 2;
+        margin-bottom: 7px;
     }
+    position: relative;
     padding-top: 15px;
     margin-bottom: 15px;
+}
+
+.header__wrapper {
     position: relative;
 }
-.header__wrapper {
+.header__upper-content-wrapper {
     @include mq(tb, true) {
         padding: 0 24px;
     }
@@ -35,292 +42,7 @@
     padding: 0 12px;
 }
 
-.header__header-container {
+.header__upper-links-wrapper {
     display: flex;
     margin-left: auto;
-}
-
-.header__menu-title {
-    @include mq(tbLG, true) {
-        display: none;
-    }
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 24px;
-}
-
-.burger-menu {
-    cursor: pointer;
-    @include mq(tbLG, true) {
-        display: none;
-    }
-}
-
-.active,
-.menu--active {
-    display: block;
-}
-
-.square-btn {
-    @include mq(tbLG, true) {
-        display: none;
-    }
-    width: 40px;
-    height: 40px;
-    background-color: clr(purple50);
-}
-.navigation {
-    display: none;
-    position: absolute;
-    padding-top: 8px;
-    z-index: 10;
-    padding-bottom: 24px;
-    top: 0;
-    right: 9px;
-    width: 216px;
-    background-color: clr(white);
-    color: clr(purpleDark);
-    @include mq(mb, true) {
-        width: 250px;
-    }
-
-    @include mq(tb, true) {
-        padding-top: 2px;
-        width: 326px;
-    }
-
-    @include mq(tbLG, true) {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-end;
-        position: relative;
-        z-index: 0;
-        width: 100%;
-        padding: 0;
-        right: 0;
-    }
-
-    &--active {
-        display: grid;
-    }
-}
-
-.contact_link {
-    @include mq(tbLG, true) {
-        margin-bottom: 0;
-    }
-    margin-bottom: 24px;
-}
-
-.menu {
-    @include mq(tb, true) {
-        width: 316px;
-    }
-    @include mq(tbLG, true) {
-        display: block;
-        position: relative;
-        z-index: 0;
-        width: 100%;
-        padding-left: 0;
-    }
-    display: block;
-    width: 216px;
-    background-color: clr(white);
-    color: clr(purpleDark);
-    padding-left: 24px;
-}
-
-.menu__title {
-    @include text(24px, 400, $primaryFont);
-    @include mq(tbLG, true) {
-        display: none;
-    }
-    color: clr(purple);
-    line-height: 29px;
-}
-
-.menu__contact {
-    @include mq(tbLG, true) {
-        padding-top: 23px;
-        padding-left: 40px;
-        padding-right: 33px;
-        position: absolute;
-        left: 0;
-        width: 100%;
-        grid-template-columns: repeat(2, minmax(50%, 1fr));
-        justify-content: space-between;
-        background-color: clr(white);
-    }
-
-    display: none;
-    &--active {
-        @include mq(tb, true) {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        @include mq(tbLG, true) {
-            display: grid;
-        }
-    }
-}
-
-.menu__contact-item {
-    @include mq(tbLG, true) {
-        margin: 0 0 25px;
-        align-items: center;
-    }
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 0;
-    &--youtube {
-        align-self: center;
-    }
-    &--facebook {
-        margin-right: 16px;
-    }
-    &--instagram {
-        margin-right: 16px;
-    }
-    &--map {
-        @include mq(tbLG, true) {
-            display: block;
-            grid-area: image;
-        }
-        display: none;
-    }
-    &--tel {
-        @include mq(tbLG, true) {
-            align-self: start;
-            grid-area: telephone;
-        }
-    }
-}
-.menu__contact-link {
-    display: flex;
-    align-items: center;
-}
-.menu__contact-ref {
-    @include mq(tbLG, true) {
-        @include text(14px, 500, $secondaryFont);
-        display: inline-block;
-        margin-left: 16px;
-        color: clr(black);
-        line-height: 17px;
-    }
-    &:hover {
-        color: clr(purple);
-    }
-    display: none;
-}
-
-.menu__location-block {
-    @include mq(tb, true) {
-        display: block;
-        text-align: center;
-    }
-    @include mq(tbLG, true) {
-        display: flex;
-        align-self: start;
-        justify-content: flex-start;
-        grid-area: adress;
-    }
-}
-
-.black {
-    @include mq(tbLG, true) {
-        margin-left: 20px;
-    }
-    color: clr(black);
-}
-.social_networks {
-    @include mq(tbLG, true) {
-        display: grid;
-        justify-content: start;
-    }
-    @include mq(tb, true) {
-        justify-content: center;
-    }
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin-bottom: 32px;
-}
-.contact_info {
-    @include mq(tb, true) {
-        align-items: center;
-        justify-content: center;
-    }
-    @include mq(tbLG, true) {
-        display: grid;
-        grid-template-columns: 1fr 159px;
-        grid-template-rows: 56px 1fr;
-        grid-template-areas:
-            "adress image"
-            "telephone image";
-    }
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: start;
-    justify-content: start;
-}
-.menu__contact-address {
-    @include text(15px, 500, $secondaryFont);
-
-    @include mq(tbLG, true) {
-        @include text(14px, 500, $secondaryFont);
-        text-align: left;
-        line-height: 17px;
-    }
-    line-height: 19px;
-    font-style: normal;
-}
-.menu__contact-tel {
-    @include text(17px, 400, $primaryFont);
-    @include mq(tb, true) {
-        margin-bottom: 17px;
-    }
-    @include mq(tbLG, true) {
-        @include text(32px, 400, $primaryFont);
-        line-height: 32px;
-    }
-    margin-bottom: 32px;
-    line-height: 20px;
-}
-//hover
-.menu__tab:hover .menu__items {
-    @include mq(tbLG, true) {
-        display: grid;
-    }
-}
-.menu__tab:hover .menu__contact {
-    @include mq(tbLG, true) {
-        display: grid;
-    }
-}
-
-.menu__items:hover,
-.menu__contact:hover {
-    @include mq(tbLG, true) {
-        display: grid;
-        
-    }
-}
-
-.menu__item:hover .menu__items {
-    @include mq(tbLG, true) {
-        display: grid;
-    }
-}
-
-.menu__item:hover .menu__contact {
-    @include mq(tbLG, true) {
-        display: grid;
-    }
-}
-
-.menu__tabs:hover {
-    @include mq(tbLG, true) {
-    }
 }

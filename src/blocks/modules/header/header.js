@@ -31,12 +31,15 @@ const location = {
     header: document.querySelectorAll(".location__header"),
     items: document.querySelectorAll("location__item"),
     defaultItem: document.querySelector(".location__default-item"),
+    activeBtnClass: "location__btn-pseudo--active",
+    pseudoBtn: document.getElementById("location__btn-pseudo"),
 };
 
 const search = {
     btn: document.getElementById("search__btn"),
     input: document.getElementById("search"),
     activeClass: "search__input--active",
+    activeBtnClass: "search__btn--active",
 };
 //---------to show/hide menu links on tablet/mb ---------
 function onMenuLinkClick(activeLink) {
@@ -110,13 +113,44 @@ function toggleMenu(e) {
     e.preventDefault();
     menu.navigation.classList.toggle("navigation--active");
     menu.box.classList.toggle("menu--active");
-    burger.menu.classList.toggle("active");
+    burger.menu.classList.toggle("burger-menu--active");
 }
 
 //---------to show/hide location and search forms on mb and tablet---------
-function onFormBtnClick(element, activeClass) {
+function onLocationFormBtnClick(
+    element,
+    activeClass,
+    acctiveButton,
+    activeBtnClass,
+    prevEl,
+    prevElClass
+) {
     const tabletDesk = window.matchMedia("(max-width: 999px)");
     if (tabletDesk.matches) {
+        if (prevEl.classList.contains(prevElClass)) {
+            prevEl.classList.remove(prevElClass);
+        }
+        element.classList.toggle(activeClass);
+        acctiveButton.classList.toggle(activeBtnClass);
+    }
+}
+
+function onSearchFormClick(
+    element,
+    activeClass,
+    pseudoBtn,
+    pseudoBtnClass,
+    prevEl,
+    prevElClass
+) {
+    const tabletDesk = window.matchMedia("(max-width: 999px)");
+    if (tabletDesk.matches) {
+        if (prevEl.classList.contains(prevElClass)) {
+            prevEl.classList.remove(prevElClass);
+        }
+        if (pseudoBtn.classList.contains(pseudoBtnClass)) {
+            pseudoBtn.classList.remove(pseudoBtnClass);
+        }
         element.classList.toggle(activeClass);
     }
 }
@@ -135,18 +169,27 @@ function onLocationItemClick(e) {
         e.target.closest(".location__item").innerText;
 }
 
-function activeEl(e) {
-    console.log(e.target);
-}
-
 burger.button.addEventListener("click", (e) => toggleMenu(e));
 menu.button.addEventListener("click", (e) => toggleMenu(e));
 menu.navigation.addEventListener("click", onMenuClick);
 location.btn.addEventListener("click", () =>
-    onFormBtnClick(location.box, location.activeClass)
+    onLocationFormBtnClick(
+        location.box,
+        location.activeClass,
+        location.pseudoBtn,
+        location.activeBtnClass,
+        search.input,
+        search.activeClass
+    )
 );
 search.btn.addEventListener("click", () =>
-    onFormBtnClick(search.input, search.activeClass)
+    onSearchFormClick(
+        search.input,
+        search.activeClass,
+        location.pseudoBtn,
+        location.activeBtnClass,
+        location.box,
+        location.activeClass
+    )
 );
 location.list.addEventListener("click", onLocationItemClick);
-document.addEventListener("mouseover", activeEl);

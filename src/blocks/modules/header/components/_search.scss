@@ -7,29 +7,34 @@
     cursor: pointer;
 }
 .search__input {
-    @include text(16px, 300, $secondaryFont);
+    @include text(9px, 300, $secondaryFont);
+    width: 120px;
+    height: 27px;
     @include mq(tbLG, true) {
+        @include text(16px, 300, $secondaryFont);
         display: block;
+        width: 200px;
+        line-height: 25px;
     }
     @media (max-width: 767px) {
         position: absolute;
-        top: 56px;
+        top: 41px;
         right: 10px;
     }
     @media (max-width: 999px) {
         position: absolute;
-        top: 44px;
+        top: 36px;
         right: 9px;
         z-index: 2;
     }
 
     display: none;
-    width: 200px;
+
     border-radius: 4px;
     padding-left: 16px;
     border: none;
     background: clr(secondaryBG);
-    line-height: 25px;
+
     color: #7a7979;
     outline: none;
     &:active {
@@ -45,5 +50,3 @@
         display: block;
     }
 }
-
-

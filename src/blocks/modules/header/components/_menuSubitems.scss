@@ -16,6 +16,10 @@
 .menu__sub-item {
     margin-bottom: 15px;
 
+    @include mq(tbLG, true) {
+        margin-bottom: 7px;
+    }
+
     &:last-child {
         margin-bottom: 0;
     }

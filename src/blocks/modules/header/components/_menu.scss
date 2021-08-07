@@ -1,0 +1,96 @@
+.navigation {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 9px;
+    width: 216px;
+    z-index: 10;
+    padding-top: 8px;
+    padding-bottom: 24px;
+    background-color: clr(white);
+    color: clr(purpleDark);
+    @include mq(mb, true) {
+        width: 250px;
+    }
+
+    @include mq(tb, true) {
+        padding-top: 2px;
+        width: 326px;
+    }
+
+    @include mq(tbLG, true) {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        position: relative;
+        width: 100%;
+        padding: 0;
+        right: 0;
+    }
+
+    &--active {
+        display: grid;
+    }
+}
+
+.menu {
+    @include mq(tb, true) {
+        width: 316px;
+    }
+    @include mq(tbLG, true) {
+        display: block;
+        position: relative;
+        width: 100%;
+        padding-left: 0;
+    }
+    display: block;
+    width: 216px;
+    background-color: clr(white);
+    color: clr(purpleDark);
+    padding-left: 24px;
+}
+
+.menu__title-box {
+    @include mq(tbLG, true) {
+        display: none;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.menu__title {
+    @include text(24px, 400, $primaryFont);
+    @include mq(tbLG, true) {
+        display: none;
+    }
+    color: clr(purple);
+    line-height: 29px;
+}
+
+.burger-menu {
+    cursor: pointer;
+    @include mq(tbLG, true) {
+        display: none;
+    }
+    &--active {
+        display: block;
+    }
+}
+
+.square-btn {
+    @include mq(tbLG, true) {
+        display: none;
+    }
+    width: 40px;
+    height: 40px;
+    background-color: clr(purple50);
+}
+
+.black {
+    @include mq(tbLG, true) {
+        margin-left: 20px;
+    }
+    color: clr(black);
+}
