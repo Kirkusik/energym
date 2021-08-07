@@ -119,6 +119,7 @@
     }
     display: flex;
     justify-content: flex-start;
+    margin: 0;
     &--youtube {
         align-self: center;
     }
@@ -128,11 +129,10 @@
     }
     &--map {
         @include mq(tbLG, true) {
-            opacity: 1;
+            display: inline-block;
             grid-area: image;
         }
-        display: block;
-        opacity: 0;
+        display: none;
     }
     &--tel {
         @include mq(tbLG, true) {

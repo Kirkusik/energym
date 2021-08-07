@@ -6,11 +6,11 @@
 @import "./components/menuTabs";
 @import "./components/menuItems";
 @import "./components/menuSubitems";
+@import "./components/menuAnimation";
 
 //----containers------
 
 .header {
-    z-index: 10;
     @include mq(tb, true) {
         padding-top: 9px;
         margin-bottom: 9px;
@@ -26,6 +26,7 @@
 
 .header__wrapper {
     position: relative;
+    z-index: 10;
 }
 .header__upper-content-wrapper {
     @include mq(tb, true) {

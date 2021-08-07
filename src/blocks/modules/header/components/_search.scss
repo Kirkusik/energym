@@ -48,5 +48,7 @@
     }
     &--active {
         display: block;
+        animation-name: move;
+        animation-duration: 0.5s;
     }
 }

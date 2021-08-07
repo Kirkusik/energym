@@ -1,10 +1,10 @@
 .navigation {
     display: none;
     position: absolute;
+    z-index: 10;
     top: -8px;
     right: 9px;
     width: 216px;
-    z-index: 10;
     padding-top: 8px;
     padding-bottom: 24px;
     background-color: clr(white);
@@ -30,6 +30,8 @@
 
     &--active {
         display: grid;
+        animation-name: fade;
+        animation-duration: 1s;
     }
 }
 
