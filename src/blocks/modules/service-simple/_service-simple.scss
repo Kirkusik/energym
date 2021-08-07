@@ -1,0 +1,70 @@
+.service-simple__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background: #faf7fb;
+}
+
+.service-simple__description--inner {
+    flex-basis: 70%;
+}
+
+.service-simple__gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.service-simple__items {
+    padding: 20px;
+}
+
+.service-simple__line--rectangle {
+    width: 12px;
+    height: 12px;
+    background: #ffa6c4;
+    margin-right: 24px;
+}
+
+.service-simple__line {
+    display: flex;
+    color: #000000;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    align-items: center;
+    margin: 15px 20px;
+}
+
+.service-simple__grid-wrapper {
+    display: grid;
+    grid-template-columns: 49% 51%;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "P15 P17"
+        "P15 P16"
+        "BTN BTN";
+}
+
+.service-simple__item-img {
+    width: 100%;
+    height: 100%;
+}
+
+.gallery__img--image15 {
+    grid-area: P15;
+}
+
+.gallery__img--image16 {
+    grid-area: P16;
+}
+
+.gallery__img--image17 {
+    grid-area: P17;
+}
+
+.service-simple__order-btn {
+    grid-area: BTN;
+}
