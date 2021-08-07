@@ -1,0 +1,32 @@
+%forms {
+    z-index: 2;
+    width: 208px;
+    @include text(18px, 300, $secondaryFont);
+    @include mq(tbLG, true) {
+        width: 200px;
+        @include text(16px, 300, $secondaryFont);
+        position: relative;
+        line-height: 25px;
+    }
+
+    @media (max-width: 999px) {
+        position: absolute;
+        right: 9px;
+        top: 36px;
+    }
+
+    @media (max-width: 767px) {
+        top: 41px;
+    }
+
+    background: clr(secondaryBG);
+    color: #7a7979;
+    outline: none;
+    border: none;
+    display: block;
+    opacity: 0;
+
+    &:focus {
+        outline: auto;
+    }
+}

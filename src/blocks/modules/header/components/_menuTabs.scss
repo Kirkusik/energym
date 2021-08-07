@@ -3,8 +3,8 @@
         padding-right: 19px;
     }
     @include mq(tbLG, true) {
-        display: flex;
-        align-items: center;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) 170px repeat(3, 1fr);
         justify-content: space-between;
         padding-left: 40px;
         padding-right: 33px;
@@ -14,8 +14,21 @@
 .menu__tab {
     @include mq(tbLG, true) {
         margin-bottom: 0;
-        flex-grow: 1;
     }
+    &:nth-child(2) {
+        @include mq(tbLG, true) {
+            padding-left: 15%;
+        }
+    }
+
+    &:nth-child(4),
+    &:nth-child(5),
+    &:last-child {
+        @include mq(tbLG, true) {
+            justify-self: end;
+        }
+    }
+
     margin-bottom: 20px;
 }
 

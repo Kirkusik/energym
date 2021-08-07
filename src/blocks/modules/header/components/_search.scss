@@ -7,38 +7,27 @@
     cursor: pointer;
 }
 .search__input {
-    @include text(16px, 300, $secondaryFont);
-    z-index: 2;
-    width: 200px;
-    line-height: 25px;
+    @extend %forms;
     @include mq(tbLG, true) {
         display: block;
         border-radius: 4px;
+        padding-top: 0;
+        padding-bottom: 0;
+        @include text(16px, 300, $secondaryFont);
     }
     @media (max-width: 767px) {
-        top: 41px;
         right: 10px;
     }
-    @media (max-width: 999px) {
-        position: absolute;
-        top: 36px;
-        right: 9px;
-    }
     display: none;
-
+    opacity: 1;
     padding-left: 16px;
-    border: none;
-    background: clr(secondaryBG);
-    color: #7a7979;
-    outline: none;
+    padding-top: 8px;
+    padding-bottom: 8px;
     &:active {
         outline: none;
     }
     &:hover {
         cursor: pointer;
-    }
-    &:focus {
-        outline: auto;
     }
     &--active {
         display: block;

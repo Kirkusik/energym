@@ -4,11 +4,11 @@
     z-index: 10;
     top: -8px;
     right: 10px;
-
     padding-top: 8px;
     padding-bottom: 24px;
     background-color: clr(white);
     color: clr(purpleDark);
+    box-shadow: -4px 7px 8px 0px rgba(34, 60, 80, 0.2);
     @include mq(mb, true) {
         width: 300px;
     }
@@ -25,6 +25,7 @@
         width: 100%;
         padding: 0;
         right: 0;
+        box-shadow: none;
     }
 
     &--active {

@@ -54,12 +54,12 @@
             content: "";
         }
         @include mq(tb, true) {
-            margin-right: 64px;
+            margin-right: 38px;
         }
         content: url("../../../img/svg/menu_arrow_down.svg");
         width: 8px;
         height: 16px;
-        text-align: center;
+        margin-right: 50px;
     }
     &--active::after {
         content: url("../../../img/svg/menu_arrow_up.svg");
