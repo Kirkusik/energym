@@ -1,0 +1,207 @@
+.codex__wrapper {
+    padding-top: 16px;
+    background-color: clr(secondaryBG);
+}
+.codex__wrapper {
+    display: grid;
+    grid-template-columns: 1.2fr;
+    grid-template-rows: 59px min-content min-content 48px;
+    row-gap: 24px;
+    grid-template-areas: "title" "video" "text" "btn";
+
+    @include mq(tb, true) {
+        grid-template-columns: 1fr 1.2fr;
+        grid-template-rows: 61px min-content min-content;
+        grid-template-areas: "title video" "text video" "btn video";
+    }
+    @include mq(tbLG, true) {
+        row-gap: 40px;
+        grid-template-rows: 91px minmax(min-content, max-content) min-content;
+    }
+    @media (min-width: 1200px) {
+        grid-template-rows: 91px minmax(min-content, max-content) 70px;
+    }
+    @include mq(dt, true) {
+        grid-template-rows: 138px min-content 70px;
+        grid-template-areas: "title video" "text video" "btn video";
+    }
+}
+
+.codex__title {
+    font-size: rem(22);
+    line-height: 27px;
+    padding: 16px;
+    grid-area: title;
+
+    @include mq(tb, true) {
+        font-size: rem(24);
+        line-height: 29px;
+        padding: 16px 24px;
+    }
+    @include mq(tbLG, true) {
+        font-size: rem(36);
+        padding: 24px 32px;
+        line-height: 44px;
+    }
+    @include mq(dt, true) {
+        font-size: rem(48);
+        line-height: 58px;
+        padding: 40px;
+    }
+    &--part {
+        text-transform: uppercase;
+    }
+}
+
+.codex__info {
+    @include mq(tb, false) {
+        padding: 0 12px;
+    }
+    @include mq(tb, true) {
+        margin-left: 24px;
+        max-width: 314px;
+    }
+    @include mq(tbLG, true) {
+        max-width: 430px;
+        margin-left: 28px;
+    }
+    @include mq(dt, true) {
+        max-width: 485px;
+        margin-left: 40px;
+    }
+}
+
+.codex__text {
+    @include text(rem(16), 500, $secondaryFont);
+    line-height: 18px;
+    color: clr(black);
+
+    grid-area: text;
+
+    &:not(:last-child) {
+        margin-bottom: 5px;
+
+        @include mq(tb, true) {
+            margin-bottom: 16px;
+        }
+        @media (min-width: 1200px) {
+            margin-bottom: 12px;
+        }
+    }
+    @media (min-width: 1200px) {
+        font-size: rem(18);
+        line-height: 22px;
+    }
+}
+
+.codex__order-btn {
+    font-size: rem(13);
+    line-height: 16px;
+    grid-area: btn;
+    text-align: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin: 0 auto;
+
+    @include mq(tb, true) {
+        font-size: rem(15);
+        margin: 0 auto 0 24px;
+        padding: 12px 46px;
+    }
+    @media (min-width: 1200px) {
+        line-height: 46px;
+    }
+
+    @include mq(dt, true) {
+        font-size: rem(18);
+        line-height: 26px;
+        margin-left: 40px;
+        padding: 24px 46px;
+    }
+}
+
+// Video
+
+.codex__video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    grid-area: video;
+
+    @include pseudo(after, none, absolute) {
+        width: 50px;
+        height: 50px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-image: url(../../../img/about-us-codex/video-play.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right;
+        z-index: 1;
+
+        @include mq(dt, true) {
+            width: 100px;
+            height: 100px;
+        }
+    }
+    // propotions for mobile
+    padding-bottom: 48.43%;
+
+    @include mq(tb, true) {
+        // propotions for tablet and more
+        padding-bottom: 73.61%;
+        // for decrease and replace video as in design
+        transform: scale(0.83);
+        transform-origin: right center;
+    }
+    @include mq(tbLG, true) {
+        transform: scale(0.88);
+        transform-origin: right bottom;
+    }
+    @include mq(dt, true) {
+        margin-top: 4%;
+        transform: scale(0.9);
+        transform-origin: right bottom;
+    }
+
+    &--enabled {
+        cursor: pointer;
+    }
+}
+// codex__video-wrapper additional class for interact with pseudo-element from js
+.codex__video-icon {
+    &::after {
+        content: "";
+    }
+}
+.codex__video-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.codex__video-cover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.codex__video-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    display: none;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: transparent;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
