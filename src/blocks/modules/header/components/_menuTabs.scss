@@ -12,6 +12,13 @@
     @include mq(tbLG, true) {
         margin-bottom: 0;
     }
+    &:not(:last-child) {
+        @include mq(tbLG, true) {
+            padding-right: 9%;
+            padding-left: 4px;
+        }
+    }
+
     margin-bottom: 20px;
 }
 
