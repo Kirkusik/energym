@@ -74,9 +74,7 @@
 //-------contacts
 .menu__contact {
     @include mq(tbLG, true) {
-        padding-top: 28px;
-        padding-left: 40px;
-        padding-right: 33px;
+        padding: 28px 33px 0 40px;
         position: absolute;
         left: 0;
         width: 100%;
