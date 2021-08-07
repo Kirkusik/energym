@@ -1,4 +1,7 @@
 .menu__tabs {
+    @include mq(tb, true) {
+        padding-right: 19px;
+    }
     @include mq(tbLG, true) {
         display: flex;
         align-items: center;
@@ -11,20 +14,8 @@
 .menu__tab {
     @include mq(tbLG, true) {
         margin-bottom: 0;
+        flex-grow: 1;
     }
-    &:not(:last-child) {
-        @include mq(tbLG, true) {
-            padding-right: 6%;
-            padding-left: 9px;
-        }
-        &:not(:last-child) {
-            @media (min-width: 1200px) {
-                padding-right: 9%;
-                padding-left: 4px;
-            }
-        }
-    }
-
     margin-bottom: 20px;
 }
 
@@ -48,6 +39,7 @@
     }
     @include mq(tbLG, true) {
         @include text(16px, 500, $secondaryFont);
+        display: inline-flex;
         border-bottom: 1px solid transparent;
         padding-bottom: 24px;
         position: relative;

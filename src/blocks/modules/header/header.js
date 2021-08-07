@@ -31,8 +31,6 @@ const location = {
     header: document.querySelectorAll(".location__header"),
     items: document.querySelectorAll("location__item"),
     defaultItem: document.querySelector(".location__default-item"),
-    activeBtnClass: "location__btn-pseudo--active",
-    pseudoBtn: document.getElementById("location__btn-pseudo"),
 };
 
 const search = {
@@ -43,6 +41,11 @@ const search = {
 };
 //---------to show/hide menu links on tablet/mb ---------
 function onMenuLinkClick(activeLink) {
+    const activeSubLists = document.querySelectorAll(
+        ".menu__sub-items--active"
+    );
+    const activeArrow = document.querySelector(".menu__sub-title-link--active");
+    const activeSubItem = document.querySelector(".menu__item-link--active");
     title.links.forEach((link) => {
         if (
             link === activeLink &&
@@ -52,8 +55,21 @@ function onMenuLinkClick(activeLink) {
             link.classList.add(title.activeClass);
             link.nextElementSibling.classList.add(title.subListsActiveClass);
         } else {
+            //remove all styles in main link and sublinks after close
             link.classList.remove(title.activeClass);
             link.nextElementSibling.classList.remove(title.subListsActiveClass);
+            //arrow -->
+            if (activeArrow) {
+                activeArrow.classList.remove(subtitle.activeArrowClass);
+            }
+            // red hover
+            if (activeSubItem) {
+                activeSubItem.classList.remove(subtitle.activeClass);
+            }
+            //child links of subitem
+            activeSubLists.forEach((list) => {
+                list.classList.remove(subtitle.subListsActiveClass);
+            });
         }
     });
 }
@@ -62,14 +78,13 @@ function onMenuSublinkClick(activeSublink) {
     const activeSubLists = document.querySelectorAll(
         ".menu__sub-items--active"
     );
+    //set active class only if subItem contains child items
+    if (!activeSublink.nextElementSibling) {
+        return;
+    }
     subtitle.links.forEach((link) => {
         if (
             link === activeSublink &&
-            //set active class only if subItem contains child items
-            activeSublink.nextElementSibling.classList.contains(
-                subtitle.subListsClass
-            ) &&
-            //close link in case second click
             !link.classList.contains(subtitle.activeClass)
         ) {
             link.classList.add(subtitle.activeClass);
@@ -117,44 +132,16 @@ function toggleMenu(e) {
 }
 
 //---------to show/hide location and search forms on mb and tablet---------
-function onLocationFormBtnClick(
-    element,
-    activeClass,
-    acctiveButton,
-    activeBtnClass,
-    prevEl,
-    prevElClass
-) {
+function onFormClick(element, activeClass, prevEl, prevElClass) {
     const tabletDesk = window.matchMedia("(max-width: 999px)");
     if (tabletDesk.matches) {
         if (prevEl.classList.contains(prevElClass)) {
             prevEl.classList.remove(prevElClass);
         }
         element.classList.toggle(activeClass);
-        acctiveButton.classList.toggle(activeBtnClass);
     }
 }
-
-function onSearchFormClick(
-    element,
-    activeClass,
-    pseudoBtn,
-    pseudoBtnClass,
-    prevEl,
-    prevElClass
-) {
-    const tabletDesk = window.matchMedia("(max-width: 999px)");
-    if (tabletDesk.matches) {
-        if (prevEl.classList.contains(prevElClass)) {
-            prevEl.classList.remove(prevElClass);
-        }
-        if (pseudoBtn.classList.contains(pseudoBtnClass)) {
-            pseudoBtn.classList.remove(pseudoBtnClass);
-        }
-        element.classList.toggle(activeClass);
-    }
-}
-//---------to show/hide location list on desktop---------
+//---------to show/hide location list on click---------
 (function selectList() {
     location.header.forEach((el) => {
         el.addEventListener("click", function () {
@@ -173,21 +160,17 @@ burger.button.addEventListener("click", (e) => toggleMenu(e));
 menu.button.addEventListener("click", (e) => toggleMenu(e));
 menu.navigation.addEventListener("click", onMenuClick);
 location.btn.addEventListener("click", () =>
-    onLocationFormBtnClick(
+    onFormClick(
         location.box,
         location.activeClass,
-        location.pseudoBtn,
-        location.activeBtnClass,
         search.input,
         search.activeClass
     )
 );
 search.btn.addEventListener("click", () =>
-    onSearchFormClick(
+    onFormClick(
         search.input,
         search.activeClass,
-        location.pseudoBtn,
-        location.activeBtnClass,
         location.box,
         location.activeClass
     )

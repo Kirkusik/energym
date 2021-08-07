@@ -3,19 +3,18 @@
     position: absolute;
     z-index: 10;
     top: -8px;
-    right: 9px;
-    width: 216px;
+    right: 10px;
+
     padding-top: 8px;
     padding-bottom: 24px;
     background-color: clr(white);
     color: clr(purpleDark);
     @include mq(mb, true) {
-        width: 250px;
+        width: 300px;
     }
 
     @include mq(tb, true) {
         padding-top: 2px;
-        width: 326px;
     }
 
     @include mq(tbLG, true) {
@@ -36,9 +35,6 @@
 }
 
 .menu {
-    @include mq(tb, true) {
-        width: 316px;
-    }
     @include mq(tbLG, true) {
         display: block;
         position: relative;
@@ -46,7 +42,7 @@
         padding-left: 0;
     }
     display: block;
-    width: 216px;
+    width: 300px;
     background-color: clr(white);
     color: clr(purpleDark);
     padding-left: 24px;

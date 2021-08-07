@@ -7,17 +7,15 @@
     cursor: pointer;
 }
 .search__input {
-    @include text(9px, 300, $secondaryFont);
-    width: 120px;
-    height: 27px;
+    @include text(16px, 300, $secondaryFont);
+    z-index: 2;
+    width: 200px;
+    line-height: 25px;
     @include mq(tbLG, true) {
-        @include text(16px, 300, $secondaryFont);
         display: block;
-        width: 200px;
-        line-height: 25px;
+        border-radius: 4px;
     }
     @media (max-width: 767px) {
-        position: absolute;
         top: 41px;
         right: 10px;
     }
@@ -25,16 +23,12 @@
         position: absolute;
         top: 36px;
         right: 9px;
-        z-index: 2;
     }
-
     display: none;
 
-    border-radius: 4px;
     padding-left: 16px;
     border: none;
     background: clr(secondaryBG);
-
     color: #7a7979;
     outline: none;
     &:active {

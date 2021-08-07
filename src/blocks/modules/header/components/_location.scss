@@ -1,12 +1,11 @@
 .location {
-    @include text(9px, 300, $secondaryFont);
+    @include text(16px, 300, $secondaryFont);
     @include mq(tbLG, true) {
-        @include text(16px, 300, $secondaryFont);
         opacity: 1;
         position: relative;
         margin-right: 33px;
-        width: 200px;
-        height: 25px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
     }
 
     @media (max-width: 999px) {
@@ -23,11 +22,10 @@
     }
 
     display: block;
+    width: 200px;
+    height: 25px;
     opacity: 0;
-    width: 120px;
-    height: 27px;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+
     border: none;
     background: clr(secondaryBG);
     color: #7a7979;
@@ -61,29 +59,6 @@
     }
     display: flex;
     margin-right: 19px;
-}
-
-.location__btn-pseudo {
-    opacity: 0;
-    display: none;
-    &--active {
-        opacity: 1;
-        display: block;
-        position: absolute;
-        top: 200%;
-        right: 0;
-        margin-right: 25px;
-        animation-name: move;
-        animation-duration: 0.5s;
-        @include mq(tb, true) {
-            top: 145%;
-            margin-right: 8px;
-        }
-        @include mq(tbLG, true) {
-            top: 0;
-            opacity: 0;
-        }
-    }
 }
 
 .location__default-item {
