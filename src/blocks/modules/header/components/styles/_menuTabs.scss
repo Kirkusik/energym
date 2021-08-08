@@ -57,7 +57,8 @@
         color: clr(purple);
     }
 
-    &:hover::after {
+    &:hover::after,
+    &:focus::after {
         @include mq(tbLG, true) {
             transform: translate(0);
             background-color: clr(red);

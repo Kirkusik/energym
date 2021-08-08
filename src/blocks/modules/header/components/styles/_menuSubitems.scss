@@ -33,7 +33,8 @@
         padding-left: 0;
         display: block;
     }
-    &:hover {
+    &:hover,
+    &:focus {
         @include mq(tbLG, true) {
             color: clr(purple);
         }
