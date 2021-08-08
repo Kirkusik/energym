@@ -100,7 +100,11 @@
 }
 //-----focus-------
 .menu__tab:focus .menu__items,
-.menu__tab:focus .menu__contact {
+.menu__tab:focus .menu__contact,
+.menu__items:focus,
+.menu__contact:focus,
+.menu__item:focus .menu__items,
+.menu__item:focus .menu__contact {
     @include mq(tbLG, true) {
         display: grid;
     }
