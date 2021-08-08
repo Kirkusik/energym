@@ -2,10 +2,26 @@
   background: #faf7fb;
 }
 
+.cards-button__area {
+  padding: 24px 0;
+}
+
 .cards__button {
   display: flex;
   justify-content: center;
   font-size: 13px;
   line-height: 16px;
-  padding: 16px 0 16px 0;
+  padding: 16px 0;
+  &:last-child {
+    margin-top: 16px;
+    background: #ffffff;
+  }
+}
+
+.cards__order {
+  display: flex;
+}
+
+.order-item__compare {
+  display: flex;
 }
