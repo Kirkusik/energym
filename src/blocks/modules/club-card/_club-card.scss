@@ -20,8 +20,31 @@
 
 .cards__order {
   display: flex;
+  @include text(13px, 400, $primaryFont);
+  line-height: 16px;
+}
+
+.cards-order__item {
+  padding-left: 11px;
+}
+
+.cards-order__slogan {
+  font-size: 22px;
+  line-height: 27px;
+  color: #b694c0;
+  width: 50%;
 }
 
 .order-item__compare {
   display: flex;
+}
+
+.order-item__name {
+  padding: 12px 0 4px 0;
+}
+
+.order-item__price {
+  font-size: 9px;
+  line-height: 11px;
+  color: #5c3668;
 }
