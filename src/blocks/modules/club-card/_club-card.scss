@@ -25,7 +25,10 @@
 }
 
 .cards-order__item {
-  padding-left: 11px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .cards-order__slogan {
@@ -35,8 +38,9 @@
   width: 50%;
 }
 
-.order-item__compare {
+.cards-order__compare {
   display: flex;
+  justify-content: flex-end;
 }
 
 .order-item__name {
@@ -47,4 +51,54 @@
   font-size: 9px;
   line-height: 11px;
   color: #5c3668;
+  padding-bottom: 12px;
+}
+
+.compare-cards__btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  @include text(9px, 500, $secondaryFont);
+  line-height: 11px;
+  color: #5c3668;
+  padding: 0 10px 8px 10px;
+  border: 2px solid #e5004f;
+  box-sizing: border-box;
+  backdrop-filter: blur(4px);
+  border-radius: 8px;
+}
+
+.compare-cards__text {
+  padding-top: 3px;
+}
+
+.compare-cards__current-pic {
+  padding-right: 11px;
+}
+
+.cards-service__title {
+  @include text(17px, 400, $primaryFont);
+  line-height: 20px;
+}
+
+.cards-service__table {
+  @include text(13px, 500, $secondaryFont);
+  line-height: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-table__item {
+  display: flex;
+}
+
+.service-table__title {
+  width: 54%;
+}
+
+.service-table__value {
+  &--white {
+    background: #ffffff;
+  }
 }
