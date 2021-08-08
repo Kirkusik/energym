@@ -2,11 +2,12 @@
     @include mq(tbLG, true) {
         position: absolute;
         grid-template-columns: repeat(5, 1fr);
+        column-gap: 8px;
         justify-content: space-between;
         left: 0;
+        margin: 0;
         padding: 32px 0 40px 40px;
         width: 100%;
-        margin: 0;
         background-color: clr(white);
     }
     display: none;
@@ -15,6 +16,7 @@
         @include mq(tbLG, true) {
             grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
             row-gap: 32px;
+            column-gap: 0;
         }
     }
     &--active {
