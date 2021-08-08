@@ -63,14 +63,13 @@
 
 .why-we__list {
     grid-area: text;
-    margin-left: 32px;
     margin-right: 12px;
     max-width: 576px;
     @media (max-width: 575px) {
         margin-top: 24px;
     }
-    @include mq(tbLG, true) {
-        margin-left: 20px;
+    @media (max-width: 999px) {
+        margin-left: 12px;
     }
 }
 .why-we__item {
@@ -78,19 +77,6 @@
     @include text(rem(16), 500, $secondaryFont);
     line-height: 20px;
     color: clr(black);
-
-    grid-area: text;
-    @include pseudo(before, "", absolute) {
-        width: 8px;
-        height: 8px;
-        background-color: clr(pink);
-        left: -20px;
-        top: 3px;
-        @include mq(tbLG, true) {
-            width: 11px;
-            height: 11px;
-        }
-    }
 
     &:not(:last-child) {
         margin-bottom: 8px;
