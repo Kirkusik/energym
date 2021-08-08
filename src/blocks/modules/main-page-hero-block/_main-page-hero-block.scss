@@ -280,14 +280,12 @@
 .advantages__phone {
     grid-area: phone;
     @include mq(tb, true) {
-        // justify-self: end;
         align-self: end;
     }
 }
 .advantages__phone-pic {
     @include mq(tb, true) {
         justify-self: center;
-        // align-self: end;
     }
 }
 .advantages__list {
@@ -300,18 +298,23 @@
     }
 }
 .advantages__list-item {
-    margin-bottom: 8px;
     font-family: $secondaryFont;
     font-weight: 500;
-    font-size: rem(15);
+    font-size: rem(16);
     line-height: 18px;
     color: #000000;
+
+    &:not(:last-child) {
+        margin-bottom: 8px;
+
+        @include mq(tb, true) {
+            margin-bottom: 16px;
+        }
+    }
+
     @include mq(tbLG, true) {
         font-size: rem(18);
         line-height: 21px;
-    }
-    @include mq(tb, true) {
-        margin-bottom: 16px;
     }
 }
 
