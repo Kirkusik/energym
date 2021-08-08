@@ -292,27 +292,14 @@
 }
 .advantages__list {
     grid-area: list;
-    margin-left: 37px;
+    margin-left: 12px;
 
     @include mq(tb, true) {
-        margin-left: 48px;
+        margin-left: 20px;
         max-width: 504px;
     }
 }
 .advantages__list-item {
-    @include pseudo(before, "", absolute) {
-        @include mq(tb, true) {
-            left: -26px;
-            width: 12px;
-            height: 12px;
-        }
-        display: inline-block;
-        top: 4px;
-        left: -23px;
-        width: 8px;
-        height: 8px;
-        background-color: clr(pink);
-    }
     margin-bottom: 8px;
     font-family: $secondaryFont;
     font-weight: 500;
