@@ -1,12 +1,7 @@
-const burger = {
-    menu: document.querySelector(".burger-menu"),
-    button: document.querySelector(".burger-menu__button"),
-};
-
 const menu = {
-    navigation: document.querySelector(".navigation"),
-    box: document.querySelector(".menu"),
+    navigation: document.querySelector(".menu-wrapper"),
     button: document.querySelector(".square-btn"),
+    burgerButton: document.querySelector(".menu__burger-button"),
 };
 
 const title = {
@@ -39,45 +34,69 @@ const search = {
     activeClass: "search__input--active",
     activeBtnClass: "search__btn--active",
 };
-//---------to show/hide menu links on tablet/mb ---------
+//---------to show/hide menu links on tablet and mb ---------
+
+//menu
+function addLinkClass(link) {
+    link.classList.add(title.activeClass);
+    link.nextElementSibling.classList.add(title.subListsActiveClass);
+}
+
+function removeLinkClass(link, activeArrow, activeSubItem, activeSubLists) {
+    link.classList.remove(title.activeClass);
+    link.nextElementSibling.classList.remove(title.subListsActiveClass);
+    if (activeArrow) {
+        activeArrow.classList.remove(subtitle.activeArrowClass);
+    }
+    if (activeSubItem) {
+        activeSubItem.classList.remove(subtitle.activeClass);
+    }
+    activeSubLists.forEach((list) => {
+        list.classList.remove(subtitle.subListsActiveClass);
+    });
+}
+
 function onMenuLinkClick(activeLink) {
-    const activeSubLists = document.querySelectorAll(
-        ".menu__sub-items--active"
-    );
-    const activeArrow = document.querySelector(".menu__sub-title-link--active");
-    const activeSubItem = document.querySelector(".menu__item-link--active");
     title.links.forEach((link) => {
         if (
             link === activeLink &&
             //close link in case second click
             !link.classList.contains(title.activeClass)
         ) {
-            link.classList.add(title.activeClass);
-            link.nextElementSibling.classList.add(title.subListsActiveClass);
+            addLinkClass(link);
         } else {
-            //remove all styles in main link and sublinks after close
-            link.classList.remove(title.activeClass);
-            link.nextElementSibling.classList.remove(title.subListsActiveClass);
-            //arrow -->
-            if (activeArrow) {
-                activeArrow.classList.remove(subtitle.activeArrowClass);
-            }
-            // red hover
-            if (activeSubItem) {
-                activeSubItem.classList.remove(subtitle.activeClass);
-            }
-            //child links of subitem
-            activeSubLists.forEach((list) => {
-                list.classList.remove(subtitle.subListsActiveClass);
-            });
+            removeLinkClass(
+                link,
+                document.querySelector(".menu__sub-title-link--active"),
+                document.querySelector(".menu__item-link--active"),
+                document.querySelectorAll(".menu__sub-items--active")
+            );
+        }
+    });
+}
+//submenu
+function addSublinkClass(link) {
+    link.classList.add(subtitle.activeClass);
+    link.classList.add(subtitle.activeArrowClass);
+    link.nextElementSibling.classList.add(subtitle.subListsActiveClass);
+}
+
+function removeSublinkClass(link, activeSubLists) {
+    link.classList.remove(subtitle.activeClass);
+    link.classList.remove(subtitle.activeArrowClass);
+    activeSubLists.forEach((list) => {
+        if (
+            //to prevent to hide list in active sublinks
+            !list.previousElementSibling.classList.contains(
+                subtitle.activeClass
+            )
+        ) {
+            list.classList.remove(subtitle.subListsActiveClass);
         }
     });
 }
 
 function onMenuSublinkClick(activeSublink) {
-    const activeSubLists = document.querySelectorAll(
-        ".menu__sub-items--active"
-    );
     //set active class only if subItem contains child items
     if (!activeSublink.nextElementSibling) {
         return;
@@ -87,22 +106,12 @@ function onMenuSublinkClick(activeSublink) {
             link === activeSublink &&
             !link.classList.contains(subtitle.activeClass)
         ) {
-            link.classList.add(subtitle.activeClass);
-            link.classList.add(subtitle.activeArrowClass);
-            link.nextElementSibling.classList.add(subtitle.subListsActiveClass);
+            addSublinkClass(link);
         } else {
-            link.classList.remove(subtitle.activeClass);
-            link.classList.remove(subtitle.activeArrowClass);
-            activeSubLists.forEach((list) => {
-                if (
-                    //to prevent to hide list in active sublinks
-                    !list.previousElementSibling.classList.contains(
-                        subtitle.activeClass
-                    )
-                ) {
-                    list.classList.remove(subtitle.subListsActiveClass);
-                }
-            });
+            removeSublinkClass(
+                link,
+                document.querySelectorAll(".menu__sub-items--active")
+            );
         }
     });
 }
@@ -116,19 +125,16 @@ function onMenuClick(e) {
         onMenuLinkClick(activeItem);
     }
     // on subItem click
-    else if (activeSubItem && tabletDesk.matches) {
+    if (activeSubItem && tabletDesk.matches) {
         onMenuSublinkClick(activeSubItem);
-    } else {
-        return;
     }
+    return;
 }
 
 //---------to show/hide menu---------
 function toggleMenu(e) {
     e.preventDefault();
-    menu.navigation.classList.toggle("navigation--active");
-    menu.box.classList.toggle("menu--active");
-    burger.menu.classList.toggle("burger-menu--active");
+    menu.navigation.classList.toggle("menu-wrapper--active");
 }
 
 //---------to show/hide location and search forms on mb and tablet---------
@@ -156,7 +162,7 @@ function onLocationItemClick(e) {
         e.target.closest(".location__item").innerText;
 }
 
-burger.button.addEventListener("click", (e) => toggleMenu(e));
+menu.burgerButton.addEventListener("click", (e) => toggleMenu(e));
 menu.button.addEventListener("click", (e) => toggleMenu(e));
 menu.navigation.addEventListener("click", onMenuClick);
 location.btn.addEventListener("click", () =>

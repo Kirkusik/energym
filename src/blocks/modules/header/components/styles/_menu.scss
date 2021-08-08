@@ -1,33 +1,22 @@
-.navigation {
+.menu-wrapper {
     display: none;
     position: absolute;
     z-index: 10;
-    top: -8px;
+    width: 300px;
+    top: -9px;
     right: 10px;
-    padding-top: 8px;
-    padding-bottom: 24px;
     background-color: clr(white);
     color: clr(purpleDark);
     box-shadow: -4px 7px 8px 0px rgba(34, 60, 80, 0.2);
-    @include mq(mb, true) {
-        width: 300px;
-    }
-
-    @include mq(tb, true) {
-        padding-top: 2px;
-    }
-
     @include mq(tbLG, true) {
+        right: 0;
         display: flex;
         flex-direction: row;
         align-items: flex-end;
         position: relative;
         width: 100%;
-        padding: 0;
-        right: 0;
         box-shadow: none;
     }
-
     &--active {
         display: grid;
         animation-name: fade;
@@ -37,15 +26,11 @@
 
 .menu {
     @include mq(tbLG, true) {
-        display: block;
-        width: 100%;
-        padding-left: 0;
+        padding: 0;
     }
     display: block;
-    width: 300px;
-    background-color: clr(white);
-    color: clr(purpleDark);
-    padding-left: 24px;
+    width: 100%;
+    padding: 2px 0 24px 24px;
 }
 
 .menu__title-box {
@@ -67,13 +52,10 @@
     line-height: 29px;
 }
 
-.burger-menu {
+.menu__burger-button {
     cursor: pointer;
     @include mq(tbLG, true) {
         display: none;
-    }
-    &--active {
-        display: block;
     }
 }
 
@@ -84,11 +66,4 @@
     width: 40px;
     height: 40px;
     background-color: clr(purple50);
-}
-
-.black {
-    @include mq(tbLG, true) {
-        margin-left: 20px;
-    }
-    color: clr(black);
 }

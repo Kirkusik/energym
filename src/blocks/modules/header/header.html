@@ -3,19 +3,18 @@
         <div class="header__upper-content-wrapper">
             @@include("./components/html/logo.html")
             <div class="header__upper-links-wrapper">
-                @@include("./components/html/langLinks.html")
-                @@include("./components/html/location.html")
-                @@include("./components/html/search.html")
+                @@include("./components/html/headerLangLinks.html")
+                @@include("./components/html/headerLocation.html")
+                @@include("./components/html/headerSearch.html")
             </div>
-            <div class="burger-menu burger-menu--active">
-                <a class="burger-menu__button">
-                    <svg width="24" height="24" fill="none">
-                        <use href="#menu__open-svg"></use>
-                    </svg>
-                </a>
-            </div>
+
+            <a class="menu__burger-button">
+                <svg width="24" height="24" fill="none">
+                    <use href="#menu__open-svg"></use>
+                </svg>
+            </a>
         </div>
-        <div class="navigation">
+        <div class="menu-wrapper">
             <nav class="menu">
                 <div class="menu__title-box">
                     <p class="menu__title">Меню</p>

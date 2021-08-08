@@ -12,11 +12,13 @@
 
 .menu__tab {
     @include mq(tbLG, true) {
-        margin-bottom: 0;
         flex-grow: 1;
     }
-
-    margin-bottom: 20px;
+    &:not(:last-child) {
+        @media (max-width: 999px) {
+            margin-bottom: 20px;
+        }
+    }
 }
 
 .menu__tab-link {
@@ -62,37 +64,6 @@
         @include mq(tbLG, true) {
             transform: translate(0);
             background-color: clr(red);
-        }
-    }
-
-    &--contact {
-        @include mq(tbLG, true) {
-            margin-bottom: 0;
-        }
-        margin-bottom: 24px;
-    }
-}
-//-------contacts
-.menu__contact {
-    @include mq(tbLG, true) {
-        padding: 28px 33px 0 40px;
-        position: absolute;
-        left: 0;
-        width: 100%;
-        grid-template-columns: repeat(2, minmax(50%, 1fr));
-        justify-content: space-between;
-        background-color: clr(white);
-    }
-
-    display: none;
-    &--active {
-        @include mq(tb, true) {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        @include mq(tbLG, true) {
-            display: grid;
         }
     }
 }

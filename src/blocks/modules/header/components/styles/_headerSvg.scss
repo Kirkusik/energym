@@ -47,8 +47,8 @@
 .tel_desk {
     @include mq(tbLG, true) {
         display: block;
-        width: 24px;
-        height: 24px;
+        width: 32px;
+        height: 32px;
     }
     display: none;
 }
