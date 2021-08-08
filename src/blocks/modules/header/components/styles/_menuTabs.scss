@@ -3,30 +3,17 @@
         padding-right: 19px;
     }
     @include mq(tbLG, true) {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr) 170px repeat(3, 1fr);
-        justify-content: space-between;
+        display: flex;
+        align-items: center;
         padding-left: 40px;
-        padding-right: 33px;
+        padding-right: 0;
     }
 }
 
 .menu__tab {
     @include mq(tbLG, true) {
         margin-bottom: 0;
-    }
-    &:nth-child(2) {
-        @include mq(tbLG, true) {
-            padding-left: 15%;
-        }
-    }
-
-    &:nth-child(4),
-    &:nth-child(5),
-    &:last-child {
-        @include mq(tbLG, true) {
-            justify-self: end;
-        }
+        flex-grow: 1;
     }
 
     margin-bottom: 20px;

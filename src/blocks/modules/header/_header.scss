@@ -1,13 +1,13 @@
-@import "./components/helpers";
-@import "./components/menu";
-@import "./components/svg";
-@import "./components/location";
-@import "./components/search";
-@import "./components/langLinks";
-@import "./components/menuTabs";
-@import "./components/menuItems";
-@import "./components/menuSubitems";
-@import "./components/menuAnimation";
+@import "./components/styles/helpers";
+@import "./components/styles/menu";
+@import "./components/styles/svg";
+@import "./components/styles/location";
+@import "./components/styles/search";
+@import "./components/styles/langLinks";
+@import "./components/styles/menuTabs";
+@import "./components/styles/menuItems";
+@import "./components/styles/menuSubitems";
+@import "./components/styles/menuAnimation";
 
 //----containers------
 
@@ -49,49 +49,3 @@
     display: flex;
     margin-left: auto;
 }
-
-//common forms styles
-// %forms {
-//     z-index: 2;
-//     @include text(18px, 300, $secondaryFont);
-//     height: 28px;
-//     width: 208px;
-//     @include mq(tbLG, true) {
-//         @include text(16px, 300, $secondaryFont);
-//         position: relative;
-//         width: 200px; //diff
-//         height: 25px;
-//         opacity: 1;
-//         margin-right: 33px;
-//         border-top-left-radius: 4px;
-//         border-top-right-radius: 4px;
-//     }
-
-//     @media (max-width: 999px) {
-//         position: absolute;
-//         right: 9px;
-//     }
-
-//     @media (max-width: 767px) {
-//         top: 41px;
-//     }
-//     @media (max-width: 999px) {
-//         top: 36px;
-//     }
-
-//     background: clr(secondaryBG);
-//     color: #7a7979;
-//     outline: none;
-//     border: none;
-//     display: block; //diff
-//     opacity: 0;
-
-//     &:focus {
-//         outline: auto;
-//     }
-//     &--active {
-//         opacity: 1;
-//         animation-name: move;
-//         animation-duration: 0.5s;
-//     }
-// }
