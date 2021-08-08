@@ -1,70 +1,224 @@
 .service-simple__wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background: #faf7fb;
+
+    @include mq(tb, tb) {
+        display: grid;
+        grid-template-columns: 49% 51%;
+        grid-template-rows: 90% 10%;
+
+        grid-template-areas:
+            "description gallery"
+            "description btn";
+    }
+
+    @include mq(dt, dt) {
+        grid-template-columns: 70% 30%;
+    }
 }
 
 .service-simple__description--inner {
-    flex-basis: 70%;
+
+    @include mq(tb, tb) {
+        grid-area: description;
+    }
 }
 
-.service-simple__gallery {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.service-simple__title {
+    font-size: 22px;
+    line-height: 27px;
+    padding: 16px;
+    background: #b694c0;
+
+    @include mq(tb, tb) {
+        font-size: 24px;
+        line-height: 29px;
+        padding: 16px 24px;
+    }
+
+    @include mq(tbLG, tbLG) {
+        font-size: 36px;
+        line-height: 43px;
+        padding: 24px 32px;
+    }
+
+    @include mq(dt, dt) {
+        font-size: 48px;
+        line-height: 58px;
+        padding: 40px 38px 40px 38px;
+    }
 }
 
 .service-simple__items {
-    padding: 20px;
-}
+    margin: 24px auto;
 
-.service-simple__line--rectangle {
-    width: 12px;
-    height: 12px;
-    background: #ffa6c4;
-    margin-right: 24px;
+    @include mq(tb, tb) {
+        //padding-right: 20px;
+    }
 }
 
 .service-simple__line {
     display: flex;
-    color: #000000;
+    flex-direction: row;
+    padding: 8px 12px;
+
+    @include mq(tb, tb) {
+        padding: 8px 24px;
+    }
+
+    @include mq(tbLG, tbLG) {
+        padding: 8px 32px;
+    }
+
+    @include mq(dt, dt) {
+        padding: 15px 40px;
+    }
+}
+
+.service-simple__line--text {
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    align-items: center;
-    margin: 15px 20px;
+    font-size: 15px;
+    line-height: 18px;
+    color: #000000;
+
+    @include mq(dt, dt) {
+        font-size: 18px;
+        line-height: 22px;
+    }
 }
 
-.service-simple__grid-wrapper {
-    display: grid;
-    grid-template-columns: 49% 51%;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-        "P15 P17"
-        "P15 P16"
-        "BTN BTN";
+
+.service-simple__line--rectangle {
+    width: 8px;
+    min-width: 8px;
+    height: 8px;
+    background: #ffa6c4;
+    margin-right: 12px;
+    margin-top: 4px;
+
+    @include mq(tb, tb) {
+        width: 12px;
+        min-width: 12px;
+        height: 12px;
+    }
+
+    @include mq(dt, dt) {
+        margin-right: 24px;
+    }
+}
+
+.service-simple__gallery {
+
+    @include mq(tb, tb) {
+        grid-area: gallery;
+        text-align: right;
+    }
+
+    @include mq(tbLG, tbLG) {
+        display: grid;
+        margin-left: auto;
+        grid-template-columns: 160px 168px;
+        grid-template-rows: 122px 122px;
+
+        grid-template-areas:
+            "img15 img17"
+            "img15 img16";
+    }
 }
 
 .service-simple__item-img {
-    width: 100%;
-    height: 100%;
+
+    @include mq(tbLG, tbLG) {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .gallery__img--image15 {
-    grid-area: P15;
+    display: none;
+
+    @include mq(tb, tb) {
+        display: block;
+    }
+
+    @include mq(tbLG, tbLG) {
+        grid-area: img15;
+    }
 }
 
 .gallery__img--image16 {
-    grid-area: P16;
+    display: none;
+
+    @include mq(tbLG, tbLG) {
+        display: block;
+        grid-area: img16;
+    }
 }
 
 .gallery__img--image17 {
-    grid-area: P17;
+    display: none;
+
+    @include mq(tbLG, tbLG) {
+        display: block;
+        grid-area: img17;
+    }
 }
 
 .service-simple__order-btn {
-    grid-area: BTN;
+    text-align: center;
+    margin-bottom: 66px;
+
+    @include mq(tb, tb) {
+        grid-area: btn;
+        text-align: right;
+        margin-right: 20px;
+    }
+
+    @include mq(tbLG, tbLG) {
+        margin-right: 0;
+    }
+
+    @include mq(dt, dt) {
+        text-align: center;
+    }
+
+    a {
+        font-family: "Russo One", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 16px;
+        padding: 15px 70px;
+
+        @include mq(tb, tb) {
+            font-size: 15px;
+            line-height: 18px;
+            padding: 12px 50px;
+        }
+
+        @include mq(tbLG, tbLG) {
+            padding: 12px 46px;
+        }
+
+        @include mq(dt, dt) {
+            font-size: 18px;
+            line-height: 22px;
+            padding: 24px 46px;
+        }
+    }
+}
+
+
+
+//------------------
+@include mq(tb, tb) {
+
+}
+
+@include mq(tbLG, tbLG) {
+
+}
+
+@include mq(dt, dt) {
+
 }
