@@ -268,3 +268,22 @@
       background-image: url("../img/svg/arrow-down.svg");
    }
 }
+
+.styled-list {
+   & li {
+      padding-left: 30px;
+      @include pseudo(before, "", absolute) {
+         top: 4px;
+         left: 0;
+         width: 8px;
+         height: 8px;
+         background-color: clr(pink);
+
+         @include mq(tb, true) {
+            left: 0;
+            width: 12px;
+            height: 12px;
+         }
+      }
+   }
+}
