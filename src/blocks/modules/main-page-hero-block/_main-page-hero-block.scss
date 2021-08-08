@@ -47,22 +47,22 @@
 
         //forced media due to container rebuilding in general.scss
         @media (min-width: 320px) {
-            top: 40%;
+            top: 35%;
         }
-        @media (min-width: 480px) {
-            top: 60%;
+        @media (min-width: 375px) {
+            top: 45%;
         }
         @media (min-width: 576px) {
-            top: 65%;
+            top: 60%;
         }
         @media (min-width: 768px) {
             top: 67%;
         }
         @media (min-width: 992px) {
-            top: 82%;
+            top: 78%;
         }
         @media (min-width: 1000px) {
-            top: 55%;
+            top: 50%;
         }
         @media (min-width: 1200px) {
             top: 60%;
