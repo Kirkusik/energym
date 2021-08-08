@@ -1,0 +1,112 @@
+.why-we__wrapper {
+    // without title offset
+    padding-top: 20px;
+    padding-bottom: 50px;
+    background-color: clr(secondaryBG);
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, max-content);
+    grid-template-areas: "title" "img" "text";
+
+    @media (min-width: 575px) {
+        padding-top: 80px;
+        grid-template-areas: "img" "title" "text";
+        row-gap: 24px;
+    }
+    @include mq(tbLG, true) {
+        grid-template-columns: 1fr 1.23fr;
+        grid-template-rows: 91px max-content;
+        grid-template-areas: "img title" "img text";
+        row-gap: 40px;
+        column-gap: 110px;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    @include mq(dt, true) {
+        grid-template-columns: 1.21fr 1fr;
+        grid-template-rows: 138px max-content;
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }
+}
+
+.why-we__title {
+    font-size: rem(22);
+    line-height: 27px;
+    padding: 16px;
+    grid-area: title;
+
+    @media (max-width: 575px) {
+        transform: translateY(27px);
+        justify-self: right;
+    }
+    @include mq(mb, false) {
+        padding: 8px;
+    }
+    @include mq(tb, true) {
+        font-size: rem(24);
+        line-height: 29px;
+        padding: 16px 24px;
+    }
+    @include mq(tbLG, true) {
+        font-size: rem(36);
+        padding: 24px 32px;
+        line-height: 44px;
+    }
+    @include mq(dt, true) {
+        font-size: rem(48);
+        line-height: 58px;
+        padding: 40px;
+    }
+}
+
+.why-we__list {
+    grid-area: text;
+    margin-left: 32px;
+    margin-right: 12px;
+    max-width: 576px;
+    @media (max-width: 575px) {
+        margin-top: 24px;
+    }
+}
+.why-we__item {
+    font-size: rem(16);
+    @include text(rem(16), 500, $secondaryFont);
+    line-height: 20px;
+    color: clr(black);
+
+    grid-area: text;
+    @include pseudo(before, "", absolute) {
+        width: 8px;
+        height: 8px;
+        background-color: clr(pink);
+        left: -20px;
+        top: 3px;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 8px;
+
+        @media (min-width: 1200px) {
+            margin-bottom: 12px;
+        }
+    }
+
+    @include mq(dt, true) {
+        font-size: rem(18);
+        line-height: 23px;
+    }
+}
+
+.why-we-img {
+    display: block;
+    @media (max-width: 1200px) {
+        width: 100%;
+        height: auto;
+    }
+}
+.why-we__img-box {
+    grid-area: img;
+    align-self: end;
+}
