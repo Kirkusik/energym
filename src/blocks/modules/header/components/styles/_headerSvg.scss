@@ -22,7 +22,7 @@
         margin-right: 21px;
     }
     @include mq(tbLG, true) {
-        margin-right: 12px;
+        margin-right: 5px;
         width: 19px;
         height: 19px;
     }
@@ -47,8 +47,8 @@
 .tel_desk {
     @include mq(tbLG, true) {
         display: block;
-        width: 24px;
-        height: 24px;
+        width: 32px;
+        height: 32px;
     }
     display: none;
 }

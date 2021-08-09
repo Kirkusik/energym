@@ -1,18 +1,24 @@
 .menu__tabs {
+    @include mq(tb, true) {
+        padding-right: 19px;
+    }
     @include mq(tbLG, true) {
         display: flex;
         align-items: center;
-        justify-content: space-between;
         padding-left: 40px;
-        padding-right: 33px;
+        padding-right: 0;
     }
 }
 
 .menu__tab {
     @include mq(tbLG, true) {
-        margin-bottom: 0;
+        flex-grow: 1;
     }
-    margin-bottom: 20px;
+    &:not(:last-child) {
+        @media (max-width: 999px) {
+            margin-bottom: 20px;
+        }
+    }
 }
 
 .menu__tab-link {
@@ -35,8 +41,9 @@
     }
     @include mq(tbLG, true) {
         @include text(16px, 500, $secondaryFont);
+        display: inline-flex;
         border-bottom: 1px solid transparent;
-        padding-bottom: 23px;
+        padding-bottom: 24px;
         position: relative;
     }
     @include text(15px, 500, $secondaryFont);
@@ -52,7 +59,8 @@
         color: clr(purple);
     }
 
-    &:hover::after {
+    &:hover::after,
+    &:focus::after {
         @include mq(tbLG, true) {
             transform: translate(0);
             background-color: clr(red);
