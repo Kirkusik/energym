@@ -9,20 +9,21 @@
 .header__lang-item {
     @include text(15px, 700, $secondaryFont);
     line-height: 18px;
+    color: clr(black);
     &--ukr {
-        color: clr(pink);
         margin-right: 6px;
         &::after {
             content: "";
             position: absolute;
-            margin-left: 3px;
+            margin-left: 2px;
+            top: 5px;
             width: 2px;
-            height: 15px;
+            height: 11px;
             background-color: clr(purple);
         }
     }
 
-    &--rus {
-        color: clr(black);
+    &--active {
+        color: clr(pink);
     }
 }

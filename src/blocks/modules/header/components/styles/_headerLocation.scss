@@ -9,7 +9,10 @@
         border-top-left-radius: 4px;
         border-top-right-radius: 4px;
     }
-
+    @media (max-width: 767px) {
+        // right: 10px;
+        top: 42px;
+    }
     display: block;
     width: 208px;
     height: 30px;
@@ -60,10 +63,12 @@
 .location__arrow {
     @include mq(tbLG, true) {
         top: 2px;
+        right: 10px;
     }
     position: absolute;
     top: 4px;
-    right: 10px;
+    margin-left: 2px;
+    right: 0;
     border: none;
     background: transparent;
     cursor: pointer;

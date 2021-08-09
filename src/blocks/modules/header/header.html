@@ -8,7 +8,10 @@
                 @@include("./components/html/headerSearch.html")
             </div>
 
-            <a class="menu__burger-button">
+            <a
+                class="menu__burger-button"
+                aria-label="відкрити навігацію по сайту"
+            >
                 <svg width="24" height="24" fill="none">
                     <use href="#menu__open-svg"></use>
                 </svg>
@@ -18,7 +21,10 @@
             <nav class="menu">
                 <div class="menu__title-box">
                     <p class="menu__title">Меню</p>
-                    <button class="square-btn square-btn--cross"></button>
+                    <button
+                        class="square-btn square-btn--cross"
+                        aria-label="закрити навігацію"
+                    ></button>
                 </div>
                 <ul class="menu__tabs">
                     <li class="menu__tab">
@@ -52,3 +58,20 @@
         </div>
     </div>
 </header>
+
+<!-- 
+спросить -->
+<!-- <menu-list>
+    <menu-item>
+        <menu-link>          
+        </menu-link>
+        submenu
+        <submenu-item>
+            <submenu-link>              
+            </submenu-link>
+            <submenu-first>               
+            </submenu-first>
+
+        </submenu-item>
+    </menu-item>
+</menu-list> -->

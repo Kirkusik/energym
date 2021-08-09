@@ -32,7 +32,7 @@
     @include text(15px, 500, $secondaryFont);
     @include mq(tbLG, true) {
         @include text(16px, 400, $primaryFont);
-        display: block;
+        flex-direction: column;
         padding-bottom: 12px;
         color: clr(black);
         line-height: 20px;
@@ -74,6 +74,7 @@
     @include mq(tbLG, true) {
         display: inline-block;
         border: 1px solid transparent;
+        padding-top: 16px;
     }
     display: none;
 }

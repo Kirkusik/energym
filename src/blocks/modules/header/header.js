@@ -1,3 +1,5 @@
+"use strict";
+
 const menu = {
     navigation: document.querySelector(".menu-wrapper"),
     button: document.querySelector(".square-btn"),
@@ -30,7 +32,7 @@ const location = {
 
 const search = {
     btn: document.getElementById("search__btn"),
-    input: document.getElementById("search"),
+    form: document.getElementById("search"),
     activeClass: "search__input--active",
     activeBtnClass: "search__btn--active",
 };
@@ -118,8 +120,9 @@ function onMenuSublinkClick(activeSublink) {
 
 function onMenuClick(e) {
     const tabletDesk = window.matchMedia("(max-width: 999px)");
-    activeItem = e.target.closest(".menu__tab-link");
-    activeSubItem = e.target.closest(".menu__item-link");
+    const activeItem = e.target.closest(".menu__tab-link");
+    const activeSubItem = e.target.closest(".menu__item-link");
+
     //on item click
     if (activeItem && tabletDesk.matches) {
         onMenuLinkClick(activeItem);
@@ -128,6 +131,7 @@ function onMenuClick(e) {
     if (activeSubItem && tabletDesk.matches) {
         onMenuSublinkClick(activeSubItem);
     }
+
     return;
 }
 
@@ -161,6 +165,7 @@ function onLocationItemClick(e) {
     location.defaultItem.innerText =
         e.target.closest(".location__item").innerText;
 }
+//---------remove borders in search input---------
 
 menu.burgerButton.addEventListener("click", (e) => toggleMenu(e));
 menu.button.addEventListener("click", (e) => toggleMenu(e));
@@ -169,13 +174,13 @@ location.btn.addEventListener("click", () =>
     onFormClick(
         location.box,
         location.activeClass,
-        search.input,
+        search.form,
         search.activeClass
     )
 );
 search.btn.addEventListener("click", () =>
     onFormClick(
-        search.input,
+        search.form,
         search.activeClass,
         location.box,
         location.activeClass
