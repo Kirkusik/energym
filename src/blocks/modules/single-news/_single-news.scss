@@ -3,11 +3,9 @@
     background-color: #faf7fb;
   }
 
-  @include mq(tbLG, tbLG) {
-    padding-bottom: 140px;
-  }
   @include mq(dt, dt) {
     background-color: #fff;
+    padding-bottom: 0;
   }
 }
 
@@ -16,21 +14,18 @@
 }
 
 .single-news__new-wrapper {
-  margin-bottom: 32px;
+  padding-bottom: 32px;
   margin-left: auto;
   margin-right: auto;
 
   @include mq(tb, true) {
-    // margin-bottom: 42px;
+    padding-bottom: 100px;
   }
-  @include mq(tbLG, true) {
-    padding-bottom: 40px;
-  }
+
   @include mq(dt, dt) {
-    padding-bottom: 80px;
+    margin-bottom: 0;
+    padding-bottom: 50px;
     padding-left: 130px;
-    padding-right: auto;
-    // margin-right: -140px;
   }
 }
 .single-news__title {
@@ -196,20 +191,22 @@
     }
   }
 
-  & li {
-    @include pseudo(before, "", absolute) {
-      @include mq(tb, true) {
-        left: -26px;
-        width: 12px;
-        height: 12px;
-      }
-      display: inline-block;
-      top: 4px;
-      left: -23px;
-      width: 8px;
-      height: 8px;
-      background-color: clr(pink);
+  & ul {
+    @extend .styled-list;
+    grid-area: list;
+    margin-left: 24px;
+    @include mq(tb, true) {
+      margin-left: 64px;
+      margin-bottom: 24px;
     }
+
+    @include mq(tbLG, true) {
+      margin-left: 40px;
+      margin-bottom: 40px;
+    }
+  }
+
+  & li {
     margin-bottom: 16px;
     font-family: $secondaryFont, Arial, sans-serif;
     font-size: 16px;
@@ -228,27 +225,11 @@
     }
   }
 
-  & ul {
-    grid-area: list;
-    margin-left: 37px;
-    @include mq(tb, true) {
-      margin-left: 100px;
-      margin-bottom: 40px;
-    }
-
-    @include mq(tbLG, true) {
-      margin-left: 108px;
-      margin-bottom: 40px;
-    }
-  }
   @include mq(tb, true) {
     margin-bottom: 42px;
   }
   @include mq(tbLG, true) {
     padding-bottom: 40px;
-  }
-  @include mq(dt, dt) {
-    padding-bottom: 80px;
   }
 }
 
@@ -262,6 +243,10 @@
 }
 
 .single-news__link-btn {
+  margin-bottom: 0;
+  @include mq(tb, true) {
+    margin-bottom: 0;
+  }
   @include mq(tbLG, true) {
     align-self: flex-end;
     margin-bottom: 0;
