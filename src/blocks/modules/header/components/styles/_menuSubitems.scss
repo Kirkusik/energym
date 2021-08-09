@@ -15,7 +15,9 @@
 
 .menu__sub-item {
     margin-bottom: 15px;
-
+    @include mq(tbLG, true) {
+        margin-bottom: 7px;
+    }
     &:last-child {
         margin-bottom: 0;
     }
@@ -25,11 +27,12 @@
     @include text(15px, 500, $secondaryFont);
     @include mq(tbLG, true) {
         @include text(14px, 400, $secondaryFont);
+        display: block;
         color: clr(black);
         padding-left: 0;
-        display: block;
     }
-    &:hover {
+    &:hover,
+    &:focus {
         @include mq(tbLG, true) {
             color: clr(purple);
         }
@@ -49,15 +52,15 @@
         @include mq(tbLG, true) {
             content: "";
         }
+        @include mq(tb, true) {
+            margin-right: 38px;
+        }
         content: url("../../../img/svg/menu_arrow_down.svg");
         width: 8px;
         height: 16px;
-        margin-right: 64px;
+        margin-right: 50px;
     }
     &--active::after {
         content: url("../../../img/svg/menu_arrow_up.svg");
-        width: 8px;
-        height: 16px;
-        margin-right: 64px;
     }
 }
