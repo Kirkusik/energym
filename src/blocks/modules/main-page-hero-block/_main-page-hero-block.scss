@@ -1,421 +1,403 @@
 .hero-inner {
-    position: relative;
+   position: relative;
 
-    //getting dynamic height apr. 53% (190/350) img propotion
-    //decrease in 1 % becouse of white gap before facts section
-    @include pseudo($location: after) {
-        display: block;
-        padding-bottom: 52%;
-    }
+   //getting dynamic height apr. 53% (190/350) img propotion
+   //decrease in 1 % becouse of white gap before facts section
+   @include pseudo($location: after) {
+      display: block;
+      padding-bottom: 52%;
+   }
 }
 // images
 .hero__bgi-left,
 .hero__bgi-right {
-    position: absolute;
-    top: 0;
-    width: 67%;
-    height: auto;
+   position: absolute;
+   top: 0;
+   width: 67%;
+   height: auto;
 }
 
 .hero__bgi-right {
-    z-index: -2;
-    right: 0;
+   z-index: -2;
+   right: 0;
 }
 .hero__bgi-left {
-    z-index: -1;
-    left: 0;
+   z-index: -1;
+   left: 0;
 }
 
 // title and links block
 .hero__info {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    transition: top 0.3s;
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   transition: top 0.3s;
 
-    &--active {
-        top: 30%;
-    }
+   &--active {
+      top: 30%;
+   }
 
-    &--position {
-        top: 60%;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+   &--position {
+      top: 60%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
 
-        //forced media due to container rebuilding in general.scss
-        @media (min-width: 320px) {
-            top: 40%;
-        }
-        @media (min-width: 480px) {
-            top: 60%;
-        }
-        @media (min-width: 576px) {
-            top: 65%;
-        }
-        @media (min-width: 768px) {
-            top: 67%;
-        }
-        @media (min-width: 992px) {
-            top: 82%;
-        }
-        @media (min-width: 1000px) {
-            top: 55%;
-        }
-        @media (min-width: 1200px) {
-            top: 60%;
-        }
-    }
+      //forced media due to container rebuilding in general.scss
+      @media (min-width: 320px) {
+         top: 40%;
+      }
+      @media (min-width: 480px) {
+         top: 60%;
+      }
+      @media (min-width: 576px) {
+         top: 65%;
+      }
+      @media (min-width: 768px) {
+         top: 67%;
+      }
+      @media (min-width: 992px) {
+         top: 82%;
+      }
+      @media (min-width: 1000px) {
+         top: 55%;
+      }
+      @media (min-width: 1200px) {
+         top: 60%;
+      }
+   }
 }
 
 .hero__links-box {
-    display: flex;
-    justify-content: space-evenly;
-    position: absolute;
-    opacity: 0;
+   display: flex;
+   justify-content: space-evenly;
+   position: absolute;
+   opacity: 0;
 
-    &--active {
-        opacity: 1;
-        left: 0;
-        right: 0;
-        bottom: 20%;
-    }
+   &--active {
+      opacity: 1;
+      left: 0;
+      right: 0;
+      bottom: 20%;
+   }
 }
 
 .hero__info-title {
-    color: transparent;
-    -webkit-text-stroke: 2px #ffffff;
-    text-transform: uppercase;
-    line-height: 27px;
-    text-align: center;
-    transition: transform 0.5s;
-    max-width: 190px;
-    margin-left: auto;
-    margin-right: auto;
+   color: transparent;
+   -webkit-text-stroke: 2px #ffffff;
+   text-transform: uppercase;
+   line-height: 27px;
+   text-align: center;
+   transition: transform 0.5s;
+   max-width: 190px;
+   margin-left: auto;
+   margin-right: auto;
 
-    &--part {
-        white-space: nowrap;
-    }
-    @include text(rem(22));
+   &--part {
+      white-space: nowrap;
+   }
+   @include text(rem(22));
 
-    @include mq(tb, true) {
-        font-size: rem(24);
-        line-height: 29px;
-        max-width: 522px;
-    }
-    @include mq(tbLG, true) {
-        font-size: rem(61);
-        line-height: 74px;
-    }
+   @include mq(tb, true) {
+      font-size: rem(24);
+      line-height: 29px;
+      max-width: 522px;
+   }
+   @include mq(tbLG, true) {
+      font-size: rem(61);
+      line-height: 74px;
+   }
 }
 
 .hero__info-link {
-    @include text(rem(22));
-    line-height: 27px;
-    color: clr(white);
-    transition: all 0.5s ease-in-out;
+   @include text(rem(22));
+   line-height: 27px;
+   color: clr(white);
+   transition: all 0.5s ease-in-out;
 
-    @include mq(tb, true) {
-        font-size: rem(24);
-        line-height: 29px;
-        opacity: 0.6;
-    }
+   @include mq(tb, true) {
+      font-size: rem(24);
+      line-height: 29px;
+      opacity: 0.6;
+   }
 
-    @include mq(tbLG, true) {
-        font-size: rem(48);
-        line-height: 58px;
-        color: transparent;
-        -webkit-text-stroke: 2px #ffffff;
-    }
+   @include mq(tbLG, true) {
+      font-size: rem(48);
+      line-height: 58px;
+      color: transparent;
+      -webkit-text-stroke: 2px #ffffff;
+   }
 }
 
 //button contacts us
 .hero__contact {
-    position: absolute;
-    right: 0;
-    bottom: rem(8);
-    padding: 0;
-    width: 32px;
-    background-color: clr(purple30);
-    z-index: 5;
-    &--text {
-        display: none;
-    }
-    &:hover {
-        width: 32px;
-    }
-    //decrease picture in btn
-    &::before {
-        transform: scale(0.7);
-    }
+   position: absolute;
+   right: 0;
+   bottom: rem(8);
+   padding: 0;
+   width: 32px;
+   background-color: clr(purple30);
+   z-index: 5;
+   &--text {
+      display: none;
+   }
+   &:hover {
+      width: 32px;
+   }
+   //decrease picture in btn
+   &::before {
+      transform: scale(0.7);
+   }
 
-    //Important!!! Need for overrides styles for btn from general.scss
-    //prevents the button from moving in mob and tablet version
-    @media (max-width: 768px) {
-        width: 32px;
-    }
+   //Important!!! Need for overrides styles for btn from general.scss
+   //prevents the button from moving in mob and tablet version
+   @media (max-width: 768px) {
+      width: 32px;
+   }
 
-    @include mq(tb, true) {
-        bottom: rem(16);
-        &::before {
-            transform: scale(0.85);
-        }
-    }
+   @include mq(tb, true) {
+      bottom: rem(16);
+      &::before {
+         transform: scale(0.85);
+      }
+   }
 
-    @include mq(tbLG, true) {
-        padding: 19px;
-        width: 40px;
-        height: 40px;
-        bottom: rem(33);
-        padding: 5px;
-        &:hover {
-            width: 40px;
-        }
-    }
-    @include mq(dt, true) {
-        width: 70px;
-        height: 70px;
-        bottom: rem(16);
-        padding: 19px;
-        &:hover {
-            width: 200px;
-        }
-        &--text {
-            display: block;
-        }
-        &::before {
-            transform: scale(1);
-        }
-    }
+   @include mq(tbLG, true) {
+      padding: 19px;
+      width: 40px;
+      height: 40px;
+      bottom: rem(33);
+      padding: 5px;
+      &:hover {
+         width: 40px;
+      }
+   }
+   @include mq(dt, true) {
+      width: 70px;
+      height: 70px;
+      bottom: rem(16);
+      padding: 19px;
+      &:hover {
+         width: 200px;
+      }
+      &--text {
+         display: block;
+      }
+      &::before {
+         transform: scale(1);
+      }
+   }
 }
 
 // arrow btn
 .hero__arrow {
-    position: absolute;
-    bottom: rem(8);
-    left: 50%;
-    transform: translateX(-50%);
-    width: 32px;
-    height: 32px;
-    background-color: clr(purple30);
-    background-image: url("../img/svg/arrow-down.svg");
-    background-size: 16px 16px;
-    transition: opacity 0.1s;
+   position: absolute;
+   bottom: rem(8);
+   left: 50%;
+   transform: translateX(-50%);
+   width: 32px;
+   height: 32px;
+   background-color: clr(purple30);
+   background-image: url("../img/svg/arrow-down.svg");
+   background-size: 16px 16px;
+   transition: opacity 0.1s;
 
-    &--active {
-        opacity: 0;
-        pointer-events: none;
-    }
+   &--active {
+      opacity: 0;
+      pointer-events: none;
+   }
 
-    @include mq(tb, true) {
-        bottom: rem(16);
-        background-size: 24px 24px;
-    }
-    @include mq(tbLG, true) {
-        width: 40px;
-        height: 40px;
-        bottom: rem(33);
-    }
-    @include mq(dt, true) {
-        width: 70px;
-        height: 70px;
-        background-size: 32px 32px;
-        bottom: rem(16);
-    }
+   @include mq(tb, true) {
+      bottom: rem(16);
+      background-size: 24px 24px;
+   }
+   @include mq(tbLG, true) {
+      width: 40px;
+      height: 40px;
+      bottom: rem(33);
+   }
+   @include mq(dt, true) {
+      width: 70px;
+      height: 70px;
+      background-size: 32px 32px;
+      bottom: rem(16);
+   }
 }
 
 // -----------------Advantages section-------------------
-.advantages-inner {
-    background: #faf7fb;
-    padding-top: 16px;
-    padding-left: 0;
-    padding-bottom: 50px;
-
-    @include mq(tb, true) {
-        padding-top: 100px;
-        padding-bottom: 100px;
-    }
-    @include mq(dt, true) {
-        display: none;
-    }
-}
-
 .advantages__wrapper {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    grid-template-rows: 1fr minmax(min-content, max-content) 170px;
-    row-gap: 24px;
-    grid-template-areas: "title title" "list list" "buttons phone";
-    @include mq(tb, false) {
-        margin-bottom: 32px;
-    }
-    @include mq(tb, true) {
-        grid-template-areas: "title title" "list phone" "buttons buttons ";
-        grid-template-rows: 1fr minmax(min-content, max-content) 30px;
-    }
-    @include mq(tbLG, true) {
-        row-gap: 40px;
-        grid-template-areas: "title phone" "list phone" "buttons phone";
-        grid-template-rows: 91px minmax(322px, max-content) 118px;
-    }
+   background: #faf7fb;
+   padding-top: 16px;
+   padding-left: 0;
+   padding-bottom: 50px;
+
+   display: grid;
+   grid-template-columns: 1.2fr 1fr;
+   grid-template-rows: 1fr minmax(min-content, max-content) 170px;
+   row-gap: 24px;
+   grid-template-areas: "title title" "list list" "buttons phone";
+
+   @include mq(tb, true) {
+      grid-template-areas: "title title" "list phone" "buttons buttons ";
+      grid-template-rows: 1fr minmax(min-content, max-content) 30px;
+   }
+   @include mq(tbLG, true) {
+      row-gap: 40px;
+      grid-template-areas: "title phone" "list phone" "buttons phone";
+      grid-template-rows: 91px minmax(322px, max-content) 118px;
+   }
+   @include mq(tb, true) {
+      padding-top: 40px;
+      padding-bottom: 100px;
+   }
+   @media (min-width: 1200px) {
+      display: none;
+   }
 }
 .advantages__title {
-    grid-area: title;
-    font-size: rem(22);
-    line-height: 27px;
-    padding: 16px;
+   grid-area: title;
+   font-size: rem(22);
+   line-height: 27px;
+   padding: 16px;
 
-    @include mq(tb, true) {
-        font-size: rem(24);
-        line-height: 29px;
-        padding: 16px 24px;
-    }
-    @include mq(tbLG, true) {
-        font-size: rem(36);
-        padding: 32px 24px;
-    }
+   @include mq(tb, true) {
+      font-size: rem(24);
+      line-height: 29px;
+      padding: 16px 24px;
+   }
+   @include mq(tbLG, true) {
+      font-size: rem(36);
+      padding: 32px 24px;
+   }
 }
 .advantages__phone {
-    grid-area: phone;
-    @include mq(tb, true) {
-        // justify-self: end;
-        align-self: end;
-    }
+   grid-area: phone;
+   @include mq(tb, true) {
+      // justify-self: end;
+      align-self: end;
+   }
 }
 .advantages__phone-pic {
-    @include mq(tb, true) {
-        justify-self: center;
-        // align-self: end;
-    }
+   @include mq(tb, true) {
+      justify-self: center;
+      // align-self: end;
+   }
 }
 .advantages__list {
-    grid-area: list;
-    margin-left: 37px;
+   grid-area: list;
+   margin-left: 12px;
 
-    @include mq(tb, true) {
-        margin-left: 48px;
-        max-width: 504px;
-    }
+   @include mq(tb, true) {
+      margin-left: 20px;
+      max-width: 504px;
+   }
 }
 .advantages__list-item {
-    @include pseudo(before, "", absolute) {
-        @include mq(tb, true) {
-            left: -26px;
-            width: 12px;
-            height: 12px;
-        }
-        display: inline-block;
-        top: 4px;
-        left: -23px;
-        width: 8px;
-        height: 8px;
-        background-color: clr(pink);
-    }
-    margin-bottom: 8px;
-    font-family: $secondaryFont;
-    font-weight: 500;
-    font-size: rem(15);
-    line-height: 18px;
-    color: #000000;
-    @include mq(tbLG, true) {
-        font-size: rem(18);
-        line-height: 21px;
-    }
-    @include mq(tb, true) {
-        margin-bottom: 16px;
-    }
+   margin-bottom: 8px;
+   font-family: $secondaryFont;
+   font-weight: 500;
+   font-size: rem(15);
+   line-height: 18px;
+   color: #000000;
+   @include mq(tbLG, true) {
+      font-size: rem(18);
+      line-height: 21px;
+   }
+   @include mq(tb, true) {
+      margin-bottom: 16px;
+   }
 }
 
 .advantages__subscribe {
-    &--services {
-        grid-area: buttons;
-        @include flex();
-        flex-direction: column;
+   &--services {
+      grid-area: buttons;
+      @include flex();
+      flex-direction: column;
 
-        @include mq(tb, true) {
-            flex-direction: row;
-            justify-self: start;
-            margin-left: 24px;
-        }
+      @include mq(tb, true) {
+         flex-direction: row;
+         justify-self: start;
+         margin-left: 24px;
+      }
 
-        @include mq(tbLG, true) {
-            flex-direction: row;
-            justify-self: start;
-            align-self: start;
-            margin-left: 24px;
-        }
-    }
-    &--appstore {
-        margin-bottom: 16px;
-        background-image: url(../../../img/main-page-hero-block/appstore_light.svg);
+      @include mq(tbLG, true) {
+         flex-direction: row;
+         justify-self: start;
+         align-self: start;
+         margin-left: 24px;
+      }
+   }
+   &--appstore {
+      margin-bottom: 16px;
+      background-image: url(../../../img/main-page-hero-block/appstore_light.svg);
 
-        @include mq(tb, true) {
-            margin-bottom: 0;
-            margin-right: 40px;
-            background-image: url(../../../img/main-page-hero-block/appstore_dark.svg);
-        }
-    }
-    &--googleplay {
-        margin-bottom: 0;
-        background-image: url(../../../img/main-page-hero-block/googleplay_light.svg);
+      @include mq(tb, true) {
+         margin-bottom: 0;
+         margin-right: 40px;
+         background-image: url(../../../img/main-page-hero-block/appstore_dark.svg);
+      }
+   }
+   &--googleplay {
+      margin-bottom: 0;
+      background-image: url(../../../img/main-page-hero-block/googleplay_light.svg);
 
-        @include mq(tb, true) {
-            background-image: url(../../../img/main-page-hero-block/googleplay_dark.svg);
-        }
-    }
+      @include mq(tb, true) {
+         background-image: url(../../../img/main-page-hero-block/googleplay_dark.svg);
+      }
+   }
 }
 .advantages__subscribe-link {
-    background-repeat: no-repeat;
-    width: 154px;
-    height: 45px;
-    background-size: contain;
-    @include mq(tb, true) {
-        width: 90px;
-        height: 26px;
-    }
-    @include mq(tbLG, true) {
-        width: 180px;
-        height: 52px;
-    }
+   background-repeat: no-repeat;
+   width: 154px;
+   height: 45px;
+   background-size: contain;
+   @include mq(tb, true) {
+      width: 90px;
+      height: 26px;
+   }
+   @include mq(tbLG, true) {
+      width: 180px;
+      height: 52px;
+   }
 }
 
 // Button to news page
 
 .advantages__linkout {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    max-width: 140px;
+   display: flex;
+   align-items: center;
+   margin-left: auto;
+   max-width: 140px;
 
-    &:hover {
-        //used a nested selector, because the square button is a child of the link
-        .advantages__linkout-icon {
-            background-color: clr(red);
-        }
-    }
+   &:hover {
+      //used a nested selector, because the square button is a child of the link
+      .advantages__linkout-icon {
+         background-color: clr(red);
+      }
+   }
 
-    @include mq(tb, true) {
-        display: none;
-    }
+   @include mq(tb, true) {
+      display: none;
+   }
 
-    @include mq(tb, false) {
-        @include text(rem(22));
-        line-height: 27px;
-        color: clr(purple50);
-        transition: color 0.3s;
+   @include mq(tb, false) {
+      @include text(rem(22));
+      line-height: 27px;
+      color: clr(purple50);
+      transition: color 0.3s;
 
-        &:hover {
-            color: clr(purple);
-        }
-    }
+      &:hover {
+         color: clr(purple);
+      }
+   }
 }
 
 .advantages__linkout-icon {
-    @include mq(tb, false) {
-        width: 40px;
-        height: 40px;
-        margin-left: 12px;
-    }
+   @include mq(tb, false) {
+      width: 40px;
+      height: 40px;
+      margin-left: 12px;
+   }
 }

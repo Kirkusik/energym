@@ -9,9 +9,6 @@
    margin-left: auto;
    margin-right: auto;
 
-   @media (min-width: 400px) {
-      max-width: 400px;
-   }
    @media (min-width: 576px) {
       max-width: 576px;
    }
@@ -266,5 +263,24 @@
 
    &--down {
       background-image: url("../img/svg/arrow-down.svg");
+   }
+}
+
+.styled-list {
+   & li {
+      padding-left: 30px;
+      @include pseudo(before, "", absolute) {
+         top: 4px;
+         left: 0;
+         width: 8px;
+         height: 8px;
+         background-color: clr(pink);
+
+         @include mq(tb, true) {
+            left: 0;
+            width: 12px;
+            height: 12px;
+         }
+      }
    }
 }
