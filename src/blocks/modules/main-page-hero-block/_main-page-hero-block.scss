@@ -228,33 +228,33 @@
 
 // -----------------Advantages section-------------------
 .advantages__wrapper {
-   background: #faf7fb;
-   padding-top: 16px;
-   padding-left: 0;
-   padding-bottom: 50px;
+    background: #faf7fb;
+    padding-top: 16px;
+    padding-left: 0;
+    padding-bottom: 50px;
 
-   display: grid;
-   grid-template-columns: 1.2fr 1fr;
-   grid-template-rows: 1fr minmax(min-content, max-content) 170px;
-   row-gap: 24px;
-   grid-template-areas: "title title" "list list" "buttons phone";
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    grid-template-rows: 1fr minmax(min-content, max-content) 170px;
+    row-gap: 24px;
+    grid-template-areas: "title title" "list list" "buttons phone";
 
-   @include mq(tb, true) {
-      grid-template-areas: "title title" "list phone" "buttons buttons ";
-      grid-template-rows: 1fr minmax(min-content, max-content) 30px;
-   }
-   @include mq(tbLG, true) {
-      row-gap: 40px;
-      grid-template-areas: "title phone" "list phone" "buttons phone";
-      grid-template-rows: 91px minmax(322px, max-content) 118px;
-   }
-   @include mq(tb, true) {
-      padding-top: 40px;
-      padding-bottom: 100px;
-   }
-   @media (min-width: 1200px) {
-      display: none;
-   }
+    @include mq(tb, true) {
+        grid-template-areas: "title title" "list phone" "buttons buttons ";
+        grid-template-rows: 1fr minmax(min-content, max-content) 30px;
+    }
+    @include mq(tbLG, true) {
+        row-gap: 40px;
+        grid-template-areas: "title phone" "list phone" "buttons phone";
+        grid-template-rows: 91px minmax(322px, max-content) 118px;
+    }
+    @include mq(tb, true) {
+        padding-top: 40px;
+        padding-bottom: 100px;
+    }
+    @media (min-width: 1200px) {
+        display: none;
+    }
 }
 .advantages__title {
     grid-area: title;
@@ -314,55 +314,43 @@
 }
 
 .advantages__subscribe {
-    &--services {
-        grid-area: buttons;
-        @include flex();
-        flex-direction: column;
+    grid-area: buttons;
+    @include flex();
+    flex-direction: column;
 
-        @include mq(tb, true) {
-            flex-direction: row;
-            justify-self: start;
-            margin-left: 24px;
-        }
-
-        @include mq(tbLG, true) {
-            flex-direction: row;
-            justify-self: start;
-            align-self: start;
-            margin-left: 24px;
-        }
+    @include mq(tb, true) {
+        flex-direction: row;
+        justify-self: start;
+        margin-left: 24px;
     }
-    &--appstore {
-        margin-bottom: 16px;
-        background-image: url(../../../img/main-page-hero-block/appstore_light.svg);
 
+    @include mq(tbLG, true) {
+        flex-direction: row;
+        justify-self: start;
+        align-self: start;
+        margin-left: 24px;
+    }
+
+    &--appstore {
+        width: 154px;
+        height: 45px;
+        margin-bottom: 16px;
+        @media (max-width: 767px) {
+            background-image: url(../img/main-page-hero-block/appstore_light.svg);
+        }
         @include mq(tb, true) {
             margin-bottom: 0;
             margin-right: 40px;
-            background-image: url(../../../img/main-page-hero-block/appstore_dark.svg);
         }
     }
-    &--googleplay {
-        margin-bottom: 0;
-        background-image: url(../../../img/main-page-hero-block/googleplay_light.svg);
 
-        @include mq(tb, true) {
-            background-image: url(../../../img/main-page-hero-block/googleplay_dark.svg);
+    &--googleplay {
+        width: 154px;
+        height: 45px;
+        margin-bottom: 0;
+        @media (max-width: 767px) {
+            background-image: url(../img/main-page-hero-block/googleplay_light.svg);
         }
-    }
-}
-.advantages__subscribe-link {
-    background-repeat: no-repeat;
-    width: 154px;
-    height: 45px;
-    background-size: contain;
-    @include mq(tb, true) {
-        width: 90px;
-        height: 26px;
-    }
-    @include mq(tbLG, true) {
-        width: 180px;
-        height: 52px;
     }
 }
 
