@@ -228,7 +228,7 @@
 
 // -----------------Advantages section-------------------
 .advantages__wrapper {
-    background: #faf7fb;
+    background: clr(secondaryBG);
     padding-top: 16px;
     padding-left: 0;
     padding-bottom: 50px;
@@ -361,6 +361,7 @@
     align-items: center;
     margin-left: auto;
     max-width: 140px;
+    grid-column: 2/3;
 
     &:hover {
         //used a nested selector, because the square button is a child of the link
@@ -386,6 +387,7 @@
 }
 
 .advantages__linkout-icon {
+    background-color: clr(pink);
     @include mq(tb, false) {
         width: 40px;
         height: 40px;
