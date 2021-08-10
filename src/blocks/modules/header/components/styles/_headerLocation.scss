@@ -34,7 +34,6 @@
     cursor: pointer;
     @include mq(tbLG, true) {
         margin-right: 14px;
-        cursor: none;
     }
     display: flex;
     margin-right: 19px;

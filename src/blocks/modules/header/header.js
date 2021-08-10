@@ -159,15 +159,37 @@ function onBehindMenuTouch(e) {
 }
 
 //---------to show/hide location and search forms on mb and tablet---------
-function onFormClick(element, activeClass, prevEl, prevElClass) {
-    const tabletDesk = window.matchMedia("(max-width: 999px)");
-    if (tabletDesk.matches) {
-        if (prevEl.classList.contains(prevElClass)) {
-            prevEl.classList.remove(prevElClass);
-        }
-        element.classList.toggle(activeClass);
+
+function toggleForms(element, activeClass, prevEl, prevElClass) {
+    if (prevEl.classList.contains(prevElClass)) {
+        prevEl.classList.remove(prevElClass);
+    }
+    element.classList.toggle(activeClass);
+}
+
+//remove list in case hiding search form
+function removeLocationList(element, activeClass) {
+    if (!element.classList.contains(activeClass)) {
+        element.classList.remove("location--selected");
     }
 }
+
+function onSearchFormClick(element, activeClass, prevEl, prevElClass) {
+    const tabletDesk = window.matchMedia("(max-width: 999px)");
+    if (tabletDesk.matches) {
+        toggleForms(element, activeClass, prevEl, prevElClass);
+        removeLocationList(prevEl, prevElClass);
+    }
+}
+
+function onLocationFormClick(element, activeClass, prevEl, prevElClass) {
+    const tabletDesk = window.matchMedia("(max-width: 999px)");
+    if (tabletDesk.matches) {
+        toggleForms(element, activeClass, prevEl, prevElClass);
+        removeLocationList(element, activeClass);
+    }
+}
+
 //---------to show/hide location list on click---------
 (function selectList() {
     location.header.forEach((el) => {
@@ -188,7 +210,7 @@ menu.burgerButton.addEventListener("click", (e) => toggleMenu(e));
 menu.button.addEventListener("click", (e) => toggleMenu(e));
 menu.navigation.addEventListener("click", onMenuClick);
 location.btn.addEventListener("click", () =>
-    onFormClick(
+    onLocationFormClick(
         location.box,
         location.activeClass,
         search.form,
@@ -196,7 +218,7 @@ location.btn.addEventListener("click", () =>
     )
 );
 search.btn.addEventListener("click", () =>
-    onFormClick(
+    onSearchFormClick(
         search.form,
         search.activeClass,
         location.box,
