@@ -10,7 +10,7 @@
         border-top-right-radius: 4px;
     }
     @media (max-width: 767px) {
-              top: 42px;
+        top: 42px;
     }
     display: block;
     width: 208px;
@@ -31,8 +31,10 @@
 
 .location__btn {
     position: relative;
+    cursor: pointer;
     @include mq(tbLG, true) {
         margin-right: 14px;
+        cursor: none;
     }
     display: flex;
     margin-right: 19px;
