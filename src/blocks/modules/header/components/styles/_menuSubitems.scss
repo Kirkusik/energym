@@ -6,9 +6,6 @@
     display: none;
     margin: 16px 16px 16px 0;
     &--active {
-        @include mq(tbLG, true) {
-            display: none;
-        }
         display: block;
     }
 }

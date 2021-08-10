@@ -139,6 +139,23 @@ function onMenuClick(e) {
 function toggleMenu(e) {
     e.preventDefault();
     menu.navigation.classList.toggle("menu-wrapper--active");
+    if (document.querySelector(".menu__link--active")) {
+        removeLinkClass(
+            document.querySelector(".menu__link--active"),
+            document.querySelector(".submenu__link--pseudo-active"),
+            document.querySelector(".submenu__link--active"),
+            document.querySelectorAll(".submenu__list-first--active")
+        );
+    }
+}
+function onBehindMenuTouch(e) {
+    if (
+        !e.target.closest(".menu-wrapper") &&
+        !e.target.closest(".menu__burger-button") &&
+        menu.navigation.classList.contains("menu-wrapper--active")
+    ) {
+        menu.navigation.classList.remove("menu-wrapper--active");
+    }
 }
 
 //---------to show/hide location and search forms on mb and tablet---------
@@ -187,3 +204,5 @@ search.btn.addEventListener("click", () =>
     )
 );
 location.list.addEventListener("click", onLocationItemClick);
+document.addEventListener("click", onBehindMenuTouch);
+document.addEventListener("touchstart", onBehindMenuTouch);
