@@ -1,0 +1,102 @@
+.kids-hero__wrapper {
+    background-color: clr(secondaryBG);
+    @include mq(tb, true) {
+        background-color: transparent;
+    }
+}
+.kids-hero__title-wrapper {
+    @include mq(tb, true) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.kids-hero__title {
+    font-size: rem(22);
+    line-height: 27px;
+    padding: 16px;
+    text-transform: uppercase;
+
+    @include mq(tb, true) {
+        font-size: rem(24);
+        line-height: 29px;
+        padding: 16px 24px;
+    }
+    @include mq(tbLG, true) {
+        font-size: rem(36);
+        padding: 24px 32px;
+        line-height: 44px;
+    }
+    @include mq(dt, true) {
+        font-size: rem(48);
+        line-height: 58px;
+        padding: 40px;
+    }
+
+    &--part {
+        display: none;
+        @include mq(dt, true) {
+            display: block;
+            font-family: #{"Montserrat"};
+            font-weight: 500;
+            font-size: rem(24);
+            line-height: 30px;
+        }
+    }
+}
+
+.kids-hero__info-list {
+    padding: 24px 12px;
+    display: grid;
+    grid-template-columns: auto auto 64px;
+    @include mq(tb, true) {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0;
+    }
+}
+
+.kids-hero__cards-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.kids-hero__info-link {
+    color: clr(black);
+}
+
+.kids-hero__cards-item {
+    &:first-child {
+        display: none;
+        @include mq(tb, true) {
+            display: block;
+        }
+    }
+}
+
+.kids-hero__video-wrapper {
+    height: 0;
+    padding-bottom: 48.43%;
+
+    @include mq(tb, true) {
+        padding-bottom: 73.61%;
+        transform: scale(0.83);
+        transform-origin: center center;
+    }
+    @include mq(tbLG, true) {
+        transform: scale(0.88);
+    }
+    @include mq(dt, true) {
+        margin-top: 4%;
+        transform: scale(0.9);
+    }
+}
+
+.kids-hero__tag {
+    position: absolute;
+    // color: transparent;
+    // -webkit-text-stroke: 2px #ffffff;
+    text-transform: uppercase;
+    // transition: transform 0.5s;
+    bottom: 0;
+    padding: 12px 12px 7px 12px;
+    background-color: clr(purple30);
+}
