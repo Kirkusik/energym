@@ -1,75 +1,75 @@
-.service-simple__wrapper {
-
-    @include mq(tb, tb) {
+.service-simple__container {
+    padding-bottom: 50px;
+    @include mq(tb, true) {
         display: grid;
-        grid-template-columns: 49% 51%;
-        grid-template-rows: 90% 10%;
-
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 6fr 1fr;
         grid-template-areas:
             "description gallery"
             "description btn";
     }
-
-    @include mq(dt, dt) {
-        grid-template-columns: 70% 30%;
+    @media screen and (min-width: 992px) {
+        grid-template-columns: 3fr 2fr;
+    }
+    @include mq(dt, true) {
+        grid-template-columns: 4fr 3fr;
     }
 }
 
 .service-simple__description--inner {
-
-    @include mq(tb, tb) {
+    @include mq(tb, true) {
         grid-area: description;
     }
 }
 
 .service-simple__title {
-    font-size: 22px;
-    line-height: 27px;
-    padding: 16px;
+    font-size: 20px;
+    line-height: 25px;
+    padding: 15px;
     background: #b694c0;
-
-    @include mq(tb, tb) {
+    @include mq(mb, true) {
+        font-size: 22px;
+        line-height: 27px;
+    }
+    @include mq(mbLG, true) {
+    }
+    @include mq(tb, true) {
         font-size: 24px;
         line-height: 29px;
         padding: 16px 24px;
     }
-
-    @include mq(tbLG, tbLG) {
+    @include mq(tbLG, true) {
         font-size: 36px;
         line-height: 43px;
         padding: 24px 32px;
     }
-
-    @include mq(dt, dt) {
-        font-size: 48px;
-        line-height: 58px;
-        padding: 40px 38px 40px 38px;
-    }
 }
 
 .service-simple__items {
-    margin: 24px auto;
-
-    @include mq(tb, tb) {
-        //padding-right: 20px;
+    padding-top: 16px;
+    padding-bottom: 32px;
+    @include mq(tb, true) {
+        padding-top: 8px;
+        padding-bottom: 32px;
+    }
+    @include mq(tbLG, true) {
+        padding-top: 24px;
+    }
+    @include mq(dt, true) {
+        padding-top: 10px;
     }
 }
 
 .service-simple__line {
-    display: flex;
-    flex-direction: row;
-    padding: 8px 12px;
-
-    @include mq(tb, tb) {
-        padding: 8px 24px;
+    margin: 8px 12px 8px 15px;
+    @include mq(tb, true) {
+        margin: 16px 15px 16px 25px;
     }
-
-    @include mq(tbLG, tbLG) {
-        padding: 8px 32px;
+    @include mq(tbLG, true) {
+        margin: 16px 55px 16px 35px;
     }
-
-    @include mq(dt, dt) {
-        padding: 15px 40px;
+    @include mq(dt, true) {
+        margin: 30px 0 30px 35px;
     }
 }
 
@@ -77,148 +77,109 @@
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 15px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 16px;
     color: #000000;
-
-    @include mq(dt, dt) {
+    @include mq(mb, true) {
+        font-size: 15px;
+        line-height: 18px;
+    }
+    @include mq(dt, true) {
         font-size: 18px;
         line-height: 22px;
     }
 }
 
-
-.service-simple__line--rectangle {
-    width: 8px;
-    min-width: 8px;
-    height: 8px;
-    background: #ffa6c4;
-    margin-right: 12px;
-    margin-top: 4px;
-
-    @include mq(tb, tb) {
-        width: 12px;
-        min-width: 12px;
-        height: 12px;
-    }
-
-    @include mq(dt, dt) {
-        margin-right: 24px;
-    }
-}
-
 .service-simple__gallery {
-
-    @include mq(tb, tb) {
-        grid-area: gallery;
-        text-align: right;
-    }
-
-    @include mq(tbLG, tbLG) {
-        display: grid;
-        margin-left: auto;
-        grid-template-columns: 160px 168px;
-        grid-template-rows: 122px 122px;
-
-        grid-template-areas:
-            "img15 img17"
-            "img15 img16";
+    grid-area: gallery;
+    margin-left: auto;
+    @media screen and (min-width: 992px) {
+        display: flex;
+        flex-direction: row;
+        margin-right: 50px;
     }
 }
 
-.service-simple__item-img {
-
-    @include mq(tbLG, tbLG) {
-        width: 100%;
-        height: 100%;
+.gallery__img--wrapper {
+    @media screen and (min-width: 992px) {
+        display: flex;
+        flex-direction: column;
     }
 }
 
 .gallery__img--image15 {
     display: none;
-
-    @include mq(tb, tb) {
+    @include mq(tb, true) {
         display: block;
-    }
-
-    @include mq(tbLG, tbLG) {
-        grid-area: img15;
+        text-align: end;
+        min-width: 160px;
+        min-height: 244px;
     }
 }
 
 .gallery__img--image16 {
     display: none;
-
-    @include mq(tbLG, tbLG) {
+    @media screen and (min-width: 992px) {
         display: block;
-        grid-area: img16;
+        margin-top: -3px;
     }
 }
 
 .gallery__img--image17 {
     display: none;
-
-    @include mq(tbLG, tbLG) {
+    @media screen and (min-width: 992px){
         display: block;
-        grid-area: img17;
     }
 }
 
 .service-simple__order-btn {
     text-align: center;
-    margin-bottom: 66px;
-
-    @include mq(tb, tb) {
+    @include mq(tb, true) {
         grid-area: btn;
         text-align: right;
         margin-right: 20px;
+        margin-top: 35px;
+    }
+    @media screen and (min-width: 992px){
+        margin-right: 50px;
+        margin-top: 26px;
     }
 
-    @include mq(tbLG, tbLG) {
-        margin-right: 0;
+    @include mq(tbLG, true) {
+        margin-top: -25px;
     }
 
-    @include mq(dt, dt) {
-        text-align: center;
+    @media screen and (min-width: 1200px){
+        margin-top: 20px;
     }
 
-    a {
-        font-family: "Russo One", sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 13px;
-        line-height: 16px;
-        padding: 15px 70px;
-
-        @include mq(tb, tb) {
-            font-size: 15px;
-            line-height: 18px;
-            padding: 12px 50px;
-        }
-
-        @include mq(tbLG, tbLG) {
-            padding: 12px 46px;
-        }
-
-        @include mq(dt, dt) {
-            font-size: 18px;
-            line-height: 22px;
-            padding: 24px 46px;
-        }
+    @include mq(dt, true) {
+        margin-top: -50px;
+        margin-right: 112px;
     }
 }
 
+.service-simple__btn {
+    font-family: "Russo One", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    padding: 15px 70px;
 
+    @include mq(tb, true) {
+        font-size: 15px;
+        line-height: 18px;
+        padding: 12px 50px;
+    }
 
-//------------------
-@include mq(tb, tb) {
+    @include mq(tbLG, true) {
+        padding: 12px 48px;
+    }
 
-}
-
-@include mq(tbLG, tbLG) {
-
-}
-
-@include mq(dt, dt) {
-
+    @include mq(dt, true) {
+        font-size: 18px;
+        line-height: 22px;
+        padding: 24px 46px;
+    }
 }
