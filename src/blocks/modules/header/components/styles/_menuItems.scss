@@ -1,4 +1,4 @@
-.menu__items {
+.submenu__list {
     @extend %subItemsList;
     @include mq(tbLG, true) {
         grid-template-columns: repeat(5, 1fr);
@@ -21,14 +21,15 @@
     }
 }
 
-.menu__item {
+.submenu__item {
     @include mq(tbLG, true) {
         margin-bottom: 0;
     }
     margin-bottom: 20px;
     cursor: pointer;
 }
-.menu__item-link {
+
+.submenu__link {
     @include text(15px, 500, $secondaryFont);
     @include mq(tbLG, true) {
         @include text(16px, 400, $primaryFont);
@@ -63,14 +64,28 @@
     }
 }
 
-.menu__item-text {
-    @include mq(tbLG, true) {
-        display: block;
-        margin-bottom: 16px;
+.submenu__link--pseudo {
+    &:checked {
+        color: clr(red);
+    }
+    &::after {
+        @include mq(tbLG, true) {
+            content: "";
+        }
+        @include mq(tb, true) {
+            margin-right: 38px;
+        }
+        content: url("../img/svg/menu_arrow_down.svg");
+        width: 8px;
+        height: 16px;
+        margin-right: 50px;
+    }
+    &-active::after {
+        content: url("../img/svg/menu_arrow_up.svg");
     }
 }
 
-.menu__item-img {
+.submenu__img {
     @include mq(tbLG, true) {
         display: inline-block;
         border: 1px solid transparent;
@@ -79,29 +94,29 @@
     display: none;
 }
 //-----hover-------
-.menu__tab:hover .menu__items,
-.menu__tab:hover .menu__contact,
-.menu__items:hover,
-.menu__contact:hover,
-.menu__item:hover .menu__items,
-.menu__item:hover .menu__contact {
+.menu__item:hover .submenu__list,
+.menu__item:hover .submenu__contact,
+.submenu__list:hover,
+.submenu__contact:hover,
+.submenu__item:hover .submenu__list,
+.submenu__item:hover .submenu__contact {
     @include mq(tbLG, true) {
         display: grid;
     }
 }
 //-----focus-------
-.menu__tab:focus .menu__items,
-.menu__tab:focus .menu__contact,
-.menu__items:focus,
-.menu__contact:focus,
-.menu__item:focus .menu__items,
-.menu__item:focus .menu__contact {
+.menu__item:focus .submenu__list,
+.menu__item:focus .submenu__contact,
+.submenu__list:focus,
+.submenu__contact:focus,
+.submenu__item:focus .submenu__list,
+.submenu__item:focus .submenu__contact {
     @include mq(tbLG, true) {
         display: grid;
     }
 }
 //----contacts items-------
-.menu__contact {
+.submenu__contact {
     @extend %subItemsList;
     @include mq(tbLG, true) {
         grid-template-columns: repeat(2, minmax(50%, 1fr));
@@ -120,7 +135,7 @@
     }
 }
 //socials
-.menu__socials-list {
+.submenu__socials-list {
     @include mq(tbLG, true) {
         display: grid;
         justify-content: start;
@@ -135,8 +150,8 @@
     margin-bottom: 32px;
     padding-top: 24px;
 }
-.menu__socials-item,
-.menu__contact-item {
+.submenu__socials-item,
+.submenu__contact-item {
     @include mq(tbLG, true) {
         margin: 0 0 25px;
         align-items: center;
@@ -146,7 +161,7 @@
     margin: 0;
 }
 
-.menu__socials-item {
+.submenu__socials-item {
     &:last-child {
         align-self: center;
     }
@@ -155,11 +170,11 @@
         margin-right: 16px;
     }
 }
-.menu__socials-link {
+.submenu__socials-link {
     display: flex;
     align-items: center;
 }
-.menu__socials-ref {
+.submenu__socials-ref {
     @include mq(tbLG, true) {
         @include text(14px, 500, $secondaryFont);
         display: inline-block;
@@ -175,7 +190,7 @@
     display: none;
 }
 //contacts
-.menu__contact-list {
+.submenu__contact-list {
     @include mq(tb, true) {
         align-items: center;
         justify-content: center;
@@ -194,7 +209,7 @@
     justify-content: start;
 }
 
-.menu__contact-item {
+.submenu__contact-item {
     &:first-child {
         @include mq(tbLG, true) {
             display: inline-block;
@@ -227,8 +242,8 @@
     }
 }
 
-.menu__contact-address,
-.menu__contact-tel {
+.submenu__contact-address,
+.submenu__contact-tel {
     color: clr(black);
     line-height: 19px;
     @include mq(tbLG, true) {
@@ -236,7 +251,7 @@
     }
 }
 
-.menu__contact-address {
+.submenu__contact-address {
     @include text(15px, 500, $secondaryFont);
     @include mq(tbLG, true) {
         @include text(14px, 500, $secondaryFont);
@@ -245,7 +260,7 @@
     }
     font-style: normal;
 }
-.menu__contact-tel {
+.submenu__contact-tel {
     @include text(17px, 400, $primaryFont);
     @include mq(tb, true) {
         margin-bottom: 17px;

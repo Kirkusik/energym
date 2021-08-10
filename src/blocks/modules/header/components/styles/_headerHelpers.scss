@@ -23,10 +23,9 @@
     display: block;
     opacity: 0;
 
-    // &:focus {
-    //     // outline: auto;
-    //     border-radius: none;
-    // }
+    &:focus {
+        outline: auto;
+    }
 }
 //extended classes at menuItems.sccs
 %subItemsList {

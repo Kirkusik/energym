@@ -7,17 +7,17 @@ const menu = {
 };
 
 const title = {
-    links: [...document.querySelectorAll(".menu__tab-link")],
-    activeClass: "menu__tab-link--active",
-    subListsActiveClass: "menu__items--active",
+    links: [...document.querySelectorAll(".menu__link")],
+    activeClass: "menu__link--active",
+    subListsActiveClass: "submenu__list--active",
 };
 
 const subtitle = {
-    links: [...document.querySelectorAll(".menu__item-link")],
-    activeClass: "menu__item-link--active",
-    subListsActiveClass: "menu__sub-items--active",
-    subListsClass: "menu__sub-items",
-    activeArrowClass: "menu__sub-title-link--active",
+    links: [...document.querySelectorAll(".submenu__link")],
+    activeClass: "submenu__link--active",
+    subListsActiveClass: "submenu__list-first--active",
+    subListsClass: "submenu__list-first",
+    activeArrowClass: "submenu__link--pseudo-active",
 };
 
 const location = {
@@ -69,9 +69,9 @@ function onMenuLinkClick(activeLink) {
         } else {
             removeLinkClass(
                 link,
-                document.querySelector(".menu__sub-title-link--active"),
-                document.querySelector(".menu__item-link--active"),
-                document.querySelectorAll(".menu__sub-items--active")
+                document.querySelector(".submenu__link--pseudo-active"),
+                document.querySelector(".submenu__link--active"),
+                document.querySelectorAll(".submenu__list-first--active")
             );
         }
     });
@@ -112,7 +112,7 @@ function onMenuSublinkClick(activeSublink) {
         } else {
             removeSublinkClass(
                 link,
-                document.querySelectorAll(".menu__sub-items--active")
+                document.querySelectorAll(".submenu__list-first--active")
             );
         }
     });
@@ -120,8 +120,8 @@ function onMenuSublinkClick(activeSublink) {
 
 function onMenuClick(e) {
     const tabletDesk = window.matchMedia("(max-width: 999px)");
-    const activeItem = e.target.closest(".menu__tab-link");
-    const activeSubItem = e.target.closest(".menu__item-link");
+    const activeItem = e.target.closest(".menu__link");
+    const activeSubItem = e.target.closest(".submenu__link");
 
     //on item click
     if (activeItem && tabletDesk.matches) {
