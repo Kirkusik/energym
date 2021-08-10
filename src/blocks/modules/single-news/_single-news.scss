@@ -55,7 +55,7 @@
 }
 
 .single-news__title-description {
-  font-family: $secondaryFont, Arial, sans-serif;
+  font-family: $secondaryFont;
   font-weight: 500;
   font-size: 15px;
   line-height: 18px;
@@ -101,7 +101,7 @@
   height: 40px;
 
   &--appstore {
-    background-image: url(../../../img/img-single-news/appstore.jpeg);
+    background-image: url(../img/img-single-news/appstore.jpeg);
     margin-right: 25px;
 
     @include mq(tb, tb) {
@@ -109,40 +109,40 @@
     }
   }
   &--googleplay {
-    background-image: url(../../../img/img-single-news/googleplay.jpeg);
+    background-image: url(../img/img-single-news/googleplay.jpeg);
   }
 }
 .single-news__text-wrapper {
   & h1 {
-    font-family: $primaryFont, Arial, sans-serif;
+    font-family: $primaryFont;
     font-weight: normal;
     font-size: 48px;
     line-height: 58px;
   }
 
   & h2 {
-    font-family: $primaryFont, Arial, sans-serif;
+    font-family: $primaryFont;
     font-weight: normal;
     font-size: 32px;
     line-height: 39px;
   }
 
   & h3 {
-    font-family: $primaryFont, Arial, sans-serif;
+    font-family: $primaryFont;
     font-weight: normal;
     font-size: 25px;
     line-height: 30px;
   }
 
   & h4 {
-    font-family: $primaryFont, Arial, sans-serif;
+    font-family: $primaryFont;
     font-weight: normal;
     font-size: 20px;
     line-height: 24px;
   }
 
   & h5 {
-    font-family: $secondaryFont, Arial, sans-serif;
+    font-family: $secondaryFont;
     font-size: 16px;
     line-height: 18px;
     font-weight: 400;
@@ -171,7 +171,7 @@
   }
 
   & p {
-    font-family: $secondaryFont, Arial, sans-serif;
+    font-family: $secondaryFont;
     font-size: 16px;
     line-height: 18px;
     margin-bottom: 16px;
@@ -193,7 +193,6 @@
 
   & ul {
     @extend .styled-list;
-    grid-area: list;
     margin-left: 24px;
     @include mq(tb, true) {
       margin-left: 64px;
@@ -208,7 +207,7 @@
 
   & li {
     margin-bottom: 16px;
-    font-family: $secondaryFont, Arial, sans-serif;
+    font-family: $secondaryFont;
     font-size: 16px;
     line-height: 18px;
 
