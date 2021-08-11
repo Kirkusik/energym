@@ -7,20 +7,17 @@
         grid-template-rows: 61px min-content;
         grid-template-areas: "title info" "video video";
         align-items: center;
-        
     }
 
     @include mq(tbLG, true) {
-    grid-template-rows: 91px min-content;   
-    padding-bottom: 100px;
-        } 
-        
-        @include mq(dt, true) {
-     grid-template-rows: 136px min-content; 
-      padding: 40px;
-        
-        }
-          
+        grid-template-rows: 91px min-content;
+        padding-bottom: 100px;
+    }
+
+    @include mq(dt, true) {
+        grid-template-rows: 136px min-content;
+        padding: 40px;
+    }
 }
 
 .kids-hero__title {
@@ -63,11 +60,9 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     @include mq(tb, true) {
-
         margin-right: 24px;
         padding: 0;
     }
- 
 }
 .kids-hero__info-list {
     display: flex;
@@ -75,14 +70,9 @@
     }
 }
 
-.kids-hero__info-item{
+.kids-hero__info-item {
     @include mq(tb, true) {
-    }  
-}
-.kids-hero__cards-list {
-    display: flex;
-    justify-content: space-between;
-    justify-self: end;
+    }
 }
 
 .kids-hero__info-link {
@@ -93,7 +83,6 @@
     @include mq(tb, true) {
         font-size: rem(12);
         line-height: 15px;
-  
     }
     @include mq(tbLG, true) {
         font-size: rem(17);
@@ -102,8 +91,12 @@
     @include mq(dt, true) {
         font-size: rem(24);
         line-height: 30px;
-     
     }
+}
+.kids-hero__cards-list {
+    display: flex;
+    justify-content: space-between;
+    justify-self: end;
 }
 
 .kids-hero__cards-item {
@@ -113,34 +106,30 @@
             display: block;
         }
     }
-    &:nth-child(2){
+    &:nth-child(2) {
         margin-right: 16px;
     }
-    &:not(:last-child){
+    &:not(:last-child) {
         @include mq(tb, true) {
-        margin-right: 16px;
-    } 
+            margin-right: 16px;
+        }
     }
-   
 }
 
 .kids-hero__cards-img {
     @include mq(tbLG, true) {
-     width: 36px;
-     height: 22px;
+        width: 36px;
+        height: 22px;
     }
     @include mq(dt, true) {
         width: 60px;
         height: 38px;
-   
     }
-
 }
 .kids-hero__video-wrapper {
     height: 0;
     padding-bottom: 62.5%;
     grid-area: video;
-    
 }
 
 .kids-hero__tag-wrapper {
@@ -151,55 +140,49 @@
         padding: 16px 100px 16px 24px;
     }
 
-@include mq(tbLG, true) {
-    padding: 24px 133px 27px 24px;
-}
-@include mq(dt, true) {
- 
-    padding: 40px;
-
-}
+    @include mq(tbLG, true) {
+        padding: 24px 133px 27px 24px;
+    }
+    @include mq(dt, true) {
+        padding: 40px;
+    }
 }
 
 .kids-hero__tag {
     @include text(18px, 400, $primaryFont);
     text-transform: uppercase;
     color: transparent;
-   -webkit-text-stroke: 2px clr(white);
+    -webkit-text-stroke: 2px clr(white);
     line-height: 20px;
-padding-bottom: 4px;
-   @include mq(tb, true) {
-  font-size: rem(36);
-  line-height: 44px;
-  padding-bottom: 12px;
-  }
-  @include mq(tbLG, true) {
-  font-size: rem(48);
-  line-height: 58px;
-  }   
-    
-  @include mq(dt, true) {
-    font-size: rem(72);
-    line-height: 87px;
-    padding-bottom: 0;
+    padding-bottom: 4px;
+    @include mq(tb, true) {
+        font-size: rem(36);
+        line-height: 44px;
+        padding-bottom: 12px;
+    }
+    @include mq(tbLG, true) {
+        font-size: rem(48);
+        line-height: 58px;
+    }
 
-}
+    @include mq(dt, true) {
+        font-size: rem(72);
+        line-height: 87px;
+        padding-bottom: 0;
+    }
 }
 .kids-hero__tag-subtitle {
     @include text(17px, 600, $secondaryFont);
     color: clr(white);
     line-height: 20px;
- 
-  @include mq(tbLG, true) {
-  font-size: rem(18);
-  line-height: 22px;
-  }   
-    
-  @include mq(dt, true) {
-    font-size: rem(36);
-    line-height: 44px;
-   
 
-}
+    @include mq(tbLG, true) {
+        font-size: rem(18);
+        line-height: 22px;
+    }
 
+    @include mq(dt, true) {
+        font-size: rem(36);
+        line-height: 44px;
+    }
 }
