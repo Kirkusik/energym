@@ -5,7 +5,33 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
+    @include mq(tbLG, true) {
+     margin-right: 5px;
+    }
+    &::after {
+    width: 16px;
+    height: 16px;
+    content: url("../img/svg/search-mob.svg");   
+    margin-right: 19px;
+
+    @include mq(tb, true) {
+        width: 22px;
+        height: 22px;
+        margin-right: 21px;
+    }
+
+    @include mq(tbLG, true) {
+        width: 19px;
+        height: 19px;
+    }
+    
+    }
 }
+
+.search__label{
+display: none;
+}
+
 .search__input {
     @extend %forms;
     @include mq(tbLG, true) {
@@ -13,6 +39,7 @@
         padding-top: 0;
         padding-bottom: 0;
         border-radius: 4px;
+       
         @include text(16px, 300, $secondaryFont);
     }
     @media (max-width: 767px) {
@@ -27,9 +54,6 @@
 
     &:active {
         outline: none;
-    }
-    &:hover {
-        cursor: pointer;
     }
     &--active {
         display: block;

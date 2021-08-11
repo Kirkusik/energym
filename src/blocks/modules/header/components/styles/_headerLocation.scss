@@ -16,6 +16,7 @@
     width: 208px;
     height: 30px;
     opacity: 0;
+    cursor: pointer;
     &--active {
         opacity: 1;
         animation-name: move;
@@ -37,6 +38,20 @@
     }
     display: flex;
     margin-right: 19px;
+    &:before{
+        content: url("../img/svg/location-mob.svg");
+        width: 10px;
+        height: 16px;
+       
+        @include mq(tb, true) {
+            width: 12px;
+            height: 20px;
+        }
+        @include mq(tbLG, true) {
+            margin-right: 0;
+        }
+    }
+    
 }
 
 .location__default-item {
@@ -44,6 +59,7 @@
         line-height: 25px;
     }
     line-height: 30px;
+   
 }
 
 .location__item {
@@ -72,6 +88,11 @@
     border: none;
     background: transparent;
     cursor: pointer;
+    &::before {
+    content: url("../img/svg/location_down_arrow.svg");
+     width: 10px;
+     height: 6px;
+    }
 }
 .location__list {
     @include mq(tbLG, true) {

@@ -7,21 +7,24 @@
 }
 
 .header__lang-item {
-    @include text(15px, 700, $secondaryFont);
-    line-height: 18px;
-    color: clr(black);
-    &--ukr {
+    &:first-child {
         margin-right: 6px;
         &::after {
             content: "";
             position: absolute;
             margin-left: 2px;
-            top: 2px;
+            top: 7px;
             width: 2px;
             height: 13px;
             background-color: clr(purple);
         }
     }
+}
+
+.header__lang-link {
+    @include text(15px, 700, $secondaryFont);
+    line-height: 18px;
+    color: clr(black);
 
     &--active {
         color: clr(pink);
