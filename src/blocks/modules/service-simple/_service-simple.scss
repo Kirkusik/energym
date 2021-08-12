@@ -11,8 +11,11 @@
     @media screen and (min-width: 992px) {
         grid-template-columns: 3fr 2fr;
     }
+    @include mq(tbLG, true) {
+        grid-template-rows: 292px 1fr;
+    }
     @include mq(dt, true) {
-        grid-template-columns: 4fr 3fr;
+        grid-template-columns: 5fr 3fr;
     }
 }
 
@@ -26,12 +29,10 @@
     font-size: 20px;
     line-height: 25px;
     padding: 15px;
-    background: #b694c0;
+    background: clr(purple);
     @include mq(mb, true) {
         font-size: 22px;
         line-height: 27px;
-    }
-    @include mq(mbLG, true) {
     }
     @include mq(tb, true) {
         font-size: 24px;
@@ -46,17 +47,15 @@
 }
 
 .service-simple__items {
-    padding-top: 16px;
-    padding-bottom: 32px;
+    padding: 16px 0;
     @include mq(tb, true) {
-        padding-top: 8px;
-        padding-bottom: 32px;
+        padding: 8px 0;
     }
-    @include mq(tbLG, true) {
-        padding-top: 24px;
+    @media screen and (min-width: 992px){
+        padding: 24px 0;
     }
-    @include mq(dt, true) {
-        padding-top: 10px;
+    @media screen and (min-width: 1200px){
+        padding: 10px 0;
     }
 }
 
@@ -65,28 +64,28 @@
     @include mq(tb, true) {
         margin: 16px 15px 16px 25px;
     }
-    @include mq(tbLG, true) {
-        margin: 16px 55px 16px 35px;
+    @media screen and (min-width: 992px){
+        margin: 22px 55px 22px 35px;
     }
-    @include mq(dt, true) {
-        margin: 30px 0 30px 35px;
+    @media screen and (min-width: 1200px){
+        margin: 30px 55px 30px 35px;
     }
-}
 
-.service-simple__line--text {
-    font-family: Montserrat, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
-    color: #000000;
-    @include mq(mb, true) {
-        font-size: 15px;
-        line-height: 18px;
-    }
-    @include mq(dt, true) {
-        font-size: 18px;
-        line-height: 22px;
+    &--text {
+        font-family: $secondaryFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        color: clr(black);
+        @include mq(mb, true) {
+            font-size: 15px;
+            line-height: 18px;
+        }
+        @media screen and (min-width: 1200px){
+            font-size: 18px;
+            line-height: 22px;
+        }
     }
 }
 
@@ -101,6 +100,7 @@
 }
 
 .gallery__img--wrapper {
+    vertical-align: bottom;
     @media screen and (min-width: 992px) {
         display: flex;
         flex-direction: column;
@@ -121,7 +121,6 @@
     display: none;
     @media screen and (min-width: 992px) {
         display: block;
-        margin-top: -3px;
     }
 }
 
@@ -134,6 +133,7 @@
 
 .service-simple__order-btn {
     text-align: center;
+    margin-top: 14px;
     @include mq(tb, true) {
         grid-area: btn;
         text-align: right;
@@ -144,42 +144,34 @@
         margin-right: 50px;
         margin-top: 26px;
     }
-
-    @include mq(tbLG, true) {
-        margin-top: -25px;
-    }
-
     @media screen and (min-width: 1200px){
-        margin-top: 20px;
+        justify-self: self-start;
+        margin-left: 25px;
+        padding-top: 15px;
     }
-
     @include mq(dt, true) {
-        margin-top: -50px;
-        margin-right: 112px;
+        margin-left: 0;
     }
 }
 
 .service-simple__btn {
-    font-family: "Russo One", sans-serif;
+    font-family: $primaryFont;
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
     line-height: 16px;
     padding: 15px 70px;
-
     @include mq(tb, true) {
         font-size: 15px;
         line-height: 18px;
         padding: 12px 50px;
     }
-
     @include mq(tbLG, true) {
         padding: 12px 48px;
     }
-
     @include mq(dt, true) {
         font-size: 18px;
         line-height: 22px;
-        padding: 24px 46px;
+        padding: 20px 46px;
     }
 }
