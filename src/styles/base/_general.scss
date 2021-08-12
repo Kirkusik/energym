@@ -1,352 +1,353 @@
 .svgs-wrap {
-    display: none;
+   display: none;
 }
 
 .container {
-    width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-left: auto;
-    margin-right: auto;
+   width: 100%;
+   padding-left: 10px;
+   padding-right: 10px;
+   margin-left: auto;
+   margin-right: auto;
 
-    @media (min-width: 576px) {
-        max-width: 576px;
-    }
-    @media (min-width: 640px) {
-        max-width: 640px;
-    }
-    @media (min-width: 768px) {
-        max-width: 768px;
-    }
-    @media (min-width: 992px) {
-        max-width: 992px;
-    }
-    @media (min-width: 1200px) {
-        max-width: 1200px;
-    }
+   @media (min-width: 576px) {
+      max-width: 576px;
+   }
+   @media (min-width: 640px) {
+      max-width: 640px;
+   }
+   @media (min-width: 768px) {
+      max-width: 768px;
+   }
+   @media (min-width: 992px) {
+      max-width: 992px;
+   }
+   @media (min-width: 1200px) {
+      max-width: 1200px;
+   }
 }
 
 .section-title__h1 {
-    @include text(48px);
+   @include text(48px);
 }
 
 .section-title__h2 {
-    @include text(32px);
+   @include text(32px);
 }
 
 .section-title__h3 {
-    @include text(25px);
+   @include text(25px);
 }
 
 .section-title__h4 {
-    @include text(20px);
+   @include text(20px);
 }
 
 .section-title__h5 {
-    @include text(16px);
+   @include text(16px);
 }
 
 .section-text__h1 {
-    @include text(18px, 400, "Montserrat");
+   @include text(18px, 400, "Montserrat");
 }
 
 .section-text__h2 {
-    @include text(16px, 400, "Montserrat");
+   @include text(16px, 400, "Montserrat");
 }
 
 .section-text__h3 {
-    @include text(14px, 400, "Montserrat");
+   @include text(14px, 400, "Montserrat");
 }
 
 .section-highlight {
-    @extend .section-title__h1;
-    width: max-content;
-    padding: 40px;
-    background-color: clr(purple);
-    color: clr(white);
+   @extend .section-title__h1;
+   width: max-content;
+   padding: 40px;
+   background-color: clr(purple);
+   color: clr(white);
 
-    &--inversed {
-        background-color: clr(purple30);
-        display: flex;
-        flex-direction: column;
+   &--inversed {
+      background-color: clr(purple30);
+      display: flex;
+      flex-direction: column;
 
-        & > .section-highlight__title {
-            color: transparent;
-            -webkit-text-stroke: 2px clr(white);
-            @include text(72px);
-        }
+      & > .section-highlight__title {
+         color: transparent;
+         -webkit-text-stroke: 2px clr(white);
+         @include text(72px);
+      }
 
-        & > .section-highlight__subtitle {
-            -webkit-text-stroke: initial;
-            color: clr(white);
-            @include text(36px, 600, $secondaryFont);
-        }
-    }
+      & > .section-highlight__subtitle {
+         -webkit-text-stroke: initial;
+         color: clr(white);
+         @include text(36px, 600, $secondaryFont);
+      }
+   }
 }
 
 .primary-btn {
-    cursor: pointer;
-    text-transform: uppercase;
-    padding: 24px 46px;
-    @include text(18px);
-    color: clr(red);
-    border: 1px solid clr(red);
-    box-sizing: border-box;
-    border-radius: 4px;
-    background: none;
-    transition: opacity 0.2s;
-    text-decoration: none;
+   cursor: pointer;
+   text-transform: uppercase;
+   padding: 24px 46px;
+   @include text(18px);
+   color: clr(red);
+   border: 1px solid clr(red);
+   box-sizing: border-box;
+   border-radius: 4px;
+   background: none;
+   transition: opacity 0.2s;
+   text-decoration: none;
 
-    &:hover {
-        opacity: 0.7;
-    }
+   &:hover {
+      opacity: 0.7;
+   }
 }
 
 .secondary-btn {
-    @extend .primary-btn;
-    color: clr(purpleDark);
-    border-color: clr(purpleDark);
-    transition: opacity 0.2s, color 0.2s, border-color 0.2s;
+   @extend .primary-btn;
+   color: clr(purpleDark);
+   border-color: clr(purpleDark);
+   transition: opacity 0.2s, color 0.2s, border-color 0.2s;
 
-    &:hover {
-        color: clr(black);
-        border-color: clr(black);
-        opacity: 1;
-    }
+   &:hover {
+      color: clr(black);
+      border-color: clr(black);
+      opacity: 1;
+   }
 }
 
 .goto-btn {
-    display: inline-block;
-    padding: 24px;
-    @include text(24px, 600, $secondaryFont);
-    color: clr(white);
-    background-color: clr(purple);
-    text-decoration: none;
-    outline: none;
-    border: none;
+   display: inline-block;
+   padding: 24px;
+   @include text(24px, 600, $secondaryFont);
+   color: clr(white);
+   background-color: clr(purple);
+   text-decoration: none;
+   outline: none;
+   border: none;
 
-    @include pseudo(after, "", relative) {
-        background-image: url(../img/svg/goto__arrow.svg);
-        background-position: center;
-        background-repeat: no-repeat;
-        margin-left: 24px;
-        width: 16px;
-        height: 16px;
-        transition: bottom 0.4s;
-        bottom: 0;
-    }
+   @include pseudo(after, "", relative) {
+      background-image: url(../img/svg/goto__arrow.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-left: 24px;
+      width: 16px;
+      height: 16px;
+      transition: bottom 0.4s;
+      bottom: 0;
+   }
 
-    &:hover::after {
-        bottom: 5px;
-    }
+   &:hover::after {
+      bottom: 5px;
+   }
 }
 
 .more-btn {
-    @extend .goto-btn;
-    position: relative;
-    cursor: pointer;
-    box-sizing: border-box;
-    width: 56px;
-    padding: 18px 16px;
-    font-size: 16px;
-    display: inline-flex;
-    align-items: center;
-    overflow: hidden;
-    transition: width 0.3s, color 0.3s, background-color 0.3s;
-    white-space: nowrap;
-    background-color: clr(red);
-    color: transparent;
+   @extend .goto-btn;
+   position: relative;
+   cursor: pointer;
+   box-sizing: border-box;
+   width: 56px;
+   padding: 18px 16px;
+   font-size: 16px;
+   display: inline-flex;
+   align-items: center;
+   overflow: hidden;
+   transition: width 0.3s, color 0.3s, background-color 0.3s;
+   white-space: nowrap;
+   background-color: clr(red);
+   color: transparent;
 
-    &::after {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        right: 0;
-        top: 0;
-        margin-left: 0;
-    }
+   &::after {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      right: 0;
+      top: 0;
+      margin-left: 0;
+   }
 
-    &:hover {
-        width: 220px;
-        color: clr(white);
+   &:hover {
+      width: 220px;
+      color: clr(white);
 
-        &::after {
+      &::after {
+         width: 52px;
+         background-color: clr(red);
+      }
+   }
+
+   @media (max-width: 768px) {
+      width: 220px;
+      color: clr(white);
+
+      &::after {
+         width: 52px;
+      }
+      &:hover {
+         &::after {
             width: 52px;
-            background-color: clr(red);
-        }
-    }
-
-    @media (max-width: 768px) {
-        width: 220px;
-        color: clr(white);
-
-        &::after {
-            width: 52px;
-        }
-        &:hover {
-            &::after {
-                width: 52px;
-            }
-        }
-    }
+         }
+      }
+   }
 }
 
 .contact-us-btn {
-    @extend .more-btn;
-    width: 70px;
-    padding: 19px;
-    font-family: #{"Russo One"};
-    font-weight: 400;
-    background-color: clr(pink);
+   @extend .more-btn;
+   width: 70px;
+   padding: 19px;
+   font-family: #{"Russo One"};
+   font-weight: 400;
+   background-color: clr(pink);
 
-    @include pseudo(before, url(../img/svg/msg-dialog.svg), static) {
-        height: 32px;
-        margin-right: 20px;
-        transition: margin-right 0.3s;
-    }
+   @include pseudo(before, url(../img/svg/msg-dialog.svg), static) {
+      height: 32px;
+      margin-right: 20px;
+      transition: margin-right 0.3s;
+   }
 
-    @include pseudo(after, none);
+   @include pseudo(after, none);
 
-    &:hover {
-        width: 200px;
-        color: clr(white);
-        background-color: clr(red);
+   &:hover {
+      width: 200px;
+      color: clr(white);
+      background-color: clr(red);
 
-        &::before {
-            margin-right: 12px;
-        }
-    }
+      &::before {
+         margin-right: 12px;
+      }
+   }
 }
 
 .square-btn {
-    outline: none;
-    border: none;
-    cursor: pointer;
-    width: 70px;
-    height: 70px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    background-color: clr(pink);
-    transition: background-color 0.3s;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 24px 24px;
+   outline: none;
+   border: none;
+   cursor: pointer;
+   width: 70px;
+   height: 70px;
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   background-color: clr(pink);
+   transition: background-color 0.3s;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: 24px 24px;
 
-    &:hover {
-        background-color: clr(red);
-    }
+   &:hover {
+      background-color: clr(red);
+   }
 
-    &--bigger {
-        width: 90px;
-        height: 90px;
-    }
+   &--bigger {
+      width: 90px;
+      height: 90px;
+   }
 
-    &--cross {
-        background-image: url("../img/svg/cross.svg");
-    }
+   &--cross {
+      background-image: url("../img/svg/cross.svg");
+   }
 
-    &--left {
-        background-image: url("../img/svg/arrow-left.svg");
-    }
+   &--left {
+      background-image: url("../img/svg/arrow-left.svg");
+   }
 
-    &--right {
-        background-image: url("../img/svg/arrow-right.svg");
-    }
+   &--right {
+      background-image: url("../img/svg/arrow-right.svg");
+   }
 
-    &--up {
-        background-image: url("../img/svg/arrow-up.svg");
-    }
+   &--up {
+      background-image: url("../img/svg/arrow-up.svg");
+   }
 
-    &--down {
-        background-image: url("../img/svg/arrow-down.svg");
-    }
+   &--down {
+      background-image: url("../img/svg/arrow-down.svg");
+   }
 }
 
 .styled-list {
-    & li {
-        padding-left: 30px;
-        @include pseudo(before, "", absolute) {
-            top: 4px;
-            left: 0;
-            width: 8px;
-            height: 8px;
-            background-color: clr(pink);
+   & li {
+      padding-left: 30px;
+      @include pseudo(before, "", absolute) {
+         top: 4px;
+         left: 0;
+         width: 8px;
+         height: 8px;
+         background-color: clr(pink);
 
-            @include mq(tb, true) {
-                left: 0;
-                width: 12px;
-                height: 12px;
-            }
-        }
-    }
+         @include mq(tb, true) {
+            left: 0;
+            width: 12px;
+            height: 12px;
+         }
+      }
+   }
 }
 
 // Video
 .video-wrapper {
-    position: relative;
-    width: 100%;
+   position: relative;
+   width: 100%;
 
-    &--enabled {
-        cursor: pointer;
-    }
+   &--enabled {
+      cursor: pointer;
+   }
 }
 
 .video-link,
 .video-cover {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
+   position: absolute;
+   top: 0;
+   right: 0;
+   width: 100%;
+   height: 100%;
+   background-color: clr(purple50);
 }
 
 .video-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    padding: 0;
-    width: 50px;
-    height: 50px;
-    border: none;
-    cursor: pointer;
-    background-image: url("../img/svg/video-play.svg");
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: right;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 1;
+   padding: 0;
+   width: 50px;
+   height: 50px;
+   border: none;
+   cursor: pointer;
+   background-image: url("../img/svg/video-play.svg");
+   background-color: transparent;
+   background-repeat: no-repeat;
+   background-size: contain;
+   background-position: right;
 
-    @include mq(dt, true) {
-        width: 100px;
-        height: 100px;
-    }
+   @include mq(dt, true) {
+      width: 100px;
+      height: 100px;
+   }
 }
 
 // Subscribe buttons
 .subscribe-link {
-    background-repeat: no-repeat;
-    width: 143px;
-    height: 40px;
-    background-size: contain;
-    @include mq(tb, true) {
-        width: 90px;
-        height: 26px;
-    }
-    @include mq(tbLG, true) {
-        width: 180px;
-        height: 52px;
-    }
+   background-repeat: no-repeat;
+   width: 143px;
+   height: 40px;
+   background-size: contain;
+   @include mq(tb, true) {
+      width: 90px;
+      height: 26px;
+   }
+   @include mq(tbLG, true) {
+      width: 180px;
+      height: 52px;
+   }
 
-    &--appstore {
-        background-image: url(../img/svg/appstore_dark.svg);
-    }
+   &--appstore {
+      background-image: url(../img/svg/appstore_dark.svg);
+   }
 
-    &--googleplay {
-        background-image: url(../img/svg/googleplay_dark.svg);
-    }
+   &--googleplay {
+      background-image: url(../img/svg/googleplay_dark.svg);
+   }
 }
