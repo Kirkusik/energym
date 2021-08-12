@@ -3,11 +3,9 @@
     background-color: #faf7fb;
   }
 
-  @include mq(tbLG, tbLG) {
-    padding-bottom: 140px;
-  }
   @include mq(dt, dt) {
     background-color: #fff;
+    padding-bottom: 0;
   }
 }
 
@@ -16,21 +14,18 @@
 }
 
 .single-news__new-wrapper {
-  margin-bottom: 32px;
+  padding-bottom: 32px;
   margin-left: auto;
   margin-right: auto;
 
   @include mq(tb, true) {
-    // margin-bottom: 42px;
+    padding-bottom: 100px;
   }
-  @include mq(tbLG, true) {
-    padding-bottom: 40px;
-  }
+
   @include mq(dt, dt) {
-    padding-bottom: 80px;
+    margin-bottom: 0;
+    padding-bottom: 50px;
     padding-left: 130px;
-    padding-right: auto;
-    // margin-right: -140px;
   }
 }
 .single-news__title {
@@ -60,7 +55,7 @@
 }
 
 .single-news__title-description {
-  font-family: $secondaryFont, Arial, sans-serif;
+  font-family: $secondaryFont;
   font-weight: 500;
   font-size: 15px;
   line-height: 18px;
@@ -106,7 +101,7 @@
   height: 40px;
 
   &--appstore {
-    background-image: url(../../../img/img-single-news/appstore.jpeg);
+    background-image: url(../img/img-single-news/appstore.jpeg);
     margin-right: 25px;
 
     @include mq(tb, tb) {
@@ -114,40 +109,40 @@
     }
   }
   &--googleplay {
-    background-image: url(../../../img/img-single-news/googleplay.jpeg);
+    background-image: url(../img/img-single-news/googleplay.jpeg);
   }
 }
 .single-news__text-wrapper {
   & h1 {
-    font-family: $primaryFont, Arial, sans-serif;
+    font-family: $primaryFont;
     font-weight: normal;
     font-size: 48px;
     line-height: 58px;
   }
 
   & h2 {
-    font-family: $primaryFont, Arial, sans-serif;
+    font-family: $primaryFont;
     font-weight: normal;
     font-size: 32px;
     line-height: 39px;
   }
 
   & h3 {
-    font-family: $primaryFont, Arial, sans-serif;
+    font-family: $primaryFont;
     font-weight: normal;
     font-size: 25px;
     line-height: 30px;
   }
 
   & h4 {
-    font-family: $primaryFont, Arial, sans-serif;
+    font-family: $primaryFont;
     font-weight: normal;
     font-size: 20px;
     line-height: 24px;
   }
 
   & h5 {
-    font-family: $secondaryFont, Arial, sans-serif;
+    font-family: $secondaryFont;
     font-size: 16px;
     line-height: 18px;
     font-weight: 400;
@@ -176,7 +171,7 @@
   }
 
   & p {
-    font-family: $secondaryFont, Arial, sans-serif;
+    font-family: $secondaryFont;
     font-size: 16px;
     line-height: 18px;
     margin-bottom: 16px;
@@ -196,22 +191,23 @@
     }
   }
 
-  & li {
-    @include pseudo(before, "", absolute) {
-      @include mq(tb, true) {
-        left: -26px;
-        width: 12px;
-        height: 12px;
-      }
-      display: inline-block;
-      top: 4px;
-      left: -23px;
-      width: 8px;
-      height: 8px;
-      background-color: clr(pink);
+  & ul {
+    @extend .styled-list;
+    margin-left: 24px;
+    @include mq(tb, true) {
+      margin-left: 64px;
+      margin-bottom: 24px;
     }
+
+    @include mq(tbLG, true) {
+      margin-left: 40px;
+      margin-bottom: 40px;
+    }
+  }
+
+  & li {
     margin-bottom: 16px;
-    font-family: $secondaryFont, Arial, sans-serif;
+    font-family: $secondaryFont;
     font-size: 16px;
     line-height: 18px;
 
@@ -228,27 +224,11 @@
     }
   }
 
-  & ul {
-    grid-area: list;
-    margin-left: 37px;
-    @include mq(tb, true) {
-      margin-left: 100px;
-      margin-bottom: 40px;
-    }
-
-    @include mq(tbLG, true) {
-      margin-left: 108px;
-      margin-bottom: 40px;
-    }
-  }
   @include mq(tb, true) {
     margin-bottom: 42px;
   }
   @include mq(tbLG, true) {
     padding-bottom: 40px;
-  }
-  @include mq(dt, dt) {
-    padding-bottom: 80px;
   }
 }
 
@@ -262,6 +242,10 @@
 }
 
 .single-news__link-btn {
+  margin-bottom: 0;
+  @include mq(tb, true) {
+    margin-bottom: 0;
+  }
   @include mq(tbLG, true) {
     align-self: flex-end;
     margin-bottom: 0;
