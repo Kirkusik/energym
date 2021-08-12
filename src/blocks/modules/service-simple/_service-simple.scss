@@ -15,7 +15,7 @@
         grid-template-rows: 292px 1fr;
     }
     @include mq(dt, true) {
-        grid-template-columns: 5fr 3fr;
+        grid-template-columns: 6fr 4fr;
     }
 }
 
@@ -150,7 +150,7 @@
         padding-top: 15px;
     }
     @include mq(dt, true) {
-        margin-left: 0;
+        margin-left: 25px;
     }
 }
 
