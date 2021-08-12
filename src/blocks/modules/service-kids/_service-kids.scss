@@ -1,85 +1,109 @@
 .kids-hero__wrapper {
     background-color: clr(secondaryBG);
-    @include mq(tb, true) {
-        background-color: transparent;
+    @include mq(tb, true) {    
         display: grid;
-        grid-template-columns: 1fr 1.2fr;
+        grid-template-columns: repeat(2, minmax(184px, 1fr) auto);
         grid-template-rows: 61px min-content;
-        grid-template-areas: "title info" "video video";
+        grid-template-areas: "title . info" "video video video";
         align-items: center;
+        background-color: transparent;
     }
 
     @include mq(tbLG, true) {
+        grid-template-areas: "title info" "video video";
+        grid-template-columns: 353px auto;
         grid-template-rows: 91px min-content;
         padding-bottom: 100px;
     }
 
     @include mq(dt, true) {
         grid-template-rows: 136px min-content;
-        padding: 40px;
+        padding-bottom: 0;
     }
 }
 
 .kids-hero__title {
-    font-size: rem(22);
-    line-height: 27px;
-    padding: 16px;
-    text-transform: uppercase;
     grid-area: title;
+    padding: 16px;
+    font-size: rem(22);
+    line-height: 27px; 
+    text-transform: uppercase;
     @include mq(tb, true) {
+        padding: 16px 24px;
         font-size: rem(24);
         line-height: 29px;
-        padding: 16px 24px;
+        
     }
     @include mq(tbLG, true) {
-        font-size: rem(36);
         padding: 24px 32px;
+        font-size: rem(36);
         line-height: 44px;
+        
+        
     }
     @include mq(dt, true) {
+        padding: 40px 40px 15px;
         font-size: rem(48);
         line-height: 58px;
-        padding: 40px;
+        
     }
 
     &--part {
         display: none;
         @include mq(dt, true) {
             display: block;
-            font-family: $secondaryFont;
-            font-weight: 500;
-            font-size: rem(24);
+            @include text(24px, 500, $secondaryFont);
             line-height: 30px;
         }
     }
 }
 
 .kids-hero__info-wrapper {
+    display: grid;
+    grid-template-columns: auto 64px;
     grid-area: info;
     padding: 24px 12px;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
     @include mq(tb, true) {
+        grid-template-columns: auto 104px;
+        column-gap: 24px;
         margin-right: 24px;
         padding: 0;
     }
+    @include mq(tbLG, true) {
+        grid-template-columns: auto 88px;
+    
+    }
+    @include mq(dt, true) {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 0;
+    
+    }
 }
 .kids-hero__info-list {
-    display: flex;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
     @include mq(tb, true) {
+display: flex;
+justify-content: flex-end;
     }
 }
 
 .kids-hero__info-item {
-    @include mq(tb, true) {
+    &:first-child{
+        @include mq(tb, true) {
+        margin-right: 16px;
+    } 
+    @include mq(dt, true) {
+        margin-right: 24px;
+    }   
     }
+  
 }
 
 .kids-hero__info-link {
     color: clr(black);
-    @include text(14px, 400, $secondaryFont);
     line-height: 19px;
-
+    @include text(14px, 400, $secondaryFont);
     @include mq(tb, true) {
         font-size: rem(12);
         line-height: 15px;
@@ -103,8 +127,14 @@
     &:first-child {
         display: none;
         @include mq(tb, true) {
-            display: block;
+        display: block;
         }
+        @include mq(tbLG, true) {
+            display: none;
+}
+  @include mq(dt, true) {
+     display: block;
+    }
     }
     &:nth-child(2) {
         margin-right: 16px;
@@ -127,9 +157,10 @@
     }
 }
 .kids-hero__video-wrapper {
+    grid-area: video;
     height: 0;
     padding-bottom: 62.5%;
-    grid-area: video;
+    
 }
 
 .kids-hero__tag-wrapper {
@@ -139,7 +170,6 @@
     @include mq(tb, true) {
         padding: 16px 100px 16px 24px;
     }
-
     @include mq(tbLG, true) {
         padding: 24px 133px 27px 24px;
     }
@@ -149,12 +179,12 @@
 }
 
 .kids-hero__tag {
+    padding-bottom: 4px;
     @include text(18px, 400, $primaryFont);
     text-transform: uppercase;
     color: transparent;
     -webkit-text-stroke: 2px clr(white);
-    line-height: 20px;
-    padding-bottom: 4px;
+    line-height: 20px;   
     @include mq(tb, true) {
         font-size: rem(36);
         line-height: 44px;
