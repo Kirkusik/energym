@@ -1,6 +1,6 @@
 .kids-hero__wrapper {
     background-color: clr(secondaryBG);
-    @include mq(tb, true) {    
+    @include mq(tb, true) {
         display: grid;
         grid-template-columns: repeat(2, minmax(184px, 1fr) auto);
         grid-template-rows: 61px min-content;
@@ -26,26 +26,22 @@
     grid-area: title;
     padding: 16px;
     font-size: rem(22);
-    line-height: 27px; 
+    line-height: 27px;
     text-transform: uppercase;
     @include mq(tb, true) {
         padding: 16px 24px;
         font-size: rem(24);
         line-height: 29px;
-        
     }
     @include mq(tbLG, true) {
         padding: 24px 32px;
         font-size: rem(36);
         line-height: 44px;
-        
-        
     }
     @include mq(dt, true) {
         padding: 40px 40px 15px;
         font-size: rem(48);
         line-height: 58px;
-        
     }
 
     &--part {
@@ -71,33 +67,33 @@
     }
     @include mq(tbLG, true) {
         grid-template-columns: auto 88px;
-    
     }
     @include mq(dt, true) {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: auto 228px;
         column-gap: 0;
-    
     }
 }
 .kids-hero__info-list {
-   display: grid;
-   grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     @include mq(tb, true) {
-display: flex;
-justify-content: flex-end;
+        display: flex;
+        justify-content: flex-end;
+    }
+    @include mq(dt, true) {
+        justify-content: center;
     }
 }
 
 .kids-hero__info-item {
-    &:first-child{
+    &:first-child {
         @include mq(tb, true) {
-        margin-right: 16px;
-    } 
-    @include mq(dt, true) {
-        margin-right: 24px;
-    }   
+            margin-right: 16px;
+        }
+        @include mq(dt, true) {
+            margin-right: 24px;
+        }
     }
-  
 }
 
 .kids-hero__info-link {
@@ -127,14 +123,14 @@ justify-content: flex-end;
     &:first-child {
         display: none;
         @include mq(tb, true) {
-        display: block;
+            display: block;
         }
         @include mq(tbLG, true) {
             display: none;
-}
-  @include mq(dt, true) {
-     display: block;
-    }
+        }
+        @include mq(dt, true) {
+            display: block;
+        }
     }
     &:nth-child(2) {
         margin-right: 16px;
@@ -160,7 +156,6 @@ justify-content: flex-end;
     grid-area: video;
     height: 0;
     padding-bottom: 62.5%;
-    
 }
 
 .kids-hero__tag-wrapper {
@@ -184,7 +179,7 @@ justify-content: flex-end;
     text-transform: uppercase;
     color: transparent;
     -webkit-text-stroke: 2px clr(white);
-    line-height: 20px;   
+    line-height: 20px;
     @include mq(tb, true) {
         font-size: rem(36);
         line-height: 44px;
