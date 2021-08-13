@@ -1,4 +1,4 @@
-.kids-hero__wrapper {
+.video-section__wrapper {
     background-color: clr(secondaryBG);
     @include mq(tb, true) {
         display: grid;
@@ -22,7 +22,7 @@
     }
 }
 
-.kids-hero__title {
+.video-section__title {
     grid-area: title;
     padding: 16px;
     font-size: rem(22);
@@ -43,7 +43,9 @@
         font-size: rem(48);
         line-height: 58px;
     }
+}
 
+.kids-hero__title {
     &--part {
         display: none;
         @include mq(dt, true) {
@@ -53,8 +55,7 @@
         }
     }
 }
-
-.kids-hero__info-wrapper {
+.video-section__info-wrapper {
     display: grid;
     grid-template-columns: auto 64px;
     grid-area: info;
@@ -76,7 +77,7 @@
         margin-bottom: 40px;
     }
 }
-.kids-hero__info-list {
+.video-section__info-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     @include mq(tb, true) {
@@ -88,7 +89,7 @@
     }
 }
 
-.kids-hero__info-item {
+.video-section__info-item {
     &:first-child {
         @include mq(tb, true) {
             margin-right: 16px;
@@ -99,7 +100,7 @@
     }
 }
 
-.kids-hero__info-link {
+.video-section__info-link {
     color: clr(black);
     line-height: 19px;
     @include text(14px, 400, $secondaryFont);
@@ -116,13 +117,13 @@
         line-height: 30px;
     }
 }
-.kids-hero__cards-list {
+.video-section__cards-list {
     display: flex;
     justify-content: space-between;
     justify-self: end;
 }
 
-.kids-hero__cards-item {
+.video-section__cards-item {
     &:first-child {
         display: none;
         @include mq(tb, true) {
@@ -145,7 +146,7 @@
     }
 }
 
-.kids-hero__cards-img {
+.video-section__cards-img {
     @include mq(tbLG, true) {
         width: 36px;
         height: 22px;
@@ -161,7 +162,7 @@
     padding-bottom: 62.5%;
 }
 
-.kids-hero__tag-wrapper {
+.video__tag-wrapper {
     position: absolute;
     bottom: 0;
     padding: 12px 12px 7px 12px;
@@ -176,7 +177,7 @@
     }
 }
 
-.kids-hero__tag {
+.video__tag {
     padding-bottom: 4px;
     @include text(18px, 400, $primaryFont);
     text-transform: uppercase;
@@ -199,7 +200,7 @@
         padding-bottom: 0;
     }
 }
-.kids-hero__tag-subtitle {
+.video__tag-subtitle {
     @include text(17px, 600, $secondaryFont);
     color: clr(white);
     line-height: 20px;
