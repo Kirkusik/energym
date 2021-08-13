@@ -1,107 +1,109 @@
 .info-inner {
-   text-align: center;
-   padding-top: 8%;
-   padding-bottom: 8%;
-   background: clr(secondaryBG) url(../img/main-page-hero-block/facts-text.svg)
-      no-repeat;
-   background-size: contain;
-   background-position: center;
+    text-align: center;
+    padding-top: 8%;
+    padding-bottom: 8%;
+    background: clr(secondaryBG) url(../img/main-page-hero-block/facts-text.svg) no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 .info__content-list {
-   display: grid;
-   grid-template-columns: repeat(2, 1fr);
-   row-gap: 55px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 55px;
 
-   @include mq(mb, true) {
-      row-gap: 75px;
-   }
+    @include mq(mb, true) {
+        row-gap: 75px;
+    }
 
-   @media (min-width: 640px) {
-      row-gap: 80px;
-   }
+    @media (min-width: 640px) {
+        row-gap: 80px;
+    }
 
-   @media (min-width: 800px) {
-      row-gap: 100px;
-   }
+    @media (min-width: 800px) {
+        row-gap: 100px;
+    }
 
-   @include mq(tbLG, true) {
-      grid-template-columns: repeat(4, 1fr);
-      row-gap: 0;
-   }
+    @include mq(tbLG, true) {
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 0;
+    }
 }
 
 .info__content-item {
-   padding-top: 10px;
-   padding-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 
-   @include mq(tb, true) {
-      width: 80%;
-   }
-   margin-left: auto;
-   margin-right: auto;
+    @include mq(tb, true) {
+        width: 80%;
+    }
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .info__content-text {
-   color: clr(black);
-   font-family: $secondaryFont;
+    color: clr(black);
+    font-family: $secondaryFont;
 
-   &--title {
-      font-size: 30px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 36px;
-      letter-spacing: 0em;
-      margin-bottom: 10px;
+    &--title {
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 36px;
+        letter-spacing: 0em;
+        margin-bottom: 10px;
 
-      @include mq(tb, true) {
-         font-size: 48px;
-         line-height: 58px;
-      }
-   }
+        @include mq(tb, true) {
+            font-size: 48px;
+            line-height: 58px;
+        }
+    }
 
-   &--subtitle {
-      font-size: 16px;
-      line-height: 20px;
-      letter-spacing: 0em;
+    &--subtitle {
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0em;
+        padding-left: 10px;
+        padding-right: 10px;
 
-      @include mq(tb, true) {
-         font-size: 20px;
-         line-height: 24px;
-      }
-   }
+        @include mq(tb, true) {
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
 }
 
 .info__content-title {
-   &--degree {
-      vertical-align: super;
-      font-size: rem(10);
+    &--degree {
+        vertical-align: super;
+        font-size: rem(10);
+        line-height: 10px;
 
-      @include mq(tb, true) {
-         font-size: rem(15);
-      }
-      @include mq(tbLG, true) {
-         font-size: rem(25);
-      }
-   }
+        @include mq(tb, true) {
+            font-size: rem(15);
+        }
+        @include mq(tbLG, true) {
+            font-size: rem(25);
+        }
+    }
 }
 
 .info__content-subtitle {
-   &--part {
-      @media (min-width: 320px) {
-         display: block;
-      }
-   }
-   @include mq(tb, true) {
-      font-size: rem(15);
-      line-height: 18px;
-      max-width: 150px;
-   }
-   @include mq(tbLG, true) {
-      font-size: rem(20);
-      line-height: 24px;
-      max-width: 173px;
-   }
-   font-size: rem(9);
-   line-height: rem(11);
+    &--part {
+        @media (min-width: 320px) {
+            display: block;
+        }
+    }
+    @include mq(tb, true) {
+        font-size: rem(15);
+        line-height: 18px;
+        max-width: 150px;
+    }
+    @include mq(tbLG, true) {
+        font-size: rem(20);
+        line-height: 24px;
+        max-width: 173px;
+    }
+    font-size: rem(9);
+    line-height: rem(11);
 }
