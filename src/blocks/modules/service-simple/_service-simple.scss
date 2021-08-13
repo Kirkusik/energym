@@ -1,0 +1,180 @@
+.service-simple__container {
+    padding-bottom: 50px;
+    @include mq(tb, true) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 6fr 1fr;
+        grid-template-areas:
+            "description gallery"
+            "description btn";
+    }
+    @media screen and (min-width: 992px) {
+        grid-template-columns: 3fr 2fr;
+    }
+    @include mq(tbLG, true) {
+        grid-template-rows: 292px 1fr;
+    }
+    @include mq(dt, true) {
+        grid-template-columns: 6fr 4fr;
+    }
+}
+
+.service-simple__description--inner {
+    @include mq(tb, true) {
+        grid-area: description;
+    }
+}
+
+.service-simple__title {
+    font-size: 20px;
+    line-height: 25px;
+    padding: 15px;
+    background: clr(purple);
+    @include mq(mb, true) {
+        font-size: 22px;
+        line-height: 27px;
+    }
+    @include mq(tb, true) {
+        font-size: 24px;
+        line-height: 29px;
+        padding: 16px 24px;
+    }
+    @include mq(tbLG, true) {
+        font-size: 36px;
+        line-height: 43px;
+        padding: 24px 32px;
+    }
+}
+
+.service-simple__items {
+    padding: 16px 0;
+    @include mq(tb, true) {
+        padding: 8px 0;
+    }
+    @media screen and (min-width: 992px){
+        padding: 24px 0;
+    }
+    @media screen and (min-width: 1200px){
+        padding: 10px 0;
+    }
+}
+
+.service-simple__line {
+    margin: 8px 12px 8px 15px;
+    @include mq(tb, true) {
+        margin: 16px 15px 16px 25px;
+    }
+    @media screen and (min-width: 992px){
+        margin: 22px 55px 22px 35px;
+    }
+    @media screen and (min-width: 1200px){
+        margin: 30px 55px 30px 35px;
+    }
+
+    &--text {
+        font-family: $secondaryFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        color: clr(black);
+        @include mq(mb, true) {
+            font-size: 15px;
+            line-height: 18px;
+        }
+        @media screen and (min-width: 1200px){
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+}
+
+.service-simple__gallery {
+    grid-area: gallery;
+    margin-left: auto;
+    @media screen and (min-width: 992px) {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.gallery__img--wrapper {
+    vertical-align: bottom;
+    @media screen and (min-width: 992px) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.gallery__img--image15 {
+    display: none;
+    @include mq(tb, true) {
+        display: block;
+        text-align: end;
+        min-width: 160px;
+        min-height: 244px;
+    }
+}
+
+.gallery__img--image16 {
+    display: none;
+    @media screen and (min-width: 992px) {
+        display: block;
+    }
+}
+
+.gallery__img--image17 {
+    display: none;
+    @media screen and (min-width: 992px){
+        display: block;
+    }
+}
+
+.service-simple__order-btn {
+    text-align: center;
+    margin-top: 14px;
+    @include mq(tb, true) {
+        grid-area: btn;
+        text-align: right;
+        margin-right: 20px;
+        margin-top: 35px;
+    }
+    @media screen and (min-width: 992px){
+        margin-right: 0;
+        margin-top: -15px;
+    }
+    @include mq(tbLG, true) {
+        margin-top: 20px;
+    }
+    @media screen and (min-width: 1200px){
+        justify-self: self-end;
+        margin-right: 157px;
+        margin-top: 25px;
+        padding-top: 15px;
+    }
+    @include mq(dt, true) {
+        margin-right: 133px;
+    }
+}
+
+.service-simple__btn {
+    font-family: $primaryFont;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    padding: 15px 70px;
+    @include mq(tb, true) {
+        font-size: 15px;
+        line-height: 18px;
+        padding: 12px 50px;
+    }
+    @include mq(tbLG, true) {
+        padding: 12px 48px;
+    }
+    @include mq(dt, true) {
+        font-size: 18px;
+        line-height: 22px;
+        padding: 20px 46px;
+    }
+}
