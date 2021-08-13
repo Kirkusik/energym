@@ -95,7 +95,6 @@
     @media screen and (min-width: 992px) {
         display: flex;
         flex-direction: row;
-        margin-right: 50px;
     }
 }
 
@@ -141,16 +140,20 @@
         margin-top: 35px;
     }
     @media screen and (min-width: 992px){
-        margin-right: 50px;
-        margin-top: 26px;
+        margin-right: 0;
+        margin-top: -15px;
+    }
+    @include mq(tbLG, true) {
+        margin-top: 20px;
     }
     @media screen and (min-width: 1200px){
-        justify-self: self-start;
-        margin-left: 25px;
+        justify-self: self-end;
+        margin-right: 157px;
+        margin-top: 25px;
         padding-top: 15px;
     }
     @include mq(dt, true) {
-        margin-left: 25px;
+        margin-right: 133px;
     }
 }
 
