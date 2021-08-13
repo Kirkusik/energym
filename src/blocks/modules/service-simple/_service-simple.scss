@@ -1,5 +1,21 @@
+.hero-block__video-wrapper a{
+    //position: fixed;
+}
+
+
+
+
+
+
+
+
+
+//----------------------------------------------------------------
+
 .service-simple__container {
     padding-bottom: 50px;
+    background-color: clr(secondaryBG);
+    background-clip: content-box;
     @include mq(tb, true) {
         display: grid;
         grid-template-columns: 1fr 1fr;
