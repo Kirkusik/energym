@@ -1,0 +1,86 @@
+.service-complex__hero-block {
+  background-color: #faf7fb;
+}
+.service-complex__hero-content-wrapper {
+  @include mq(tbLG, tbLG) {
+    display: flex;
+  }
+}
+.services-complex__list-wrapper {
+  background-color: rgba(153, 153, 154, 0.8);
+  padding: 16px 12px 4px 12px;
+  font-family: $secondaryFont;
+  font-weight: 500;
+  line-height: 18px;
+
+  @include mq(tb, tb) {
+    padding: 24px 24px 0 24px;
+  }
+  @include mq(tbLG, tbLG) {
+    width: 234px;
+    padding: 24px auto 0 41px;
+    line-height: 21px;
+  }
+  @include mq(dt, dt) {
+    padding: 37px auto 0 41px;
+    line-height: 22px;
+  }
+}
+
+.services-complex__default {
+  display: flex;
+  justify-content: space-between;
+  @include mq(tbLG, tbLG) {
+    display: none;
+  }
+}
+
+.services-complex__arrow {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.services-complex__default-item {
+  font-size: 16px;
+}
+
+.services-menu {
+  column-count: 2;
+  @include mq(tbLG, tbLG) {
+    column-count: 1;
+  }
+}
+
+.services-complex__list-item {
+  margin-bottom: 12px;
+  @include mq(tb, tb) {
+    margin-bottom: 24px;
+  }
+  @include mq(tbLG, tbLG) {
+    margin-bottom: 16px;
+  }
+  @include mq(dt, dt) {
+    margin-bottom: 23px;
+  }
+}
+
+.services-menu__link {
+  color: #fff;
+  &:hover {
+    color: #ffa6c4;
+  }
+  &--active {
+    color: #e5004f;
+    @include mq(tbLG, tbLG) {
+      color: #fff;
+    }
+  }
+}
+
+.services-video-block__text-wrapper {
+}
+
+.services-video-block__title {
+  margin-top: 30px;
+}
