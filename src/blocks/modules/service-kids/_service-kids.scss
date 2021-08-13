@@ -71,6 +71,9 @@
     @include mq(dt, true) {
         grid-template-columns: auto 228px;
         column-gap: 0;
+        align-content: flex-end;
+        align-self: flex-end;
+        margin-bottom: 40px;
     }
 }
 .kids-hero__info-list {
