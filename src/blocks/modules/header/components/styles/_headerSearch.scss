@@ -37,12 +37,12 @@
 
 .search__input {
     @extend %forms;
+
     @include mq(tbLG, true) {
         display: block;
         padding-top: 0;
         padding-bottom: 0;
         border-radius: 4px;
-
         @include text(16px, 300, $secondaryFont);
     }
     @media (max-width: 767px) {
@@ -50,6 +50,7 @@
         top: 40px;
     }
     display: none;
+    transition: 0.4s;
     opacity: 1;
     padding-left: 16px;
     padding-top: 6px;
@@ -60,7 +61,7 @@
     }
     &--active {
         display: block;
-        animation-name: move;
-        animation-duration: 0.5s;
+        // animation-name: move;
+        // animation-duration: 0.5s;
     }
 }
