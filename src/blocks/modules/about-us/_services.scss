@@ -1,0 +1,133 @@
+.about-us-services__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include mq(tb, true) {
+        //proportional column widths relative to the container width
+        grid-template-columns: 30% 7.8% 24.7% 37.5%;
+        grid-auto-rows: min-content;
+    }
+}
+
+.about-us-services__link {
+    position: relative;
+    display: block;
+    height: 100%;
+}
+.about-us-services__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: 0.3s;
+    @include mq(tb, true) {
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.8;
+    }
+}
+
+.about-us-services__item {
+    overflow: hidden;
+    &--gym {
+        @media (max-width: 767px) {
+            grid-column: 1/-1;
+        }
+    }
+    &--group {
+        @include mq(tb, true) {
+            grid-column: 3/-1;
+        }
+    }
+
+    &:first-child {
+        @include mq(tb, true) {
+            grid-column: 1/3;
+        }
+    }
+    &:nth-child(4) {
+        @include mq(tb, true) {
+            grid-column: 2/4;
+        }
+    }
+    @include pseudo(after, "", absolute) {
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+
+        @include text(min(232px, 17vw));
+        color: transparent;
+        -webkit-text-stroke: 1px clr(white);
+        line-height: 77px;
+
+        @media (min-width: 480px) {
+            bottom: 10px;
+        }
+        @media (min-width: 635px) {
+            bottom: 20px;
+        }
+        @include mq(tb, true) {
+            left: -24px;
+            bottom: -16px;
+        }
+    }
+
+    &:first-child::after {
+        content: "01";
+    }
+    &:nth-child(2)::after {
+        content: "02";
+    }
+    &:nth-child(3)::after {
+        content: "03";
+    }
+    &:nth-child(4)::after {
+        content: "04";
+    }
+    &:nth-child(5)::after {
+        content: "05";
+    }
+}
+
+// items hover
+.about-us-services__item:hover .about-us-services__btn,
+.about-us-services__item:focus .about-us-services__btn {
+    @include mq(tb, true) {
+        opacity: 1;
+    }
+}
+// img hover
+.about-us-services__item:hover .about-us-services__img,
+.about-us-services__item:focus .about-us-services__img {
+    @include mq(tb, true) {
+        opacity: 1;
+    }
+}
+.about-us-services__btn {
+    z-index: 2;
+    padding: 1em;
+    padding-right: 3em;
+    position: absolute;
+    line-height: 1.22;
+    right: 0;
+    bottom: 6%;
+    @include text(rem(9), 700, "Montserrat");
+    background-image: url("../img/svg/goto__arrow.svg");
+    background-repeat: no-repeat;
+    background-size: 7px 7px;
+    //centering the arrow in the center of the right padding
+    background-position: right calc((3em - 7px) / 2) center;
+    transition: 0.3s;
+    @include mq(tb, true) {
+        opacity: 0;
+        bottom: 11%;
+        font-size: rem(16);
+        font-weight: 600;
+        background-size: 12px 12px;
+        background-position: right calc((3em - 12px) / 2) center;
+    }
+    @include mq(dt, true) {
+        font-size: rem(24);
+        background-size: 16px 16px;
+        background-position: right calc((3em - 16px) / 2) center;
+    }
+}
