@@ -57,17 +57,17 @@
 }
 .video-section__info-wrapper {
     display: grid;
-    grid-template-columns: auto 64px;
+    grid-template-columns: auto 88px;
     grid-area: info;
     padding: 24px 12px;
     @include mq(tb, true) {
-        grid-template-columns: auto 104px;
+        grid-template-columns: auto 140px;
         column-gap: 24px;
         margin-right: 24px;
         padding: 0;
     }
     @include mq(tbLG, true) {
-        grid-template-columns: auto 88px;
+        grid-template-columns: auto 136px;
     }
     @include mq(dt, true) {
         grid-template-columns: auto 228px;
@@ -83,6 +83,10 @@
     @include mq(tb, true) {
         display: flex;
         justify-content: flex-end;
+    }
+    @include mq(tbLG, true) {
+        align-content: flex-end;
+        align-self: flex-end;
     }
     @include mq(dt, true) {
         justify-content: center;
@@ -103,14 +107,10 @@
 .video-section__info-link {
     color: clr(black);
     line-height: 19px;
-    @include text(14px, 400, $secondaryFont);
-    @include mq(tb, true) {
-        font-size: rem(12);
-        line-height: 15px;
-    }
+    @include text(16px, 400, $secondaryFont);
     @include mq(tbLG, true) {
-        font-size: rem(17);
-        line-height: 20px;
+        font-size: rem(20);
+        line-height: 24px;
     }
     @include mq(dt, true) {
         font-size: rem(24);
@@ -148,10 +148,6 @@
 
 .video-section__cards-img {
     @include mq(tbLG, true) {
-        width: 36px;
-        height: 22px;
-    }
-    @include mq(dt, true) {
         width: 60px;
         height: 38px;
     }
@@ -215,15 +211,17 @@
         line-height: 44px;
     }
 }
-.video-btn--adaptive {
-    width: 48px;
-    height: 48px;
-    @include mq(tbLG, true) {
-        width: 64px;
-        height: 64px;
-    }
-    @include mq(dt, true) {
-        width: 130px;
-        height: 130px;
+.video-btn {
+    &--adaptive {
+        width: 48px;
+        height: 48px;
+        @include mq(tbLG, true) {
+            width: 64px;
+            height: 64px;
+        }
+        @include mq(dt, true) {
+            width: 130px;
+            height: 130px;
+        }
     }
 }
