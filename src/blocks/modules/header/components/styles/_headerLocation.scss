@@ -1,10 +1,9 @@
 .location {
     @extend %forms;
+    // @extend %hideAnimation;
     @include mq(tbLG, true) {
         @include text(16px, 300, $secondaryFont);
-        position: relative;
         height: 25px;
-        opacity: 1;
         margin-right: 33px;
         border-top-left-radius: 4px;
         border-top-right-radius: 4px;
@@ -12,23 +11,17 @@
     @media (max-width: 767px) {
         top: 42px;
     }
-    display: block;
     width: 208px;
     height: 30px;
-    opacity: 0;
     cursor: pointer;
 
     &--active {
-        opacity: 1;
-        animation-name: move;
-        animation-duration: 0.5s;
+        @extend %showAnimation;
     }
 }
 
 .location--selected .location__list {
-    opacity: 1;
-    animation-name: move;
-    animation-duration: 0.5s;
+    @extend %showAnimation;
 }
 
 .location__btn {
@@ -43,7 +36,6 @@
         content: url("../img/svg/location-mob.svg");
         width: 10px;
         height: 16px;
-
         @include mq(tb, true) {
             width: 12px;
             height: 20px;
@@ -71,7 +63,6 @@
     @include mq(tbLG, true) {
         padding-left: 16px;
     }
-    // position: relative;
     display: flex;
     justify-content: space-between;
     padding-left: 8px;
@@ -82,29 +73,21 @@
         top: 2px;
         right: 10px;
     }
-    // position: absolute;
-    // top: 4px;
     margin-left: 2px;
-    // right: 0;
-    // margin-right: 24px;
     border: none;
     background: transparent;
     cursor: pointer;
     &::before {
         content: url("../img/svg/location_down_arrow.svg");
-        // text-align: center;
         display: inline-block;
         margin-bottom: 3px;
-        // width: 10px;
-        // height: 6px;
     }
 }
 .location__list {
+    @extend %hideAnimation;
     @include mq(tbLG, true) {
         padding-left: 16px;
     }
-    display: block;
-    opacity: 0;
     padding: 3px 0 9px 8px;
     background-color: clr(white);
     border-bottom-left-radius: 4px;

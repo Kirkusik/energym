@@ -204,7 +204,6 @@ function onLocationItemClick(e) {
     location.defaultItem.innerText =
         e.target.closest(".location__item").innerText;
 }
-//---------remove borders in search input---------
 
 menu.burgerButton.addEventListener("click", (e) => toggleMenu(e));
 menu.button.addEventListener("click", (e) => toggleMenu(e));

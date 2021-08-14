@@ -1,17 +1,8 @@
-@keyframes fade {
+@keyframes moveUp {
     from {
-        opacity: 0.4;
+        transform: translateY(0);
     }
     to {
-        opacity: 1;
-    }
-}
-
-@keyframes move {
-    from {
         transform: translateY(-20px);
-    }
-    to {
-        transform: translateX(0);
     }
 }

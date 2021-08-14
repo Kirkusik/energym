@@ -8,6 +8,8 @@
         @include text(16px, 300, $secondaryFont);
         position: relative;
         line-height: 25px;
+        opacity: 1;
+        visibility: visible;
     }
 
     @media (max-width: 999px) {
@@ -20,13 +22,49 @@
     color: #7a7979;
     outline: none;
     border: none;
-    display: block;
-    // opacity: 0;
+    //----animation-----
 
+    animation-name: moveUp;
+    animation-duration: 0.5s;
+    transition: 0.4s;
+    opacity: 0;
+    visibility: hidden;
     &:focus {
         outline: auto;
     }
 }
+
+%showAnimation {
+    opacity: 1;
+    visibility: visible;
+    animation-name: moveDown;
+    animation-duration: 0.5s;
+    @keyframes moveDown {
+        from {
+            transform: translateY(-20px);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+}
+
+%hideAnimation {
+    opacity: 0;
+    visibility: hidden;
+    animation-name: moveUp;
+    animation-duration: 0.5s;
+    transition: 0.4s;
+    @keyframes moveUp {
+        from {
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(-20px);
+        }
+    }
+}
+
 //extended classes at menuItems.sccs
 %subItemsList {
     @include mq(tbLG, true) {
