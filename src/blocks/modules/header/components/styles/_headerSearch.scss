@@ -37,7 +37,6 @@
 
 .search__input {
     @extend %forms;
-    // @extend %hideAnimation;
     @include mq(tbLG, true) {
         padding-top: 0;
         padding-bottom: 0;
@@ -56,6 +55,7 @@
         outline: none;
     }
     &--active {
-        @extend %showAnimation;
-    }
+        opacity: 1;
+        visibility: visible;
+        z-index: 2;
 }

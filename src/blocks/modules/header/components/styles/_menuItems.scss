@@ -167,7 +167,7 @@
         margin-right: 16px;
     }
 
-     &:last-child {
+    &:last-child {
         align-self: center;
     }
 
@@ -180,9 +180,8 @@
             width: 32px;
             height: 32px;
         }
-       
     }
-    
+
     &:first-child::before {
         content: url("../img/svg/facebook_desk.svg");
     }
@@ -195,13 +194,10 @@
         width: 24px;
         height: 18px;
         @include mq(tbLG, true) {
-         width: 32px;
-         height: 25px;
-    
+            width: 32px;
+            height: 25px;
         }
-       
     }
- 
 }
 .submenu__socials-link {
     display: flex;
@@ -275,32 +271,29 @@
     }
     //-----icons-----
     &:nth-child(2)::before {
-    content: url("../img/svg/location_desk.svg");
-    margin-right: 15px;
-    width: 21px;
-    height: 18px;
-    @include mq(tb, true) {
-    margin-bottom: 18px;
-    margin-right: 0;
-    }
-    @include mq(tbLG, true) {
-    margin-bottom: 0;
-    width: 24px;
-    height: 28px;
-    }
-
+        content: url("../img/svg/location_desk.svg");
+        margin-right: 15px;
+        width: 21px;
+        height: 18px;
+        @include mq(tb, true) {
+            margin-bottom: 18px;
+            margin-right: 0;
+        }
+        @include mq(tbLG, true) {
+            margin-bottom: 0;
+            width: 24px;
+            height: 28px;
+        }
     }
 
     &:last-child::before {
-    content: url("../img/svg/tel_desk.svg");
-    @include mq(tbLG, true) {
-    display: block;
-    width: 32px;
-    height: 32px;
-    }
-    display: none;
-           
-        
+        content: url("../img/svg/tel_desk.svg");
+        @include mq(tbLG, true) {
+            display: block;
+            width: 32px;
+            height: 32px;
+        }
+        display: none;
     }
 }
 
@@ -321,11 +314,8 @@
         line-height: 17px;
     }
     font-style: normal;
-
-    &::before{
-
-    }
 }
+
 .submenu__contact-tel {
     @include text(17px, 400, $primaryFont);
     @include mq(tb, true) {

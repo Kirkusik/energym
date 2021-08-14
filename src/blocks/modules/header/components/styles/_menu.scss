@@ -3,12 +3,11 @@
     z-index: 10;
     width: 300px;
     top: -9px;
-    right: -360px;
+    right: 10px;
     display: none;
     background-color: clr(white);
     color: clr(purpleDark);
     box-shadow: -4px 7px 8px 0px rgba(34, 60, 80, 0.2);
-    transition: 0.4s;
     @include mq(tbLG, true) {
         right: 0;
         display: flex;
@@ -20,7 +19,6 @@
     }
     &--active {
         display: grid;
-        right: 10px;
     }
 }
 

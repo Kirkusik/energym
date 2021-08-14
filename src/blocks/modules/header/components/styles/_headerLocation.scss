@@ -1,6 +1,5 @@
 .location {
     @extend %forms;
-    // @extend %hideAnimation;
     @include mq(tbLG, true) {
         @include text(16px, 300, $secondaryFont);
         height: 25px;
@@ -11,17 +10,18 @@
     @media (max-width: 767px) {
         top: 42px;
     }
-    width: 208px;
     height: 30px;
     cursor: pointer;
-
     &--active {
-        @extend %showAnimation;
+        opacity: 1;
+        visibility: visible;
+        z-index: 2;
     }
 }
 
 .location--selected .location__list {
-    @extend %showAnimation;
+    opacity: 1;
+    visibility: visible;
 }
 
 .location__btn {
@@ -62,17 +62,13 @@
 .location__header {
     @include mq(tbLG, true) {
         padding-left: 16px;
+        padding-right: 8px;
     }
     display: flex;
     justify-content: space-between;
     padding-left: 8px;
-    padding-right: 8px;
 }
 .location__arrow {
-    @include mq(tbLG, true) {
-        top: 2px;
-        right: 10px;
-    }
     margin-left: 2px;
     border: none;
     background: transparent;
@@ -84,7 +80,6 @@
     }
 }
 .location__list {
-    @extend %hideAnimation;
     @include mq(tbLG, true) {
         padding-left: 16px;
     }
@@ -92,4 +87,6 @@
     background-color: clr(white);
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
 }
