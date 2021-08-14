@@ -80,6 +80,9 @@
 .cards-service__title {
   @include text(17px, 400, $primaryFont);
   line-height: 20px;
+  position: relative;
+  bottom: 45px;
+  display: inline-block;
 }
 
 .cards-service__table {
@@ -87,18 +90,35 @@
   line-height: 16px;
   display: flex;
   flex-direction: column;
+  padding-bottom: 50px;
 }
 
 .service-table__item {
   display: flex;
+  align-items: center;
+  &--first {
+    align-items: start;
+  }
 }
 
 .service-table__title {
-  width: 54%;
+  width: 62%;
 }
 
 .service-table__value {
+  padding: 8px 0 8px 32px;
+  width: 48%;
   &--white {
     background: #ffffff;
+  }
+  &--first {
+    padding: 0 0 12px 0;
+    @include text(9px, 400, $secondaryFont);
+    line-height: 11px;
+    display: flex;
+    flex-direction: column;
+  }
+  &--weekday {
+    padding-bottom: 8px;
   }
 }
