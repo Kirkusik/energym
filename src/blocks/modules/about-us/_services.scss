@@ -101,9 +101,7 @@
 
 // items hover and img hover
 .about-us-services__item:hover .about-us-services__btn,
-.about-us-services__item:focus .about-us-services__btn,
-.about-us-services__item:hover .about-us-services__img,
-.about-us-services__item:focus .about-us-services__img {
+.about-us-services__item:hover .about-us-services__img {
     @include mq(tb, true) {
         opacity: 1;
     }
