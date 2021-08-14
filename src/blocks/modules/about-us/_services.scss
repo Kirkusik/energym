@@ -1,7 +1,10 @@
 .about-us-services__list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
 
+    @media (min-width: 576px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
     @include mq(tb, true) {
         //proportional column widths relative to the container width
         grid-template-columns: 30% 7.8% 24.7% 37.5%;
@@ -58,21 +61,20 @@
     // big numbers general styles
     @include pseudo(after, "", absolute) {
         right: 0;
-        bottom: 0;
+        bottom: 10vw;
         z-index: 1;
 
         // make numbers with adaptive font-size depending on screen width
-        @include text(min(232px, 17vw));
+        @include text(25vw);
         color: transparent;
         -webkit-text-stroke: 1px clr(white);
         line-height: 77px;
 
-        @media (min-width: 480px) {
-            bottom: 10px;
+        @media (min-width: 576px) {
+            font-size: min(232px, 17vw);
+            bottom: 30px;
         }
-        @media (min-width: 635px) {
-            bottom: 20px;
-        }
+
         @include mq(tb, true) {
             left: -24px;
             bottom: -16px;
@@ -116,10 +118,11 @@
     line-height: 1.22;
     right: 0;
     bottom: 6%;
-    @include text(rem(9), 700, "Montserrat");
+    @include text(rem(16), 700, "Montserrat");
     background-image: url("../img/svg/goto__arrow.svg");
     background-repeat: no-repeat;
-    background-size: 7px 7px;
+    // background-size: 7px 7px;
+    background-size: 16px 16px;
 
     //centering the arrow in the center of the right padding
     background-position: right calc((3em - 7px) / 2) center;
@@ -128,9 +131,9 @@
     @include mq(tb, true) {
         opacity: 0;
         bottom: 11%;
-        font-size: rem(16);
-        font-weight: 600;
-        background-size: 12px 12px;
+        // font-size: rem(16);
+        // font-weight: 600;
+        // background-size: 12px 12px;
         background-position: right calc((3em - 12px) / 2) center;
     }
     @include mq(dt, true) {
