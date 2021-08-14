@@ -119,24 +119,19 @@
     @include text(rem(16), 700, "Montserrat");
     background-image: url("../img/svg/goto__arrow.svg");
     background-repeat: no-repeat;
-    // background-size: 7px 7px;
     background-size: 16px 16px;
+    transition: 0.3s;
 
     //centering the arrow in the center of the right padding
     background-position: right calc((3em - 7px) / 2) center;
-    transition: 0.3s;
 
     @include mq(tb, true) {
         opacity: 0;
         bottom: 11%;
-        // font-size: rem(16);
-        // font-weight: 600;
-        // background-size: 12px 12px;
         background-position: right calc((3em - 12px) / 2) center;
     }
     @include mq(dt, true) {
         font-size: rem(24);
-        background-size: 16px 16px;
         background-position: right calc((3em - 16px) / 2) center;
     }
 }
