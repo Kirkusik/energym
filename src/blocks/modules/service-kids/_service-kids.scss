@@ -215,3 +215,15 @@
         line-height: 44px;
     }
 }
+.video-btn--adaptive {
+    width: 48px;
+    height: 48px;
+    @include mq(tbLG, true) {
+        width: 64px;
+        height: 64px;
+    }
+    @include mq(dt, true) {
+        width: 130px;
+        height: 130px;
+    }
+}
