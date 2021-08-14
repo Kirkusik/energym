@@ -17,6 +17,7 @@
     height: 30px;
     opacity: 0;
     cursor: pointer;
+
     &--active {
         opacity: 1;
         animation-name: move;

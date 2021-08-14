@@ -46,8 +46,10 @@
         @include text(16px, 300, $secondaryFont);
     }
     @media (max-width: 767px) {
-        right: 10px;
-        top: 40px;
+        // width: 0;
+        // transform: translate(0, -50%);
+        right: 9px;
+        top: 41px;
     }
     display: none;
     transition: 0.4s;
@@ -61,7 +63,8 @@
     }
     &--active {
         display: block;
-        // animation-name: move;
-        // animation-duration: 0.5s;
+        // width: 300px;
+        animation-name: move;
+        animation-duration: 0.5s;
     }
 }
