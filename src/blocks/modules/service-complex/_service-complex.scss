@@ -33,6 +33,10 @@
   @include mq(tbLG, tbLG) {
     display: none;
   }
+
+  &--active {
+    display: none;
+  }
 }
 
 .services-complex__arrow {
@@ -46,8 +50,10 @@
 }
 
 .services-menu {
+  display: none;
   column-count: 2;
   @include mq(tbLG, tbLG) {
+    display: block;
     column-count: 1;
   }
 }
