@@ -13,15 +13,13 @@
     height: 30px;
     cursor: pointer;
     &--active {
-        opacity: 1;
-        visibility: visible;
+        display: block;
         z-index: 2;
     }
 }
 
 .location--selected .location__list {
-    opacity: 1;
-    visibility: visible;
+    display: block;
 }
 
 .location__btn {
@@ -83,10 +81,9 @@
     @include mq(tbLG, true) {
         padding-left: 16px;
     }
+    display: none;
     padding: 3px 0 9px 8px;
     background-color: clr(white);
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
-    opacity: 0;
-    visibility: hidden;
 }

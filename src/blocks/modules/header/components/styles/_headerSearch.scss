@@ -45,7 +45,7 @@
     }
     @media (max-width: 767px) {
         right: 9px;
-        top: 40px;
+        top: 42px;
     }
     padding-left: 16px;
     padding-top: 6px;
@@ -55,8 +55,7 @@
         outline: none;
     }
     &--active {
-        opacity: 1;
-        visibility: visible;
+        display: block;
         z-index: 2;
     }
 }

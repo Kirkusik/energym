@@ -7,8 +7,7 @@
         @include text(16px, 300, $secondaryFont);
         position: relative;
         line-height: 25px;
-        opacity: 1;
-        visibility: visible;
+        display: block;
     }
 
     @media (max-width: 999px) {
@@ -21,8 +20,7 @@
     color: #7a7979;
     outline: none;
     border: none;
-    opacity: 0;
-    visibility: hidden;
+    display: none;
     &:focus {
         outline: auto;
     }
