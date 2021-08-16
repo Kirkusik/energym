@@ -7,9 +7,7 @@
         border-top-left-radius: 4px;
         border-top-right-radius: 4px;
     }
-    @media (max-width: 767px) {
-        top: 42px;
-    }
+
     height: 30px;
     cursor: pointer;
     &--active {
@@ -65,6 +63,7 @@
     display: flex;
     justify-content: space-between;
     padding-left: 8px;
+    position: relative;
 }
 .location__arrow {
     margin-left: 2px;
@@ -80,8 +79,19 @@
 .location__list {
     @include mq(tbLG, true) {
         padding-left: 16px;
+        position: relative;
+    }
+    @media (max-width: 767px) {
+        position: absolute;
+        top: 28px;
+        right: -1px;
+        width: 214px;
+        border-bottom: 1px solid #7a7979;
+        border-left: 1px solid #7a7979;
+        border-right: 1px solid #7a7979;
     }
     display: none;
+
     padding: 3px 0 9px 8px;
     background-color: clr(white);
     border-bottom-left-radius: 4px;

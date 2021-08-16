@@ -9,9 +9,14 @@
         line-height: 25px;
         display: block;
     }
-
+    @media (max-width: 767px) {
+        border: 1px solid #7a7979;
+        top: 42px;
+        right: 9px;
+    }
     @media (max-width: 999px) {
         position: absolute;
+        border: none;
         right: 9px;
         top: 36px;
     }
@@ -19,7 +24,7 @@
     background: clr(secondaryBG);
     color: #7a7979;
     outline: none;
-    border: none;
+
     display: none;
     &:focus {
         outline: auto;

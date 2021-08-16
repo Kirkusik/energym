@@ -41,11 +41,8 @@
         padding-top: 0;
         padding-bottom: 0;
         border-radius: 4px;
+        border: none;
         @include text(16px, 300, $secondaryFont);
-    }
-    @media (max-width: 767px) {
-        right: 9px;
-        top: 42px;
     }
     padding-left: 16px;
     padding-top: 6px;
