@@ -1,3 +1,5 @@
+"use strict";
+
 const menu = {
     navigation: document.querySelector(".menu-wrapper"),
     button: document.querySelector(".square-btn"),
@@ -5,17 +7,17 @@ const menu = {
 };
 
 const title = {
-    links: [...document.querySelectorAll(".menu__tab-link")],
-    activeClass: "menu__tab-link--active",
-    subListsActiveClass: "menu__items--active",
+    links: [...document.querySelectorAll(".menu__link")],
+    activeClass: "menu__link--active",
+    subListsActiveClass: "submenu__list--active",
 };
 
 const subtitle = {
-    links: [...document.querySelectorAll(".menu__item-link")],
-    activeClass: "menu__item-link--active",
-    subListsActiveClass: "menu__sub-items--active",
-    subListsClass: "menu__sub-items",
-    activeArrowClass: "menu__sub-title-link--active",
+    links: [...document.querySelectorAll(".submenu__link")],
+    activeClass: "submenu__link--active",
+    subListsActiveClass: "submenu__list-first--active",
+    subListsClass: "submenu__list-first",
+    activeArrowClass: "submenu__link--pseudo-active",
 };
 
 const location = {
@@ -30,7 +32,7 @@ const location = {
 
 const search = {
     btn: document.getElementById("search__btn"),
-    input: document.getElementById("search"),
+    form: document.getElementById("search"),
     activeClass: "search__input--active",
     activeBtnClass: "search__btn--active",
 };
@@ -67,9 +69,9 @@ function onMenuLinkClick(activeLink) {
         } else {
             removeLinkClass(
                 link,
-                document.querySelector(".menu__sub-title-link--active"),
-                document.querySelector(".menu__item-link--active"),
-                document.querySelectorAll(".menu__sub-items--active")
+                document.querySelector(".submenu__link--pseudo-active"),
+                document.querySelector(".submenu__link--active"),
+                document.querySelectorAll(".submenu__list-first--active")
             );
         }
     });
@@ -110,7 +112,7 @@ function onMenuSublinkClick(activeSublink) {
         } else {
             removeSublinkClass(
                 link,
-                document.querySelectorAll(".menu__sub-items--active")
+                document.querySelectorAll(".submenu__list-first--active")
             );
         }
     });
@@ -118,8 +120,9 @@ function onMenuSublinkClick(activeSublink) {
 
 function onMenuClick(e) {
     const tabletDesk = window.matchMedia("(max-width: 999px)");
-    activeItem = e.target.closest(".menu__tab-link");
-    activeSubItem = e.target.closest(".menu__item-link");
+    const activeItem = e.target.closest(".menu__link");
+    const activeSubItem = e.target.closest(".submenu__link");
+
     //on item click
     if (activeItem && tabletDesk.matches) {
         onMenuLinkClick(activeItem);
@@ -128,6 +131,7 @@ function onMenuClick(e) {
     if (activeSubItem && tabletDesk.matches) {
         onMenuSublinkClick(activeSubItem);
     }
+
     return;
 }
 
@@ -135,18 +139,57 @@ function onMenuClick(e) {
 function toggleMenu(e) {
     e.preventDefault();
     menu.navigation.classList.toggle("menu-wrapper--active");
+    if (document.querySelector(".menu__link--active")) {
+        removeLinkClass(
+            document.querySelector(".menu__link--active"),
+            document.querySelector(".submenu__link--pseudo-active"),
+            document.querySelector(".submenu__link--active"),
+            document.querySelectorAll(".submenu__list-first--active")
+        );
+    }
+}
+function onBehindMenuTouch(e) {
+    if (
+        !e.target.closest(".menu-wrapper") &&
+        !e.target.closest(".menu__burger-button") &&
+        menu.navigation.classList.contains("menu-wrapper--active")
+    ) {
+        menu.navigation.classList.remove("menu-wrapper--active");
+    }
 }
 
 //---------to show/hide location and search forms on mb and tablet---------
-function onFormClick(element, activeClass, prevEl, prevElClass) {
-    const tabletDesk = window.matchMedia("(max-width: 999px)");
-    if (tabletDesk.matches) {
-        if (prevEl.classList.contains(prevElClass)) {
-            prevEl.classList.remove(prevElClass);
-        }
-        element.classList.toggle(activeClass);
+
+function toggleForms(element, activeClass, prevEl, prevElClass) {
+    if (prevEl.classList.contains(prevElClass)) {
+        prevEl.classList.remove(prevElClass);
+    }
+    element.classList.toggle(activeClass);
+}
+
+//remove list in case hiding search form
+function removeLocationList(element, activeClass) {
+    if (!element.classList.contains(activeClass)) {
+        element.classList.remove("location--selected");
     }
 }
+
+function onSearchFormClick(element, activeClass, prevEl, prevElClass) {
+    const tabletDesk = window.matchMedia("(max-width: 999px)");
+    if (tabletDesk.matches) {
+        toggleForms(element, activeClass, prevEl, prevElClass);
+        removeLocationList(prevEl, prevElClass);
+    }
+}
+
+function onLocationFormClick(element, activeClass, prevEl, prevElClass) {
+    const tabletDesk = window.matchMedia("(max-width: 999px)");
+    if (tabletDesk.matches) {
+        toggleForms(element, activeClass, prevEl, prevElClass);
+        removeLocationList(element, activeClass);
+    }
+}
+
 //---------to show/hide location list on click---------
 (function selectList() {
     location.header.forEach((el) => {
@@ -166,19 +209,21 @@ menu.burgerButton.addEventListener("click", (e) => toggleMenu(e));
 menu.button.addEventListener("click", (e) => toggleMenu(e));
 menu.navigation.addEventListener("click", onMenuClick);
 location.btn.addEventListener("click", () =>
-    onFormClick(
+    onLocationFormClick(
         location.box,
         location.activeClass,
-        search.input,
+        search.form,
         search.activeClass
     )
 );
 search.btn.addEventListener("click", () =>
-    onFormClick(
-        search.input,
+    onSearchFormClick(
+        search.form,
         search.activeClass,
         location.box,
         location.activeClass
     )
 );
 location.list.addEventListener("click", onLocationItemClick);
+document.addEventListener("click", onBehindMenuTouch);
+document.addEventListener("touchstart", onBehindMenuTouch);
