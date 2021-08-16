@@ -8,33 +8,22 @@
 }
 .services-complex__list-wrapper {
   background-color: rgba(153, 153, 154, 0.8);
-  padding: 16px 12px 4px 12px;
+
   font-family: $secondaryFont;
   font-weight: 500;
   line-height: 18px;
-
-  @include mq(tb, tb) {
-    padding: 24px 24px 0 24px;
-  }
-  @include mq(tbLG, tbLG) {
-    width: 234px;
-    padding: 24px auto 0 41px;
-    line-height: 21px;
-  }
-  @include mq(dt, dt) {
-    padding: 37px auto 0 41px;
-    line-height: 22px;
-  }
 }
 
 .services-complex__default {
+  padding: 16px 12px;
   display: flex;
   justify-content: space-between;
+
   @include mq(tbLG, tbLG) {
     display: none;
   }
 
-  &--active {
+  &--active-menu {
     display: none;
   }
 }
@@ -52,9 +41,24 @@
 .services-menu {
   display: none;
   column-count: 2;
+  padding: 16px 12px;
+  @include mq(tb, tb) {
+    padding: 24px 24px 0 24px;
+  }
   @include mq(tbLG, tbLG) {
+    width: 234px;
+    padding: 24px auto 0 41px;
+    line-height: 21px;
     display: block;
     column-count: 1;
+  }
+  @include mq(dt, dt) {
+    padding: 37px auto 0 41px;
+    line-height: 22px;
+  }
+
+  &--active {
+    display: block;
   }
 }
 
