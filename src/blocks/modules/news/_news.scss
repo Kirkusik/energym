@@ -105,7 +105,7 @@
   justify-content: stretch;
   align-items: stretch;
   flex-wrap: wrap;
-  @media (min-width: 576px) {
+  @media (min-width: 640px) {
     flex-direction: row;
   }
 }
@@ -115,7 +115,7 @@
   margin-bottom: 16px;
   color: #000000;
 
-  @media (min-width: 576px) {
+  @media (min-width: 640px) {
     width: 47%;
   }
   @media (max-width: 767px) {
