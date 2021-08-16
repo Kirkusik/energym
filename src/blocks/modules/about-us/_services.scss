@@ -35,20 +35,21 @@
     // need for large numbers correct display
     overflow: hidden;
 
-    &--gym {
-        @media (max-width: 767px) {
-            grid-column: 1/-1;
-        }
-    }
-    &--group {
-        @include mq(tb, true) {
-            grid-column: 3/-1;
-        }
-    }
-
     &:first-child {
         @include mq(tb, true) {
             grid-column: 1/3;
+        }
+        &:after {
+            content: "01";
+        }
+    }
+
+    &:nth-child(2) {
+        @include mq(tb, true) {
+            grid-column: 3/-1;
+        }
+        &:after {
+            content: "02";
         }
     }
 
@@ -56,6 +57,21 @@
         @include mq(tb, true) {
             grid-column: 2/4;
         }
+        &:after {
+            content: "04";
+        }
+    }
+    &:last-child {
+        @media (max-width: 767px) {
+            grid-column: 1/-1;
+        }
+        &:after {
+            content: "05";
+        }
+    }
+
+    &:nth-child(3)::after {
+        content: "03";
     }
 
     // big numbers general styles
@@ -79,23 +95,6 @@
             left: -24px;
             bottom: -16px;
         }
-    }
-
-    // numbers content
-    &:first-child::after {
-        content: "01";
-    }
-    &:nth-child(2)::after {
-        content: "02";
-    }
-    &:nth-child(3)::after {
-        content: "03";
-    }
-    &:nth-child(4)::after {
-        content: "04";
-    }
-    &:nth-child(5)::after {
-        content: "05";
     }
 }
 
