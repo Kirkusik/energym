@@ -7,7 +7,6 @@
 @import "./components/styles/menuTabs";
 @import "./components/styles/menuItems";
 @import "./components/styles/menuSubitems";
-@import "./components/styles/headerAnimation";
 
 //----containers------
 
@@ -47,5 +46,6 @@
 
 .header__upper-links-wrapper {
     display: flex;
+    align-items: center;
     margin-left: auto;
 }
