@@ -13,4 +13,4 @@ function serviceMenuClick() {
 serviceComplex.header.addEventListener("click", (e) => {
   serviceMenuClick();
 });
-console.log(serviceComplex.header);
+console.log(serviceComplex.items);
