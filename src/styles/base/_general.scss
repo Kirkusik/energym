@@ -387,7 +387,7 @@
         margin-right: 24px;
         padding: 0;
     }
-    @include mq(tbLG, true) {
+    @media (min-width: 550px) {
         grid-template-columns: auto 228px;
     }
     @include mq(dt, true) {
@@ -477,7 +477,7 @@
 }
 
 .video-section__cards-img {
-    @include mq(tbLG, true) {
+    @media (min-width: 550px) {
         width: 60px;
         height: 38px;
     }
