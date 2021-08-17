@@ -2,7 +2,7 @@
     background-color: clr(secondaryBG);
     @include mq(tb, true) {
         display: grid;
-        grid-template-columns: repeat(2, minmax(184px, 1fr) auto); //move
+        grid-template-columns: repeat(2, minmax(184px, 1fr) auto);
         grid-template-rows: 61px min-content;
         grid-template-areas: "title . info" "video video video";
         align-items: center;

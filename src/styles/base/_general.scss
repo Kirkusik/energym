@@ -1,535 +1,540 @@
 .svgs-wrap {
-   display: none;
+    display: none;
 }
 
 .container {
-   width: 100%;
-   padding-left: 10px;
-   padding-right: 10px;
-   margin-left: auto;
-   margin-right: auto;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
 
-   @media (min-width: 576px) {
-      max-width: 576px;
-   }
-   @media (min-width: 640px) {
-      max-width: 640px;
-   }
-   @media (min-width: 768px) {
-      max-width: 768px;
-   }
-   @media (min-width: 992px) {
-      max-width: 992px;
-   }
-   @media (min-width: 1200px) {
-      max-width: 1200px;
-   }
+    @media (min-width: 576px) {
+        max-width: 576px;
+    }
+    @media (min-width: 640px) {
+        max-width: 640px;
+    }
+    @media (min-width: 768px) {
+        max-width: 768px;
+    }
+    @media (min-width: 992px) {
+        max-width: 992px;
+    }
+    @media (min-width: 1200px) {
+        max-width: 1200px;
+    }
 }
 
 .section-title__h1 {
-   @include text(48px);
+    @include text(48px);
 }
 
 .section-title__h2 {
-   @include text(32px);
+    @include text(32px);
 }
 
 .section-title__h3 {
-   @include text(25px);
+    @include text(25px);
 }
 
 .section-title__h4 {
-   @include text(20px);
+    @include text(20px);
 }
 
 .section-title__h5 {
-   @include text(16px);
+    @include text(16px);
 }
 
 .section-text__h1 {
-   @include text(18px, 400, "Montserrat");
+    @include text(18px, 400, "Montserrat");
 }
 
 .section-text__h2 {
-   @include text(16px, 400, "Montserrat");
+    @include text(16px, 400, "Montserrat");
 }
 
 .section-text__h3 {
-   @include text(14px, 400, "Montserrat");
+    @include text(14px, 400, "Montserrat");
 }
 
 .section-highlight {
-   @extend .section-title__h1;
-   width: max-content;
-   padding: 40px;
-   background-color: clr(purple);
-   color: clr(white);
+    @extend .section-title__h1;
+    width: max-content;
+    padding: 40px;
+    background-color: clr(purple);
+    color: clr(white);
 
-   &--inversed {
-      background-color: clr(purple30);
-      display: flex;
-      flex-direction: column;
+    &--inversed {
+        background-color: clr(purple30);
+        display: flex;
+        flex-direction: column;
 
-      & > .section-highlight__title {
-         color: transparent;
-         -webkit-text-stroke: 2px clr(white);
-         @include text(72px);
-      }
+        & > .section-highlight__title {
+            color: transparent;
+            -webkit-text-stroke: 2px clr(white);
+            @include text(72px);
+        }
 
-      & > .section-highlight__subtitle {
-         -webkit-text-stroke: initial;
-         color: clr(white);
-         @include text(36px, 600, $secondaryFont);
-      }
-   }
+        & > .section-highlight__subtitle {
+            -webkit-text-stroke: initial;
+            color: clr(white);
+            @include text(36px, 600, $secondaryFont);
+        }
+    }
 }
 
 .primary-btn {
-   cursor: pointer;
-   text-transform: uppercase;
-   padding: 24px 46px;
-   @include text(18px);
-   color: clr(red);
-   border: 1px solid clr(red);
-   box-sizing: border-box;
-   border-radius: 4px;
-   background: none;
-   transition: opacity 0.2s;
-   text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 24px 46px;
+    @include text(18px);
+    color: clr(red);
+    border: 1px solid clr(red);
+    box-sizing: border-box;
+    border-radius: 4px;
+    background: none;
+    transition: opacity 0.2s;
+    text-decoration: none;
 
-   &:hover {
-      opacity: 0.7;
-   }
+    &:hover {
+        opacity: 0.7;
+    }
 }
 
 .secondary-btn {
-   @extend .primary-btn;
-   color: clr(purpleDark);
-   border-color: clr(purpleDark);
-   transition: opacity 0.2s, color 0.2s, border-color 0.2s;
+    @extend .primary-btn;
+    color: clr(purpleDark);
+    border-color: clr(purpleDark);
+    transition: opacity 0.2s, color 0.2s, border-color 0.2s;
 
-   &:hover {
-      color: clr(black);
-      border-color: clr(black);
-      opacity: 1;
-   }
+    &:hover {
+        color: clr(black);
+        border-color: clr(black);
+        opacity: 1;
+    }
 }
 
 .goto-btn {
-   display: inline-block;
-   padding: 24px;
-   @include text(24px, 600, $secondaryFont);
-   color: clr(white);
-   background-color: clr(purple);
-   text-decoration: none;
-   outline: none;
-   border: none;
+    display: inline-block;
+    padding: 24px;
+    @include text(24px, 600, $secondaryFont);
+    color: clr(white);
+    background-color: clr(purple);
+    text-decoration: none;
+    outline: none;
+    border: none;
 
-   @include pseudo(after, "", relative) {
-      background-image: url(../img/svg/goto__arrow.svg);
-      background-position: center;
-      background-repeat: no-repeat;
-      margin-left: 24px;
-      width: 16px;
-      height: 16px;
-      transition: bottom 0.4s;
-      bottom: 0;
-   }
+    @include pseudo(after, "", relative) {
+        background-image: url(../img/svg/goto__arrow.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-left: 24px;
+        width: 16px;
+        height: 16px;
+        transition: bottom 0.4s;
+        bottom: 0;
+    }
 
-   &:hover::after {
-      bottom: 5px;
-   }
+    &:hover::after {
+        bottom: 5px;
+    }
 }
 
 .more-btn {
-   @extend .goto-btn;
-   position: relative;
-   cursor: pointer;
-   box-sizing: border-box;
-   width: 56px;
-   padding: 18px 16px;
-   font-size: 16px;
-   display: inline-flex;
-   align-items: center;
-   overflow: hidden;
-   transition: width 0.3s, color 0.3s, background-color 0.3s;
-   white-space: nowrap;
-   background-color: clr(red);
-   color: transparent;
+    @extend .goto-btn;
+    position: relative;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 56px;
+    padding: 18px 16px;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    overflow: hidden;
+    transition: width 0.3s, color 0.3s, background-color 0.3s;
+    white-space: nowrap;
+    background-color: clr(red);
+    color: transparent;
 
-   &::after {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      right: 0;
-      top: 0;
-      margin-left: 0;
-   }
+    &::after {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: 0;
+        top: 0;
+        margin-left: 0;
+    }
 
-   &:hover {
-      width: 220px;
-      color: clr(white);
+    &:hover {
+        width: 220px;
+        color: clr(white);
 
-      &::after {
-         width: 52px;
-         background-color: clr(red);
-      }
-   }
-
-   @media (max-width: 768px) {
-      width: 220px;
-      color: clr(white);
-
-      &::after {
-         width: 52px;
-      }
-      &:hover {
-         &::after {
+        &::after {
             width: 52px;
-         }
-      }
-   }
+            background-color: clr(red);
+        }
+    }
+
+    @media (max-width: 768px) {
+        width: 220px;
+        color: clr(white);
+
+        &::after {
+            width: 52px;
+        }
+        &:hover {
+            &::after {
+                width: 52px;
+            }
+        }
+    }
 }
 
 .contact-us-btn {
-   @extend .more-btn;
-   width: 70px;
-   padding: 19px;
-   font-family: #{"Russo One"};
-   font-weight: 400;
-   background-color: clr(pink);
+    @extend .more-btn;
+    width: 70px;
+    padding: 19px;
+    font-family: #{"Russo One"};
+    font-weight: 400;
+    background-color: clr(pink);
 
-   @include pseudo(before, url(../img/svg/msg-dialog.svg), static) {
-      height: 32px;
-      margin-right: 20px;
-      transition: margin-right 0.3s;
-   }
+    @include pseudo(before, url(../img/svg/msg-dialog.svg), static) {
+        height: 32px;
+        margin-right: 20px;
+        transition: margin-right 0.3s;
+    }
 
-   @include pseudo(after, none);
+    @include pseudo(after, none);
 
-   &:hover {
-      width: 200px;
-      color: clr(white);
-      background-color: clr(red);
+    &:hover {
+        width: 200px;
+        color: clr(white);
+        background-color: clr(red);
 
-      &::before {
-         margin-right: 12px;
-      }
-   }
+        &::before {
+            margin-right: 12px;
+        }
+    }
 }
 
 .square-btn {
-   outline: none;
-   border: none;
-   cursor: pointer;
-   width: 70px;
-   height: 70px;
-   display: inline-flex;
-   justify-content: center;
-   align-items: center;
-   background-color: clr(pink);
-   transition: background-color 0.3s;
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: 24px 24px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: clr(pink);
+    transition: background-color 0.3s;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
 
-   &:hover {
-      background-color: clr(red);
-   }
+    &:hover {
+        background-color: clr(red);
+    }
 
-   &--bigger {
-      width: 90px;
-      height: 90px;
-   }
+    &--bigger {
+        width: 90px;
+        height: 90px;
+    }
 
-   &--cross {
-      background-image: url("../img/svg/cross.svg");
-   }
+    &--cross {
+        background-image: url("../img/svg/cross.svg");
+    }
 
-   &--left {
-      background-image: url("../img/svg/arrow-left.svg");
-   }
+    &--left {
+        background-image: url("../img/svg/arrow-left.svg");
+    }
 
-   &--right {
-      background-image: url("../img/svg/arrow-right.svg");
-   }
+    &--right {
+        background-image: url("../img/svg/arrow-right.svg");
+    }
 
-   &--up {
-      background-image: url("../img/svg/arrow-up.svg");
-   }
+    &--up {
+        background-image: url("../img/svg/arrow-up.svg");
+    }
 
-   &--down {
-      background-image: url("../img/svg/arrow-down.svg");
-   }
+    &--down {
+        background-image: url("../img/svg/arrow-down.svg");
+    }
 }
 
 .styled-list {
-   & li {
-      padding-left: 30px;
-      @include pseudo(before, "", absolute) {
-         top: 4px;
-         left: 0;
-         width: 8px;
-         height: 8px;
-         background-color: clr(pink);
-
-         @include mq(tb, true) {
+    & li {
+        padding-left: 30px;
+        @include pseudo(before, "", absolute) {
+            top: 4px;
             left: 0;
-            width: 12px;
-            height: 12px;
-         }
-      }
-   }
+            width: 8px;
+            height: 8px;
+            background-color: clr(pink);
+
+            @include mq(tb, true) {
+                left: 0;
+                width: 12px;
+                height: 12px;
+            }
+        }
+    }
 }
 
 // Video
 .video-wrapper {
-   position: relative;
-   width: 100%;
+    position: relative;
+    width: 100%;
 
-   &--enabled {
-      cursor: pointer;
-   }
+    &--enabled {
+        cursor: pointer;
+    }
 }
 
 .video-link,
 .video-cover {
-   position: absolute;
-   top: 0;
-   right: 0;
-   width: 100%;
-   height: 100%;
-   background-color: clr(purple50);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: clr(purple50);
 }
 
 .video-btn {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   z-index: 1;
-   padding: 0;
-   width: 50px;
-   height: 50px;
-   border: none;
-   cursor: pointer;
-   background-image: url("../img/svg/video-play.svg");
-   background-color: transparent;
-   background-repeat: no-repeat;
-   background-size: contain;
-   background-position: right;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    background-image: url("../img/svg/video-play.svg");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
 
-   @include mq(dt, true) {
-      width: 100px;
-      height: 100px;
-   }
+    @include mq(dt, true) {
+        width: 100px;
+        height: 100px;
+    }
 }
 
 // Subscribe buttons
 .subscribe-link {
-   background-repeat: no-repeat;
-   width: 143px;
-   height: 40px;
-   background-size: contain;
-   @include mq(tb, true) {
-      width: 90px;
-      height: 26px;
-   }
-   @include mq(tbLG, true) {
-      width: 180px;
-      height: 52px;
-   }
+    background-repeat: no-repeat;
+    width: 143px;
+    height: 40px;
+    background-size: contain;
+    @include mq(tb, true) {
+        width: 90px;
+        height: 26px;
+    }
+    @include mq(tbLG, true) {
+        width: 180px;
+        height: 52px;
+    }
 
-   &--appstore {
-      background-image: url(../img/svg/appstore_dark.svg);
-   }
+    &--appstore {
+        background-image: url(../img/svg/appstore_dark.svg);
+    }
 
-   &--googleplay {
-      background-image: url(../img/svg/googleplay_dark.svg);
-   }
+    &--googleplay {
+        background-image: url(../img/svg/googleplay_dark.svg);
+    }
 }
 
 //section title
 .section__title {
-   padding: 16px;
-   font-size: rem(22);
-   line-height: 27px;
-   text-transform: uppercase;
-   @include mq(tb, true) {
-      padding: 16px 24px;
-      font-size: rem(24);
-      line-height: 29px;
-   }
-   @include mq(tbLG, true) {
-      padding: 24px 32px;
-      font-size: rem(36);
-      line-height: 44px;
-   }
-   @include mq(dt, true) {
-      padding: 40px 40px 15px;
-      font-size: rem(48);
-      line-height: 58px;
-   }
+    padding: 16px;
+    font-size: rem(22);
+    line-height: 27px;
+    text-transform: uppercase;
+    @include mq(tb, true) {
+        padding: 16px 24px;
+        font-size: rem(24);
+        line-height: 29px;
+    }
+    @include mq(tbLG, true) {
+        padding: 24px 32px;
+        font-size: rem(36);
+        line-height: 44px;
+    }
+    @include mq(dt, true) {
+        padding: 40px 40px 15px;
+        font-size: rem(48);
+        line-height: 58px;
+    }
 }
 //Video section
 //----schedule and cards wrapper----
 .video-section__info-wrapper {
-   display: grid;
-   grid-template-columns: auto 88px;
-   padding: 24px 12px;
-   @include mq(tb, true) {
-      grid-template-columns: auto 140px;
-      column-gap: 24px;
-      margin-right: 24px;
-      padding: 0;
-   }
-   @include mq(tbLG, true) {
-      grid-template-columns: auto 136px;
-   }
-   @include mq(dt, true) {
-      grid-template-columns: auto 228px;
-      column-gap: 0;
-      align-content: flex-end;
-      align-self: flex-end;
-      margin-bottom: 40px;
-   }
+    display: grid;
+    padding: 24px 12px;
+    @media (min-width: 368px) {
+        grid-template-columns: auto 140px;
+    }
+    @include mq(tb, true) {
+        column-gap: 24px;
+        margin-right: 24px;
+        padding: 0;
+    }
+    @include mq(tbLG, true) {
+        grid-template-columns: auto 228px;
+    }
+    @include mq(dt, true) {
+        column-gap: 0;
+        align-content: flex-end;
+        align-self: flex-end;
+        margin-bottom: 40px;
+    }
 }
 //----schedule list----
 .video-section__info-list {
-   display: grid;
-   grid-template-columns: repeat(2, 1fr);
-   align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    @media (min-width: 368px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 0;
+        align-items: center;
+    }
 
-   @include mq(tb, true) {
-      display: flex;
-      justify-content: flex-end;
-   }
-   @include mq(tbLG, true) {
-      align-content: flex-end;
-      align-self: flex-end;
-   }
-   @include mq(dt, true) {
-      justify-content: center;
-   }
+    @include mq(tb, true) {
+        display: flex;
+        justify-content: flex-end;
+    }
+    @include mq(tbLG, true) {
+        align-content: flex-end;
+        align-self: flex-end;
+    }
+    @include mq(dt, true) {
+        justify-content: center;
+    }
 }
 
 .video-section__info-item {
-   display: flex;
-   &:first-child {
-      @include mq(tb, true) {
-         margin-right: 16px;
-      }
-      @include mq(dt, true) {
-         margin-right: 24px;
-      }
-   }
+    display: flex;
+    &:first-child {
+        @include mq(tb, true) {
+            margin-right: 16px;
+        }
+        @include mq(dt, true) {
+            margin-right: 24px;
+        }
+    }
 }
 .video-section__info-link {
-   color: clr(black);
-   line-height: 19px;
-   @include text(16px, 400, $secondaryFont);
-   padding: 5px 10px;
-   transition: background-color 0.4s;
+    color: clr(black);
+    line-height: 19px;
+    @include text(16px, 400, $secondaryFont);
+    padding: 5px 10px;
+    transition: background-color 0.4s;
 
-   &:hover {
-      background-color: clr(purple50);
-   }
+    &:hover {
+        background-color: clr(purple50);
+    }
 
-   @include mq(tbLG, true) {
-      font-size: rem(20);
-      line-height: 24px;
-   }
-   @include mq(dt, true) {
-      font-size: rem(24);
-      line-height: 30px;
-   }
+    @include mq(tbLG, true) {
+        font-size: rem(20);
+        line-height: 24px;
+    }
+    @include mq(dt, true) {
+        font-size: rem(24);
+        line-height: 30px;
+    }
 }
 //----cards list----
 .video-section__cards-list {
-   display: flex;
-   justify-content: space-between;
-   justify-self: end;
-   align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+    @media (min-width: 368px) {
+        padding: 0;
+    }
 }
 
 .video-section__cards-item {
-   &:nth-child(2) {
-      margin-right: 16px;
-   }
-   &:not(:last-child) {
-      @include mq(tb, true) {
-         margin-right: 16px;
-      }
-   }
+    &:not(:last-child) {
+        margin-right: 16px;
+    }
 }
 
 .video-section__cards-link {
-   display: flex;
-   align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .video-section__cards-img {
-   @include mq(tbLG, true) {
-      width: 60px;
-      height: 38px;
-   }
+    @include mq(tbLG, true) {
+        width: 60px;
+        height: 38px;
+    }
 }
 
 //----video and img tag----
 .img__tag-wrapper {
-   position: absolute;
-   bottom: 0;
-   padding: 12px 12px 7px 12px;
-   @include mq(tb, true) {
-      padding: 16px 100px 16px 24px;
-   }
-   @include mq(tbLG, true) {
-      padding: 24px 133px 27px 24px;
-   }
-   @include mq(dt, true) {
-      padding: 40px;
-   }
+    position: absolute;
+    bottom: 0;
+    padding: 12px 12px 7px 12px;
+    @include mq(tb, true) {
+        padding: 16px 100px 16px 24px;
+    }
+    @include mq(tbLG, true) {
+        padding: 24px 133px 27px 24px;
+    }
+    @include mq(dt, true) {
+        padding: 40px;
+    }
 }
 
 .img__tag {
-   padding-bottom: 4px;
-   @include text(22px, 400, $primaryFont);
-   text-transform: uppercase;
-   color: transparent;
-   -webkit-text-stroke: 2px clr(white);
-   line-height: 26px;
+    padding-bottom: 4px;
+    @include text(22px, 400, $primaryFont);
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 2px clr(white);
+    line-height: 26px;
 
-   @include mq(tb, true) {
-      font-size: rem(36);
-      line-height: 44px;
-      padding-bottom: 12px;
-   }
-   @include mq(tbLG, true) {
-      font-size: rem(48);
-      line-height: 58px;
-   }
+    @include mq(tb, true) {
+        font-size: rem(36);
+        line-height: 44px;
+        padding-bottom: 12px;
+    }
+    @include mq(tbLG, true) {
+        font-size: rem(48);
+        line-height: 58px;
+    }
 
-   @include mq(dt, true) {
-      font-size: rem(72);
-      line-height: 87px;
-      padding-bottom: 0;
-   }
+    @include mq(dt, true) {
+        font-size: rem(72);
+        line-height: 87px;
+        padding-bottom: 0;
+    }
 }
 .img__tag-subtitle {
-   @include text(16px, 600, $secondaryFont);
-   color: clr(white);
-   line-height: 20px;
+    @include text(16px, 600, $secondaryFont);
+    color: clr(white);
+    line-height: 20px;
 
-   @include mq(tbLG, true) {
-      font-size: rem(18);
-      line-height: 22px;
-   }
+    @include mq(tbLG, true) {
+        font-size: rem(18);
+        line-height: 22px;
+    }
 
-   @include mq(dt, true) {
-      font-size: rem(36);
-      line-height: 44px;
-   }
+    @include mq(dt, true) {
+        font-size: rem(36);
+        line-height: 44px;
+    }
 }
