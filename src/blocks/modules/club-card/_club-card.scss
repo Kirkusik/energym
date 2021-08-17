@@ -4,6 +4,11 @@
 
 .cards-button__area {
   padding: 24px 0;
+  @include mq(tb, true) {
+    width: 40%;
+    position: relative;
+    padding-top: 73px;
+  }
 }
 
 .cards__button {
@@ -22,6 +27,10 @@
   display: flex;
   @include text(13px, 400, $primaryFont);
   line-height: 16px;
+  @include mq(tb, true) {
+    position: absolute;
+    top: 69px;
+  }
 }
 
 .cards-order__item {
@@ -29,22 +38,42 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+  @include mq(tb, true) {
+    position: absolute;
+    left: 349%;
+    padding-left: 0;
+    width: 100%;
+}}
 
 .cards-order__slogan {
   font-size: 22px;
   line-height: 27px;
   color: #b694c0;
   width: 50%;
+  @include mq(tb, true) {
+    position: relative;
+    width: 100%;
+  }
 }
 
 .cards-order__compare {
   display: flex;
   justify-content: flex-end;
+  @include mq(tb, true) {
+    position: absolute;
+    top: 118px;
+    left: 55%;
+  }
 }
 
 .order-item__name {
   padding: 12px 0 4px 0;
+  @include mq(tb, true) {
+  padding-top: 95px;
+  @include text(17px, 400, $primaryFont);
+  line-height: 20px;
+  align-self: start;
+  }
 }
 
 .order-item__price {
@@ -52,6 +81,11 @@
   line-height: 11px;
   color: #5c3668;
   padding-bottom: 12px;
+  @include mq(tb, true) {
+    @include text(15px, 400, $primaryFont);
+    line-height: 18px;
+    align-self: start;
+    }
 }
 
 .compare-cards__btn {
@@ -67,6 +101,11 @@
   box-sizing: border-box;
   backdrop-filter: blur(4px);
   border-radius: 8px;
+  @include mq(tb, true) {
+    @include text(15px, 500, $secondaryFont);
+    line-height: 18px;
+    padding: 0 18px 8px 18px;
+  }
 }
 
 .compare-cards__text {
@@ -75,7 +114,17 @@
 
 .compare-cards__current-pic {
   padding-right: 11px;
+  @include mq(tb, true) {
+  padding-right: 46px;
+  }
 }
+
+.cards__service {
+  @include mq(tb, true) {
+    padding-top: 80px;
+  }
+}
+
 
 .cards-service__title {
   @include text(17px, 400, $primaryFont);
@@ -83,6 +132,9 @@
   position: relative;
   bottom: 45px;
   display: inline-block;
+  // @include mq(tb, true) {
+  //   top: 34px;
+  //   }
 }
 
 .cards-service__table {
