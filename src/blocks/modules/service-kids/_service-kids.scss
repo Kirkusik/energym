@@ -2,15 +2,14 @@
     background-color: clr(secondaryBG);
     @include mq(tb, true) {
         display: grid;
-        grid-template-columns: repeat(2, minmax(184px, 1fr) auto);
+        grid-template-columns: 184px auto;
         grid-template-rows: 61px min-content;
-        grid-template-areas: "title . info" "video video video";
+        grid-template-areas: "title info" "video video";
         align-items: center;
         background-color: transparent;
     }
 
     @include mq(tbLG, true) {
-        grid-template-areas: "title info" "video video";
         grid-template-columns: 353px auto;
         grid-template-rows: 91px min-content;
         padding-bottom: 100px;
