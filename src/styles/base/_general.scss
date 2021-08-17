@@ -187,8 +187,9 @@
          width: 52px;
       }
       &:hover {
+         width: 270px;
          &::after {
-            width: 52px;
+            background-color: transparent;
          }
       }
    }
