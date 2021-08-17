@@ -1,6 +1,6 @@
 //extended classes at headerLocation.scss and headerSearch.scss
 %forms {
-    width: 214px;
+    width: 216px;
     @include text(18px, 300, $secondaryFont);
     @include mq(tbLG, true) {
         width: 200px;
@@ -11,8 +11,6 @@
     }
     @media (max-width: 767px) {
         border: 1px solid #7a7979;
-        top: 42px;
-        right: 9px;
     }
     @media (max-width: 999px) {
         position: absolute;

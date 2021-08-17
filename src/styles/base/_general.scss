@@ -293,12 +293,6 @@
     &--enabled {
         cursor: pointer;
     }
-    //уточнить
-    &--center {
-        grid-area: video;
-        height: 0;
-        padding-bottom: 62.5%;
-    }
 }
 
 .video-link,
@@ -358,36 +352,8 @@
     }
 }
 
-//Video section
-//----section wrapper----
-.video-section__wrapper {
-    background-color: clr(secondaryBG);
-    @include mq(tb, true) {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(184px, 1fr) auto);
-        grid-template-rows: 61px min-content;
-        grid-template-areas: "title . info" "video video video";
-        align-items: center;
-        background-color: transparent;
-    }
-
-    @include mq(tbLG, true) {
-        grid-template-areas: "title info" "video video";
-        grid-template-columns: 353px auto;
-        grid-template-rows: 91px min-content;
-        padding-bottom: 100px;
-    }
-
-    @include mq(dt, true) {
-        grid-template-rows: 136px min-content;
-        padding-bottom: 0;
-    }
-}
-
-//----section title----
-//*!important add section-highlight class with video-section__title class
-.video-section__title {
-    grid-area: title;
+//section title
+.section__title {
     padding: 16px;
     font-size: rem(22);
     line-height: 27px;
@@ -408,11 +374,11 @@
         line-height: 58px;
     }
 }
+//Video section
 //----schedule and cards wrapper----
 .video-section__info-wrapper {
     display: grid;
     grid-template-columns: auto 88px;
-    grid-area: info;
     padding: 24px 12px;
     @include mq(tb, true) {
         grid-template-columns: auto 140px;
@@ -431,7 +397,7 @@
         margin-bottom: 40px;
     }
 }
-//----schedule----
+//----schedule list----
 .video-section__info-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -471,7 +437,7 @@
         line-height: 30px;
     }
 }
-//----cards----
+//----cards list----
 .video-section__cards-list {
     display: flex;
     justify-content: space-between;
@@ -507,9 +473,8 @@
     }
 }
 
-//----video tag----
-//*!important add section-highlight--inversed class with video__tag-wrapper class
-.video__tag-wrapper {
+//----video and img tag----
+.img__tag-wrapper {
     position: absolute;
     bottom: 0;
     padding: 12px 12px 7px 12px;
@@ -524,7 +489,7 @@
     }
 }
 
-.video__tag {
+.img__tag {
     padding-bottom: 4px;
     @include text(18px, 400, $primaryFont);
     text-transform: uppercase;
@@ -547,7 +512,7 @@
         padding-bottom: 0;
     }
 }
-.video__tag-subtitle {
+.img__tag-subtitle {
     @include text(17px, 600, $secondaryFont);
     color: clr(white);
     line-height: 20px;

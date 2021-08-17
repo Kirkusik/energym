@@ -37,6 +37,9 @@
 
 .search__input {
     @extend %forms;
+    @media (max-width: 767px) {
+        top: 40px;
+    }
     @include mq(tbLG, true) {
         padding-top: 0;
         padding-bottom: 0;
