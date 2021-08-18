@@ -29,3 +29,13 @@ function serviceMenuClickChoice(e) {
 serviceComplex.header.addEventListener("click", serviceMenuClick);
 
 serviceComplex.list.addEventListener("click", serviceMenuClickChoice);
+
+import { createVideo } from "../../../js/import/video";
+
+let servicesComplexVideo = document.querySelector(
+  ".services-complex__video-wrapper"
+);
+
+if (servicesComplexVideo) {
+  createVideo(servicesComplexVideo);
+}

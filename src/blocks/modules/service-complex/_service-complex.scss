@@ -1,4 +1,4 @@
-.service-complex__hero-block {
+.service-complex__hero-block-wrapper {
   background-color: #faf7fb;
 }
 .service-complex__hero-content-wrapper {
@@ -41,9 +41,10 @@
 .services-menu {
   display: none;
   column-count: 2;
-  padding: 16px 12px;
-  @include mq(tb, tb) {
-    padding: 24px 24px 0 24px;
+  padding: 16px 12px 0 12px;
+  @include mq(tb, true) {
+    padding: 24px auto 21px 24px;
+    column-count: 3;
   }
   @include mq(tbLG, tbLG) {
     width: 234px;
@@ -70,7 +71,7 @@
   @include mq(tbLG, tbLG) {
     margin-bottom: 16px;
   }
-  @include mq(dt, dt) {
+  @media (min-width: 1200px) {
     margin-bottom: 23px;
   }
 }
@@ -88,9 +89,50 @@
   }
 }
 
-.services-video-block__text-wrapper {
+.services-video-block {
+  padding-top: 30px;
+  width: 100%;
+  @include mq(tb, tb) {
+    padding-top: 24px;
+  }
 }
 
+.services-complex__hero-video-wrapper {
+  @include mq(tbLG, tbLG) {
+    padding-top: 82px;
+  }
+}
+.services-video-block__text-wrapper {
+  @include mq(tb, tb) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @include mq(tbLG, tbLG) {
+    padding-left: 24px;
+  }
+}
+
+.services-complex__info-wrapper {
+  @include mq(tbLG, tbLG) {
+    margin-bottom: 24px;
+  }
+}
 .services-video-block__title {
-  margin-top: 30px;
+  @include mq(tbLG, tbLG) {
+    color: #b694c0;
+    font-size: 24px;
+    line-height: 29px;
+    background-color: transparent;
+    padding: 0;
+    margin-bottom: 26px;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 36px;
+    line-height: 43px;
+  }
+  @include mq(dt, dt) {
+    margin-bottom: 40px;
+  }
 }
