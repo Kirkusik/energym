@@ -1,18 +1,20 @@
 //extended classes at headerLocation.scss and headerSearch.scss
 %forms {
-    width: 214px;
+    width: 216px;
     @include text(18px, 300, $secondaryFont);
     @include mq(tbLG, true) {
         width: 200px;
         @include text(16px, 300, $secondaryFont);
         position: relative;
         line-height: 25px;
-        opacity: 1;
-        visibility: visible;
+        display: block;
     }
-
+    @media (max-width: 767px) {
+        border: 1px solid #7a7979;
+    }
     @media (max-width: 999px) {
         position: absolute;
+        border: none;
         right: 9px;
         top: 36px;
     }
@@ -20,9 +22,8 @@
     background: clr(secondaryBG);
     color: #7a7979;
     outline: none;
-    border: none;
-    opacity: 0;
-    visibility: hidden;
+
+    display: none;
     &:focus {
         outline: auto;
     }
