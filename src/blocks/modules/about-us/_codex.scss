@@ -143,3 +143,10 @@
         transform-origin: right bottom;
     }
 }
+
+.codex__video-btn {
+    @include mq(dt, true) {
+        width: 100px;
+        height: 100px;
+    }
+}

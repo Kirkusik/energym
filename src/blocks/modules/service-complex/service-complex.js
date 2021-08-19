@@ -1,8 +1,10 @@
+// Open and close menu on service-complex
 const serviceComplex = {
   list: document.querySelector(".services-menu"),
   header: document.querySelector(".services-complex__default"),
   items: document.querySelectorAll(".services-menu__link"),
   defaultItem: document.querySelector(".services-complex__default-item"),
+  closeBtn: document.querySelector(".services-complex__arrow--close"),
 };
 
 function serviceMenuClick() {
@@ -26,10 +28,20 @@ function serviceMenuClickChoice(e) {
   serviceComplex.list.classList.remove("services-menu--active");
 }
 
+function serviceMenuClose(e) {
+  serviceComplex.header.classList.remove(
+    "services-complex__default--active-menu"
+  );
+  serviceComplex.list.classList.remove("services-menu--active");
+}
+
 serviceComplex.header.addEventListener("click", serviceMenuClick);
 
 serviceComplex.list.addEventListener("click", serviceMenuClickChoice);
 
+serviceComplex.closeBtn.addEventListener("click", serviceMenuClose);
+
+// input video on service-complex
 import { createVideo } from "../../../js/import/video";
 
 let servicesComplexVideo = document.querySelector(

@@ -1,0 +1,147 @@
+.about-us-services__list {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media (min-width: 576px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include mq(tb, true) {
+        //proportional column widths relative to the container width
+        grid-template-columns: 30% 7.8% 24.7% 37.5%;
+        grid-auto-rows: min-content;
+    }
+}
+
+.about-us-services__link {
+    position: relative;
+    display: block;
+    height: 100%;
+}
+
+.about-us-services__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: 0.3s;
+
+    @include mq(tb, true) {
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.8;
+    }
+}
+
+.about-us-services__item {
+    // need for large numbers correct display
+    overflow: hidden;
+
+    &:first-child {
+        @include mq(tb, true) {
+            grid-column: 1/3;
+        }
+        &:after {
+            content: "01";
+        }
+    }
+
+    &:nth-child(2) {
+        @include mq(tb, true) {
+            grid-column: 3/-1;
+        }
+        &:after {
+            content: "02";
+        }
+    }
+
+    &:nth-child(4) {
+        @include mq(tb, true) {
+            grid-column: 2/4;
+        }
+        &:after {
+            content: "04";
+        }
+    }
+    &:last-child {
+        @media (max-width: 767px) {
+            grid-column: 1/-1;
+        }
+        &:after {
+            content: "05";
+        }
+    }
+
+    &:nth-child(3)::after {
+        content: "03";
+    }
+
+    // big numbers general styles
+    @include pseudo(after, "", absolute) {
+        right: 0;
+        bottom: 10vw;
+        z-index: 1;
+
+        // make numbers with adaptive font-size depending on screen width
+        @include text(25vw);
+        color: transparent;
+        -webkit-text-stroke: 1px clr(white);
+        line-height: 77px;
+
+        @media (min-width: 576px) {
+            font-size: min(232px, 17vw);
+            bottom: 30px;
+        }
+
+        @include mq(tb, true) {
+            left: -24px;
+            bottom: -16px;
+        }
+    }
+}
+
+// items hover and img hover
+.about-us-services__item:hover .about-us-services__btn,
+.about-us-services__item:hover .about-us-services__img {
+    @include mq(tb, true) {
+        opacity: 1;
+    }
+}
+
+.about-us-services__btn {
+    z-index: 2;
+    padding: 1em;
+    padding-right: 3em;
+    position: absolute;
+    // adaptive line-height
+    line-height: 1.22;
+    right: 0;
+    bottom: 6%;
+    @include text(rem(16), 700, "Montserrat");
+    background-image: url("../img/svg/goto__arrow.svg");
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    transition: 0.3s;
+
+    //centering the arrow in the center of the right padding
+    background-position: right calc((3em - 7px) / 2) center;
+
+    @include mq(tb, true) {
+        opacity: 0;
+        bottom: 11%;
+        background-position: right calc((3em - 12px) / 2) center;
+    }
+    @include mq(dt, true) {
+        font-size: rem(24);
+        background-position: right calc((3em - 16px) / 2) center;
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+}
