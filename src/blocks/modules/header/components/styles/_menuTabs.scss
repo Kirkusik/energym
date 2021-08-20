@@ -1,4 +1,4 @@
-.menu__tabs {
+.menu__list {
     @include mq(tb, true) {
         padding-right: 19px;
     }
@@ -10,7 +10,7 @@
     }
 }
 
-.menu__tab {
+.menu__item {
     @include mq(tbLG, true) {
         flex-grow: 1;
     }
@@ -21,7 +21,7 @@
     }
 }
 
-.menu__tab-link {
+.menu__link {
     @include mq(tb, true) {
         &::after {
             @include mq(tbLG, true) {
@@ -34,7 +34,7 @@
                 transition: all 0.3s linear;
                 bottom: 0;
             }
-            content: url("../../../img/svg/menu-arrow-right.svg");
+            content: url("../img/svg/menu-arrow-right.svg");
             width: 21px;
             height: 14px;
         }

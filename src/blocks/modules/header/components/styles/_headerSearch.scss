@@ -5,33 +5,57 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
+    margin-right: 19px;
+    @include mq(tb, true) {
+        margin-right: 21px;
+    }
+
+    @include mq(tbLG, true) {
+        margin-right: 5px;
+    }
+    &::after {
+        content: url("../img/svg/search-mob.svg");
+        display: block;
+        width: 16px;
+        height: 16px;
+
+        @include mq(tb, true) {
+            width: 22px;
+            height: 22px;
+        }
+
+        @include mq(tbLG, true) {
+            width: 19px;
+            height: 19px;
+        }
+    }
 }
+
+.search__label {
+    display: none;
+}
+
 .search__input {
     @extend %forms;
+    @media (max-width: 767px) {
+        top: 40px;
+    }
     @include mq(tbLG, true) {
-        display: block;
-        border-radius: 4px;
         padding-top: 0;
         padding-bottom: 0;
+        border-radius: 4px;
+        border: none;
         @include text(16px, 300, $secondaryFont);
     }
-    @media (max-width: 767px) {
-        right: 10px;
-    }
-    display: none;
-    opacity: 1;
     padding-left: 16px;
-    padding-top: 8px;
+    padding-top: 6px;
     padding-bottom: 8px;
+
     &:active {
         outline: none;
     }
-    &:hover {
-        cursor: pointer;
-    }
     &--active {
         display: block;
-        animation-name: move;
-        animation-duration: 0.5s;
+        z-index: 2;
     }
 }
