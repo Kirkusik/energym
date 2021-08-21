@@ -154,13 +154,17 @@
 
 .exellent-section__btn {
     grid-area: button;
-    justify-self: center;
     padding-top: 16px;
     padding-bottom: 16px;
     font-size: rem(13);
     line-height: 16px;
     text-align: center;
     transition: all 0.3s linear;
+
+    // @media (min-width: 550px) and (max-width: 767px) {
+    //     justify-self: center;
+    //     max-width: 500px;
+    // }
     @include mq(tb, true) {
         justify-self: start;
         margin-left: 40px;
