@@ -1,0 +1,188 @@
+.kids-exellents__wrapper {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+        "title"
+        "list"
+        "button";
+    row-gap: 26px;
+    position: relative;
+    padding: 32px 12px;
+    opacity: 0.95;
+    background-color: clr(purple);
+    background-image: radial-gradient(
+        181.26% 158.02% at -48.36% 50%,
+        #f1c4ff 0%,
+        #717071 50%,
+        #ffa6c4 97.4%
+    );
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        content: "";
+        background: url(../img/service-kids/service-kids-exellent-bg-s.jpg)
+            no-repeat right;
+        background-size: cover;
+        opacity: 0.5;
+
+        @include mq(tb, true) {
+            background: url(../img/service-kids/service-kids-exellent-bg-m.jpg)
+                no-repeat right;
+        }
+        @include mq(tbLG, true) {
+            background: url(../img/service-kids/service-kids-exellent-bg-l.jpg)
+                no-repeat right;
+        }
+        @include mq(dt, true) {
+            background: url(../img/service-kids/service-kids-exellent-bg-xl.jpg)
+                no-repeat right;
+        }
+    }
+    @include mq(tb, true) {
+        grid-template-rows: repeat(3, auto);
+        grid-template-columns: auto 294px;
+        grid-template-areas:
+            "title ."
+            "list ."
+            "button .";
+        row-gap: 24px;
+        padding: 32px 0 40px 24px;
+    }
+    @include mq(tbLG, true) {
+        grid-template-columns: auto 456px;
+        padding-top: 103px;
+        padding-left: 61px;
+        row-gap: 0;
+    }
+    @include mq(dt, true) {
+        padding: 96px 0 89px 40px;
+        grid-template-rows: repeat(3, auto);
+        grid-template-columns: auto 561px;
+        grid-template-areas:
+            "title ."
+            "list button"
+            "list .";
+    }
+}
+
+.exellent-section__title {
+    grid-area: title;
+    @include text(22px, 400, $primaryFont);
+    line-height: 27px;
+    color: clr(white);
+    @include mq(tb, true) {
+        margin-left: 56px;
+        font-size: rem(24);
+        line-height: 29px;
+    }
+    @include mq(tbLG, true) {
+        margin-bottom: 24px;
+    }
+    @include mq(dt, true) {
+        margin-bottom: 39px;
+        font-size: rem(32);
+        line-height: 39px;
+    }
+}
+.exellent-section__list {
+    grid-area: list;
+    @include mq(tbLG, true) {
+        margin-bottom: 80px;
+    }
+    @include mq(dt, true) {
+        margin-bottom: 0;
+    }
+}
+
+.exellent-section__item {
+    position: relative;
+    padding-left: 56px;
+    &::before {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+    }
+    &:first-child::before {
+        content: url("../img/svg/kids-drive.svg");
+    }
+    &:nth-child(2n)::before {
+        content: url("../img/svg/kids-grace.svg");
+    }
+
+    &:last-child::before {
+        content: url("../img/svg/kids-goal.svg");
+    }
+    &:not(:last-child) {
+        margin-bottom: 16px;
+        @include mq(tbLG, true) {
+            margin-bottom: 34px;
+        }
+        @include mq(dt, true) {
+            margin-bottom: 42px;
+        }
+    }
+}
+
+.exellent-section__subtitle {
+    margin-bottom: 8px;
+    @include text(17px, 400, $secondaryFont);
+    line-height: 21px;
+    color: clr(pink);
+    @include mq(tb, true) {
+        margin-bottom: 12px;
+    }
+    @include mq(dt, true) {
+        margin-bottom: 15px;
+        font-size: rem(24);
+        line-height: 30px;
+    }
+}
+
+.exellent-section__descr {
+    @include text(15px, 400, $secondaryFont);
+    line-height: 19px;
+    color: clr(white);
+    @include mq(dt, true) {
+        font-size: rem(18);
+        line-height: 22px;
+    }
+}
+
+.exellent-section__btn {
+    grid-area: button;
+    justify-self: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-size: rem(13);
+    line-height: 16px;
+    text-align: center;
+    transition: all 0.3s linear;
+    @include mq(tb, true) {
+        justify-self: start;
+        margin-left: 40px;
+        padding: 12px 50px;
+        font-size: rem(15);
+        line-height: 18px;
+    }
+    @include mq(tbLG, true) {
+        margin-left: 61px;
+        padding: 12px 46px;
+    }
+
+    @include mq(dt, true) {
+        margin-left: 24px;
+        margin-top: 74px;
+        padding: 24px 46px;
+        font-size: rem(18);
+        line-height: 22px;
+    }
+    &:hover {
+        color: clr(pink);
+        border-color: clr(pink);
+        padding: 24px 46px;
+    }
+}
