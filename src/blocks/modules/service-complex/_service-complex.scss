@@ -2,7 +2,9 @@
 
 .service-complex__hero-block-wrapper {
   background-color: clr(secondaryBG);
+
   &--description {
+    z-index: -10;
     padding-top: 50px;
     padding-bottom: 50px;
     @include mq(tb, true) {
@@ -169,16 +171,55 @@
     width: 100%;
     text-align: center;
   }
+  @include mq(tb, tb) {
+    margin-left: 8px;
+  }
 }
 
 .service-complex__description-wrapper {
   margin-top: 24px;
   @include mq(tb, tb) {
     margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
   }
 }
 
 .service-complex__img-wrapper {
+  display: none;
+  @include mq(tb, tb) {
+    display: grid;
+    grid-template-columns: 194px auto;
+    margin-left: 8px;
+  }
+  @include mq(tbLG, true) {
+    position: relative;
+    z-index: 1;
+
+    &::after {
+      content: "";
+      width: 280px;
+      height: 225px;
+      background-color: clr(pink);
+      position: absolute;
+      left: 135px;
+      top: 33px;
+      z-index: -1;
+    }
+  }
+}
+
+.service-complex__img-uprise {
+  display: none;
+  @include mq(tbLG, true) {
+    display: grid;
+    grid-template-rows: 112px 180px;
+  }
+}
+
+.service-complex__desc-img2 {
+  margin-left: 122px;
 }
 
 .service-complex__list-wrapper {
@@ -197,6 +238,7 @@
   }
   @include mq(tb, true) {
     margin-bottom: 20px;
+    margin-left: 0;
   }
   @include mq(dt, dt) {
     font-size: 18px;
@@ -208,4 +250,15 @@
   padding-top: 16px;
   padding-bottom: 16px;
   margin: 8px 12px 0;
+  @include mq(tb, tb) {
+    margin-top: 20px;
+    margin-right: 20px;
+    align-self: flex-end;
+  }
+  @include mq(tbLG, true) {
+    margin-top: 48px;
+  }
+  @include mq(dt, dt) {
+    margin-top: 20px;
+  }
 }
