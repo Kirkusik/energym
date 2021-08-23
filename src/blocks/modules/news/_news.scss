@@ -98,6 +98,17 @@
     color: clr(white);
   }
 }
+
+.news-list {
+  @include mq(tb, tb) {
+    background-color: #faf7fb;
+  }
+
+  @include mq(dt, dt) {
+    background-color: #fff;
+  }
+}
+
 .news-list__items {
   margin-top: 24px;
   display: flex;
