@@ -1,0 +1,52 @@
+.kids-numbers__wrapper {
+    display: none;
+    @include mq(tbLG, true) {
+        display: block;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        background-color: clr(secondaryBG);
+    }
+    @include mq(dt, true) {
+        display: none;
+    }
+}
+
+.kids-numbers__title {
+    text-transform: none;
+    margin-bottom: 49px;
+}
+
+.kids-numbers__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    column-gap: 157px;
+    row-gap: 16px;
+}
+
+.kids-numbers__subtitle {
+    margin-bottom: 12px;
+    @include text(17px, 400, $primaryFont);
+    line-height: 21px;
+    color: clr(black);
+}
+
+.kids-numbers__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+    @include text(15px, 400, $secondaryFont);
+    line-height: 19px;
+    color: #707070;
+}
+
+.kids-numbers__link {
+    color: clr(red);
+
+    &:after {
+        content: url("../img/svg/arrow-right-red.svg");
+        margin-top: 2px;
+        margin-left: 8px;
+    }
+}
