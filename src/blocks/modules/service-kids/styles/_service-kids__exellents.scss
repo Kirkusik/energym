@@ -1,6 +1,5 @@
 //---move to general--------
 .exellent-section__wrapper {
-    display: grid;
     position: relative;
     background-color: clr(purple);
     &:before {
@@ -15,7 +14,7 @@
 }
 //-----------------------------
 .kids-exellents__wrapper {
-    // display: grid;
+    display: grid;
     grid-template-rows: repeat(3, auto);
     grid-template-areas:
         "title"
@@ -43,7 +42,7 @@
         background: url(../img/service-kids/service-kids-exellent-bg-s.jpg)
             no-repeat right;
         background-size: cover;
-        opacity: 0.5;
+        opacity: 0.3;
 
         @include mq(tb, true) {
             background: url(../img/service-kids/service-kids-exellent-bg-m.jpg)
@@ -56,6 +55,7 @@
         @include mq(dt, true) {
             background: url(../img/service-kids/service-kids-exellent-bg-xl.jpg)
                 no-repeat right;
+            opacity: 0.5;
         }
     }
     @include mq(tb, true) {
@@ -130,12 +130,6 @@
 }
 //----move to general-----
 .exellent-section__item {
-    position: relative;
-    &::before {
-        display: inline-block;
-        position: absolute;
-        left: 0;
-    }
     &:not(:last-child) {
         margin-bottom: 16px;
         @include mq(tbLG, true) {
@@ -148,13 +142,13 @@
 }
 //-----------------------------
 .kids-exellents__item {
-    // position: relative;
+    position: relative;
     padding-left: 56px;
-    // &::before {
-    //     display: inline-block;
-    //     position: absolute;
-    //     left: 0;
-    // }
+    &::before {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+    }
     &:first-child::before {
         content: url("../img/svg/kids-drive.svg");
     }
@@ -211,10 +205,11 @@
     text-align: center;
     transition: all 0.3s linear;
 
-    // @media (min-width: 550px) and (max-width: 767px) {
-    //     justify-self: center;
-    //     max-width: 500px;
-    // }
+    //ask
+    @media (max-width: 767px) {
+        justify-self: center;
+    }
+
     @include mq(tb, true) {
         justify-self: start;
         margin-left: 40px;
@@ -237,6 +232,6 @@
     &:hover {
         color: clr(pink);
         border-color: clr(pink);
-        padding: 24px 46px;
+        // padding: 24px 46px;
     }
 }
