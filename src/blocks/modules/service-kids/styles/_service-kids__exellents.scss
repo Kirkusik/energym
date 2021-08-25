@@ -1,30 +1,12 @@
-//---move to general--------
-.exellent-section__wrapper {
-    position: relative;
-    background-color: clr(purple);
-    &:before {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        z-index: -1;
-        content: "";
-    }
-}
-//-----------------------------
 .kids-exellents__wrapper {
-    display: grid;
     grid-template-rows: repeat(3, auto);
     grid-template-areas:
         "title"
         "list"
         "button";
     row-gap: 32px;
-    // position: relative;
     padding: 32px 12px;
     opacity: 0.95;
-    // background-color: clr(purple);
     background-image: radial-gradient(
         181.26% 158.02% at -48.36% 50%,
         #f1c4ff 0%,
@@ -32,13 +14,6 @@
         #ffa6c4 97.4%
     );
     &::before {
-        // position: absolute;
-        // top: 0;
-        // left: 0;
-        // bottom: 0;
-        // right: 0;
-        // z-index: -1;
-        // content: "";
         background: url(../img/service-kids/service-kids-exellent-bg-s.jpg)
             no-repeat right;
         background-size: cover;
@@ -98,27 +73,6 @@
     }
 }
 
-//----move to general-----
-.exellent-section__title {
-    // grid-area: title;
-    @include text(22px, 400, $primaryFont);
-    line-height: 27px;
-    color: clr(white);
-    @include mq(tb, true) {
-        // margin-left: 56px;
-        font-size: rem(24);
-        line-height: 29px;
-    }
-    // @include mq(tbLG, true) {
-    //     margin-bottom: 24px;
-    // }
-    @include mq(dt, true) {
-        // margin-bottom: 39px;
-        font-size: rem(32);
-        line-height: 39px;
-    }
-}
-//-----------------------------
 .kids-exellents__list {
     grid-area: list;
     @include mq(tbLG, true) {
@@ -128,27 +82,8 @@
         margin-bottom: 0;
     }
 }
-//----move to general-----
-.exellent-section__item {
-    &:not(:last-child) {
-        margin-bottom: 16px;
-        @include mq(tbLG, true) {
-            margin-bottom: 34px;
-        }
-        @include mq(dt, true) {
-            margin-bottom: 42px;
-        }
-    }
-}
-//-----------------------------
+
 .kids-exellents__item {
-    position: relative;
-    padding-left: 56px;
-    &::before {
-        display: inline-block;
-        position: absolute;
-        left: 0;
-    }
     &:first-child::before {
         content: url("../img/svg/kids-drive.svg");
     }
@@ -159,43 +94,8 @@
     &:last-child::before {
         content: url("../img/svg/kids-goal.svg");
     }
-    // &:not(:last-child) {
-    //     margin-bottom: 16px;
-    //     @include mq(tbLG, true) {
-    //         margin-bottom: 34px;
-    //     }
-    //     @include mq(dt, true) {
-    //         margin-bottom: 42px;
-    //     }
-    // }
 }
 
-//----move to general-----
-.exellent-section__subtitle {
-    margin-bottom: 8px;
-    @include text(17px, 400, $secondaryFont);
-    line-height: 21px;
-    color: clr(pink);
-    @include mq(tb, true) {
-        margin-bottom: 12px;
-    }
-    @include mq(dt, true) {
-        margin-bottom: 15px;
-        font-size: rem(24);
-        line-height: 30px;
-    }
-}
-
-.exellent-section__descr {
-    @include text(15px, 400, $secondaryFont);
-    line-height: 19px;
-    color: clr(white);
-    @include mq(dt, true) {
-        font-size: rem(18);
-        line-height: 22px;
-    }
-}
-//-----------------------------
 .kids-exellents__btn {
     grid-area: button;
     padding-top: 16px;
@@ -205,7 +105,6 @@
     text-align: center;
     transition: all 0.3s linear;
 
-    //ask
     @media (max-width: 767px) {
         justify-self: center;
     }

@@ -12,8 +12,8 @@
 }
 
 .kids-numbers__title {
-    text-transform: none;
     margin-bottom: 49px;
+    text-transform: none;
 }
 
 .kids-numbers__list {
@@ -34,7 +34,6 @@
 .kids-numbers__content {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
     margin-bottom: 12px;
     @include text(15px, 400, $secondaryFont);
     line-height: 19px;
@@ -42,11 +41,26 @@
 }
 
 .kids-numbers__link {
+    position: relative;
+    padding-right: 32px;
     color: clr(red);
-
     &:after {
         content: url("../img/svg/arrow-right-red.svg");
-        margin-top: 2px;
+        position: absolute;
+        top: 2px;
         margin-left: 8px;
+    }
+}
+
+.video-wrapper {
+    &--kids-numbers {
+        height: 0;
+        padding-bottom: 56.25%;
+    }
+}
+
+.video-cover {
+    &--kids-numbers {
+        object-fit: cover;
     }
 }
