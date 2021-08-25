@@ -2,11 +2,8 @@
 import SwiperCore, { Navigation } from 'swiper/core';
 // // configure Swiper to use modules
 SwiperCore.use([Navigation]);
-// import 'swiper/swiper-bundle.css';
-// Photoswipe init
-import PhotoSwipe from "photoswipe";
-import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default';
 
+// photoswipe init func
 import { initPhotoSwipe } from '../../../js/import/photoswipe';
 
 const photogallery = document.querySelector('.photogallery__wrapper')
@@ -18,9 +15,8 @@ if (photogallery) {
 
     const swiper = new SwiperCore(gallerySliderContainer, {
         spaceBetween: 15,
-        // // loop: true,
+        loop: true,
         slidesPerView: 'auto',
-        // centeredSlides: true,
         slideToClickedSlide: false,
         navigation: {
             nextEl: swiperNext,
@@ -32,5 +28,48 @@ if (photogallery) {
 
     });
 
+    const cancelModalBtn = document.querySelector('.photogallery__modal--close');
+    const openModal = document.querySelector('.pswp--open');
+    // init photoswype modal gallery
     initPhotoSwipe(".zoom-gallery", true, swiper);
+
+    getDynamicTopPosition(cancelModalBtn);
+    window.addEventListener('resize', getDynamicTopPosition);
+
 }
+
+
+// find out the value by which the modal img is shifted from the top of viewport 
+// and set this value as the top property for the close modal button
+function getDynamicTopPosition(btn) {
+    // elements for getting dynamic top position of img and set it to close modal btn
+    const photoswypeZoomWrapper = document.querySelector('.pswp__zoom-wrap');
+    if (photoswypeZoomWrapper) {
+        // tranformProperty format: translate3d(0px, 258px, 0px) scale(1)
+        let tranformProperty = photoswypeZoomWrapper.style.transform;
+        let currentTopPositon = tranformProperty.split(' ')[1].slice(0, -1);
+        btn.style.top = currentTopPositon;
+
+    }
+
+}
+
+
+
+
+// Change slides zones name according to data-attr  -> data-zone
+const slides = document.querySelectorAll('.photogallery__slide');
+setZoneTitlesToSlides()
+
+function setZoneTitlesToSlides() {
+    [...slides].forEach(slide => {
+        changeZoneTitle(slide);
+    })
+}
+
+function changeZoneTitle(zoneItemEl) {
+    const zoneTitle = zoneItemEl.dataset.zone;
+    zoneItemEl.querySelector('.photogallery__zone-title').innerText = zoneTitle;
+}
+
+
