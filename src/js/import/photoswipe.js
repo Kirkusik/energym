@@ -57,6 +57,7 @@ function initPhotoSwipe(gallerySelector, useSwipe = false, swiper = "") {
 
     // triggers when user clicks on thumbnail
     var onThumbnailsClick = function (e) {
+
         e = e || window.event;
         e.preventDefault ? e.preventDefault() : (e.returnValue = false);
 
@@ -144,8 +145,8 @@ function initPhotoSwipe(gallerySelector, useSwipe = false, swiper = "") {
             // Buttons/elements
             closeEl: true,
             captionEl: true,
-            fullscreenEl: true,
-            zoomEl: true,
+            fullscreenEl: false,
+            zoomEl: false,
             shareEl: false,
             counterEl: false,
             arrowEl: true,
@@ -205,7 +206,6 @@ function initPhotoSwipe(gallerySelector, useSwipe = false, swiper = "") {
                 let getCurrentIndex = gallery.getCurrentIndex();
                 // Update position of the slider
                 swiper.slideTo(getCurrentIndex, 0, false);
-
             });
         }
 
@@ -224,6 +224,7 @@ function initPhotoSwipe(gallerySelector, useSwipe = false, swiper = "") {
     if (hashData.pid && hashData.gid) {
         openPhotoSwipe(hashData.pid, galleryElements[hashData.gid - 1], true, true);
     }
+
 };
 
 export { initPhotoSwipe };
