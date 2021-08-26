@@ -7,8 +7,7 @@
         border-top-left-radius: 4px;
         border-top-right-radius: 4px;
     }
-    @media (max-width: 767px) {
-        border: 1px solid #7a7979;
+    @media (max-width: 999px) {
         top: 42px;
     }
     height: 30px;
@@ -31,20 +30,23 @@
     }
     display: flex;
     margin-right: 19px;
-    &:before {
-        content: url("../img/svg/location-mob.svg");
-        width: 10px;
-        height: 16px;
-        @include mq(tb, true) {
-            width: 12px;
-            height: 20px;
-        }
-        @include mq(tbLG, true) {
-            margin-right: 0;
-        }
+}
+.location__svg {
+    width: 10px;
+    height: 16px;
+    fill: clr(pink);
+    transition: all 0.3s linear;
+    @include mq(tb, true) {
+        width: 12px;
+        height: 20px;
+    }
+    @include mq(tbLG, true) {
+        margin-right: 0;
+    }
+    &:hover {
+        fill: clr(red);
     }
 }
-
 .location__default-item {
     @include mq(tbLG, true) {
         line-height: 25px;
@@ -87,14 +89,9 @@
     @media (max-width: 767px) {
         position: absolute;
         top: 28px;
-        right: -1px;
         width: 216px;
-        border-bottom: 1px solid #7a7979;
-        border-left: 1px solid #7a7979;
-        border-right: 1px solid #7a7979;
     }
     display: none;
-
     padding: 3px 0 9px 8px;
     background-color: clr(white);
     border-bottom-left-radius: 4px;
