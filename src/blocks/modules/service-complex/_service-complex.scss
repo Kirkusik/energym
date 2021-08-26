@@ -17,6 +17,13 @@
     }
   }
 }
+
+.service-complex__title {
+  @media (max-width: 340px) {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
 .service-complex__hero-content-wrapper {
   @include mq(tbLG, tbLG) {
     display: flex;
@@ -171,9 +178,6 @@
     width: 100%;
     text-align: center;
   }
-  @include mq(tb, tb) {
-    margin-left: 8px;
-  }
 }
 
 .service-complex__description-wrapper {
@@ -190,7 +194,6 @@
   @include mq(tb, tb) {
     display: grid;
     grid-template-columns: 194px auto;
-    margin-left: 8px;
   }
   @include mq(tbLG, true) {
     position: relative;

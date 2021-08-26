@@ -9,8 +9,8 @@
         line-height: 25px;
         display: block;
     }
-    @media (max-width: 767px) {
-        border: 1px solid #7a7979;
+    @media (max-width: 999px) {
+        background: clr(pink);
     }
     @media (max-width: 999px) {
         position: absolute;
@@ -22,10 +22,14 @@
     background: clr(secondaryBG);
     color: #7a7979;
     outline: none;
-
     display: none;
+    transition: all 0.3s linear;
     &:focus {
         outline: auto;
+    }
+
+    &:hover {
+        background: clr(pink);
     }
 }
 
