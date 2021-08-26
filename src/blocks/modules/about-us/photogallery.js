@@ -28,13 +28,23 @@ if (photogallery) {
 
     });
 
+
+    swiper.on('slideChange', function () {
+        const activeSlide = document.querySelector('.swiper-slide-active');
+        const duplicateActiveSlide = document.querySelector('.swiper-slide-duplicate-active');
+        changeSeparateZoneTitle(activeSlide || duplicateActiveSlide);
+    });
+
+
     const cancelModalBtn = document.querySelector('.photogallery__modal--close');
-    const openModal = document.querySelector('.pswp--open');
+
+
     // init photoswype modal gallery
     initPhotoSwipe(".zoom-gallery", true, swiper);
 
     getDynamicTopPosition(cancelModalBtn);
     window.addEventListener('resize', getDynamicTopPosition);
+    window.addEventListener('resize', () => setZoneTitlesToSlides());
 
 }
 
@@ -54,22 +64,28 @@ function getDynamicTopPosition(btn) {
 
 }
 
-
-
-
 // Change slides zones name according to data-attr  -> data-zone
 const slides = document.querySelectorAll('.photogallery__slide');
-setZoneTitlesToSlides()
+const outerZoneTitle = document.querySelector('.photogallery__zone-title--outer')
+
+setZoneTitlesToSlides();
+
 
 function setZoneTitlesToSlides() {
     [...slides].forEach(slide => {
-        changeZoneTitle(slide);
+        changeInnerZoneTitle(slide);
+
     })
 }
 
-function changeZoneTitle(zoneItemEl) {
+function changeInnerZoneTitle(zoneItemEl) {
     const zoneTitle = zoneItemEl.dataset.zone;
     zoneItemEl.querySelector('.photogallery__zone-title').innerText = zoneTitle;
 }
 
+
+function changeSeparateZoneTitle(zoneItemEl) {
+    const zoneTitle = zoneItemEl.dataset.zone;
+    outerZoneTitle.innerText = zoneTitle;
+}
 

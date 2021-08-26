@@ -49,28 +49,48 @@
         padding: 40px;
     }
 }
-
-.photogallery__zone-box {
+// zone as a part of grid layout in mb and dt media
+.photogallery__zone-separate-box {
     grid-area: zone;
     margin-left: 10px;
+
     @include mq(tb, true) {
-        position: absolute;
-        bottom: 120px;
-        z-index: 2;
-        color: clr(white);
-        margin-left: 24px;
-    }
-    @include mq(tbLG, true) {
         display: none;
     }
+
     @include mq(dt, true) {
         display: block;
-        color: clr(black);
         justify-self: left;
         position: static;
         margin-left: 45px;
     }
 }
+// .photogallery__zone-box {
+//     color: clr(black);
+
+//     &:hover {
+//         background-color: clr(purple40);
+//         @include mq(tbLG, true) {
+//             font-size: rem(24);
+//         }
+//     }
+// }
+.photogallery__zone-box--inner {
+    display: none;
+    @include mq(tb, true) {
+        display: block;
+        position: absolute;
+        z-index: 2;
+        color: clr(white);
+        margin-left: 24px;
+        bottom: 20px;
+    }
+
+    @include mq(dt, true) {
+        display: none;
+    }
+}
+
 .photogallery__zone {
     @include text(rem(16), 600, "Montserrat");
     margin-bottom: 6px;
@@ -143,8 +163,8 @@
 }
 
 .photogallery__slide {
-    cursor: pointer;
-    transition: opacity 0.4s;
+    cursor: zoom-in;
+    transition: opacity 0.3s;
 
     // zoom hover
     &:hover {
@@ -162,13 +182,14 @@
         left: 0;
         right: 0;
         bottom: 0;
-        transition: opacity 0.4s;
+        transition: opacity 0.3s;
     }
 
     @include mq(tb, true) {
         width: auto;
     }
 }
+
 .photogallery__slider-img {
     width: 100%;
     display: block;
@@ -183,7 +204,7 @@
         width: 100%;
     }
 }
-// Buttons
+// slider buttons
 .photogallery__buttons-box {
     grid-area: nav;
     display: flex;
@@ -222,5 +243,91 @@
         width: 70px;
         height: 70px;
         background-size: 32px 32px;
+    }
+}
+
+//  photoswipe styles for zoom
+
+.photogallery__modal-item {
+    left: 15%;
+    right: 15%;
+}
+.photogallery__modal-bg {
+    opacity: 0.8 !important;
+}
+// photoswipe buttons in fullscreen images (left, right, cross)
+.photogallery__modal--slide-left,
+.photogallery__modal--slide-right,
+.photogallery__modal--close {
+    // need for overwritten photoswype styles
+    background: none !important;
+    background-repeat: no-repeat !important;
+    background-color: clr(red) !important;
+    background-position: center center !important;
+    opacity: 1 !important;
+    &::before {
+        content: none;
+    }
+    &:hover {
+        background-color: clr(pink) !important;
+    }
+    @media (max-width: 480px) {
+        width: 30px;
+        height: 30px;
+        background-size: 15px !important;
+    }
+    @media (min-width: 481px) {
+        width: 50px;
+        height: 50px;
+        background-size: 20px !important;
+    }
+    @media (min-width: 768px) {
+        width: 70px;
+        height: 70px;
+        background-size: 30px !important;
+    }
+}
+.photogallery__modal--slide-left,
+.photogallery__modal--slide-right {
+    @media (max-width: 480px) {
+        transform: translateY(100%);
+    }
+    @media (min-width: 481px) {
+        transform: translateY(40%);
+    }
+    @media (min-width: 768px) {
+        transform: translateY(20%);
+    }
+}
+
+.photogallery__modal--slide-left {
+    background-image: url("../img/svg/arrow-left.svg") !important;
+    left: 10px;
+
+    @media (min-width: 768px) {
+        left: 4%;
+    }
+}
+.photogallery__modal--slide-right {
+    background-image: url("../img/svg/arrow-right.svg") !important;
+
+    right: 10px;
+
+    @media (min-width: 768px) {
+        right: 4%;
+    }
+}
+.photogallery__modal-bar {
+    // need for overwritten photoswype styles
+    opacity: 1 !important;
+    background: none !important;
+}
+
+.photogallery__modal--close {
+    background-image: url("../img/svg/cross.svg") !important;
+    right: 10px;
+
+    @media (min-width: 768px) {
+        right: 4%;
     }
 }
