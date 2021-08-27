@@ -269,7 +269,7 @@
 
 .service-complex-exellents__wrapper {
   padding: 36px 12px 61px;
-  opacity: 0.9;
+  opacity: 0.95;
   grid-template-rows: repeat(2, auto);
   grid-template-areas:
     "title"
@@ -289,7 +289,7 @@
     opacity: 0.3;
 
     @include mq(tb, true) {
-      background: url(../img/service-complex/exellent-bg-m.jpeg) no-repeat right;
+      background: url(../img/service-complex/exellent-bg-m.jpg) no-repeat right;
     }
     @include mq(tbLG, true) {
       background: url(../img/service-complex/exellent-bg-l.jpeg) no-repeat right;
@@ -297,6 +297,7 @@
     @include mq(dt, true) {
       background: url(../img/service-complex/exellent-bg-xl.jpeg) no-repeat
         right;
+      opacity: 0.5;
     }
   }
   @include mq(tb, true) {
