@@ -71,30 +71,30 @@
         flex-direction: column;
 
         & > .section-highlight__title {
+            @include text(72px);
             color: transparent;
             -webkit-text-stroke: 2px clr(white);
-            @include text(72px);
         }
 
         & > .section-highlight__subtitle {
+            @include text(36px, 600, $secondaryFont);
             -webkit-text-stroke: initial;
             color: clr(white);
-            @include text(36px, 600, $secondaryFont);
         }
     }
 }
 
 .primary-btn {
+    @include text(18px);
+    box-sizing: border-box;
+    border: 1px solid clr(red);
+    padding: 24px 46px;
+    transition: opacity 0.2s;
     cursor: pointer;
     text-transform: uppercase;
-    padding: 24px 46px;
-    @include text(18px);
     color: clr(red);
-    border: 1px solid clr(red);
-    box-sizing: border-box;
     border-radius: 4px;
     background: none;
-    transition: opacity 0.2s;
     text-decoration: none;
 
     &:hover {
@@ -104,8 +104,8 @@
 
 .secondary-btn {
     @extend .primary-btn;
-    color: clr(purpleDark);
-    border-color: clr(purpleDark);
+    color: clr(purpledark);
+    border-color: clr(purpledark);
     transition: opacity 0.2s, color 0.2s, border-color 0.2s;
 
     &:hover {
@@ -116,25 +116,25 @@
 }
 
 .goto-btn {
-    display: inline-block;
-    padding: 24px;
     @include text(24px, 600, $secondaryFont);
-    color: clr(white);
-    background-color: clr(purple);
-    text-decoration: none;
-    outline: none;
-    border: none;
 
     @include pseudo(after, "", relative) {
+        bottom: 0;
+        width: 16px;
+        height: 16px;
+        transition: bottom 0.4s;
         background-image: url(../img/svg/goto__arrow.svg);
         background-position: center;
         background-repeat: no-repeat;
         margin-left: 24px;
-        width: 16px;
-        height: 16px;
-        transition: bottom 0.4s;
-        bottom: 0;
     }
+    display: inline-block;
+    border: none;
+    padding: 24px;
+    color: clr(white);
+    background-color: clr(purple);
+    text-decoration: none;
+    outline: none;
 
     &:hover::after {
         bottom: 5px;
@@ -142,31 +142,33 @@
 }
 
 .more-btn {
-    @extend .goto-btn;
-    position: relative;
-    cursor: pointer;
     box-sizing: border-box;
-    width: 56px;
-    padding: 18px 16px;
-    font-size: 16px;
     display: inline-flex;
     align-items: center;
+    position: relative;
+    width: 56px;
     overflow: hidden;
+    padding: 18px 16px;
     transition: width 0.3s, color 0.3s, background-color 0.3s;
+    cursor: pointer;
+    font-size: 16px;
     white-space: nowrap;
     background-color: clr(red);
     color: transparent;
 
-    &::after {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        right: 0;
-        top: 0;
-        margin-left: 0;
+    @media (max-width: 768px) {
+        width: 270px;
+        color: clr(white);
+        &:hover {
+            width: 270px;
+            &::after {
+                background-color: transparent;
+            }
+        }
+
+        &::after {
+            width: 52px;
+        }
     }
 
     &:hover {
@@ -178,31 +180,22 @@
             background-color: clr(red);
         }
     }
+    @extend .goto-btn;
 
-    @media (max-width: 768px) {
-        width: 270px;
-        color: clr(white);
-
-        &::after {
-            width: 52px;
-        }
-        &:hover {
-            width: 270px;
-            &::after {
-                background-color: transparent;
-            }
-        }
+    &::after {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        margin-left: 0;
     }
 }
 
 .contact-us-btn {
-    @extend .more-btn;
-    width: 70px;
-    padding: 19px;
-    font-family: #{"Russo One"};
-    font-weight: 400;
-    background-color: clr(pink);
-
     @include pseudo(before, url(../img/svg/msg-dialog.svg), static) {
         height: 32px;
         margin-right: 20px;
@@ -210,6 +203,11 @@
     }
 
     @include pseudo(after, none);
+    width: 70px;
+    padding: 19px;
+    font-family: #{"Russo One"};
+    font-weight: 400;
+    background-color: clr(pink);
 
     &:hover {
         width: 200px;
@@ -220,19 +218,20 @@
             margin-right: 12px;
         }
     }
+    @extend .more-btn;
 }
 
 .square-btn {
-    outline: none;
-    border: none;
-    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 70px;
     height: 70px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    background-color: clr(pink);
+    border: none;
     transition: background-color 0.3s;
+    outline: none;
+    cursor: pointer;
+    background-color: clr(pink);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 24px 24px;
@@ -269,20 +268,19 @@
 
 .styled-list {
     & li {
-        padding-left: 30px;
         @include pseudo(before, "", absolute) {
-            top: 4px;
-            left: 0;
-            width: 8px;
-            height: 8px;
-            background-color: clr(pink);
-
             @include mq(tb, true) {
                 left: 0;
                 width: 12px;
                 height: 12px;
             }
+            top: 4px;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            background-color: clr(pink);
         }
+        padding-left: 30px;
     }
 }
 
@@ -308,14 +306,14 @@
 
 .video-btn {
     position: absolute;
+    z-index: 1;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    padding: 0;
     width: 50px;
     height: 50px;
     border: none;
+    padding: 0;
+    transform: translate(-50%, -50%);
     cursor: pointer;
     background-image: url("../img/svg/video-play.svg");
     background-color: transparent;
@@ -326,10 +324,6 @@
 
 // Subscribe buttons
 .subscribe-link {
-    background-repeat: no-repeat;
-    width: 143px;
-    height: 40px;
-    background-size: contain;
     @include mq(tb, true) {
         width: 90px;
         height: 26px;
@@ -338,6 +332,10 @@
         width: 180px;
         height: 52px;
     }
+    background-repeat: no-repeat;
+    width: 143px;
+    height: 40px;
+    background-size: contain;
 
     &--appstore {
         background-image: url(../img/svg/appstore_dark.svg);
@@ -350,10 +348,6 @@
 
 //section title
 .section__title {
-    padding: 16px;
-    font-size: rem(22);
-    line-height: 27px;
-    text-transform: uppercase;
     @include mq(tb, true) {
         padding: 16px 24px;
         font-size: rem(24);
@@ -369,22 +363,18 @@
         font-size: rem(48);
         line-height: 58px;
     }
+    padding: 16px;
+    font-size: rem(22);
+    line-height: 27px;
+    text-transform: uppercase;
 }
 //Video section
 //----schedule and cards wrapper----
 .video-section__info-wrapper {
-    display: grid;
-    padding: 24px 12px;
-    @media (min-width: 368px) {
-        grid-template-columns: auto 140px;
-    }
     @include mq(tb, true) {
         column-gap: 24px;
         margin-right: 24px;
         padding: 0;
-    }
-    @media (min-width: 550px) {
-        grid-template-columns: auto 228px;
     }
     @include mq(dt, true) {
         column-gap: 0;
@@ -392,20 +382,17 @@
         align-self: flex-end;
         margin-bottom: 40px;
     }
+    display: grid;
+    padding: 24px 12px;
+    @media (min-width: 368px) {
+        grid-template-columns: auto 140px;
+    }
+    @media (min-width: 550px) {
+        grid-template-columns: auto 228px;
+    }
 }
 //----schedule list----
 .video-section__info-list {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 8px;
-    @media (min-width: 368px) {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        margin-bottom: 0;
-        align-items: center;
-    }
-
     @include mq(tb, true) {
         display: flex;
         justify-content: flex-end;
@@ -416,6 +403,17 @@
     }
     @include mq(dt, true) {
         justify-content: center;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+    @media (min-width: 368px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 0;
+        align-items: center;
     }
 }
 
@@ -431,15 +429,7 @@
     }
 }
 .video-section__info-link {
-    color: clr(black);
-    line-height: 19px;
     @include text(16px, 400, $secondaryFont);
-    padding: 5px 10px;
-    transition: background-color 0.4s;
-
-    &:hover {
-        background-color: clr(purple50);
-    }
 
     @include mq(tbLG, true) {
         font-size: rem(20);
@@ -449,12 +439,20 @@
         font-size: rem(24);
         line-height: 30px;
     }
+    color: clr(black);
+    line-height: 19px;
+    padding: 5px 10px;
+    transition: background-color 0.4s;
+
+    &:hover {
+        background-color: clr(purple50);
+    }
 }
 //----cards list----
 .video-section__cards-list {
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-around;
 
     @media (min-width: 368px) {
         padding: 0;
@@ -481,9 +479,6 @@
 
 //----video and img tag----
 .img__tag-wrapper {
-    position: absolute;
-    bottom: 0;
-    padding: 12px 12px 7px 12px;
     @include mq(tb, true) {
         padding: 16px 100px 16px 24px;
     }
@@ -493,15 +488,13 @@
     @include mq(dt, true) {
         padding: 40px;
     }
+    position: absolute;
+    bottom: 0;
+    padding: 12px 12px 7px 12px;
 }
 
 .img__tag {
-    padding-bottom: 4px;
     @include text(22px, 400, $primaryFont);
-    text-transform: uppercase;
-    color: transparent;
-    -webkit-text-stroke: 2px clr(white);
-    line-height: 26px;
 
     @include mq(tb, true) {
         font-size: rem(36);
@@ -518,11 +511,14 @@
         line-height: 87px;
         padding-bottom: 0;
     }
+    padding-bottom: 4px;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 2px clr(white);
+    line-height: 26px;
 }
 .img__tag-subtitle {
     @include text(16px, 600, $secondaryFont);
-    color: clr(white);
-    line-height: 20px;
 
     @include mq(tbLG, true) {
         font-size: rem(18);
@@ -533,6 +529,8 @@
         font-size: rem(36);
         line-height: 44px;
     }
+    color: clr(white);
+    line-height: 20px;
 }
 
 //Exellents section
@@ -541,20 +539,18 @@
     position: relative;
     background-color: clr(purple);
     &:before {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        z-index: -1;
         content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
     }
 }
 
 .exellent-section__title {
     @include text(22px, 400, $primaryFont);
-    line-height: 27px;
-    color: clr(white);
     @include mq(tb, true) {
         font-size: rem(24);
         line-height: 29px;
@@ -563,6 +559,8 @@
         font-size: rem(32);
         line-height: 39px;
     }
+    line-height: 27px;
+    color: clr(white);
 }
 
 .exellent-section__item {
@@ -574,21 +572,18 @@
         left: 0;
     }
     &:not(:last-child) {
-        margin-bottom: 16px;
         @include mq(tbLG, true) {
             margin-bottom: 34px;
         }
         @include mq(dt, true) {
             margin-bottom: 42px;
         }
+        margin-bottom: 16px;
     }
 }
 
 .exellent-section__subtitle {
-    margin-bottom: 8px;
     @include text(17px, 400, $secondaryFont);
-    line-height: 21px;
-    color: clr(pink);
     @include mq(tb, true) {
         margin-bottom: 12px;
     }
@@ -597,14 +592,17 @@
         font-size: rem(24);
         line-height: 30px;
     }
+    margin-bottom: 8px;
+    line-height: 21px;
+    color: clr(pink);
 }
 
 .exellent-section__descr {
     @include text(15px, 400, $secondaryFont);
-    line-height: 19px;
-    color: clr(white);
     @include mq(dt, true) {
         font-size: rem(18);
         line-height: 22px;
     }
+    line-height: 19px;
+    color: clr(white);
 }

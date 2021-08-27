@@ -8,31 +8,39 @@ const serviceComplex = {
 };
 
 function serviceMenuClick() {
-  serviceComplex.header.classList.add("services-complex__default--active-menu");
-  serviceComplex.list.classList.add("services-menu--active");
+  if (serviceComplex.header) {
+    serviceComplex.header.classList.add(
+      "services-complex__default--active-menu"
+    );
+    serviceComplex.list.classList.add("services-menu--active");
+  }
 }
 
 function serviceMenuClickChoice(e) {
-  serviceComplex.defaultItem.innerText = e.target.closest(
-    ".services-menu__link"
-  ).innerText;
-  serviceComplex.items.forEach((e) => {
-    e.classList.remove("services-menu__link--active");
-  });
-  e.target
-    .closest(".services-menu__link")
-    .classList.add("services-menu__link--active");
-  serviceComplex.header.classList.remove(
-    "services-complex__default--active-menu"
-  );
-  serviceComplex.list.classList.remove("services-menu--active");
+  if (serviceComplex.list) {
+    serviceComplex.defaultItem.innerText = e.target.closest(
+      ".services-menu__link"
+    ).innerText;
+    serviceComplex.items.forEach((e) => {
+      e.classList.remove("services-menu__link--active");
+    });
+    e.target
+      .closest(".services-menu__link")
+      .classList.add("services-menu__link--active");
+    serviceComplex.header.classList.remove(
+      "services-complex__default--active-menu"
+    );
+    serviceComplex.list.classList.remove("services-menu--active");
+  }
 }
 
 function serviceMenuClose(e) {
-  serviceComplex.header.classList.remove(
-    "services-complex__default--active-menu"
-  );
-  serviceComplex.list.classList.remove("services-menu--active");
+  if (serviceComplex.closeBtn) {
+    serviceComplex.header.classList.remove(
+      "services-complex__default--active-menu"
+    );
+    serviceComplex.list.classList.remove("services-menu--active");
+  }
 }
 
 serviceComplex.header.addEventListener("click", serviceMenuClick);
