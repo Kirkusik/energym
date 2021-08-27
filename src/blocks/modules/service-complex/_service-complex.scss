@@ -264,3 +264,103 @@
     margin-top: 20px;
   }
 }
+
+// Exellents
+
+.service-complex-exellents__wrapper {
+  padding: 36px 12px 61px;
+  opacity: 0.9;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
+    "title"
+    "list";
+  row-gap: 32px;
+  background-image: radial-gradient(
+    155.51% 135.57% at -22.61% 50.07%,
+    #b694c0 2.6%,
+    #76797b 25%,
+    #595959 62.5%,
+    #ffa6c4 88.54%
+  );
+  &::before {
+    background: url(../img/service-complex/exellent-bg-mobile.jpeg) no-repeat
+      right;
+    background-size: cover;
+    opacity: 0.3;
+
+    @include mq(tb, true) {
+      background: url(../img/service-complex/exellent-bg-m.jpeg) no-repeat right;
+    }
+    @include mq(tbLG, true) {
+      background: url(../img/service-complex/exellent-bg-l.jpeg) no-repeat right;
+    }
+    @include mq(dt, true) {
+      background: url(../img/service-complex/exellent-bg-xl.jpeg) no-repeat
+        right;
+    }
+  }
+  @include mq(tb, true) {
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: auto 320px;
+    grid-template-areas:
+      "title ."
+      "list .";
+    row-gap: 24px;
+    padding: 32px 0 40px 24px;
+  }
+  @include mq(tbLG, true) {
+    grid-template-columns: 1fr 1fr;
+    padding-top: 103px;
+    padding-left: 61px;
+    row-gap: 0;
+    background-image: radial-gradient(
+      155.51% 135.57% at -22.61% 50.07%,
+      #b694c0 0%,
+      #75787a 25%,
+      #4d4d4d 62.5%,
+      #ffa6c4 100%
+    );
+  }
+  @include mq(dt, true) {
+    padding: 96px 0 89px 40px;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: auto 600px;
+  }
+}
+.service-complex-exellents__title {
+  grid-area: title;
+  @include mq(tb, true) {
+    margin-left: 56px;
+  }
+  @include mq(tbLG, true) {
+    margin-bottom: 24px;
+  }
+  @include mq(dt, true) {
+    margin-bottom: 39px;
+  }
+}
+
+.service-complex-exellents__list {
+  grid-area: list;
+  @include mq(tbLG, true) {
+    margin-bottom: 80px;
+  }
+  @include mq(dt, true) {
+    margin-bottom: 0;
+  }
+}
+
+.service-complex-exellents__item {
+  margin-bottom: 16px;
+
+  &:first-child::before {
+    content: url("../img/svg/garmony.svg");
+  }
+  &:nth-child(2n)::before {
+    content: url("../img/svg/well-being.svg");
+  }
+
+  &:last-child::before {
+    content: url("../img/svg/energy.svg");
+  }
+}
