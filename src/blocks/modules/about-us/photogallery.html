@@ -14,14 +14,11 @@
             <a href="#" class="photogallery__plan-link">План клубу</a>
 
             <div class="swiper-container photogallery__slider">
-                <!-- Additional required wrapper -->
-                <ul class="swiper-wrapper zoom-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-                    <!-- Slides -->
-                    <li id="1" class="photogallery__slide swiper-slide" itemprop="associatedMedia" itemscope
-                        itemtype="http://schema.org/ImageObject" data-zone="Тренажерний зал">
-                        <a id="first" title="click to zoom-in" href="./img/about-us-photogallery/gym1-l.jpg"
-                            itemprop="contentUrl" data-size="1200x600">
+                <ul class="swiper-wrapper zoom-gallery">
 
+                    <!-- Slides -->
+                    <li class="photogallery__slide swiper-slide" data-zone="Тренажерний зал">
+                        <a title="click to zoom-in" href="#">
                             <picture>
                                 <source media="(min-width: 768px)" srcset="./img/about-us-photogallery/gym1-l.webp"
                                     type="image/webp" />
@@ -32,7 +29,7 @@
                                 <source media="(min-width: 320px)" srcset="./img/about-us-photogallery/gym1-s.jpg"
                                     type="image/jpeg" />
                                 <img class="photogallery__slider-img" src="./img/about-us-photogallery/gym1-l.jpg"
-                                    itemprop="thumbnail" alt="Тренажерний зал" title="Тренажерний зал">
+                                    alt="Тренажерний зал" title="Тренажерний зал">
                             </picture>
                         </a>
                         <!-- Caption -->
@@ -41,10 +38,8 @@
                             <p class="photogallery__zone-title"></p>
                         </div>
                     </li>
-                    <li id="2" class="swiper-slide photogallery__slide" itemprop="associatedMedia" itemscope
-                        itemtype="http://schema.org/ImageObject" data-zone="Басейн">
-                        <a title="click to zoom-in" href="./img/about-us-photogallery/gym2-l.jpg" itemprop="contentUrl"
-                            data-size="1200x601">
+                    <li class="swiper-slide photogallery__slide" data-zone="Басейн">
+                        <a title="click to zoom-in" href="#">
 
                             <picture>
                                 <source media="(min-width: 768px)" srcset="./img/about-us-photogallery/gym2-l.webp"
@@ -56,7 +51,7 @@
                                 <source media="(min-width: 320px)" srcset="./img/about-us-photogallery/gym2-s.jpg"
                                     type="image/jpeg" />
                                 <img class="photogallery__slider-img" src="./img/about-us-photogallery/gym2-l.jpg"
-                                    alt="Тренажерний зал" itemprop="thumbnail" title="Тренажерний зал">
+                                    alt="Тренажерний зал" title="Тренажерний зал">
                             </picture>
                         </a>
                         <!-- Caption -->
@@ -65,10 +60,8 @@
                             <p class="photogallery__zone-title"></p>
                         </div>
                     </li>
-                    <li id="3" class="swiper-slide photogallery__slide" itemprop="associatedMedia" itemscope
-                        itemtype="http://schema.org/ImageObject" data-zone="Тренажерний зал">
-                        <a title="click to zoom-in" href="./img/about-us-photogallery/gym3-l.jpg" itemprop="contentUrl"
-                            data-size="1200x600">
+                    <li class="swiper-slide photogallery__slide" data-zone="Тренажерний зал">
+                        <a title="click to zoom-in" href="#">
 
                             <picture>
                                 <source media="(min-width: 768px)" srcset="./img/about-us-photogallery/gym3-l.webp"
@@ -80,7 +73,7 @@
                                 <source media="(min-width: 320px)" srcset="./img/about-us-photogallery/gym3-s.jpg"
                                     type="image/jpeg" />
                                 <img class="photogallery__slider-img" src="./img/about-us-photogallery/gym3-l.jpg"
-                                    alt="Тренажерний зал" itemprop="thumbnail" title="Тренажерний зал">
+                                    alt="Тренажерний зал" title="Тренажерний зал">
                             </picture>
                         </a>
                         <!-- Caption -->
@@ -89,10 +82,8 @@
                             <p class="photogallery__zone-title"></p>
                         </div>
                     </li>
-                    <li id="4" class="swiper-slide photogallery__slide" itemprop="associatedMedia" itemscope
-                        itemtype="http://schema.org/ImageObject" data-zone="Тренажерний зал">
-                        <a title="click to zoom-in" href="./img/about-us-photogallery/gym4-l.jpg" itemprop="contentUrl"
-                            data-size="1200x600">
+                    <li class="swiper-slide photogallery__slide" data-zone="Тренажерний зал">
+                        <a title="click to zoom-in" href="#">
 
                             <picture>
                                 <source media="(min-width: 768px)" srcset="./img/about-us-photogallery/gym4-l.webp"
@@ -104,7 +95,7 @@
                                 <source media="(min-width: 320px)" srcset="./img/about-us-photogallery/gym4-s.jpg"
                                     type="image/jpeg" />
                                 <img class="photogallery__slider-img" src="./img/about-us-photogallery/gym4-l.jpg"
-                                    alt="Тренажерний зал" itemprop="thumbnail" title="Тренажерний зал">
+                                    alt="Тренажерний зал" title="Тренажерний зал">
                             </picture>
                         </a>
                         <!-- Caption -->
@@ -118,72 +109,7 @@
             </div>
 
         </div>
-        <!-- ------------ photoswipe-->
 
-        <!-- Root element of PhotoSwipe. Must have class pswp. -->
-        <div class="pswp photogallery__modal" tabindex="-1" role="dialog" aria-hidden="true">
-
-            <!-- Background of PhotoSwipe. 
-                    It's a separate element, as animating opacity is faster than rgba(). -->
-            <div class="pswp__bg photogallery__modal-bg"></div>
-
-            <!-- Slides wrapper with overflow:hidden. -->
-            <div class="pswp__scroll-wrap photogallery__modal-img-wrapper">
-
-                <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
-                <!-- don't modify these 3 pswp__item elements, data is added later on. -->
-                <div class="pswp__container">
-                    <div class="pswp__item photogallery__modal-item"></div>
-                    <div class="pswp__item photogallery__modal-item"></div>
-                    <div class="pswp__item photogallery__modal-item"></div>
-                </div>
-
-                <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-                <div class="pswp__ui pswp__ui--hidden">
-
-                    <div class="pswp__top-bar photogallery__modal-bar">
-
-                        <!--  Controls are self-explanatory. Order can be changed. -->
-
-                        <div class="pswp__counter"></div>
-
-                        <button class="pswp__button pswp__button--close square-btn photogallery__modal--close "
-                            title="Close (Esc)"></button>
-
-
-                        <!-- element will get class pswp__preloader--active when preloader is running -->
-                        <div class="pswp__preloader">
-                            <div class="pswp__preloader__icn">
-                                <div class="pswp__preloader__cut">
-                                    <div class="pswp__preloader__donut"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                        <div class="pswp__share-tooltip"></div>
-                    </div>
-
-                    <button class="pswp__button pswp__button--arrow--left photogallery__modal--slide-left square-btn"
-                        title="Previous (arrow left)">
-                    </button>
-
-                    <button class="pswp__button pswp__button--arrow--right square-btn photogallery__modal--slide-right"
-                        title="Next (arrow right)">
-                    </button>
-
-                    <div class="pswp__caption">
-                        <div class="pswp__caption__center">
-
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
     </div>
 
 </section>
