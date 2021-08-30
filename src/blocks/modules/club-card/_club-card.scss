@@ -17,15 +17,20 @@
     "btn btn btn btn . item item . . ."
     ". . . . . item item  . . ."
     ". . . . . item item  . . .";
+
+  @include mq(mb, true) {
+    grid-template-areas:
+      "btn btn btn btn"
+      "slgn slgn chng chng"
+      ". . item item"
+      ". . cmpr cmpr";
+
+    // "btn btn btn btn btn btn btn btn btn btn"
+    // "slgn slgn slgn slgn slgn chng chng chng chng chng"
+    // ". . . . . item item item item item"
+    // ". . . . . cmpr cmpr cmpr cmpr";
+  }
 }
-// ß .cards-button__area {
-//   padding: 24px 0;
-//   @include mq(tb, true) {
-//     // width: 40%;
-//     // position: relative;
-//     // padding-top: 73px;
-//   }
-// }
 
 .cards__button {
   display: flex;
@@ -44,8 +49,8 @@
   //   grid-area: clbck;
   // }
   @include mq(tb, true) {
-    // @include text(15px, 700, $primaryFont);
-    // line-height: 16px;
+    @include text(13px, 400, $primaryFont);
+    line-height: 16px;
   }
 }
 
@@ -184,9 +189,9 @@
   box-sizing: border-box;
   backdrop-filter: blur(4px);
   border-radius: 8px;
-  @include mq(tb, true) {
-    // @include text(15px, 500, $secondaryFont);
-    // line-height: 18px;
+  @include mq(mb, true) {
+    // @include text(13px, 500, $secondaryFont);
+    // line-height: 16px;
     // padding: 0 18px 8px 18px;
   }
   @include mq(tbLG, true) {
