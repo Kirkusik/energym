@@ -21,6 +21,10 @@
     margin-top: 16px;
     background: #ffffff;
   }
+  @include mq(tb, true) {
+    @include text(15px, 700, $primaryFont);
+    line-height: 16px;
+  }
 }
 
 .cards__order {
@@ -43,7 +47,15 @@
     left: 349%;
     padding-left: 0;
     width: 100%;
-}}
+}
+@include mq(tbLG, true) {
+  position: absolute;
+  left: 460%;
+  top: 182px;
+  padding-left: 0;
+  width: 100%;
+}
+}
 
 .cards-order__slogan {
   font-size: 22px;
@@ -59,10 +71,15 @@
 .cards-order__compare {
   display: flex;
   justify-content: flex-end;
+  // align-items: center;
   @include mq(tb, true) {
     position: absolute;
     top: 118px;
     left: 55%;
+  }
+  @include mq(tbLG, true) {
+    top: 256px;
+    left: 56%;
   }
 }
 
@@ -88,6 +105,18 @@
     }
 }
 
+.compare-cards__add-img {
+  @include mq(tb, true) {
+    display: none;
+  }
+  &--big {
+    display: none;
+    @include mq(tb, true) {
+      display: block;
+    }
+  }
+}
+
 .compare-cards__btn {
   display: flex;
   flex-direction: column;
@@ -105,6 +134,9 @@
     @include text(15px, 500, $secondaryFont);
     line-height: 18px;
     padding: 0 18px 8px 18px;
+  }
+  @include mq(tbLG, true) {
+    padding: 0 49px 25px 49px;
   }
 }
 
@@ -143,6 +175,11 @@
   display: flex;
   flex-direction: column;
   padding-bottom: 50px;
+  @include mq(tb, true) {
+    @include text(15px, 500, $secondaryFont);
+  line-height: 18px;
+  padding-bottom: 100px;
+  }
 }
 
 .service-table__item {
@@ -169,6 +206,11 @@
     line-height: 11px;
     display: flex;
     flex-direction: column;
+    @include mq(tb, true) {
+      @include text(15px, 500, $secondaryFont);
+    line-height: 18px;
+    }
+    
   }
   &--weekday {
     padding-bottom: 8px;
