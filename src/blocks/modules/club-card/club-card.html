@@ -1,81 +1,108 @@
 <section class="cards">
   <div class="container cards__container">
-    <div class="cards-button__area">
-      <a
-        href="#!"
-        class="primary-btn cards__button cards-button"
-        aria-label="Замовити карту"
-        >замовити карту</a
-      >
-      <a
-        href="#!"
-        class="secondary-btn cards__button cards-button"
-        aria-label="Передзвоніть мені"
-        >передзвоніть мені</a
-      >
-    </div>
-    <div class="cards__order cards-order">
-      <p class="cards-order__slogan">Замовляй!</p>
-      <div class="cards-order__item order-item">
+    <div class="cards__grid cards-grid">
+      <div class="cards-button__area cards-grid__buttons">
+        <a
+          href="#!"
+          class="primary-btn cards__button cards__button--order cards-button"
+          aria-label="Замовити карту"
+          >замовити карту</a
+        >
+        <a
+          href="#!"
+          class="
+            secondary-btn
+            cards__button cards__button--callback cards-button
+          "
+          aria-label="Передзвоніть мені"
+          >передзвоніть мені</a
+        >
+      </div>
+
+      <!-- <div class="cards__order cards-order"> -->
+
+      <div class="cards-grid__slogan">
+        <p class="cards-order__slogan">Замовляй!</p>
+      </div>
+
+      <!-- <div class="cards-order__item order-item"> -->
+
+      <div class="cards-grid__change-btn">
         <a href="#!" class="order-item__button" aria-label="Змінити карту">
           <svg width="30" height="32" fill="none">
             <use href="#change-card-icon"></use>
           </svg>
         </a>
+      </div>
+
+      <div class="cards-grid__item-info">
         <p class="order-item__name">Special one</p>
         <p class="order-item__price">28 000 грн</p>
       </div>
-    </div>
-    <div class="cards-order__compare compare-cards">
-      <picture class="compare-cards__current-pic">
-        <source
-          media="(min-width: 1440px)"
-          srcset="./img/club-card/special-one-1440-min.webp"
-        />
-        <source
-          media="(min-width: 1440px)"
-          srcset="./img/club-card/special-one-1440-min.jpg"
-        />
-        <source
-          media="(min-width: 1000px)"
-          srcset="./img/club-card/special-one-1000-min.webp"
-        />
-        <source
-          media="(min-width: 1000px)"
-          srcset="./img/club-card/special-one-1000-min.jpg"
-        />
-        <source
-          media="(min-width: 768px)"
-          srcset="./img/club-card/special-one-768-min.webp"
-        />
-        <source
-          media="(min-width: 768px)"
-          srcset="./img/club-card/special-one-768-min.jpg"
-        />
-        <source
-          media="(min-width: 320px)"
-          srcset="./img/club-card/special-one-375-min.webp"
-        />
-        <source
-          media="(min-width: 320px)"
-          srcset="./img/club-card/special-one-375-min.jpg"ы
-        />
-        <img
-          class="compare-cards__current"
-          src="./img/club-card/special-one-1440-min.jpg"
-          alt="Обрана карта"
-          title="Обрана карта"
-        />
-      </picture>
-      <a href="#!" class="compare-cards__btn">
-        <svg class="compare-cards__add-img" width="13" height="13" fill="none">
-          <use href="#compare-cards-icon"></use>
-        </svg>
-        <svg class="compare-cards__add-img compare-cards__add-img--big" width="40" height="40" fill="none">
-          <use href="#compare-cards-icon-big"></use>
-        </svg>
-        <p class="compare-cards__text">Порівняти</p></a
-      >
+      <!-- </div> -->
+      <!-- </div> -->
+      <div class="cards-order__compare compare-cards">
+        <picture class="compare-cards__current-pic">
+          <source
+            media="(min-width: 1440px)"
+            srcset="./img/club-card/special-one-1440-min.webp"
+          />
+          <source
+            media="(min-width: 1440px)"
+            srcset="./img/club-card/special-one-1440-min.jpg"
+          />
+          <source
+            media="(min-width: 1000px)"
+            srcset="./img/club-card/special-one-1000-min.webp"
+          />
+          <source
+            media="(min-width: 1000px)"
+            srcset="./img/club-card/special-one-1000-min.jpg"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="./img/club-card/special-one-768-min.webp"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="./img/club-card/special-one-768-min.jpg"
+          />
+          <source
+            media="(min-width: 320px)"
+            srcset="./img/club-card/special-one-375-min.webp"
+          />
+          <source
+            media="(min-width: 320px)"
+            srcset="./img/club-card/special-one-375-min.jpg"
+            ы
+          />
+          <img
+            class="compare-cards__current"
+            src="./img/club-card/special-one-1440-min.jpg"
+            alt="Обрана карта"
+            title="Обрана карта"
+          />
+        </picture>
+        <a href="#!" class="compare-cards__btn">
+          <svg
+            class="compare-cards__add-img"
+            width="13"
+            height="13"
+            fill="none"
+          >
+            <use href="#compare-cards-icon"></use>
+          </svg>
+          <svg
+            class="compare-cards__add-img compare-cards__add-img--big"
+            width="40"
+            height="40"
+            fill="none"
+          >
+            <use href="#compare-cards-icon-big"></use>
+          </svg>
+          <p class="compare-cards__text">Порівняти</p></a
+        >
+      </div>
     </div>
     <div class="cards__service cards-service">
       <p class="cards-service__title">Комплекс послуг</p>
