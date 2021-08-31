@@ -24,6 +24,16 @@
       ". item item ."
       ". . cmpr cmpr";
   }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: 22% 39% 39%;
+    grid-template-areas:
+      "slgn cmpr cmpr"
+      "btn cmpr cmpr"
+      "btn cmpr cmpr"
+      ". item .";
+  }
+
   position: relative;
 }
 
@@ -76,9 +86,8 @@
     padding-top: 24px;
   }
   @media (min-width: 1200px) {
-    width: 55%;
+    width: 100%;
   }
-
 }
 
 .cards-grid__change-btn {
@@ -95,6 +104,9 @@
   }
   @media (min-width: 991px) and (max-width: 1199px) {
     width: 180px;
+  }
+  @media (min-width: 1200px) {
+    display: none;
   }
 }
 
@@ -123,7 +135,6 @@
     padding-top: 74px;
     padding-bottom: 23px;
   }
-
 }
 
 .cards-order__compare {
@@ -143,6 +154,10 @@
   }
   @media (min-width: 991px) and (max-width: 1199px) {
     justify-content: flex-start;
+  }
+  @media (min-width: 1200px) {
+    justify-content: flex-start;
+    padding-top: 74px;
   }
 }
 
@@ -201,11 +216,20 @@
   @media (min-width: 992px) and (max-width: 1199px) {
     padding: 0 49px 0 49px;
   }
-
+  @media (min-width: 1200px) {
+    height: 76%;
+    flex-direction: row;
+    padding: 0 84px 0 84px;
+  }
 }
 
 .compare-cards__text {
   padding-top: 3px;
+  @media (min-width: 1200px) {
+    @include text(24px, 500, $secondaryFont);
+    line-height: 29px;
+    padding-left: 19px;
+  }
 }
 
 .compare-cards__current-pic {
