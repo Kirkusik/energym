@@ -5,8 +5,6 @@
 .cards__grid {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  // grid-auto-rows: minmax(100px, auto);
-  // grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   grid-template-areas:
@@ -18,7 +16,7 @@
     ". . . . . item item  . . ."
     ". . . . . item item  . . .";
 
-  @include mq(mb, true) {
+  @media (min-width: 320px) and (max-width: 575px) {
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas:
       "btn btn btn btn"
@@ -39,13 +37,8 @@
     margin-top: 12px;
     background: #ffffff;
   }
-  // &--order {
-  //   grid-area: ordr;
-  // }
-  // &--callback {
-  //   grid-area: clbck;
-  // }
-  @include mq(mb, true) {
+
+  @media (min-width: 320px) and (max-width: 575px) {
     @include text(13px, 400, $primaryFont);
     padding: 16px 0;
     line-height: 16px;
@@ -56,10 +49,6 @@
   display: flex;
   @include text(13px, 400, $primaryFont);
   line-height: 16px;
-  @include mq(tb, true) {
-    // position: absolute;
-    // top: 69px;
-  }
 }
 
 .cards-order__item {
@@ -67,19 +56,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  @include mq(tb, true) {
-    // position: absolute;
-    // left: 349%;
-    // padding-left: 0;
-    // width: 100%;
-  }
-  @include mq(tbLG, true) {
-    // position: absolute;
-    // left: 460%;
-    // top: 182px;
-    // padding-left: 0;
-    // width: 100%;
-  }
 }
 
 .cards-grid__slogan {
@@ -89,7 +65,7 @@
 .cards-grid__buttons {
   grid-area: btn;
   width: 79%;
-  @include mq(mb, true) {
+  @media (min-width: 320px) and (max-width: 575px) {
     width: 100%;
     padding-top: 24px;
   }
@@ -102,10 +78,13 @@
   width: 120px;
   display: flex;
   justify-content: center;
-  @include mq(mb, true) {
+  @media (min-width: 320px) and (max-width: 575px) {
     width: 100%;
     justify-content: start;
     padding-left: 9%;
+  }
+  @media (min-width: 991px) and (max-width: 1199px) {
+    width: 180px;
   }
 }
 
@@ -113,7 +92,7 @@
   grid-area: item;
   @include text(17px, 400, $primaryFont);
   line-height: 20px;
-  @include mq(mb, true) {
+  @media (min-width: 320px) and (max-width: 575px) {
     font-size: 13px;
     line-height: 16px;
     display: flex;
@@ -125,40 +104,36 @@
 
 .cards-order__slogan {
   padding-top: 24px;
-  // padding-bottom: 20px;
   @include text(24px, 400, $primaryFont);
   line-height: 29px;
   color: #b694c0;
-  // width: 50%;
-  @include mq(tb, true) {
-    // position: relative;
-    // width: 100%;
-  }
 }
 
 .cards-order__compare {
   grid-area: cmpr;
   display: flex;
   justify-content: center;
-  // justify-content: space-around;
-  // align-items: center;
-  @include mq(mb, true) {
+  @media (min-width: 320px) and (max-width: 575px) {
     justify-content: space-between;
   }
-  @include mq(tbLG, true) {
-    // top: 256px;
-    // left: 56%;
+  @media (min-width: 576px) and (max-width: 639px) {
+    padding-left: 56px;
+    justify-content: space-between;
+  }
+  @media (min-width: 640px) and (max-width: 767px) {
+    padding-left: 62px;
+    justify-content: space-between;
+  }
+  @media (min-width: 991px) and (max-width: 1199px) {
+    justify-content: flex-start;
   }
 }
 
 .order-item__name {
   grid-area: iname;
   padding: 0 0 4px 0;
-  @include mq(tb, true) {
-    // padding-top: 95px;
-    // @include text(17px, 400, $primaryFont);
-    // line-height: 20px;
-    // align-self: start;
+  @media (min-width: 992px) and (max-width: 1199px) {
+    padding-top: 12px;
   }
 }
 
@@ -168,7 +143,7 @@
   line-height: 18px;
   color: #5c3668;
   padding-bottom: 12px;
-  @include mq(mb, true) {
+  @media (min-width: 320px) and (max-width: 575px) {
     @include text(9px, 400, $primaryFont);
     line-height: 11px;
   }
@@ -176,13 +151,12 @@
 
 .compare-cards__add-img {
   display: none;
-  @include mq(mb, true) {
+  @media (min-width: 320px) and (max-width: 575px) {
     display: block;
-    // padding-top: 5px;
   }
   &--big {
     display: block;
-    @include mq(mb, true) {
+    @media (min-width: 320px) and (max-width: 575px) {
       display: none;
     }
   }
@@ -202,13 +176,15 @@
   box-sizing: border-box;
   backdrop-filter: blur(4px);
   border-radius: 8px;
-  @include mq(mb, true) {
+  @media (min-width: 320px) and (max-width: 575px) {
     @include text(9px, 500, $secondaryFont);
     line-height: 11px;
     padding: 0 9px 2px 9px;
-    // justify-content: center;
-    // align-items: center;
   }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    padding: 0 49px 0 49px;
+  }
+
 }
 
 .compare-cards__text {
@@ -217,18 +193,44 @@
 
 .compare-cards__current-pic {
   padding-right: 55px;
-  @include mq(mb, true) {
-    // width: 100%;
+  @media (min-width: 320px) and (max-width: 575px) {
     padding-right: 0;
+  }
+  @media (min-width: 576px) and (max-width: 639px) {
+    padding-right: 0;
+  }
+  @media (min-width: 991px) and (max-width: 1199px) {
+    padding-right: 83px;
+    padding-left: 98px;
   }
 }
 .compare-cards__current {
   max-width: 100vh;
+  position: relative;
 }
 
-.cards__service {
-  @include mq(tb, true) {
-    // padding-top: 80px;
+.compare-cards__monts {
+  position: absolute;
+  right: 197px;
+  bottom: 61px;
+  color: #ffffff;
+  @include text(15px, 400, $primaryFont);
+  line-height: 18px;
+  @media (min-width: 320px) and (max-width: 575px) {
+    display: none;
+  }
+  @media (min-width: 576px) and (max-width: 639px) {
+    position: absolute;
+    right: 165px;
+    bottom: 61px;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    right: 259px;
+    bottom: 61px;
+  }
+  @media (min-width: 991px) and (max-width: 1199px) {
+    right: 316px;
+    bottom: 61px;
   }
 }
 
@@ -237,13 +239,8 @@
   padding-bottom: 24px;
   @include text(17px, 400, $primaryFont);
   line-height: 20px;
-  // position: relative;
-  // bottom: 45px;
   display: inline-block;
-  // @include mq(tb, true) {
-  //   top: 34px;
-  //   }
-  @include mq(mb, true) {
+  @media (min-width: 320px) and (max-width: 575px) {
     position: absolute;
     top: 290px;
   }
@@ -255,7 +252,7 @@
   display: flex;
   flex-direction: column;
   padding-bottom: 50px;
-  @include mq(mb, true) {
+  @media (min-width: 320px) and (max-width: 575px) {
     @include text(13px, 500, $secondaryFont);
     line-height: 16px;
     padding-top: 24px;
@@ -277,7 +274,7 @@
 .service-table__value {
   padding: 11px 0 11px 48px;
   width: 50%;
-  @include mq(mb, true) {
+  @media (min-width: 320px) and (max-width: 575px) {
     padding: 8px 0 8px 32px;
   }
 
@@ -289,7 +286,7 @@
     font-weight: 400;
     display: flex;
     flex-direction: column;
-    @include mq(mb, true) {
+    @media (min-width: 320px) and (max-width: 575px) {
       @include text(9px, 400, $secondaryFont);
       line-height: 11px;
       padding: 0 0 12px 0;
