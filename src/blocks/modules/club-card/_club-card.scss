@@ -43,6 +43,12 @@
     padding: 16px 0;
     line-height: 16px;
   }
+
+  @media (min-width: 1200px) {
+    @include text(18px, 400, $primaryFont);
+    padding: 23px 0;
+    line-height: 22px;
+  }
 }
 
 .cards__order {
@@ -69,6 +75,10 @@
     width: 100%;
     padding-top: 24px;
   }
+  @media (min-width: 1200px) {
+    width: 55%;
+  }
+
 }
 
 .cards-grid__change-btn {
@@ -107,6 +117,13 @@
   @include text(24px, 400, $primaryFont);
   line-height: 29px;
   color: #b694c0;
+  @media (min-width: 1200px) {
+    @include text(48px, 400, $primaryFont);
+    line-height: 58px;
+    padding-top: 74px;
+    padding-bottom: 23px;
+  }
+
 }
 
 .cards-order__compare {
@@ -230,7 +247,7 @@
   }
   @media (min-width: 991px) and (max-width: 1199px) {
     right: 316px;
-    bottom: 61px;
+    bottom: 71px;
   }
 }
 
