@@ -19,17 +19,14 @@
     ". . . . . item item  . . .";
 
   @include mq(mb, true) {
+    grid-template-columns: repeat(4, 1fr);
     grid-template-areas:
       "btn btn btn btn"
       "slgn slgn chng chng"
-      ". . item item"
+      ". item item ."
       ". . cmpr cmpr";
-
-    // "btn btn btn btn btn btn btn btn btn btn"
-    // "slgn slgn slgn slgn slgn chng chng chng chng chng"
-    // ". . . . . item item item item item"
-    // ". . . . . cmpr cmpr cmpr cmpr";
   }
+  position: relative;
 }
 
 .cards__button {
@@ -48,8 +45,9 @@
   // &--callback {
   //   grid-area: clbck;
   // }
-  @include mq(tb, true) {
+  @include mq(mb, true) {
     @include text(13px, 400, $primaryFont);
+    padding: 16px 0;
     line-height: 16px;
   }
 }
@@ -91,6 +89,10 @@
 .cards-grid__buttons {
   grid-area: btn;
   width: 79%;
+  @include mq(mb, true) {
+    width: 100%;
+    padding-top: 24px;
+  }
 }
 
 .cards-grid__change-btn {
@@ -100,12 +102,25 @@
   width: 120px;
   display: flex;
   justify-content: center;
+  @include mq(mb, true) {
+    width: 100%;
+    justify-content: start;
+    padding-left: 9%;
+  }
 }
 
 .cards-grid__item-info {
   grid-area: item;
   @include text(17px, 400, $primaryFont);
   line-height: 20px;
+  @include mq(mb, true) {
+    font-size: 13px;
+    line-height: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 40%;
+  }
 }
 
 .cards-order__slogan {
@@ -127,10 +142,8 @@
   justify-content: center;
   // justify-content: space-around;
   // align-items: center;
-  @include mq(tb, true) {
-    // position: absolute;
-    // top: 118px;
-    // left: 55%;
+  @include mq(mb, true) {
+    justify-content: space-between;
   }
   @include mq(tbLG, true) {
     // top: 256px;
@@ -155,22 +168,22 @@
   line-height: 18px;
   color: #5c3668;
   padding-bottom: 12px;
-  @include mq(tb, true) {
-    // @include text(15px, 400, $primaryFont);
-    // line-height: 18px;
-    // align-self: start;
+  @include mq(mb, true) {
+    @include text(9px, 400, $primaryFont);
+    line-height: 11px;
   }
 }
 
 .compare-cards__add-img {
   display: none;
-  @include mq(tb, true) {
-    // display: none;
+  @include mq(mb, true) {
+    display: block;
+    // padding-top: 5px;
   }
   &--big {
     display: block;
-    @include mq(tb, true) {
-      // display: block;
+    @include mq(mb, true) {
+      display: none;
     }
   }
 }
@@ -190,12 +203,11 @@
   backdrop-filter: blur(4px);
   border-radius: 8px;
   @include mq(mb, true) {
-    // @include text(13px, 500, $secondaryFont);
-    // line-height: 16px;
-    // padding: 0 18px 8px 18px;
-  }
-  @include mq(tbLG, true) {
-    // padding: 0 49px 25px 49px;
+    @include text(9px, 500, $secondaryFont);
+    line-height: 11px;
+    padding: 0 9px 2px 9px;
+    // justify-content: center;
+    // align-items: center;
   }
 }
 
@@ -205,9 +217,13 @@
 
 .compare-cards__current-pic {
   padding-right: 55px;
-  @include mq(tb, true) {
-    // padding-right: 46px;
+  @include mq(mb, true) {
+    // width: 100%;
+    padding-right: 0;
   }
+}
+.compare-cards__current {
+  max-width: 100vh;
 }
 
 .cards__service {
@@ -227,6 +243,10 @@
   // @include mq(tb, true) {
   //   top: 34px;
   //   }
+  @include mq(mb, true) {
+    position: absolute;
+    top: 290px;
+  }
 }
 
 .cards-service__table {
@@ -235,10 +255,10 @@
   display: flex;
   flex-direction: column;
   padding-bottom: 50px;
-  @include mq(tb, true) {
-    //   @include text(15px, 500, $secondaryFont);
-    // line-height: 18px;
-    // padding-bottom: 100px;
+  @include mq(mb, true) {
+    @include text(13px, 500, $secondaryFont);
+    line-height: 16px;
+    padding-top: 24px;
   }
 }
 
@@ -257,6 +277,10 @@
 .service-table__value {
   padding: 11px 0 11px 48px;
   width: 50%;
+  @include mq(mb, true) {
+    padding: 8px 0 8px 32px;
+  }
+
   &--white {
     background: #ffffff;
   }
@@ -265,9 +289,10 @@
     font-weight: 400;
     display: flex;
     flex-direction: column;
-    @include mq(tb, true) {
-      //   @include text(15px, 500, $secondaryFont);
-      // line-height: 18px;
+    @include mq(mb, true) {
+      @include text(9px, 400, $secondaryFont);
+      line-height: 11px;
+      padding: 0 0 12px 0;
     }
   }
   &--weekday {
