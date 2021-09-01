@@ -262,15 +262,15 @@
   @media (min-width: 320px) and (max-width: 575px) {
     @include text(9px, 500, $secondaryFont);
     line-height: 11px;
-    padding: 0 9px 2px 9px;
+    padding: 6px 9px 6px 9px;
   }
   @media (min-width: 992px) and (max-width: 1199px) {
-    padding: 0 49px 0 49px;
+    padding: 27px 49px 27px 49px;
   }
   @media (min-width: 1200px) {
     height: 76%;
     flex-direction: row;
-    padding: 0 84px 0 84px;
+    padding: 93px 84px 93px 84px;
     height: 100%;
   }
 }
