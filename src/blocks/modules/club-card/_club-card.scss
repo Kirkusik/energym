@@ -34,7 +34,6 @@
       "btn cmpr cmpr"
       ". item item";
   }
-
   position: relative;
 }
 
@@ -298,6 +297,7 @@
     padding-left: 98px;
   }
 }
+
 .compare-cards__current {
   max-width: 100vh;
   position: relative;
@@ -341,6 +341,12 @@
     position: absolute;
     top: 290px;
   }
+  @media (min-width: 1200px) {
+    padding-top: 50px;
+    padding-bottom: 63px;
+    @include text(24px, 400, $primaryFont);
+    line-height: 29px;
+  }
 }
 
 .cards-service__table {
@@ -348,11 +354,19 @@
   line-height: 18px;
   display: flex;
   flex-direction: column;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
   @media (min-width: 320px) and (max-width: 575px) {
     @include text(13px, 500, $secondaryFont);
     line-height: 16px;
     padding-top: 24px;
+    padding-bottom: 50px;
+  }
+  @media (min-width: 1200px) {
+    padding-top: 50px;
+    padding-bottom: 63px;
+    @include text(18px, 500, $secondaryFont);
+    line-height: 22px;
+    padding-bottom: 178px;
   }
 }
 
@@ -366,6 +380,9 @@
 
 .service-table__title {
   width: 50%;
+  @media (min-width: 1200px) {
+    width: 22%;
+  }
 }
 
 .service-table__value {
@@ -373,6 +390,24 @@
   width: 50%;
   @media (min-width: 320px) and (max-width: 575px) {
     padding: 8px 0 8px 32px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 78%;
+    padding-left: 59px;
+  }
+
+  &--desktop {
+    display: none;
+    @media (min-width: 1200px) {
+      display: inline;
+    }
+  }
+
+  &--mobile {
+    @media (min-width: 1200px) {
+      display: none;
+    }
   }
 
   &--white {
@@ -388,8 +423,24 @@
       line-height: 11px;
       padding: 0 0 12px 0;
     }
+    @media (min-width: 1200px) {
+      padding-left: 48px;
+      display: block;
+    }
   }
   &--weekday {
     padding-bottom: 8px;
+  }
+}
+
+.service-table__done-icon {
+  @media (min-width: 1200px) {
+    display: none;
+  }
+  &--desktop {
+    display: none;
+    @media (min-width: 1200px) {
+      display: block;
+    }
   }
 }
