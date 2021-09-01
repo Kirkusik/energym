@@ -28,10 +28,11 @@
   @media (min-width: 1200px) {
     grid-template-columns: 22% 39% 39%;
     grid-template-areas:
+      "chng exp exp"
       "slgn cmpr cmpr"
       "btn cmpr cmpr"
       "btn cmpr cmpr"
-      ". item .";
+      ". item item";
   }
 
   position: relative;
@@ -74,8 +75,21 @@
   align-items: center;
 }
 
+.cards-grid__expression {
+  grid-area: exp;
+  @include text(18px, 400, $secondaryFont);
+  line-height: 22px;
+  color: #7a7979;
+  width: 779px;
+  margin: 0 auto;
+  padding-top: 37px;
+}
+
 .cards-grid__slogan {
   grid-area: slgn;
+  @media (min-width: 1200px) {
+    padding-top: 15px;
+  }
 }
 
 .cards-grid__buttons {
@@ -106,7 +120,10 @@
     width: 180px;
   }
   @media (min-width: 1200px) {
-    display: none;
+    position: absolute;
+    top: 65px;
+    left: 603px;
+    z-index: 1;
   }
 }
 
@@ -131,8 +148,8 @@
   color: #b694c0;
   @media (min-width: 1200px) {
     @include text(48px, 400, $primaryFont);
-    line-height: 58px;
-    padding-top: 74px;
+    line-height: 15px;
+    padding-top: 15px;
     padding-bottom: 23px;
   }
 }
@@ -156,8 +173,8 @@
     justify-content: flex-start;
   }
   @media (min-width: 1200px) {
-    justify-content: flex-start;
-    padding-top: 74px;
+    justify-content: center;
+    padding-top: 15px;
   }
 }
 
@@ -166,6 +183,26 @@
   padding: 0 0 4px 0;
   @media (min-width: 992px) and (max-width: 1199px) {
     padding-top: 12px;
+  }
+  @media (min-width: 1200px) {
+    @include text(24px, 400, $primaryFont);
+    line-height: 29px;
+    width: 779px;
+    margin: 0 auto;
+    padding-top: 24px;
+  }
+}
+
+.order-item__svg {
+  @media (min-width: 1200px) {
+    display: none;
+  }
+}
+
+.order-item__svg--dstp {
+  display: none;
+  @media (min-width: 1200px) {
+    display: block;
   }
 }
 
@@ -178,6 +215,17 @@
   @media (min-width: 320px) and (max-width: 575px) {
     @include text(9px, 400, $primaryFont);
     line-height: 11px;
+  }
+  @media (min-width: 1200px) {
+    @include text(40px, 500, $secondaryFont);
+    line-height: 49px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #ffffff;
+    color: transparent;
+    position: absolute;
+    top: 251px;
+    left: 452px;
+    z-index: 1;
   }
 }
 
@@ -220,6 +268,7 @@
     height: 76%;
     flex-direction: row;
     padding: 0 84px 0 84px;
+    height: 100%;
   }
 }
 
@@ -272,6 +321,9 @@
   @media (min-width: 991px) and (max-width: 1199px) {
     right: 316px;
     bottom: 71px;
+  }
+  @media (min-width: 1200px) {
+    display: none;
   }
 }
 
