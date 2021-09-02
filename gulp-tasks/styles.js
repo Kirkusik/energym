@@ -17,7 +17,7 @@ const sass = require("gulp-sass")(require("sass"));
 const argv = yargs.argv,
    production = !!argv.production;
 
-gulp.task("styles", () => {
+gulp.task("styles", async() => {
    return gulp
       .src(paths.styles.src)
       .pipe(gulpif(!production, sourcemaps.init()))
