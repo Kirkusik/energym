@@ -1,0 +1,62 @@
+.page-404 {
+  background: url(../img/404/404_background.jpeg) no-repeat right;
+  background-size: cover;
+  height: 100vh;
+  font-family: $primaryFont;
+  font-weight: 400;
+}
+.page-404__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+  @include mq(tbLG, true) {
+    width: 50%;
+  }
+}
+.page-404__title {
+  color: #ffffff;
+  font-size: 72px;
+  @media (min-width: 576px) {
+    font-size: 108px;
+  }
+  @include mq(tb, true) {
+    font-size: 144px;
+  }
+  @include mq(tbLG, true) {
+    font-size: 198px;
+  }
+  @include mq(dt, true) {
+    font-size: 288px;
+    line-height: 347px;
+  }
+}
+
+.page-404__description {
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 25px;
+  @media (min-width: 576px) {
+    font-size: 24px;
+  }
+
+  @include mq(tb, true) {
+    font-size: 32px;
+    line-height: 39px;
+  }
+  @include mq(dt, true) {
+    font-size: 32px;
+    line-height: 39px;
+    margin-top: 0;
+  }
+}
+
+.page-404__primary-btn {
+  color: #ffa6c4;
+  border: 1px solid #ffa6c4;
+  margin-top: 50px;
+}
