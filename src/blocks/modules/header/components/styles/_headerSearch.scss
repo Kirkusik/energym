@@ -1,0 +1,65 @@
+.search__form {
+    display: flex;
+}
+.search__btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-right: 19px;
+    @include mq(tb, true) {
+        margin-right: 21px;
+    }
+
+    @include mq(tbLG, true) {
+        margin-right: 5px;
+    }
+}
+
+.search__svg {
+    display: block;
+    width: 16px;
+    height: 16px;
+    fill: clr(pink);
+    transition: all 0.3s linear;
+    @include mq(tb, true) {
+        width: 22px;
+        height: 22px;
+    }
+
+    @include mq(tbLG, true) {
+        width: 19px;
+        height: 19px;
+    }
+    &:hover {
+        fill: clr(red);
+    }
+}
+
+.search__label {
+    display: none;
+}
+
+.search__input {
+    @extend %forms;
+    @media (max-width: 767px) {
+        top: 40px;
+    }
+    @include mq(tbLG, true) {
+        padding-top: 0;
+        padding-bottom: 0;
+        border-radius: 4px;
+        border: none;
+        @include text(16px, 300, $secondaryFont);
+    }
+    padding-left: 16px;
+    padding-top: 6px;
+    padding-bottom: 8px;
+
+    &:active {
+        outline: none;
+    }
+    &--active {
+        display: block;
+        z-index: 2;
+    }
+}

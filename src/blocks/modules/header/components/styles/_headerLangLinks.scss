@@ -1,0 +1,32 @@
+.header__lang-list {
+    display: flex;
+    margin-right: 19px;
+    @include mq(tbLG, true) {
+        margin-right: 43px;
+    }
+}
+
+.header__lang-item {
+    &:first-child {
+        margin-right: 6px;
+        &::after {
+            content: "";
+            position: absolute;
+            margin-left: 2px;
+            top: 7px;
+            width: 2px;
+            height: 13px;
+            background-color: clr(purple);
+        }
+    }
+}
+
+.header__lang-link {
+    @include text(15px, 700, $secondaryFont);
+    line-height: 18px;
+    color: clr(black);
+
+    &--active {
+        color: clr(pink);
+    }
+}

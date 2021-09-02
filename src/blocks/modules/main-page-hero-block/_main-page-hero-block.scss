@@ -47,22 +47,22 @@
 
         //forced media due to container rebuilding in general.scss
         @media (min-width: 320px) {
-            top: 40%;
+            top: 35%;
         }
-        @media (min-width: 480px) {
-            top: 60%;
+        @media (min-width: 375px) {
+            top: 45%;
         }
         @media (min-width: 576px) {
-            top: 65%;
+            top: 60%;
         }
         @media (min-width: 768px) {
             top: 67%;
         }
         @media (min-width: 992px) {
-            top: 82%;
+            top: 78%;
         }
         @media (min-width: 1000px) {
-            top: 55%;
+            top: 50%;
         }
         @media (min-width: 1200px) {
             top: 60%;
@@ -227,30 +227,18 @@
 }
 
 // -----------------Advantages section-------------------
-.advantages-inner {
-    background: #faf7fb;
+.advantages__wrapper {
+    background: clr(secondaryBG);
     padding-top: 16px;
     padding-left: 0;
     padding-bottom: 50px;
 
-    @include mq(tb, true) {
-        padding-top: 100px;
-        padding-bottom: 100px;
-    }
-    @include mq(dt, true) {
-        display: none;
-    }
-}
-
-.advantages__wrapper {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     grid-template-rows: 1fr minmax(min-content, max-content) 170px;
     row-gap: 24px;
     grid-template-areas: "title title" "list list" "buttons phone";
-    @include mq(tb, false) {
-        margin-bottom: 32px;
-    }
+
     @include mq(tb, true) {
         grid-template-areas: "title title" "list phone" "buttons buttons ";
         grid-template-rows: 1fr minmax(min-content, max-content) 30px;
@@ -259,6 +247,13 @@
         row-gap: 40px;
         grid-template-areas: "title phone" "list phone" "buttons phone";
         grid-template-rows: 91px minmax(322px, max-content) 118px;
+    }
+    @include mq(tb, true) {
+        padding-top: 40px;
+        padding-bottom: 100px;
+    }
+    @media (min-width: 1200px) {
+        display: none;
     }
 }
 .advantages__title {
@@ -280,104 +275,82 @@
 .advantages__phone {
     grid-area: phone;
     @include mq(tb, true) {
-        // justify-self: end;
         align-self: end;
     }
 }
 .advantages__phone-pic {
     @include mq(tb, true) {
         justify-self: center;
-        // align-self: end;
     }
 }
 .advantages__list {
     grid-area: list;
-    margin-left: 37px;
+    margin-left: 12px;
 
     @include mq(tb, true) {
-        margin-left: 48px;
+        margin-left: 20px;
         max-width: 504px;
     }
 }
 .advantages__list-item {
-    @include pseudo(before, "", absolute) {
-        @include mq(tb, true) {
-            left: -26px;
-            width: 12px;
-            height: 12px;
-        }
-        display: inline-block;
-        top: 4px;
-        left: -23px;
-        width: 8px;
-        height: 8px;
-        background-color: clr(pink);
-    }
-    margin-bottom: 8px;
     font-family: $secondaryFont;
     font-weight: 500;
-    font-size: rem(15);
+    font-size: rem(16);
     line-height: 18px;
     color: #000000;
+
+    &:not(:last-child) {
+        margin-bottom: 8px;
+
+        @include mq(tb, true) {
+            margin-bottom: 16px;
+        }
+    }
+
     @include mq(tbLG, true) {
         font-size: rem(18);
         line-height: 21px;
     }
-    @include mq(tb, true) {
-        margin-bottom: 16px;
-    }
 }
 
 .advantages__subscribe {
-    &--services {
-        grid-area: buttons;
-        @include flex();
-        flex-direction: column;
+    grid-area: buttons;
+    @include flex();
+    flex-direction: column;
 
-        @include mq(tb, true) {
-            flex-direction: row;
-            justify-self: start;
-            margin-left: 24px;
-        }
-
-        @include mq(tbLG, true) {
-            flex-direction: row;
-            justify-self: start;
-            align-self: start;
-            margin-left: 24px;
-        }
+    @include mq(tb, true) {
+        flex-direction: row;
+        justify-self: start;
+        margin-left: 24px;
     }
-    &--appstore {
-        margin-bottom: 16px;
-        background-image: url(../../../img/main-page-hero-block/appstore_light.svg);
 
+    @include mq(tbLG, true) {
+        flex-direction: row;
+        justify-self: start;
+        align-self: start;
+        margin-left: 24px;
+    }
+
+    &--appstore {
+        width: 154px;
+        height: 45px;
+        margin-bottom: 16px;
+        @media (max-width: 767px) {
+            background-image: url(../img/main-page-hero-block/appstore_light.svg);
+        }
         @include mq(tb, true) {
             margin-bottom: 0;
             margin-right: 40px;
-            background-image: url(../../../img/main-page-hero-block/appstore_dark.svg);
         }
     }
-    &--googleplay {
-        margin-bottom: 0;
-        background-image: url(../../../img/main-page-hero-block/googleplay_light.svg);
 
-        @include mq(tb, true) {
-            background-image: url(../../../img/main-page-hero-block/googleplay_dark.svg);
+    &--googleplay {
+        width: 154px;
+        height: 45px;
+        margin-bottom: 0;
+        @media (max-width: 767px) {
+            background-image: url(../img/main-page-hero-block/googleplay_light.svg);
         }
-    }
-}
-.advantages__subscribe-link {
-    background-repeat: no-repeat;
-    width: 154px;
-    height: 45px;
-    background-size: contain;
-    @include mq(tb, true) {
-        width: 90px;
-        height: 26px;
-    }
-    @include mq(tbLG, true) {
-        width: 180px;
-        height: 52px;
     }
 }
 
@@ -388,6 +361,7 @@
     align-items: center;
     margin-left: auto;
     max-width: 140px;
+    grid-column: 2/3;
 
     &:hover {
         //used a nested selector, because the square button is a child of the link
@@ -413,6 +387,7 @@
 }
 
 .advantages__linkout-icon {
+    background-color: clr(pink);
     @include mq(tb, false) {
         width: 40px;
         height: 40px;

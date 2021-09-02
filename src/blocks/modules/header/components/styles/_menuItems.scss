@@ -1,0 +1,329 @@
+.submenu__list {
+    @extend %subItemsList;
+    @include mq(tbLG, true) {
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 8px;
+        margin: 0;
+        padding: 32px 0 40px 40px;
+    }
+    margin: 32px 0 0 15px;
+    &--cards {
+        @include mq(tbLG, true) {
+            grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+            row-gap: 32px;
+            column-gap: 0;
+        }
+    }
+    &--active {
+        @media (max-width: 999px) {
+            display: block;
+        }
+    }
+}
+
+.submenu__item {
+    @include mq(tbLG, true) {
+        margin-bottom: 0;
+    }
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.submenu__link {
+    @include text(15px, 500, $secondaryFont);
+    @include mq(tbLG, true) {
+        @include text(16px, 400, $primaryFont);
+        flex-direction: column;
+        padding-bottom: 12px;
+        color: clr(black);
+        line-height: 20px;
+    }
+    display: flex;
+    justify-content: space-between;
+    color: clr(purpleDark);
+    line-height: 18px;
+    &--active {
+        color: clr(red);
+    }
+    &:focus {
+        color: clr(red);
+    }
+    &--cards,
+    &--trainers {
+        @include mq(tbLG, true) {
+            padding-bottom: 0;
+        }
+    }
+    &--cards:hover,
+    &--trainers:hover,
+    &--cards:focus,
+    &--trainers:focus {
+        @include mq(tbLG, true) {
+            filter: brightness(120%);
+        }
+    }
+}
+
+.submenu__link--pseudo {
+    &:checked {
+        color: clr(red);
+    }
+    &::after {
+        @include mq(tbLG, true) {
+            content: "";
+        }
+        @include mq(tb, true) {
+            margin-right: 38px;
+        }
+        content: url("../img/svg/menu_arrow_down.svg");
+        width: 8px;
+        height: 16px;
+        margin-right: 50px;
+    }
+    &-active::after {
+        content: url("../img/svg/menu_arrow_up.svg");
+    }
+}
+
+.submenu__img {
+    @include mq(tbLG, true) {
+        display: inline-block;
+        border: 1px solid transparent;
+        padding-top: 16px;
+    }
+    display: none;
+}
+//-----hover-------
+.menu__item:hover .submenu__list,
+.menu__item:hover .submenu__contact,
+.submenu__list:hover,
+.submenu__contact:hover,
+.submenu__item:hover .submenu__list,
+.submenu__item:hover .submenu__contact {
+    @include mq(tbLG, true) {
+        display: grid;
+    }
+}
+//-----focus-------
+.menu__item:focus .submenu__list,
+.menu__item:focus .submenu__contact,
+.submenu__list:focus,
+.submenu__contact:focus,
+.submenu__item:focus .submenu__list,
+.submenu__item:focus .submenu__contact {
+    @include mq(tbLG, true) {
+        display: grid;
+    }
+}
+//----contacts items-------
+.submenu__contact {
+    @extend %subItemsList;
+    @include mq(tbLG, true) {
+        grid-template-columns: repeat(2, minmax(50%, 1fr));
+        padding: 28px 33px 0 40px;
+    }
+
+    &--active {
+        @include mq(tb, true) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        @include mq(tbLG, true) {
+            display: grid;
+        }
+    }
+}
+//socials
+.submenu__socials-list {
+    @include mq(tbLG, true) {
+        display: grid;
+        justify-content: start;
+        padding-top: 0;
+    }
+    @include mq(tb, true) {
+        justify-content: center;
+    }
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 32px;
+    padding-top: 24px;
+}
+.submenu__socials-item,
+.submenu__contact-item {
+    @include mq(tbLG, true) {
+        margin: 0 0 25px;
+        align-items: center;
+    }
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+.submenu__socials-item {
+    &:first-child,
+    &:nth-child(2) {
+        margin-right: 16px;
+    }
+
+    &:last-child {
+        align-self: center;
+    }
+
+    //-----socal icons-----
+    &:first-child::before,
+    &:nth-child(2)::before {
+        width: 24px;
+        height: 24px;
+        @include mq(tbLG, true) {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    &:first-child::before {
+        content: url("../img/svg/facebook_desk.svg");
+    }
+
+    &:nth-child(2)::before {
+        content: url("../img/svg/insta_desk.svg");
+    }
+    &:last-child::before {
+        content: url("../img/svg/youtube_desk.svg");
+        width: 24px;
+        height: 18px;
+        @include mq(tbLG, true) {
+            width: 32px;
+            height: 25px;
+        }
+    }
+}
+.submenu__socials-link {
+    display: flex;
+    align-items: center;
+}
+.submenu__socials-ref {
+    @include mq(tbLG, true) {
+        @include text(14px, 500, $secondaryFont);
+        display: inline-block;
+        margin-left: 16px;
+        color: clr(black);
+        line-height: 17px;
+        transition: color 200ms linear;
+    }
+    &:hover,
+    &:focus {
+        color: clr(purple);
+    }
+    display: none;
+}
+//contacts
+.submenu__contact-list {
+    @include mq(tb, true) {
+        align-items: center;
+        justify-content: center;
+    }
+    @include mq(tbLG, true) {
+        display: grid;
+        grid-template-columns: 1fr 159px;
+        grid-template-rows: 62px 1fr;
+        grid-template-areas:
+            "adress image"
+            "telephone image";
+    }
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: start;
+    justify-content: start;
+}
+
+.submenu__contact-item {
+    &:first-child {
+        @include mq(tbLG, true) {
+            display: inline-block;
+            grid-area: image;
+        }
+        display: none;
+    }
+    &:nth-child(2),
+    &:last-child {
+        @include mq(tbLG, true) {
+            align-self: start;
+        }
+    }
+    &:nth-child(2) {
+        @include mq(tb, true) {
+            justify-content: center;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        @include mq(tbLG, true) {
+            flex-wrap: nowrap;
+            grid-area: adress;
+            justify-content: left;
+        }
+    }
+    &:last-child {
+        @include mq(tbLG, true) {
+            grid-area: telephone;
+        }
+    }
+    //-----icons-----
+    &:nth-child(2)::before {
+        content: url("../img/svg/location_desk.svg");
+        margin-right: 15px;
+        width: 21px;
+        height: 18px;
+        @include mq(tb, true) {
+            margin-bottom: 18px;
+            margin-right: 0;
+        }
+        @include mq(tbLG, true) {
+            margin-bottom: 0;
+            width: 24px;
+            height: 28px;
+        }
+    }
+
+    &:last-child::before {
+        content: url("../img/svg/tel_desk.svg");
+        @include mq(tbLG, true) {
+            display: block;
+            width: 32px;
+            height: 32px;
+        }
+        display: none;
+    }
+}
+
+.submenu__contact-address,
+.submenu__contact-tel {
+    color: clr(black);
+    line-height: 19px;
+    @include mq(tbLG, true) {
+        margin-left: 20px;
+    }
+}
+
+.submenu__contact-address {
+    @include text(15px, 500, $secondaryFont);
+    @include mq(tbLG, true) {
+        @include text(14px, 500, $secondaryFont);
+        text-align: left;
+        line-height: 17px;
+    }
+    font-style: normal;
+}
+
+.submenu__contact-tel {
+    @include text(17px, 400, $primaryFont);
+    @include mq(tb, true) {
+        margin-bottom: 17px;
+    }
+    @include mq(tbLG, true) {
+        @include text(32px, 400, $primaryFont);
+        line-height: 32px;
+    }
+    margin-bottom: 32px;
+}

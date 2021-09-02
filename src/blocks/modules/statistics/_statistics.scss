@@ -1,47 +1,75 @@
 .info-inner {
-    padding: 27px 0 34px;
     text-align: center;
-    padding-bottom: 8%;
     padding-top: 8%;
-    background: clr(secondaryBG) url(../../../img/main-page-hero-block/facts-text.svg) no-repeat;
+    padding-bottom: 8%;
+    background: clr(secondaryBG) url(../img/main-page-hero-block/facts-text.svg) no-repeat;
     background-size: contain;
     background-position: center;
 }
 
 .info__content-list {
-    @include flex(center, space-evenly);
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 55px;
 
     @include mq(mb, true) {
-        justify-content: space-between;
-        max-width: 80%;
+        row-gap: 75px;
     }
-}
-.info__bgi {
+
+    @media (min-width: 640px) {
+        row-gap: 80px;
+    }
+
+    @media (min-width: 800px) {
+        row-gap: 100px;
+    }
+
     @include mq(tbLG, true) {
-        top: 4em;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 0;
     }
-    position: absolute;
-    top: 1em;
-    left: 0;
 }
 
-.info__content-title,
-.info__content-subtitle {
-    font-size: rem(13);
-    color: clr(black);
-    font-family: $primaryFont;
+.info__content-item {
+    padding-top: 10px;
+    padding-bottom: 10px;
 
     @include mq(tb, true) {
-        font-size: rem(24);
-        line-height: 29px;
-        margin-bottom: 4px;
+        width: 80%;
+    }
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.info__content-text {
+    color: clr(black);
+    font-family: $secondaryFont;
+
+    &--title {
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 36px;
+        letter-spacing: 0em;
+        margin-bottom: 10px;
+
+        @include mq(tb, true) {
+            font-size: 48px;
+            line-height: 58px;
+        }
     }
 
-    @include mq(tbLG, true) {
-        font-size: rem(48);
-        line-height: 58px;
-        margin-bottom: 8px;
+    &--subtitle {
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0em;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        @include mq(tb, true) {
+            font-size: 20px;
+            line-height: 24px;
+        }
     }
 }
 
@@ -49,6 +77,7 @@
     &--degree {
         vertical-align: super;
         font-size: rem(10);
+        line-height: 10px;
 
         @include mq(tb, true) {
             font-size: rem(15);
@@ -58,6 +87,7 @@
         }
     }
 }
+
 .info__content-subtitle {
     &--part {
         @media (min-width: 320px) {

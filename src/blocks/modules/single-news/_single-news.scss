@@ -1,0 +1,259 @@
+.single-news__wrapper {
+  @include mq(tb, tb) {
+    background-color: #faf7fb;
+  }
+
+  @include mq(dt, dt) {
+    background-color: #fff;
+    padding-bottom: 0;
+  }
+}
+
+.news-list__item-img {
+  width: 100%;
+}
+
+.single-news__new-wrapper {
+  padding-bottom: 32px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mq(tb, true) {
+    padding-bottom: 100px;
+  }
+
+  @include mq(dt, dt) {
+    margin-bottom: 0;
+    padding-bottom: 50px;
+    padding-left: 130px;
+  }
+}
+.single-news__title {
+  font-size: 22px;
+  line-height: 27px;
+  padding: 16px;
+  margin: 40px auto;
+
+  @include mq(tb, tb) {
+    margin: 100px auto 24px 0;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  @include mq(tbLG, tbLG) {
+    margin: 72px auto 40px 0;
+    font-size: 36px;
+    line-height: 43px;
+  }
+
+  @include mq(dt, dt) {
+    margin: 40px auto;
+    font-size: 48px;
+    line-height: 58px;
+    text-align: center;
+  }
+}
+
+.single-news__title-description {
+  font-family: $secondaryFont;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+
+  @include mq(tb, tb) {
+    font-size: 17px;
+    line-height: 21px;
+    width: 592px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  @include mq(dt, dt) {
+    font-size: 20px;
+    line-height: 24px;
+    text-align: left;
+    width: 100%;
+  }
+}
+
+.single-news__store-wrapper {
+  display: flex;
+  margin-top: 16px;
+  margin-bottom: 24px;
+  justify-content: center;
+
+  @include mq(tb, tb) {
+    margin-top: 24px;
+    margin-bottom: 64px;
+  }
+
+  @include mq(tbLG, tbLG) {
+    margin-top: 40px;
+  }
+
+  @include mq(dt, dt) {
+    margin-bottom: 40px;
+  }
+}
+
+.stores__item {
+  width: 143px;
+  height: 40px;
+
+  &--appstore {
+    background-image: url(../img/img-single-news/appstore.jpeg);
+    margin-right: 25px;
+
+    @include mq(tb, tb) {
+      margin-right: 40px;
+    }
+  }
+  &--googleplay {
+    background-image: url(../img/img-single-news/googleplay.jpeg);
+  }
+}
+.single-news__text-wrapper {
+  & h1 {
+    font-family: $primaryFont;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 58px;
+  }
+
+  & h2 {
+    font-family: $primaryFont;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 39px;
+  }
+
+  & h3 {
+    font-family: $primaryFont;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  & h4 {
+    font-family: $primaryFont;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  & h5 {
+    font-family: $secondaryFont;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    @include mq(tb, tb) {
+      margin-left: 24px;
+      margin-bottom: 24px;
+      font-size: 17px;
+      line-height: 21px;
+      font-weight: 500;
+    }
+
+    @include mq(tbLG, tbLG) {
+      margin-left: 32px;
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    @include mq(dt, dt) {
+      margin-left: 0;
+      margin-bottom: 32px;
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 400;
+    }
+  }
+
+  & p {
+    font-family: $secondaryFont;
+    font-size: 16px;
+    line-height: 18px;
+    margin-bottom: 16px;
+
+    @include mq(tb, true) {
+      margin-left: 24px;
+    }
+
+    @include mq(tbLG, tbLG) {
+      margin-left: 32px;
+    }
+
+    @include mq(dt, dt) {
+      margin-left: 0;
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+
+  & ul {
+    @extend .styled-list;
+    margin-left: 24px;
+    @include mq(tb, true) {
+      margin-left: 64px;
+      margin-bottom: 24px;
+    }
+
+    @include mq(tbLG, true) {
+      margin-left: 40px;
+      margin-bottom: 40px;
+    }
+  }
+
+  & li {
+    margin-bottom: 16px;
+    font-family: $secondaryFont;
+    font-size: 16px;
+    line-height: 18px;
+
+    @include mq(tbLG, true) {
+      font-size: rem(18);
+      line-height: 21px;
+    }
+    @include mq(tb, true) {
+      margin-bottom: 20px;
+    }
+    @include mq(dt, dt) {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+
+  @include mq(tb, true) {
+    margin-bottom: 42px;
+  }
+  @include mq(tbLG, true) {
+    padding-bottom: 40px;
+  }
+}
+
+.single-news__flex-container {
+  display: flex;
+  flex-direction: column;
+
+  @include mq(tbLG, true) {
+    flex-direction: row;
+  }
+}
+
+.single-news__link-btn {
+  margin-bottom: 0;
+  @include mq(tb, true) {
+    margin-bottom: 0;
+  }
+  @include mq(tbLG, true) {
+    align-self: flex-end;
+    margin-bottom: 0;
+    margin-right: 32px;
+  }
+
+  @include mq(dt, dt) {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+}

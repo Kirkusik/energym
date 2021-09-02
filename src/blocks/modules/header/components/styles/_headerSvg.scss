@@ -1,0 +1,9 @@
+// !!! impotrant header`s svg can be removed from parts/svgs.html (if not imports to other sections)
+
+.logo_desk {
+    @include mq(tbLG, true) {
+        width: 118px;
+        height: 24px;
+    }
+}
+
