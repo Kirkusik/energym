@@ -37,9 +37,12 @@
 
 .page-404__description {
   color: #ffffff;
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
   margin-top: 25px;
+  @media (min-width: 576px) {
+    font-size: 24px;
+  }
 
   @include mq(tb, true) {
     font-size: 32px;
