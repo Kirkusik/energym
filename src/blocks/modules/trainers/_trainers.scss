@@ -1,0 +1,109 @@
+.trainers__container {
+  padding-bottom: 50px;
+}
+
+.trainers__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.trainers__title-hide {
+  display: none;
+  @include mq(tb, true) {
+    display: inline-block;
+  }
+}
+
+.trainers__select {
+  align-self: center;
+}
+
+.trainers__burger {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  padding: 7px 5px;
+  // border: 1px solid clr(pink);
+  background: url(../img/svg/trainer-burger.svg) no-repeat;
+  background-size: contain;
+
+  @include mq(tb, true) {
+    background: url(../img/svg/trainer-burger2.svg) no-repeat;
+  }
+}
+
+.trainers__list {
+  // margin-top: 24px;
+
+  display: flex;
+  flex-direction: column;
+  // grid-gap: 24px;
+  @media (min-width: 576px) {
+    // display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0;
+  }
+}
+.trainers-card {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  align-self: stretch;
+  @media (min-width: 576px) {
+    width: auto;
+    margin-left: 29px;
+    margin-right: 29px;
+  }
+}
+
+.trainers-card__img {
+  width: 100%;
+  @media (min-width: 576px) {
+    width: 175px;
+    height: 250px;
+  }
+}
+
+.trainers-card__title {
+  font-family: $primaryFont;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: normal;
+  @media (min-width: 576px) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  @include mq(tb, tb) {
+    font-size: 17px;
+  }
+  @include mq(dt, dt) {
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
+
+.trainers-card__experiance {
+  font-family: $secondaryFont;
+  font-size: 16px;
+  line-height: 18px;
+  @include mq(dt, dt) {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+.trainers-card__type {
+  font-family: $secondaryFont;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+  color: clr(red);
+  @include mq(dt, dt) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
