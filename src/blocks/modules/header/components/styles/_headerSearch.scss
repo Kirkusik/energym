@@ -15,26 +15,6 @@
     }
 }
 
-.search__svg {
-    display: block;
-    width: 16px;
-    height: 16px;
-    fill: clr(pink);
-    transition: all 0.3s linear;
-    @include mq(tb, true) {
-        width: 22px;
-        height: 22px;
-    }
-
-    @include mq(tbLG, true) {
-        width: 19px;
-        height: 19px;
-    }
-    &:hover {
-        fill: clr(red);
-    }
-}
-
 .search__label {
     display: none;
 }
@@ -62,4 +42,8 @@
         display: block;
         z-index: 2;
     }
+}
+
+.search__input:hover .search__svg {
+    fill: clr(red);
 }

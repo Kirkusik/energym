@@ -22,6 +22,9 @@
     display: block;
 }
 
+.location:hover .location__svg {
+    fill: clr(red);
+}
 .location__btn {
     position: relative;
     cursor: pointer;
@@ -31,22 +34,7 @@
     display: flex;
     margin-right: 19px;
 }
-.location__svg {
-    width: 10px;
-    height: 16px;
-    fill: clr(pink);
-    transition: all 0.3s linear;
-    @include mq(tb, true) {
-        width: 12px;
-        height: 20px;
-    }
-    @include mq(tbLG, true) {
-        margin-right: 0;
-    }
-    &:hover {
-        fill: clr(red);
-    }
-}
+
 .location__default-item {
     @include mq(tbLG, true) {
         line-height: 25px;
@@ -70,6 +58,7 @@
     padding-left: 8px;
     position: relative;
 }
+
 .location__arrow {
     margin-left: 2px;
     border: none;

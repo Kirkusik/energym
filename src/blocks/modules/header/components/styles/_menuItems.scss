@@ -174,8 +174,8 @@
 .submenu__socials-link {
     display: flex;
     align-items: center;
-    &--facebook::after,
-    &--instagram::after {
+    &--facebook::before,
+    &--instagram::before {
         width: 24px;
         height: 24px;
         @include mq(tbLG, true) {
@@ -184,14 +184,14 @@
         }
     }
 
-    &--facebook::after {
+    &--facebook::before {
         content: url("../img/svg/facebook_desk.svg");
     }
 
-    &--instagram::after {
+    &--instagram::before {
         content: url("../img/svg/insta_desk.svg");
     }
-    &--youtube::after {
+    &--youtube::before {
         content: url("../img/svg/youtube_desk.svg");
         width: 24px;
         height: 18px;

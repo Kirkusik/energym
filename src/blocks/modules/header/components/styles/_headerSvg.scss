@@ -1,5 +1,3 @@
-// !!! impotrant header`s svg can be removed from parts/svgs.html (if not imports to other sections)
-
 .logo_desk {
     @include mq(tbLG, true) {
         width: 118px;
@@ -7,3 +5,39 @@
     }
 }
 
+.search__svg {
+    display: block;
+    width: 16px;
+    height: 16px;
+    fill: clr(pink);
+    transition: all 0.3s linear;
+    @include mq(tb, true) {
+        width: 22px;
+        height: 22px;
+    }
+
+    @include mq(tbLG, true) {
+        width: 19px;
+        height: 19px;
+    }
+    &:hover {
+        fill: clr(red);
+    }
+}
+
+.location__svg {
+    width: 10px;
+    height: 16px;
+    fill: clr(pink);
+    transition: all 0.3s linear;
+    @include mq(tb, true) {
+        width: 12px;
+        height: 20px;
+    }
+    @include mq(tbLG, true) {
+        margin-right: 0;
+    }
+    &:hover {
+        fill: clr(red);
+    }
+}

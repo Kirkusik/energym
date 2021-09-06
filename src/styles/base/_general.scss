@@ -349,6 +349,7 @@
 //section title
 .section__title {
     @include mq(tb, true) {
+        max-width: 100%;
         padding: 16px 24px;
         font-size: rem(24);
         line-height: 29px;
@@ -363,6 +364,7 @@
         font-size: rem(48);
         line-height: 58px;
     }
+    max-width: 90%;
     padding: 16px;
     font-size: rem(22);
     line-height: 27px;
@@ -372,12 +374,10 @@
 //----schedule and cards wrapper----
 .video-section__info-wrapper {
     @include mq(tb, true) {
-        column-gap: 24px;
         margin-right: 24px;
         padding: 0;
     }
     @include mq(dt, true) {
-        column-gap: 0;
         align-content: flex-end;
         align-self: flex-end;
         margin-bottom: 40px;
@@ -385,35 +385,19 @@
     display: grid;
     padding: 24px 12px;
     @media (min-width: 368px) {
-        grid-template-columns: auto 140px;
-    }
-    @media (min-width: 550px) {
         grid-template-columns: auto 228px;
     }
 }
 //----schedule list----
 .video-section__info-list {
     @include mq(tb, true) {
-        display: flex;
-        justify-content: flex-end;
-    }
-    @include mq(tbLG, true) {
-        align-content: flex-end;
-        align-self: flex-end;
-    }
-    @include mq(dt, true) {
         justify-content: center;
     }
     display: flex;
     align-items: center;
-    justify-content: space-between;
     margin-bottom: 15px;
-
     @media (min-width: 368px) {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
         margin-bottom: 0;
-        align-items: center;
     }
 }
 
@@ -468,13 +452,6 @@
 .video-section__cards-link {
     display: flex;
     align-items: center;
-}
-
-.video-section__cards-img {
-    @media (min-width: 550px) {
-        width: 60px;
-        height: 38px;
-    }
 }
 
 //----video and img tag----

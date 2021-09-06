@@ -157,9 +157,7 @@ function onBehindMenuTouch(e) {
         menu.navigation.classList.remove("menu-wrapper--active");
     }
 }
-
 //---------to show/hide location and search forms on mb and tablet---------
-
 function toggleForms(element, activeClass, prevEl, prevElClass) {
     if (prevEl.classList.contains(prevElClass)) {
         prevEl.classList.remove(prevElClass);
@@ -204,26 +202,41 @@ function onLocationItemClick(e) {
     location.defaultItem.innerText =
         e.target.closest(".location__item").innerText;
 }
+if (menu.burgerButton) {
+    menu.burgerButton.addEventListener("click", (e) => toggleMenu(e));
+}
+if (menu.button) {
+    menu.button.addEventListener("click", (e) => toggleMenu(e));
+}
 
-menu.burgerButton.addEventListener("click", (e) => toggleMenu(e));
-menu.button.addEventListener("click", (e) => toggleMenu(e));
-menu.navigation.addEventListener("click", onMenuClick);
-location.btn.addEventListener("click", () =>
-    onLocationFormClick(
-        location.box,
-        location.activeClass,
-        search.form,
-        search.activeClass
-    )
-);
-search.btn.addEventListener("click", () =>
-    onSearchFormClick(
-        search.form,
-        search.activeClass,
-        location.box,
-        location.activeClass
-    )
-);
-location.list.addEventListener("click", onLocationItemClick);
+if (menu.navigation) {
+    menu.navigation.addEventListener("click", onMenuClick);
+}
+
+if (location.btn) {
+    location.btn.addEventListener("click", () =>
+        onLocationFormClick(
+            location.box,
+            location.activeClass,
+            search.form,
+            search.activeClass
+        )
+    );
+}
+
+if (search.btn) {
+    search.btn.addEventListener("click", () =>
+        onSearchFormClick(
+            search.form,
+            search.activeClass,
+            location.box,
+            location.activeClass
+        )
+    );
+}
+if (location.list) {
+    location.list.addEventListener("click", onLocationItemClick);
+}
+
 document.addEventListener("click", onBehindMenuTouch);
 document.addEventListener("touchstart", onBehindMenuTouch);
