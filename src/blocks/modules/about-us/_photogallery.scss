@@ -161,12 +161,8 @@
         transform-origin: left bottom;
     }
 }
-
-.photogallery__slide {
-    cursor: pointer;
-    transition: opacity 0.3s;
-
-    // zoom hover
+.photogallery__slide-link {
+    display: block;
     &:hover {
         &::before {
             opacity: 1;
@@ -184,6 +180,10 @@
         bottom: 0;
         transition: opacity 0.3s;
     }
+}
+.photogallery__slide {
+    cursor: pointer;
+    transition: opacity 0.3s;
 
     @include mq(tb, true) {
         width: auto;
@@ -243,5 +243,102 @@
         width: 70px;
         height: 70px;
         background-size: 32px 32px;
+    }
+}
+
+// lightgallery
+// buttons
+.baguetteBox-button {
+    border-radius: 0;
+    background-color: clr(red);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+
+    &:hover,
+    &:focus {
+        background-color: clr(pink);
+    }
+}
+#next-button svg,
+#previous-button svg,
+#close-button svg {
+    display: none;
+}
+.baguetteBox-button#next-button {
+    background-image: url("../img/svg/arrow-right.svg");
+}
+.baguetteBox-button#previous-button {
+    background-image: url("../img/svg/arrow-left.svg");
+    @media (min-width: 1150px) {
+        left: 10%;
+    }
+}
+.baguetteBox-button#close-button {
+    background-image: url("../img/svg/cross.svg");
+    top: 20%;
+
+    @media (min-width: 1000px) {
+        top: 10%;
+    }
+}
+.baguetteBox-button#close-button,
+.baguetteBox-button#next-button {
+    right: 5%;
+    @media (min-width: 550px) {
+        right: 2%;
+    }
+    @media (min-width: 1150px) {
+        right: 10%;
+    }
+}
+
+.baguetteBox-button#previous-button,
+.baguetteBox-button#next-button,
+.baguetteBox-button#close-button {
+    width: 40px;
+    height: 40px;
+    @include mq(tb, true) {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+.baguetteBox-button#previous-button,
+.baguetteBox-button#next-button {
+    display: none;
+    @media (min-width: 550px) {
+        display: block;
+    }
+
+    @include mq(tb, true) {
+        transform: translateY(-10px);
+    }
+    @include mq(tbLG, true) {
+        transform: translateY(-25px);
+    }
+}
+
+#baguetteBox-overlay .full-image img {
+    position: relative;
+    &::before {
+        content: "gym";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    transform: scale(0.9);
+    transform-origin: center;
+
+    @media (min-width: 550px) {
+        transform: scale(0.7);
+    }
+    @include mq(tbLG, true) {
+        transform: scale(0.8);
+    }
+
+    @include mq(dt, true) {
+        transform: scale(1);
     }
 }

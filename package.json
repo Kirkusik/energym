@@ -64,6 +64,7 @@
         "yargs": "^17.0.1"
     },
     "dependencies": {
+        "baguettebox.js": "^1.11.1",
         "sass": "^1.35.1",
         "swiper": "^6.8.3"
     }

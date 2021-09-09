@@ -2242,6 +2242,11 @@
   "resolved" "https://registry.npmjs.org/backo2/-/backo2-1.0.2.tgz"
   "version" "1.0.2"
 
+"baguettebox.js@^1.11.1":
+  "integrity" "sha512-0HnUVs+xaqwQOVbfi0kwZnZ1fJNWE5vJLCoCAtgQBtPmOJa1fhN8gubaBFOBGDkQy/vz6PWSr7B3WilhQKjyeQ=="
+  "resolved" "https://registry.npmjs.org/baguettebox.js/-/baguettebox.js-1.11.1.tgz"
+  "version" "1.11.1"
+
 "bail@^1.0.0":
   "integrity" "sha512-xFbRxM1tahm08yHBP16MMjVUAvDaBMD38zsM9EMAUN61omwLmKlOpB/Zku5QkjZ8TZ4vn53pj+t518cH0S03RQ=="
   "resolved" "https://registry.npmjs.org/bail/-/bail-1.0.5.tgz"

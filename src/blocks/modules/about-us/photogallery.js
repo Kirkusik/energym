@@ -1,8 +1,7 @@
-// // core version + navigation, pagination modules:
 import SwiperCore, { Navigation } from 'swiper/core';
-// // configure Swiper to use modules
 SwiperCore.use([Navigation]);
 
+import baguetteBox from 'baguettebox.js';
 
 const photogallery = document.querySelector('.photogallery__wrapper')
 if (photogallery) {
@@ -58,6 +57,9 @@ if (photogallery) {
         const zoneTitle = zoneItemEl.dataset.zone;
         outerZoneTitle.innerText = zoneTitle;
     }
+
+    baguetteBox.run('.lightbox-group');
+
 }
 
 
