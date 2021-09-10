@@ -36,7 +36,6 @@ if (photogallery) {
 
     setZoneTitlesToSlides(slides);
 
-    // window.addEventListener('resize', () => setZoneTitlesToSlides());
 
     // init lightbox
     baguetteBox.run('.lightbox-group', {
@@ -44,12 +43,37 @@ if (photogallery) {
         // syncs swiper slide and zoom photo
         onChange: function (currentIndex) {
             swiper.slideTo(currentIndex, 400, true)
+            createFigureCaptions();
+        },
+        afterHide: function () {
+            const figureCaptions = document.querySelectorAll('.full-image figure');
+            // console.log(figureCaptions);
+            figureCaptions.forEach((elem) => elem.remove())
         }
     });
-
-
 }
 
+
+
+
+function createFigureCaptions() {
+    const figureCaptions = document.querySelectorAll('.full-image figure');
+    figureCaptions.forEach((elem) => {
+        const figureWrapper = elem.querySelector('.baguetteBox-img-wrapper');
+
+        if (figureWrapper) return;
+        // add capture to img block for centering
+        const baguetteBoxHtml = elem.innerHTML;
+        const img = elem.querySelector('img')
+        elem.innerHTML = "";
+        elem.innerHTML = `
+                <div class="baguetteBox-img-wrapper">
+                    ${baguetteBoxHtml}
+                    <span class="baguetteBox-caption section-text__h2">${img.alt}</span>
+                </div>`;
+    })
+    return;
+}
 
 function setZoneTitlesToSlides(slides) {
     [...slides].forEach(slide => {

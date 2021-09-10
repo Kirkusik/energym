@@ -346,11 +346,36 @@
     }
 }
 
-// figure[id^="baguetteBox-figcaption"] {
-//     @include pseudo(before, "text", absolute) {
-//         top: 0;
-//         left: 0;
-//         width: 100px;
-//         height: 100px;
-//     }
-// }
+.baguetteBox-img-wrapper {
+    display: inline-block;
+    position: relative;
+}
+.baguetteBox-caption {
+    position: absolute;
+    z-index: 3;
+    display: block;
+    bottom: 5%;
+    left: 5%;
+    color: white;
+    background-color: clr(purple40);
+    font-weight: 500;
+    font-size: 16px;
+    padding: 14px;
+
+    @media (min-width: 550px) {
+        bottom: 15%;
+        left: 15%;
+    }
+
+    @include mq(tbLG, true) {
+        font-size: 24px;
+        padding: 24px;
+        bottom: 10%;
+        left: 10%;
+    }
+
+    @include mq(dt, true) {
+        bottom: 0;
+        left: 0;
+    }
+}
