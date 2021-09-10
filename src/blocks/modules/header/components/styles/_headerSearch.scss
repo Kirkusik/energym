@@ -1,6 +1,12 @@
 .search__form {
     display: flex;
 }
+.search__form:hover .search__svg {
+    fill: clr(red);
+}
+.search__form:hover .search__input {
+    background-color: clr(pink);
+}
 .search__btn {
     border: none;
     background-color: transparent;
@@ -21,9 +27,6 @@
 
 .search__input {
     @extend %forms;
-    @media (max-width: 767px) {
-        top: 40px;
-    }
     @include mq(tbLG, true) {
         padding-top: 0;
         padding-bottom: 0;
@@ -34,7 +37,9 @@
     padding-left: 16px;
     padding-top: 6px;
     padding-bottom: 8px;
-
+    @media (max-width: 767px) {
+        top: 40px;
+    }
     &:active {
         outline: none;
     }
@@ -42,8 +47,4 @@
         display: block;
         z-index: 2;
     }
-}
-
-.search__input:hover .search__svg {
-    fill: clr(red);
 }
