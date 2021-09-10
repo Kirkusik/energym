@@ -12,7 +12,6 @@ if (photogallery) {
 
     const swiper = new SwiperCore(gallerySliderContainer, {
         spaceBetween: 15,
-        loop: true,
         slidesPerView: 'auto',
         slideToClickedSlide: false,
         navigation: {
@@ -25,7 +24,6 @@ if (photogallery) {
 
     });
 
-
     swiper.on('slideChange', function () {
         const activeSlide = document.querySelector('.swiper-slide-active');
         const duplicateActiveSlide = document.querySelector('.swiper-slide-duplicate-active');
@@ -35,35 +33,37 @@ if (photogallery) {
 
     // Change slides zones name according to data-attr  -> data-zone
     const slides = document.querySelectorAll('.photogallery__slide');
-    const outerZoneTitle = document.querySelector('.photogallery__zone-title--outer')
 
-    setZoneTitlesToSlides();
+    setZoneTitlesToSlides(slides);
 
-    window.addEventListener('resize', () => setZoneTitlesToSlides());
+    // window.addEventListener('resize', () => setZoneTitlesToSlides());
 
-    function setZoneTitlesToSlides() {
-        [...slides].forEach(slide => {
-            changeInnerZoneTitle(slide);
+    // init lightbox
+    baguetteBox.run('.lightbox-group', {
+        captions: false,
+        // syncs swiper slide and zoom photo
+        onChange: function (currentIndex) {
+            swiper.slideTo(currentIndex, 400, true)
+        }
+    });
 
-        })
-    }
-
-    function changeInnerZoneTitle(zoneItemEl) {
-        const zoneTitle = zoneItemEl.dataset.zone;
-        zoneItemEl.querySelector('.photogallery__zone-title').innerText = zoneTitle;
-    }
-
-    function changeSeparateZoneTitle(zoneItemEl) {
-        const zoneTitle = zoneItemEl.dataset.zone;
-        outerZoneTitle.innerText = zoneTitle;
-    }
-
-    baguetteBox.run('.lightbox-group');
 
 }
 
 
+function setZoneTitlesToSlides(slides) {
+    [...slides].forEach(slide => {
+        changeInnerZoneTitle(slide);
+    })
+}
 
+function changeInnerZoneTitle(zoneItemEl) {
+    const zoneTitle = zoneItemEl.dataset.zone;
+    zoneItemEl.querySelector('.photogallery__zone-title').innerText = zoneTitle;
+}
 
-
-
+function changeSeparateZoneTitle(zoneItemEl) {
+    const outerZoneTitle = document.querySelector('.photogallery__zone-title--outer')
+    const zoneTitle = zoneItemEl.dataset.zone;
+    outerZoneTitle.innerText = zoneTitle;
+}

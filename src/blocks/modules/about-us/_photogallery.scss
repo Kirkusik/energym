@@ -255,11 +255,14 @@
     background-repeat: no-repeat;
     background-size: 24px 24px;
 
-    &:hover,
     &:focus {
+        background-color: clr(red);
+    }
+    &:hover {
         background-color: clr(pink);
     }
 }
+
 #next-button svg,
 #previous-button svg,
 #close-button svg {
@@ -342,3 +345,12 @@
         transform: scale(1);
     }
 }
+
+// figure[id^="baguetteBox-figcaption"] {
+//     @include pseudo(before, "text", absolute) {
+//         top: 0;
+//         left: 0;
+//         width: 100px;
+//         height: 100px;
+//     }
+// }
