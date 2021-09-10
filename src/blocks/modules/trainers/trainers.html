@@ -14,16 +14,73 @@
         </h2>
         <div class="trainers__select">
           <ul class="trainers__select-list">
-            <li class="trainers__select-item">Всі</li>
-            <li class="trainers__select-item">Пауерліфтинг</li>
-            <li class="trainers__select-item">Бодібілдинг</li>
-            <li class="trainers__select-item">Hardcore</li>
+            <li
+              class="trainers__select-item trainers__select-item--first"
+              tab-name="trainers-card--all"
+            >
+              <span class="trainers__select-text trainers__select-text--first"
+                >Всі</span
+              >
+
+              <button class="trainers__arrow" aria-label="Відкрити меню послуг">
+                <svg width="10" height="6" fill="none">
+                  <use href="#location__down-arrow"></use>
+                </svg>
+              </button>
+            </li>
+            <li
+              class="
+                trainers__select-item
+                trainers__select-item--all
+                trainers__select-item--opened
+              "
+              tab-name="trainers-card--all"
+            >
+              Всі
+            </li>
+            <li
+              class="
+                trainers__select-item
+                trainers__select-item--powerlift
+                trainers__select-item--opened
+              "
+              tab-name="trainers-card--powerlift"
+            >
+              Пауерліфтинг
+            </li>
+            <li
+              class="
+                trainers__select-item
+                trainers__select-item--bodybuild
+                trainers__select-item--opened
+              "
+              tab-name="trainers-card--bodybuild"
+            >
+              Бодібілдинг
+            </li>
+            <li
+              class="
+                trainers__select-item
+                trainers__select-item--hardcore
+                trainers__select-item--opened
+              "
+              tab-name="trainers-card--hardcore"
+            >
+              Hardcore
+            </li>
           </ul>
-          <div class="trainers__burger"></div>
         </div>
       </div>
       <ul class="trainers__list">
-        <li class="trainers__item trainers-card trainers-card--powerlift">
+        <li
+          class="
+            trainers__item
+            trainers-card
+            trainers-card--active
+            trainers-card--powerlift
+            trainers-card--all
+          "
+        >
           <picture class="trainers-card__img">
             <source
               media="(min-width: 768px)"
@@ -57,7 +114,15 @@
           <p class="trainers-card__experiance">9 років досвіду</p>
           <p class="trainers-card__type">пауерліфтинг</p>
         </li>
-        <li class="trainers__item trainers-card trainers-card--hardcore">
+        <li
+          class="
+            trainers__item
+            trainers-card
+            trainers-card--active
+            trainers-card--hardcore
+            trainers-card--all
+          "
+        >
           <picture class="trainers-card__img">
             <source
               media="(min-width: 768px)"
@@ -91,7 +156,15 @@
           <p class="trainers-card__experiance">5 років досвіду</p>
           <p class="trainers-card__type">HARDCORE</p>
         </li>
-        <li class="trainers__item trainers-card trainers-card--bodybuild">
+        <li
+          class="
+            trainers__item
+            trainers-card
+            trainers-card--active
+            trainers-card--bodybuild
+            trainers-card--all
+          "
+        >
           <picture class="trainers-card__img">
             <source
               media="(min-width: 768px)"
@@ -125,7 +198,15 @@
           <p class="trainers-card__experiance">3 роки досвіду</p>
           <p class="trainers-card__type">бодібілдинг</p>
         </li>
-        <li class="trainers__item trainers-card trainers-card--powerlift">
+        <li
+          class="
+            trainers__item
+            trainers-card
+            trainers-card--active
+            trainers-card--powerlift
+            trainers-card--all
+          "
+        >
           <picture class="trainers-card__img">
             <source
               media="(min-width: 768px)"
@@ -159,7 +240,15 @@
           <p class="trainers-card__experiance">5 років досвіду</p>
           <p class="trainers-card__type">пауерлифтинг</p>
         </li>
-        <li class="trainers__item trainers-card trainers-card--powerlift">
+        <li
+          class="
+            trainers__item
+            trainers-card
+            trainers-card--active
+            trainers-card--powerlift
+            trainers-card--all
+          "
+        >
           <picture class="trainers-card__img">
             <source
               media="(min-width: 768px)"
@@ -193,7 +282,15 @@
           <p class="trainers-card__experiance">2 роки досвіду</p>
           <p class="trainers-card__type">пауерлифтинг</p>
         </li>
-        <li class="trainers__item trainers-card trainers-card--hardcore">
+        <li
+          class="
+            trainers__item
+            trainers-card
+            trainers-card--active
+            trainers-card--hardcore
+            trainers-card--all
+          "
+        >
           <picture class="trainers-card__img">
             <source
               media="(min-width: 768px)"
@@ -227,7 +324,15 @@
           <p class="trainers-card__experiance">1 рік досвіду</p>
           <p class="trainers-card__type">HARDCORE</p>
         </li>
-        <li class="trainers__item trainers-card trainers-card--bodybuild">
+        <li
+          class="
+            trainers__item
+            trainers-card
+            trainers-card--active
+            trainers-card--bodybuild
+            trainers-card--all
+          "
+        >
           <picture class="trainers-card__img">
             <source
               media="(min-width: 768px)"
@@ -261,7 +366,15 @@
           <p class="trainers-card__experiance">7 років досвіду</p>
           <p class="trainers-card__type">бодібілдинг</p>
         </li>
-        <li class="trainers__item trainers-card trainers-card--bodybuild">
+        <li
+          class="
+            trainers__item
+            trainers-card
+            trainers-card--active
+            trainers-card--bodybuild
+            trainers-card--all
+          "
+        >
           <picture class="trainers-card__img">
             <source
               media="(min-width: 768px)"
