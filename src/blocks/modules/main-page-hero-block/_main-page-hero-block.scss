@@ -143,9 +143,7 @@
     &--text {
         display: none;
     }
-    &:hover {
-        width: 32px;
-    }
+
     //decrease picture in btn
     &::before {
         transform: scale(0.7);
@@ -155,6 +153,9 @@
     //prevents the button from moving in mob and tablet version
     @media (max-width: 768px) {
         width: 32px;
+        &:hover {
+            width: 32px;
+        }
     }
 
     @include mq(tb, true) {
@@ -180,7 +181,7 @@
         bottom: rem(16);
         padding: 19px;
         &:hover {
-            width: 200px;
+            // width: 200px;
         }
         &--text {
             display: block;
@@ -192,7 +193,9 @@
 }
 
 // arrow btn
-.hero__arrow {
+.hero__arrow,
+.hero__news-btn,
+.hero__about-us-btn {
     position: absolute;
     bottom: rem(8);
     left: 50%;
@@ -225,7 +228,57 @@
         bottom: rem(16);
     }
 }
+.hero__about-us-btn,
+.hero__news-btn {
+    bottom: rem(-1);
+    @media (max-width: 520px) {
+        display: none;
+    }
+    @include mq(tb, true) {
+        bottom: 0;
+    }
+    @include mq(tbLG, true) {
+        bottom: rem(9);
+    }
+    @include mq(dt, true) {
+        bottom: rem(-2);
+    }
+    transition: 0.3s;
+}
 
+.hero__link-wrapper:hover {
+    .hero__about-us-btn,
+    .hero__news-btn {
+        background-color: clr(red);
+    }
+    .hero__info-link {
+        opacity: 1;
+    }
+}
+
+.hero__about-us-btn {
+    left: 130%;
+
+    @include mq(tbLG, true) {
+        left: 120%;
+    }
+
+    @include mq(dt, true) {
+        left: 130%;
+    }
+}
+.hero__news-btn {
+    left: -30%;
+    @include mq(tbLG, true) {
+        left: -20%;
+    }
+    @include mq(dt, true) {
+        left: -30%;
+    }
+}
+.hero__link-wrapper {
+    position: relative;
+}
 // -----------------Advantages section-------------------
 .advantages__wrapper {
     background: clr(secondaryBG);
