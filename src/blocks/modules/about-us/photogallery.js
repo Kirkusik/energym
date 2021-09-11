@@ -41,7 +41,7 @@ if (photogallery) {
     // init lightbox
     baguetteBox.run('.lightbox-group', {
         captions: false,
-        animation: 'fideIn',
+        animation: 'fadeIn',
         // syncs swiper slide and zoom photo
         onChange: function (currentIndex) {
             swiper.slideTo(currentIndex, 400, true)
