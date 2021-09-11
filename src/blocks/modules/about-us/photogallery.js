@@ -24,18 +24,17 @@ if (photogallery) {
 
     });
 
-    swiper.on('slideChange', function () {
-        const activeSlide = document.querySelector('.swiper-slide-active');
-        const duplicateActiveSlide = document.querySelector('.swiper-slide-duplicate-active');
-        changeSeparateZoneTitle(activeSlide || duplicateActiveSlide);
-    });
 
+    swiper.on('activeIndexChange', function () {
+        setTimeout(() => {
+            const activeSlide = photogallery.querySelector('.swiper-slide-active');
+            changeSeparateZoneTitle(activeSlide);
+        }, 0)
+    });
 
     // Change slides zones name according to data-attr  -> data-zone
     const slides = document.querySelectorAll('.photogallery__slide');
-
     setZoneTitlesToSlides(slides);
-
 
     // init lightbox
     baguetteBox.run('.lightbox-group', {
@@ -44,11 +43,6 @@ if (photogallery) {
         onChange: function (currentIndex) {
             swiper.slideTo(currentIndex, 400, true)
             createFigureCaptions();
-        },
-        afterHide: function () {
-            const figureCaptions = document.querySelectorAll('.full-image figure');
-            // console.log(figureCaptions);
-            figureCaptions.forEach((elem) => elem.remove())
         }
     });
 }
@@ -65,7 +59,6 @@ function createFigureCaptions() {
         // add capture to img block for centering
         const baguetteBoxHtml = elem.innerHTML;
         const img = elem.querySelector('img')
-        elem.innerHTML = "";
         elem.innerHTML = `
                 <div class="baguetteBox-img-wrapper">
                     ${baguetteBoxHtml}
