@@ -14,6 +14,8 @@ if (photogallery) {
         spaceBetween: 15,
         slidesPerView: 'auto',
         slideToClickedSlide: false,
+        observer: true,
+        observeParents: true,
         navigation: {
             nextEl: swiperNext,
             prevEl: swiperPrev,
@@ -39,6 +41,7 @@ if (photogallery) {
     // init lightbox
     baguetteBox.run('.lightbox-group', {
         captions: false,
+        animation: 'fideIn',
         // syncs swiper slide and zoom photo
         onChange: function (currentIndex) {
             swiper.slideTo(currentIndex, 400, true)
@@ -46,8 +49,6 @@ if (photogallery) {
         }
     });
 }
-
-
 
 
 function createFigureCaptions() {
