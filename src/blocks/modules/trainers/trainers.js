@@ -22,6 +22,11 @@ function showTrainerSelect(e) {
     ".trainers__select-item"
   ).textContent;
 
+  e.target.setAttribute(
+    "tab-name",
+    e.target.closest(".trainers__select-item").getAttribute("tab-name")
+  );
+
   trainers.trainersSelectFirst
     .closest(".trainers__select-item")
     .setAttribute(
