@@ -6,15 +6,11 @@
     @include mq(tb, true) {
         background-image: url(../img/adresses/adresses-bg.svg);
         background-repeat: no-repeat;
-        background-position: top 42% center;
+        background-position: center center;
         padding-bottom: 115px;
     }
     @include mq(tbLG, true) {
-        background-position: top 14% center;
         padding-bottom: 76px;
-    }
-    @include mq(dt, true) {
-        background-position: top 32% center;
     }
 }
 
@@ -58,7 +54,12 @@
     justify-items: center;
     row-gap: 12px;
     padding: 12px;
-    @include mq(tbLG, true) {
+
+    @media (min-width: 551px) {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 12px;
+    }
+    @media (min-width: 992px) {
         grid-template-columns: repeat(3, 1fr);
         row-gap: 36px;
         column-gap: 36px;
@@ -80,6 +81,10 @@
             fill: clr(purpleDark);
         }
     }
+    @media (min-width: 551px) and (max-width: 991px) {
+        padding: 16px 39px 16px 75px;
+    }
+
     @include mq(tbLG, true) {
         padding-top: 25px;
         padding-bottom: 25px;
