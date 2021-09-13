@@ -1,1 +1,2 @@
 import "./codex";
+import "./photogallery";
