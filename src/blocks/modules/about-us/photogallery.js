@@ -1,3 +1,4 @@
+'use strict'
 import SwiperCore, { Navigation } from 'swiper/core';
 SwiperCore.use([Navigation]);
 
@@ -42,20 +43,16 @@ if (photogallery) {
     baguetteBox.run('.lightbox-group', {
         captions: false,
         animation: 'fadeIn',
-        // syncs swiper slide and zoom photo
-        onChange: function (currentIndex) {
-            swiper.slideTo(currentIndex, 400, true)
+        onChange: function () {
             createFigureCaptions();
         }
     });
 }
 
-
 function createFigureCaptions() {
     const figureCaptions = document.querySelectorAll('.full-image figure');
     figureCaptions.forEach((elem) => {
         const figureWrapper = elem.querySelector('.baguetteBox-img-wrapper');
-
         if (figureWrapper) return;
         // add capture to img block for centering
         const baguetteBoxHtml = elem.innerHTML;
