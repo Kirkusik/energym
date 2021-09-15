@@ -45,7 +45,7 @@
   position: absolute;
   background-color: #fff;
   width: 250px;
-
+  border-radius: 4px;
   &--active {
     box-shadow: 0 2px 5px 2px #223c5033;
   }
@@ -58,7 +58,10 @@
 }
 .trainers__arrow--close {
   transform: scaleY(-1);
-
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
 .trainers__arrow-svg {
   vertical-align: middle;
 }
@@ -85,7 +88,6 @@
 .trainers__select-item--hiden {
   display: none;
 }
-
 
 .trainers__list {
   display: flex;
@@ -124,8 +126,6 @@
 
 .trainers-card__img {
   width: 100%;
-  @media (min-width: 576px) {
-  }
   @include mq(tb, tb) {
     width: 175px;
     height: 250px;

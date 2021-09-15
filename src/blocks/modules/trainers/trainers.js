@@ -6,6 +6,7 @@ const trainers = {
   ),
   trainersSelectFirst: document.querySelector(".trainers__select-text"),
   trainersSelectArrow: document.querySelector(".trainers__arrow"),
+  trainersSelectArrowClose: document.querySelector(".trainers__arrow--close"),
   trainerCards: document.querySelectorAll(".trainers-card"),
 };
 
@@ -42,7 +43,12 @@ if (trainers.trainersSelectItem) {
 
       trainers.trainersSelectArrow.setAttribute(
         "data-tab-name",
-        e.target.closest(".trainers__select-item").getAttribute("data-tab-name")
+        e.target.closest(".trainers__select-tab").getAttribute("data-tab-name")
+      );
+
+      trainers.trainersSelectArrowClose.setAttribute(
+        "data-tab-name",
+        e.target.closest(".trainers__select-tab").getAttribute("data-tab-name")
       );
 
       let trainersTabName = e.target.getAttribute(`data-tab-name`);
