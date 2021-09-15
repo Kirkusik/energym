@@ -31,6 +31,7 @@
   margin-top: 10px;
   margin-left: 10px;
   box-shadow: 0 2px 5px 2px #223c5033;
+  cursor: pointer;
 
   @include mq(tb, tb) {
     align-self: flex-end;
