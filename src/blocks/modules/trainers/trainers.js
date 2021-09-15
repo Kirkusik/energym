@@ -9,48 +9,49 @@ const trainers = {
   trainerCards: document.querySelectorAll(".trainers-card"),
 };
 
-if (trainers.trainersSelect) {
-  trainers.trainersSelect.addEventListener("click", showTrainerSelect);
+if (trainers.trainersSelectItemFirst) {
+  trainers.trainersSelectItemFirst.addEventListener("click", showTrainerSelect);
 }
 
 function showTrainerSelect(e) {
   trainers.trainersSelectItem.forEach((e) => {
     e.classList.toggle("trainers__select-item--opened");
-    trainers.trainersSelectFirst
-      .closest(".trainers__select-item--first")
-      .classList.toggle("trainers__select-item--hiden");
-  });
-
-  trainers.trainersSelectFirst.textContent = e.target.closest(
-    ".trainers__select-item"
-  ).textContent;
-
-  e.target.setAttribute(
-    "data-tab-name",
-    e.target.closest(".trainers__select-item").getAttribute("data-tab-name")
-  );
-
-  trainers.trainersSelectFirst
-    .closest(".trainers__select-item")
-    .setAttribute(
-      "data-tab-name",
-      e.target.closest(".trainers__select-item").getAttribute("data-tab-name")
+    trainers.trainersSelectItemFirst.classList.toggle(
+      "trainers__select-item--hiden"
     );
+    trainers.trainersSelect.classList.add("trainers__select-list--active");
+  });
+}
 
-  trainers.trainersSelectFirst.setAttribute(
-    "data-tab-name",
-    e.target.closest(".trainers__select-item").getAttribute("data-tab-name")
-  );
-  trainers.trainersSelectArrow.setAttribute(
-    "data-tab-name",
-    e.target.closest(".trainers__select-item").getAttribute("data-tab-name")
-  );
+if (trainers.trainersSelectItem) {
+  trainers.trainersSelectItem.forEach((el) => {
+    el.addEventListener("click", (e) => {
+      trainers.trainersSelectFirst.textContent = e.target.closest(
+        ".trainers__select-item"
+      ).textContent;
 
-  trainers.trainersSelectArrow.classList.toggle("trainers__arrow--close");
+      trainers.trainersSelectItemFirst.setAttribute(
+        "data-tab-name",
+        e.target.closest(".trainers__select-item").getAttribute("data-tab-name")
+      );
 
-  let trainersTabName = e.target.getAttribute(`data-tab-name`);
+      trainers.trainersSelectFirst.setAttribute(
+        "data-tab-name",
+        e.target.closest(".trainers__select-item").getAttribute("data-tab-name")
+      );
 
-  selectTabContent(trainersTabName);
+      trainers.trainersSelectArrow.setAttribute(
+        "data-tab-name",
+        e.target.closest(".trainers__select-item").getAttribute("data-tab-name")
+      );
+
+      let trainersTabName = e.target.getAttribute(`data-tab-name`);
+
+      selectTabContent(trainersTabName);
+      showTrainerSelect(e);
+      trainers.trainersSelect.classList.remove("trainers__select-list--active");
+    });
+  });
 }
 
 function selectTabContent(trainersTabName) {
