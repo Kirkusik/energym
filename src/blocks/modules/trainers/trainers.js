@@ -1,6 +1,9 @@
 const trainers = {
   trainersSelect: document.querySelector(".trainers__select-list"),
   trainersSelectItem: document.querySelectorAll(".trainers__select-item"),
+  trainersSelectItemFirst: document.querySelector(
+    ".trainers__select-item--first"
+  ),
   trainersSelectFirst: document.querySelector(".trainers__select-text"),
   trainersSelectArrow: document.querySelector(".trainers__arrow"),
   trainerCards: document.querySelectorAll(".trainers-card"),

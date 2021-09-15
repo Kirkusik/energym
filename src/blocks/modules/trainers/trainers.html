@@ -14,10 +14,29 @@
           <span class="trainers__title-hide">тренажерного </span> залу
         </h2>
         <div class="trainers__select">
+          <div
+            class="trainers__select-item--first"
+            data-tab-name="trainers-card--all"
+          >
+            <span class="trainers__select-text trainers__select-text--first"
+              >Всі</span
+            >
+
+            <button class="trainers__arrow" aria-label="Відкрити меню послуг">
+              <svg
+                class="trainers__arrow-svg"
+                width="10"
+                height="6"
+                fill="none"
+              >
+                <use href="#location__down-arrow"></use>
+              </svg>
+            </button>
+          </div>
           <ul class="trainers__select-list">
-            <li
+            <!-- <li
               class="trainers__select-item trainers__select-item--first"
-              tab-name="trainers-card--all"
+              data-tab-name="trainers-card--all"
             >
               <span class="trainers__select-text trainers__select-text--first"
                 >Всі</span
@@ -33,14 +52,14 @@
                   <use href="#location__down-arrow"></use>
                 </svg>
               </button>
-            </li>
+            </li> -->
             <li
               class="
                 trainers__select-item
                 trainers__select-item--all
                 trainers__select-item--opened
               "
-              tab-name="trainers-card--all"
+              data-tab-name="trainers-card--all"
             >
               Всі
             </li>
@@ -50,7 +69,7 @@
                 trainers__select-item--powerlift
                 trainers__select-item--opened
               "
-              tab-name="trainers-card--powerlift"
+              data-tab-name="trainers-card--powerlift"
             >
               Пауерліфтинг
             </li>
@@ -60,7 +79,7 @@
                 trainers__select-item--bodybuild
                 trainers__select-item--opened
               "
-              tab-name="trainers-card--bodybuild"
+              data-tab-name="trainers-card--bodybuild"
             >
               Бодібілдинг
             </li>
@@ -70,7 +89,7 @@
                 trainers__select-item--hardcore
                 trainers__select-item--opened
               "
-              tab-name="trainers-card--hardcore"
+              data-tab-name="trainers-card--hardcore"
             >
               Hardcore
             </li>

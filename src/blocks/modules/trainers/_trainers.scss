@@ -21,6 +21,12 @@
   align-self: center;
   display: flex;
   position: relative;
+  background-color: #fff;
+  width: 250px;
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-left: 10px;
+  box-shadow: 0 2px 5px 2px #223c5033;
   @include mq(tb, tb) {
     align-self: flex-end;
   }
@@ -33,11 +39,11 @@
   line-height: 20px;
   position: absolute;
   background-color: #fff;
-  box-shadow: 0 2px 5px 2px #223c5033;
+  // box-shadow: 0 2px 5px 2px #223c5033;
   width: 250px;
-  border-radius: 4px;
-  margin-top: 10px;
-  margin-left: 10px;
+  // border-radius: 4px;
+  // margin-top: 10px;
+  // margin-left: 10px;
 
   @include mq(tb, true) {
     right: 37px;
@@ -74,6 +80,14 @@
 .trainers__select-item--hiden {
   display: none;
 }
+
+.trainers__select-item--first {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  padding: 3px 16px;
+}
+
 .trainers__select-item--first.trainers__select-item--opened {
   display: flex;
   border-bottom: 1px solid #c4c4c4;
@@ -82,11 +96,11 @@
 .trainers__list {
   display: flex;
   flex-direction: column;
-  // margin-top: 20px;
+  margin-top: 20px;
   @media (min-width: 576px) {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: start;
   }
   @include mq(tb, tb) {
     justify-content: start;
@@ -101,11 +115,14 @@
   margin-right: auto;
   align-self: stretch;
   @media (min-width: 576px) {
-    width: auto;
+    width: 220px;
     margin-left: 29px;
     margin-right: 29px;
   }
 
+  @include mq(tb, tb) {
+    width: auto;
+  }
   &--active {
     display: block;
   }
@@ -114,6 +131,8 @@
 .trainers-card__img {
   width: 100%;
   @media (min-width: 576px) {
+  }
+  @include mq(tb, tb) {
     width: 175px;
     height: 250px;
   }
