@@ -23,29 +23,29 @@ function showTrainerSelect(e) {
   ).textContent;
 
   e.target.setAttribute(
-    "tab-name",
-    e.target.closest(".trainers__select-item").getAttribute("tab-name")
+    "data-tab-name",
+    e.target.closest(".trainers__select-item").getAttribute("data-tab-name")
   );
 
   trainers.trainersSelectFirst
     .closest(".trainers__select-item")
     .setAttribute(
-      "tab-name",
-      e.target.closest(".trainers__select-item").getAttribute("tab-name")
+      "data-tab-name",
+      e.target.closest(".trainers__select-item").getAttribute("data-tab-name")
     );
 
   trainers.trainersSelectFirst.setAttribute(
-    "tab-name",
-    e.target.closest(".trainers__select-item").getAttribute("tab-name")
+    "data-tab-name",
+    e.target.closest(".trainers__select-item").getAttribute("data-tab-name")
   );
   trainers.trainersSelectArrow.setAttribute(
-    "tab-name",
-    e.target.closest(".trainers__select-item").getAttribute("tab-name")
+    "data-tab-name",
+    e.target.closest(".trainers__select-item").getAttribute("data-tab-name")
   );
 
   trainers.trainersSelectArrow.classList.toggle("trainers__arrow--close");
 
-  let trainersTabName = e.target.getAttribute(`tab-name`);
+  let trainersTabName = e.target.getAttribute(`data-tab-name`);
 
   selectTabContent(trainersTabName);
 }
