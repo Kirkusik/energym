@@ -1,0 +1,106 @@
+.show-modal {
+  overflow: hidden;
+}
+
+.cards-modal {
+  display: none;
+  background-color: #fff;
+  //   overflow: auto;
+  //   max-height: 80vh;
+  &--show {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 50%;
+    // margin-top: -50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0);
+    z-index: 99;
+  }
+}
+
+.cards-modal__title {
+  position: relative;
+  width: 100%;
+  font-size: rem(18);
+  line-height: 27px;
+  padding: 27px 16px;
+
+  @media (min-width: 576px) {
+    font-size: rem(22);
+  }
+
+  @include mq(tb, true) {
+    font-size: rem(24);
+    line-height: 29px;
+    padding: 16px 24px;
+  }
+  @include mq(tbLG, true) {
+    font-size: rem(36);
+    padding: 32px 24px;
+  }
+}
+.cards-modal__title-text {
+  display: inline-block;
+  width: 85%;
+}
+
+.cards-modal__close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  background-image: url(../img/club-card/modal-close-mob.svg);
+  cursor: pointer;
+}
+
+.cards-modal__cards-wrapper {
+  overflow: auto;
+  max-height: 55vh;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  max-width: 380px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 24px;
+}
+
+.cards-modal__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cards-modal__card-title {
+  @include text(16px, 400, $secondaryFont);
+  margin-bottom: 12px;
+  @include mq(tbLG, true) {
+    margin-bottom: 15px;
+  }
+}
+
+.cards-modal__card-img {
+  @media (min-width: 400px) {
+    width: 150px;
+  }
+}
+
+.cards-modal__bg-dark {
+  display: none;
+
+  &--show {
+    display: block;
+    position: fixed;
+    z-index: 15;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    opacity: 0.5;
+  }
+}

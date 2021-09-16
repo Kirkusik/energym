@@ -1,7 +1,11 @@
-@import "./modal/cards-modal";
-
 .cards__container {
   background: #faf7fb;
+  position: relative;
+
+  &--modal-open {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
 }
 
 .cards__grid {
@@ -248,7 +252,7 @@
 }
 
 .compare-cards__btn {
-  // height: 94%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -447,3 +451,5 @@
     }
   }
 }
+
+@import "./modal/cards-modal";
