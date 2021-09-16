@@ -1,5 +1,6 @@
 <section class="cards">
   <div class="container cards__container">
+    <div class="cards-modal__bg-dark"></div>
     <div class="cards__grid cards-grid">
       <div class="cards-button__area cards-grid__buttons">
         <a
@@ -39,65 +40,69 @@
         <p class="order-item__price">28 000 грн</p>
       </div>
       <div class="cards-order__compare compare-cards">
-        <picture class="compare-cards__current-pic">
-          <source
-            media="(min-width: 1200px)"
-            srcset="./img/club-card/special-one-1440-min.webp"
-          />
-          <source
-            media="(min-width: 1200px)"
-            srcset="./img/club-card/special-one-140-min.jpg"
-          />
-          <source
-            media="(min-width: 992px)"
-            srcset="./img/club-card/special-one-1000-min.webp"
-          />
-          <source
-            media="(min-width: 992px)"
-            srcset="./img/club-card/special-one-1000-min.jpg"
-          />
-          <source
-            media="(min-width: 575px)"
-            srcset="./img/club-card/special-one-768-min.webp"
-          />
-          <source
-            media="(min-width: 575px)"
-            srcset="./img/club-card/special-one-768-min.jpg"
-          />
-          <source
-            media="(min-width: 320px)"
-            srcset="./img/club-card/special-one-375-min.webp"
-          />
-          <source
-            media="(min-width: 320px)"
-            srcset="./img/club-card/special-one-375-min.jpg"
-          />
-          <img
-            class="compare-cards__current"
-            src="./img/club-card/special-one-1440-min.jpg"
-            alt="Обрана карта"
-            title="Обрана карта"
-          />
-        </picture>
-        <p class="compare-cards__monts">12 міс</p>
-        <a href="#!" class="compare-cards__btn">
-          <svg
-            class="compare-cards__add-img"
-            width="13"
-            height="13"
-            fill="none"
-          >
-            <use href="#compare-cards-icon"></use>
-          </svg>
-          <svg
-            class="compare-cards__add-img compare-cards__add-img--big"
-            width="40"
-            height="40"
-            fill="none"
-          >
-            <use href="#compare-cards-icon-big"></use>
-          </svg>
-          <p class="compare-cards__text">Порівняти</p></a
+        <a href="#!" class="compare-cards__link">
+          <picture class="compare-cards__current-pic">
+            <source
+              media="(min-width: 1200px)"
+              srcset="./img/club-card/special-one-1440-min.webp"
+            />
+            <source
+              media="(min-width: 1200px)"
+              srcset="./img/club-card/special-one-140-min.jpg"
+            />
+            <source
+              media="(min-width: 992px)"
+              srcset="./img/club-card/special-one-1000-min.webp"
+            />
+            <source
+              media="(min-width: 992px)"
+              srcset="./img/club-card/special-one-1000-min.jpg"
+            />
+            <source
+              media="(min-width: 575px)"
+              srcset="./img/club-card/special-one-768-min.webp"
+            />
+            <source
+              media="(min-width: 575px)"
+              srcset="./img/club-card/special-one-768-min.jpg"
+            />
+            <source
+              media="(min-width: 320px)"
+              srcset="./img/club-card/special-one-375-min.webp"
+            />
+            <source
+              media="(min-width: 320px)"
+              srcset="./img/club-card/special-one-375-min.jpg"
+            />
+            <img
+              class="compare-cards__current"
+              src="./img/club-card/special-one-1440-min.jpg"
+              alt="Обрана карта"
+              title="Обрана карта"
+            />
+          </picture>
+          <p class="compare-cards__monts">12 міс</p></a
+        >
+        <a href="#!" class="compare-cards__link">
+          <span class="compare-cards__btn">
+            <svg
+              class="compare-cards__add-img"
+              width="13"
+              height="13"
+              fill="none"
+            >
+              <use href="#compare-cards-icon"></use>
+            </svg>
+            <svg
+              class="compare-cards__add-img compare-cards__add-img--big"
+              width="40"
+              height="40"
+              fill="none"
+            >
+              <use href="#compare-cards-icon-big"></use>
+            </svg>
+            <p class="compare-cards__text">Порівняти</p></span
+          ></a
         >
       </div>
     </div>
@@ -369,5 +374,6 @@
         </li>
       </ul>
     </div>
+    @@include("./modal/cards-modal.html")
   </div>
 </section>
