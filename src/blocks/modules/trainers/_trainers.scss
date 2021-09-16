@@ -1,193 +1,221 @@
 .trainers__container {
-    padding-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 .trainers__header {
-    @include mq(tbLG, tbLG) {
-        display: flex;
-        justify-content: space-between;
-    }
+  @include mq(tbLG, tbLG) {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .trainers__title-hide {
-    display: none;
+  display: none;
 
-    @media (min-width: 576px) {
-        display: inline-block;
-    }
+  @media (min-width: 576px) {
+    display: inline-block;
+  }
 }
 
 .trainers__select {
-    @include mq(tb, tb) {
-        align-self: flex-end;
-    }
+  @include mq(tb, tb) {
+    align-self: flex-end;
+  }
 
-    @include mq(tbLG, tbLG) {
-        margin-right: 30px;
-    }
-    @include mq(tbLG, false) {
-        margin-top: 30px;
-        margin-left: 30px;
-    }
-    display: flex;
-    align-self: center;
-    position: relative;
-    width: 250px;
-    font-family: $secondaryFont;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 20px;
-    background-color: #fff;
-    border-radius: 4px;
-    margin-top: 10px;
-    margin-left: 10px;
-    box-shadow: 0 2px 5px 2px #223c5033;
-    cursor: pointer;
+  @include mq(tbLG, tbLG) {
+    margin-right: 30px;
+  }
+  @include mq(tbLG, false) {
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+  display: flex;
+  align-self: center;
+  position: relative;
+  width: 250px;
+  font-family: $secondaryFont;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-left: 10px;
+  box-shadow: 0 2px 5px 2px #223c5033;
+  cursor: pointer;
+}
+.trainers__select--opened-menu {
+  border-radius: 4px 4px 0 0;
+  box-shadow: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 1px;
+    left: 16px;
+    height: 1px;
+    width: 218px;
+    background-color: #c4c4c4;
+  }
 }
 
 .trainers__select-list {
-    position: absolute;
-    top: 26px;
-    left: 0;
-    background-color: #fff;
-    width: 250px;
-    border-radius: 0 4px 4px 4px;
-    &--active {
-        box-shadow: 0 2px 5px 2px #223c5033;
-    }
+  position: absolute;
+  top: 26px;
+  left: 0;
+  background-color: #fff;
+  width: 250px;
+  border-radius: 0 0 4px 4px;
+  &--active {
+    box-shadow: 0 5px 5px -5px #223c5033;
+  }
 }
 
 .trainers__select-item {
-    display: flex;
-    justify-content: space-between;
+  padding: 3px 16px;
+  cursor: pointer;
+  color: clr(purpledark);
+
+  &:hover {
+    background-color: clr(secondarybg);
+  }
+  &--opened {
+    display: none;
+  }
+
+  &--first {
+    position: relative;
+    width: 250px;
     padding: 3px 16px;
-    cursor: pointer;
-    color: clr(purpledark);
-    &:first-child {
-        border-bottom: 1px solid #c4c4c4;
-    }
 
-    &:hover {
-        background-color: clr(secondarybg);
+    &::after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      right: 16px;
+      width: 14px;
+      height: 14px;
+      background-image: url(../img/svg/location_down_arrow.svg);
+      background-size: 100% 100%;
     }
-    &--opened {
-        display: none;
+  }
+  &--checked {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      right: 16px;
+      width: 12px;
+      height: 10px;
+      background-image: url(../img/svg/checked.svg);
+      background-size: 100% 100%;
     }
-
-    &--first {
-        display: flex;
-        justify-content: space-between;
-
-        position: relative;
-        width: 250px;
-        padding: 3px 16px;
-
-        &::after {
-            content: "";
-            position: absolute;
-            top: 6px;
-            right: 6px;
-            width: 14px;
-            height: 14px;
-            background-image: url(../img/svg/location_down_arrow.svg);
-            background-size: 100% 100%;
-        }
-    }
+  }
 }
 
-.trainers__select-item--hiden {
-    display: none;
+.trainers__select-first {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    right: 16px;
+    width: 14px;
+    height: 14px;
+    background-image: url(../img/svg/location_down_arrow.svg);
+    background-size: 100% 100%;
+    transform: rotate(180deg);
+  }
 }
 
 .trainers__list {
-    @include mq(tb, tb) {
-        justify-content: start;
-    }
-    @include mq(tbLG, false) {
-        margin-top: 0;
-    }
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    @media (min-width: 576px) {
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: start;
-    }
+  @include mq(tb, tb) {
+    justify-content: start;
+  }
+  @include mq(tbLG, false) {
+    margin-top: 0;
+  }
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  @media (min-width: 576px) {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: start;
+  }
 }
 
 .trainers-card {
-    @include mq(tb, tb) {
-        width: auto;
-    }
-    display: none;
-    align-self: stretch;
-    width: 100%;
-    max-width: 300px;
-    margin-top: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    @media (min-width: 576px) {
-        width: 220px;
-        margin-left: 29px;
-        margin-right: 29px;
-    }
-    &--active {
-        display: block;
-    }
+  @include mq(tb, tb) {
+    width: auto;
+  }
+  display: none;
+  align-self: stretch;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  @media (min-width: 576px) {
+    width: 220px;
+    margin-left: 29px;
+    margin-right: 29px;
+  }
+  &--active {
+    display: block;
+  }
 }
 
 .trainers-card__img {
-    @include mq(tb, tb) {
-        height: 250px;
-    }
-    object-fit: cover;
+  @include mq(tb, tb) {
+    height: 250px;
+  }
+  object-fit: cover;
 
-    width: 100%;
+  width: 100%;
 }
 
 .trainers-card__title {
-    @include mq(tb, tb) {
-        margin-top: 16px;
-        font-size: 17px;
-    }
-    @include mq(dt, dt) {
-        margin-top: 13px;
-        line-height: 21px;
-    }
-    font-family: $primaryFont;
-    font-size: 18px;
+  @include mq(tb, tb) {
+    margin-top: 16px;
+    font-size: 17px;
+  }
+  @include mq(dt, dt) {
+    margin-top: 13px;
+    line-height: 21px;
+  }
+  font-family: $primaryFont;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: normal;
+  margin-top: 12px;
+  @media (min-width: 576px) {
+    font-size: 16px;
     line-height: 20px;
-    font-weight: normal;
-    margin-top: 12px;
-    @media (min-width: 576px) {
-        font-size: 16px;
-        line-height: 20px;
-    }
+  }
 }
 
 .trainers-card__experiance {
-    @include mq(dt, dt) {
-        font-size: 18px;
-        line-height: 22px;
-        margin-top: 5px;
-    }
-    font-family: $secondaryFont;
-    font-size: 16px;
-    line-height: 18px;
-    margin-top: 8px;
+  @include mq(dt, dt) {
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 5px;
+  }
+  font-family: $secondaryFont;
+  font-size: 16px;
+  line-height: 18px;
+  margin-top: 8px;
 }
 
 .trainers-card__type {
-    @include mq(dt, dt) {
-        font-size: 18px;
-        line-height: 20px;
-        margin-top: 5px;
-    }
-    font-family: $secondaryFont;
-    font-size: 16px;
-    line-height: 18px;
-    font-weight: 500;
-    margin-top: 8px;
-    color: clr(red);
+  @include mq(dt, dt) {
+    font-size: 18px;
+    line-height: 20px;
+    margin-top: 5px;
+  }
+  font-family: $secondaryFont;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+  margin-top: 8px;
+  color: clr(red);
 }
