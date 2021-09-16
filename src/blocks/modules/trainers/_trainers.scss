@@ -74,7 +74,8 @@
 .trainers__select-item {
   padding: 3px 16px;
   cursor: pointer;
-  color: clr(purpledark);
+  color: clr(purpleDark);
+  position: relative;
 
   &:hover {
     background-color: clr(secondarybg);

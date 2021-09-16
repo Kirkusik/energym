@@ -25,14 +25,18 @@ function showTrainerSelect(e) {
 
 if (trainers.trainersSelectItem) {
   trainers.trainersSelectItem.forEach((el) => {
-    if (el.classList.contains("trainers__select-item--checked")) {
-      el.classList.remove("trainers__select-item--checked");
-    }
     el.addEventListener("click", (e) => {
       trainers.trainersSelectFirst.textContent = e.target.closest(
         ".trainers__select-item"
       ).textContent;
+
+      trainers.trainersSelectItem.forEach((el) => {
+        if (el.classList.contains("trainers__select-item--checked")) {
+          el.classList.remove("trainers__select-item--checked");
+        }
+      });
       e.target.classList.add("trainers__select-item--checked");
+
       trainers.trainersSelectItemFirst.setAttribute(
         "data-tab-name",
         e.target.closest(".trainers__select-item").getAttribute("data-tab-name")
