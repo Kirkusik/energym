@@ -1,0 +1,167 @@
+.advantages__wrapper {
+    background: clr(secondaryBG);
+    padding-top: 16px;
+    padding-left: 0;
+    padding-bottom: 50px;
+
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    grid-template-rows: 1fr minmax(min-content, max-content) 170px;
+    row-gap: 24px;
+    grid-template-areas: "title title" "list list" "buttons phone";
+
+    @include mq(tb, true) {
+        grid-template-areas: "title title" "list phone" "buttons buttons ";
+        grid-template-rows: 1fr minmax(min-content, max-content) 30px;
+    }
+    @include mq(tbLG, true) {
+        row-gap: 40px;
+        grid-template-areas: "title phone" "list phone" "buttons phone";
+        grid-template-rows: 91px minmax(322px, max-content) 118px;
+    }
+    @include mq(tb, true) {
+        padding-top: 40px;
+        padding-bottom: 100px;
+    }
+    @media (min-width: 1200px) {
+        display: none;
+    }
+}
+.advantages__title {
+    grid-area: title;
+    font-size: rem(22);
+    line-height: 27px;
+    padding: 16px;
+
+    @include mq(tb, true) {
+        font-size: rem(24);
+        line-height: 29px;
+        padding: 16px 24px;
+    }
+    @include mq(tbLG, true) {
+        font-size: rem(36);
+        padding: 32px 24px;
+    }
+}
+.advantages__phone {
+    grid-area: phone;
+    @include mq(tb, true) {
+        align-self: end;
+    }
+}
+.advantages__phone-pic {
+    @include mq(tb, true) {
+        justify-self: center;
+    }
+}
+.advantages__list {
+    grid-area: list;
+    margin-left: 12px;
+
+    @include mq(tb, true) {
+        margin-left: 20px;
+        max-width: 504px;
+    }
+}
+.advantages__list-item {
+    font-family: $secondaryFont;
+    font-weight: 500;
+    font-size: rem(16);
+    line-height: 18px;
+    color: #000000;
+
+    &:not(:last-child) {
+        margin-bottom: 8px;
+
+        @include mq(tb, true) {
+            margin-bottom: 16px;
+        }
+    }
+
+    @include mq(tbLG, true) {
+        font-size: rem(18);
+        line-height: 21px;
+    }
+}
+
+.advantages__subscribe {
+    grid-area: buttons;
+    @include flex();
+    flex-direction: column;
+
+    @include mq(tb, true) {
+        flex-direction: row;
+        justify-self: start;
+        margin-left: 24px;
+    }
+
+    @include mq(tbLG, true) {
+        flex-direction: row;
+        justify-self: start;
+        align-self: start;
+        margin-left: 24px;
+    }
+
+    &--appstore {
+        width: 154px;
+        height: 45px;
+        margin-bottom: 16px;
+        @media (max-width: 767px) {
+            background-image: url(../img/main-page-hero-block/appstore_light.svg);
+        }
+        @include mq(tb, true) {
+            margin-bottom: 0;
+            margin-right: 40px;
+        }
+    }
+
+    &--googleplay {
+        width: 154px;
+        height: 45px;
+        margin-bottom: 0;
+        @media (max-width: 767px) {
+            background-image: url(../img/main-page-hero-block/googleplay_light.svg);
+        }
+    }
+}
+
+// Button to news page
+
+.advantages__linkout {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    max-width: 140px;
+    grid-column: 2/3;
+
+    &:hover {
+        //used a nested selector, because the square button is a child of the link
+        .advantages__linkout-icon {
+            background-color: clr(red);
+        }
+    }
+
+    @include mq(tb, true) {
+        display: none;
+    }
+
+    @include mq(tb, false) {
+        @include text(rem(22));
+        line-height: 27px;
+        color: clr(purple50);
+        transition: color 0.3s;
+
+        &:hover {
+            color: clr(purple);
+        }
+    }
+}
+
+.advantages__linkout-icon {
+    background-color: clr(pink);
+    @include mq(tb, false) {
+        width: 40px;
+        height: 40px;
+        margin-left: 12px;
+    }
+}

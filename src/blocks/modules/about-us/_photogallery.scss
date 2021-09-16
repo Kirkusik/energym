@@ -1,0 +1,381 @@
+.photogallery__wrapper {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(3, min-content);
+    grid-template-areas: "title nav " "zone plan" "slider slider";
+    row-gap: 24px;
+    align-items: end;
+
+    background-color: clr(secondaryBG);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+
+    @include mq(tb, true) {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        grid-template-rows: repeat(2, min-content);
+        grid-template-areas: "title plan" "slider slider";
+    }
+    @include mq(dt, true) {
+        padding-top: 200px;
+        padding-bottom: 200px;
+        grid-template-columns: auto auto 1fr;
+        grid-template-rows: 138px auto 90px;
+        column-gap: 93px;
+        row-gap: 50px;
+        grid-template-areas: "title title slider" "zone zone slider" "plan nav slider";
+    }
+}
+.photogallery__title {
+    font-size: rem(22);
+    line-height: 27px;
+    padding: 16px;
+    grid-area: title;
+
+    @include mq(tb, true) {
+        font-size: rem(24);
+        line-height: 29px;
+        padding: 16px 24px;
+    }
+    @include mq(tbLG, true) {
+        font-size: rem(36);
+        padding: 24px 32px;
+        line-height: 44px;
+    }
+    @include mq(dt, true) {
+        font-size: rem(48);
+        line-height: 58px;
+        padding: 40px;
+    }
+}
+// zone as a part of grid layout in mb and dt media
+.photogallery__zone-separate-box {
+    grid-area: zone;
+    margin-left: 10px;
+
+    @include mq(tb, true) {
+        display: none;
+    }
+
+    @include mq(dt, true) {
+        display: block;
+        justify-self: left;
+        position: static;
+        margin-left: 45px;
+    }
+}
+// .photogallery__zone-box {
+//     color: clr(black);
+
+//     &:hover {
+//         background-color: clr(purple40);
+//         @include mq(tbLG, true) {
+//             font-size: rem(24);
+//         }
+//     }
+// }
+.photogallery__zone-box--inner {
+    display: none;
+    @include mq(tb, true) {
+        display: block;
+        position: absolute;
+        z-index: 2;
+        color: clr(white);
+        margin-left: 24px;
+        bottom: 20px;
+    }
+
+    @include mq(dt, true) {
+        display: none;
+    }
+}
+
+.photogallery__zone {
+    @include text(rem(16), 600, "Montserrat");
+    margin-bottom: 6px;
+    @include mq(tb, true) {
+        margin-bottom: 12px;
+    }
+    @include mq(dt, true) {
+        font-size: rem(18);
+        line-height: 22px;
+    }
+}
+
+.photogallery__zone-title {
+    @include text(rem(18), 600, "Montserrat");
+    line-height: 24px;
+
+    @include mq(mb, true) {
+        font-size: rem(22);
+        line-height: 27px;
+    }
+    @include mq(tb, true) {
+        font-size: rem(17);
+        line-height: 21px;
+    }
+    @include mq(dt, true) {
+        font-size: rem(32);
+        line-height: 39px;
+    }
+}
+
+.photogallery__plan-link {
+    @include text(rem(15), 400, "Montserrat");
+    line-height: 19px;
+    color: clr(pink);
+    grid-area: plan;
+    justify-self: end;
+    padding-bottom: 5px;
+    transition: 0.3s;
+    margin-right: 10px;
+    @media (max-width: 374px) {
+        font-size: rem(16);
+    }
+    &:hover {
+        color: clr(red);
+        &::after {
+            background-color: clr(red);
+        }
+    }
+    @include pseudo(after, "", absolute) {
+        display: block;
+        width: 100%;
+        height: 1px;
+        bottom: 2px;
+        background-color: clr(pink);
+    }
+
+    @include mq(dt, true) {
+        justify-self: left;
+        margin-left: 45px;
+        margin-right: 0;
+    }
+}
+
+.photogallery__slider {
+    grid-area: slider;
+
+    @include mq(dt, true) {
+        transform-origin: left bottom;
+    }
+}
+.photogallery__slide-link {
+    display: block;
+    &:hover {
+        &::before {
+            opacity: 1;
+        }
+    }
+    @include pseudo(before, "", absolute) {
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0.3);
+        background-image: url("../img/svg/gallery-zoom-in.svg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: opacity 0.3s;
+    }
+}
+.photogallery__slide {
+    cursor: pointer;
+    transition: opacity 0.3s;
+
+    @include mq(tb, true) {
+        width: auto;
+    }
+}
+
+.photogallery__slider-img {
+    width: 100%;
+    display: block;
+
+    @include mq(tb, true) {
+        width: auto;
+        max-width: 585px;
+        height: auto;
+    }
+    @include mq(tb, true) {
+        max-width: 585px;
+        width: 100%;
+    }
+}
+// slider buttons
+.photogallery__buttons-box {
+    grid-area: nav;
+    display: flex;
+    align-items: flex-end;
+    justify-self: end;
+    margin-right: 10px;
+    @media (max-width: 374px) {
+        justify-self: center;
+    }
+    @include mq(tb, true) {
+        display: none;
+        margin-right: 0;
+    }
+    @include mq(dt, true) {
+        display: block;
+    }
+}
+.photogallery__btn-next {
+    background-color: clr(red);
+    width: 40px;
+    height: 40px;
+    @include mq(dt, true) {
+        width: 90px;
+        height: 90px;
+        background-size: 50px 50px;
+    }
+}
+
+.photogallery__btn-prev {
+    width: 32px;
+    height: 32px;
+    background-size: 14px 14px;
+    margin-right: 15px;
+    @include mq(dt, true) {
+        margin-right: 8px;
+        width: 70px;
+        height: 70px;
+        background-size: 32px 32px;
+    }
+}
+
+// lightgallery
+// buttons
+.baguetteBox-button {
+    border-radius: 0;
+    background-color: clr(red);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+
+    &:focus {
+        background-color: clr(red);
+    }
+    &:hover {
+        background-color: clr(pink);
+    }
+}
+
+#next-button svg,
+#previous-button svg,
+#close-button svg {
+    display: none;
+}
+.baguetteBox-button#next-button {
+    background-image: url("../img/svg/arrow-right.svg");
+}
+.baguetteBox-button#previous-button {
+    background-image: url("../img/svg/arrow-left.svg");
+    @media (min-width: 1150px) {
+        left: 10%;
+    }
+}
+.baguetteBox-button#close-button {
+    background-image: url("../img/svg/cross.svg");
+    top: 20%;
+
+    @media (min-width: 1000px) {
+        top: 10%;
+    }
+}
+.baguetteBox-button#close-button,
+.baguetteBox-button#next-button {
+    right: 5%;
+    @media (min-width: 550px) {
+        right: 2%;
+    }
+    @media (min-width: 1150px) {
+        right: 10%;
+    }
+}
+
+.baguetteBox-button#previous-button,
+.baguetteBox-button#next-button,
+.baguetteBox-button#close-button {
+    width: 40px;
+    height: 40px;
+    @include mq(tb, true) {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+.baguetteBox-button#previous-button,
+.baguetteBox-button#next-button {
+    display: none;
+    @media (min-width: 550px) {
+        display: block;
+    }
+
+    @include mq(tb, true) {
+        transform: translateY(-10px);
+    }
+    @include mq(tbLG, true) {
+        transform: translateY(-25px);
+    }
+}
+
+#baguetteBox-overlay .full-image img {
+    position: relative;
+    &::before {
+        content: "gym";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    transform: scale(0.9);
+    transform-origin: center;
+
+    @media (min-width: 550px) {
+        transform: scale(0.7);
+    }
+    @include mq(tbLG, true) {
+        transform: scale(0.8);
+    }
+
+    @include mq(dt, true) {
+        transform: scale(1);
+    }
+}
+
+.baguetteBox-img-wrapper {
+    display: inline-block;
+    position: relative;
+}
+.baguetteBox-caption {
+    position: absolute;
+    z-index: 3;
+    display: block;
+    bottom: 5%;
+    left: 5%;
+    color: white;
+    background-color: clr(purple40);
+    font-weight: 500;
+    font-size: 16px;
+    padding: 14px;
+
+    @media (min-width: 550px) {
+        bottom: 15%;
+        left: 15%;
+    }
+
+    @include mq(tbLG, true) {
+        font-size: 24px;
+        padding: 24px;
+        bottom: 10%;
+        left: 10%;
+    }
+
+    @include mq(dt, true) {
+        bottom: 0;
+        left: 0;
+    }
+}

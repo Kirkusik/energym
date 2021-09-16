@@ -1,0 +1,111 @@
+.adresses__inner {
+    background-size: contain;
+    padding-bottom: 50px;
+    background-position: center;
+    background-color: clr(secondaryBG);
+    @include mq(tb, true) {
+        background-image: url(../img/adresses/adresses-bg.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        padding-bottom: 115px;
+    }
+    @include mq(tbLG, true) {
+        padding-bottom: 76px;
+    }
+}
+
+.adresses__title {
+    font-size: rem(22);
+    line-height: 27px;
+    padding: 16px 8px;
+    margin-bottom: 12px;
+
+    &--part {
+        display: block;
+    }
+    @include mq(mb, true) {
+        padding: 16px 14px;
+        &--part {
+            display: inline;
+        }
+    }
+    @include mq(tb, true) {
+        font-size: rem(24);
+        line-height: 29px;
+        padding: 16px 24px;
+        margin-bottom: 16px;
+    }
+    @include mq(tbLG, true) {
+        font-size: rem(36);
+        padding: 24px 32px;
+        line-height: 44px;
+        margin-bottom: 45px;
+    }
+    @include mq(dt, true) {
+        font-size: rem(48);
+        line-height: 58px;
+        padding: 40px;
+    }
+}
+
+.adresses__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 12px;
+    padding: 12px;
+
+    @media (min-width: 551px) {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 12px;
+    }
+    @media (min-width: 992px) {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 36px;
+        column-gap: 36px;
+    }
+}
+
+.adresses__btn {
+    position: relative;
+    background-color: clr(secondaryBG);
+    display: block;
+    font-size: 16px;
+    padding: 16px 49px 16px 85px;
+    transition: 0.3s;
+    &:hover {
+        opacity: 1;
+        color: clr(purpleDark);
+        border-color: clr(purpleDark);
+        .adresses__location-svg {
+            fill: clr(purpleDark);
+        }
+    }
+    @media (min-width: 551px) and (max-width: 991px) {
+        padding: 16px 39px 16px 75px;
+    }
+
+    @include mq(tbLG, true) {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        font-size: 18px;
+    }
+}
+
+.adresses__location-svg {
+    position: absolute;
+    width: 12px;
+    height: 20px;
+    fill: clr(red);
+    transition: 0.3s;
+    top: 13px;
+    left: 20%;
+    @include mq(tb, true) {
+        width: 12px;
+        height: 20px;
+    }
+    @include mq(tbLG, true) {
+        margin-right: 0;
+        top: 23px;
+    }
+}
