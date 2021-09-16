@@ -53,6 +53,10 @@
   height: 40px;
   background-image: url(../img/club-card/modal-close-mob.svg);
   cursor: pointer;
+  @include mq(tbLG, true) {
+    top: 0;
+    right: -70px;
+  }
 }
 
 .cards-modal__cards-wrapper {
