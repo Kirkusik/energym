@@ -1,73 +1,73 @@
 @mixin mq($screen, $min) {
-  @if ($min) {
-    @media (min-width: map-get($resolutions, $screen)) {
-      @content;
+    @if ($min) {
+        @media (min-width: map-get($resolutions, $screen)) {
+            @content;
+        }
+    } @else {
+        @media (max-width: map-get($resolutions, $screen)) {
+            @content;
+        }
     }
-  } @else {
-    @media (max-width: map-get($resolutions, $screen)) {
-      @content;
-    }
-  }
 }
 
 @function clr($name) {
-  @return map-get($colors, $name);
+    @return map-get($colors, $name);
 }
 
 @mixin text($size, $weight: 400, $family: #{"Russo One"}) {
-  font-family: $family, sans-serif;
-  font-weight: $weight;
-  font-size: $size;
+    font-family: $family, sans-serif;
+    font-weight: $weight;
+    font-size: $size;
 }
 
 // px to rem
 @function rem($pixels, $context: $mainFontSize) {
-  @if (unitless($pixels)) {
-    $pixels: $pixels * 1px;
-  }
-  @if (unitless($context)) {
-    $context: $context * 1px;
-  }
-  @return $pixels / $context * 1rem;
+    @if (unitless($pixels)) {
+        $pixels: $pixels * 1px;
+    }
+    @if (unitless($context)) {
+        $context: $context * 1px;
+    }
+    @return $pixels / $context * 1rem;
 }
 
 // Simple usage FLEXBOX
 @mixin flex($vertical: center, $horizontal: center) {
-  display: flex;
-  justify-content: $horizontal;
-  align-items: $vertical;
+    display: flex;
+    align-items: $vertical;
+    justify-content: $horizontal;
 }
 
 // Pseudo-elem
 @mixin pseudo($location: after, $content: "", $position: static) {
-  @if ($position == absolute) {
-    position: relative;
-  }
+    @if ($position == absolute) {
+        position: relative;
+    }
 
-  &::#{$location} {
-    content: $content;
-    position: $position;
-    @content;
-  }
+    &::#{$location} {
+        content: $content;
+        position: $position;
+        @content;
+    }
 }
 
 // Нужна она или нет , но пускай будет. Можно переписать подкл. шрифтов
 @mixin font-face(
-  $font-family,
-  $file-path,
-  $weight: 400,
-  $style: normal,
-  $font-display: auto,
-  $asset-pipeline: false
+    $font-family,
+    $file-path,
+    $weight: 400,
+    $style: normal,
+    $font-display: auto,
+    $asset-pipeline: false
 ) {
-  @font-face {
-    font-family: $font-family;
-    font-weight: $weight;
-    font-style: $style;
-    font-display: $font-display;
-    src: url("#{$file-path}.woff") format("woff"),
-      url("#{$file-path}.woff2") format("woff2");
-  }
+    @font-face {
+        font-family: $font-family;
+        font-weight: $weight;
+        font-style: $style;
+        font-display: $font-display;
+        src: url("#{$file-path}.woff") format("woff"),
+            url("#{$file-path}.woff2") format("woff2");
+    }
 }
 
 /* Usage:
