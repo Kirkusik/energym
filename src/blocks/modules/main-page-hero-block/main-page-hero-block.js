@@ -1,21 +1,18 @@
 (function () {
-    let heroArrow = document.querySelector(".hero__arrow");
+    const heroArrow = document.querySelector(".hero__arrow");
+    const heroInfo = document.querySelector(".hero__info");
+    const heroTitle = document.querySelector(".hero__info-title");
+    const linksBox = document.querySelector(".hero__links-box");
 
     if (heroArrow) {
         heroArrow.addEventListener("click", () => {
-            document
-                .querySelector(".hero__info")
-                .classList.remove("hero__info--position");
-            document.querySelector(".hero__info").classList.add("hero__info--active");
-            document
-                .querySelector(".hero__info-title")
-                .classList.add("hero__info-title--active");
-            document
-                .querySelector(".hero__links-box")
-                .classList.add("hero__links-box--active");
-            document
-                .querySelector(".hero__arrow")
-                .classList.add("hero__arrow--active");
+
+            heroInfo.classList.remove("hero__info--position");
+            heroInfo.classList.add("hero__info--active");
+            heroTitle.classList.add("hero__info-title--active");
+            linksBox.classList.add("hero__links-box--active");
+
+            heroArrow.classList.add("hero__arrow--active");
         });
     }
 })();
