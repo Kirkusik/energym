@@ -42,6 +42,13 @@ cards.menu.addEventListener("click", function (event) {
   cards.table.forEach((el) => {
     el.classList.add("service-table__value--compare");
   });
+
+  document
+    .querySelector(".compare-cards__link--btn")
+    .classList.add("invisible");
+  document
+    .querySelector(".compare-cards__special-one-morning")
+    .classList.add("active");
   console.dir(event.target);
   console.log(event.target.src);
 });

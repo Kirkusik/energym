@@ -444,7 +444,6 @@
 
     @media (min-width: 1200px) {
       width: 39%;
-      padding-left: 59px;
     }
   }
 
@@ -468,8 +467,10 @@
   }
 }
 
-@import "./modal/cards-modal";
+// .compare-cards__special-one-morning {
+//   display: none;
+//   padding-right: 0;
+// }
 
-.active {
-  display: inline-block;
-}
+
+@import "./modal/cards-modal";
