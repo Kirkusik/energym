@@ -88,6 +88,7 @@
 }
 
 .cards-modal__card-img {
+  cursor: pointer;
   @media (min-width: 400px) {
     width: 150px;
   }

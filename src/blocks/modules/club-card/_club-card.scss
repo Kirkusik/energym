@@ -438,6 +438,22 @@
   &--weekday {
     padding-bottom: 8px;
   }
+
+  &--compare {
+    width: 25%;
+
+    @media (min-width: 1200px) {
+      width: 39%;
+      padding-left: 59px;
+    }
+  }
+
+  &--compare-second {
+    display: none;
+    @media (min-width: 1200px) {
+      display: none;
+    }
+  }
 }
 
 .service-table__done-icon {
@@ -453,3 +469,7 @@
 }
 
 @import "./modal/cards-modal";
+
+.active {
+  display: inline-block;
+}

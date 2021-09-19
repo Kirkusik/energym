@@ -35,12 +35,13 @@
           </svg>
         </a>
       </div>
+
       <div class="cards-grid__item-info">
         <p class="order-item__name">Special one</p>
         <p class="order-item__price">28 000 грн</p>
       </div>
       <div class="cards-order__compare compare-cards">
-        <a href="#!" class="compare-cards__link">
+        <a href="#!" class="compare-cards__link compare-cards__link--first">
           <picture class="compare-cards__current-pic">
             <source
               media="(min-width: 1200px)"
@@ -83,7 +84,7 @@
           </picture>
           <p class="compare-cards__monts">12 міс</p></a
         >
-        <a href="#!" class="compare-cards__link">
+        <a href="#!" class="compare-cards__link compare-cards__link--second">
           <span class="compare-cards__btn">
             <svg
               class="compare-cards__add-img"
@@ -111,7 +112,42 @@
       <ul class="cards-service__table service-table">
         <li class="service-table__item service-table__item--first">
           <p class="service-table__title">Час відвідин</p>
-          <p class="service-table__value service-table__value--first">
+          <p
+            class="
+              service-table__value
+              service-table__value--first
+              service-table__value--compare-first
+            "
+          >
+            <span
+              class="service-table__value--weekday service-table__value--mobile"
+              >7:00-23:00 б/д</span
+            >
+            <span
+              class="
+                service-table__value--weekday service-table__value--desktop
+              "
+              >7:00-23:00 будні</span
+            >
+            <span
+              class="service-table__value--holiday service-table__value--mobile"
+              >9:00-20:00 в/д</span
+            >
+            <span
+              class="
+                service-table__value--holiday service-table__value--desktop
+              "
+              >7:00-23:00 вихідни</span
+            >
+          </p>
+
+          <p
+            class="
+              service-table__value
+              service-table__value--first
+              service-table__value--compare-second
+            "
+          >
             <span
               class="service-table__value--weekday service-table__value--mobile"
               >7:00-23:00 б/д</span
@@ -136,7 +172,38 @@
         </li>
         <li class="service-table__item">
           <p class="service-table__title">Басейн</p>
-          <p class="service-table__value service-table__value--white">
+          <p
+            class="
+              service-table__value
+              service-table__value--white
+              service-table__value--compare-first
+            "
+          >
+            <svg
+              class="service-table__done-icon"
+              width="12"
+              height="12"
+              fill="none"
+            >
+              <use href="#done-icon"></use>
+            </svg>
+            <svg
+              class="service-table__done-icon--desktop"
+              width="16"
+              height="16"
+              fill="none"
+            >
+              <use href="#done-icon-desktop"></use>
+            </svg>
+          </p>
+
+          <p
+            class="
+              service-table__value
+              service-table__value--white
+              service-table__value--compare-second
+            "
+          >
             <svg
               class="service-table__done-icon"
               width="12"
@@ -157,7 +224,26 @@
         </li>
         <li class="service-table__item">
           <p class="service-table__title">Банний комплекс</p>
-          <p class="service-table__value">
+          <p class="service-table__value service-table__value--compare-first">
+            <svg
+              class="service-table__done-icon"
+              width="12"
+              height="12"
+              fill="none"
+            >
+              <use href="#done-icon"></use>
+            </svg>
+            <svg
+              class="service-table__done-icon--desktop"
+              width="16"
+              height="16"
+              fill="none"
+            >
+              <use href="#done-icon-desktop"></use>
+            </svg>
+          </p>
+
+          <p class="service-table__value service-table__value--compare-second">
             <svg
               class="service-table__done-icon"
               width="12"
@@ -178,7 +264,38 @@
         </li>
         <li class="service-table__item">
           <p class="service-table__title">Набір рушників</p>
-          <p class="service-table__value service-table__value--white">
+          <p
+            class="
+              service-table__value
+              service-table__value--white
+              service-table__value--compare-first
+            "
+          >
+            <svg
+              class="service-table__done-icon"
+              width="12"
+              height="12"
+              fill="none"
+            >
+              <use href="#done-icon"></use>
+            </svg>
+            <svg
+              class="service-table__done-icon--desktop"
+              width="16"
+              height="16"
+              fill="none"
+            >
+              <use href="#done-icon-desktop"></use>
+            </svg>
+          </p>
+
+          <p
+            class="
+              service-table__value
+              service-table__value--white
+              service-table__value--compare-second
+            "
+          >
             <svg
               class="service-table__done-icon"
               width="12"
@@ -199,7 +316,26 @@
         </li>
         <li class="service-table__item">
           <p class="service-table__title">Банний халат</p>
-          <p class="service-table__value">
+          <p class="service-table__value service-table__value--compare-first">
+            <svg
+              class="service-table__done-icon"
+              width="12"
+              height="12"
+              fill="none"
+            >
+              <use href="#done-icon"></use>
+            </svg>
+            <svg
+              class="service-table__done-icon--desktop"
+              width="16"
+              height="16"
+              fill="none"
+            >
+              <use href="#done-icon-desktop"></use>
+            </svg>
+          </p>
+
+          <p class="service-table__value service-table__value--compare-second">
             <svg
               class="service-table__done-icon"
               width="12"
@@ -220,7 +356,38 @@
         </li>
         <li class="service-table__item">
           <p class="service-table__title">Тренажерний зал</p>
-          <p class="service-table__value service-table__value--white">
+          <p
+            class="
+              service-table__value
+              service-table__value--white
+              service-table__value--compare-first
+            "
+          >
+            <svg
+              class="service-table__done-icon"
+              width="12"
+              height="12"
+              fill="none"
+            >
+              <use href="#done-icon"></use>
+            </svg>
+            <svg
+              class="service-table__done-icon--desktop"
+              width="16"
+              height="16"
+              fill="none"
+            >
+              <use href="#done-icon-desktop"></use>
+            </svg>
+          </p>
+
+          <p
+            class="
+              service-table__value
+              service-table__value--white
+              service-table__value--compare-second
+            "
+          >
             <svg
               class="service-table__done-icon"
               width="12"
@@ -241,7 +408,26 @@
         </li>
         <li class="service-table__item">
           <p class="service-table__title">Групові заняття</p>
-          <p class="service-table__value">
+          <p class="service-table__value service-table__value--compare-first">
+            <svg
+              class="service-table__done-icon"
+              width="12"
+              height="12"
+              fill="none"
+            >
+              <use href="#done-icon"></use>
+            </svg>
+            <svg
+              class="service-table__done-icon--desktop"
+              width="16"
+              height="16"
+              fill="none"
+            >
+              <use href="#done-icon-desktop"></use>
+            </svg>
+          </p>
+
+          <p class="service-table__value service-table__value--compare-second">
             <svg
               class="service-table__done-icon"
               width="12"
@@ -262,7 +448,38 @@
         </li>
         <li class="service-table__item">
           <p class="service-table__title">Фінська сауна</p>
-          <p class="service-table__value service-table__value--white">
+          <p
+            class="
+              service-table__value
+              service-table__value--white
+              service-table__value--compare-first
+            "
+          >
+            <svg
+              class="service-table__done-icon"
+              width="12"
+              height="12"
+              fill="none"
+            >
+              <use href="#done-icon"></use>
+            </svg>
+            <svg
+              class="service-table__done-icon--desktop"
+              width="16"
+              height="16"
+              fill="none"
+            >
+              <use href="#done-icon-desktop"></use>
+            </svg>
+          </p>
+
+          <p
+            class="
+              service-table__value
+              service-table__value--white
+              service-table__value--compare-second
+            "
+          >
             <svg
               class="service-table__done-icon"
               width="12"
@@ -283,15 +500,56 @@
         </li>
         <li class="service-table__item">
           <p class="service-table__title">Гостьові візити</p>
-          <p class="service-table__value">5</p>
+          <p class="service-table__value service-table__value--compare-first">
+            5
+          </p>
+          <p class="service-table__value service-table__value--compare-second">
+            5
+          </p>
         </li>
         <li class="service-table__item">
           <p class="service-table__title">Знижка на дод. послуги</p>
-          <p class="service-table__value service-table__value--white">10%</p>
+          <p
+            class="
+              service-table__value
+              service-table__value--white
+              service-table__value--compare-first
+            "
+          >
+            10%
+          </p>
+          <p
+            class="
+              service-table__value
+              service-table__value--white
+              service-table__value--compare-second
+            "
+          >
+            10%
+          </p>
         </li>
         <li class="service-table__item">
           <p class="service-table__title">Мінісейф</p>
-          <p class="service-table__value">
+          <p class="service-table__value service-table__value--compare-first">
+            <svg
+              class="service-table__done-icon"
+              width="12"
+              height="12"
+              fill="none"
+            >
+              <use href="#done-icon"></use>
+            </svg>
+            <svg
+              class="service-table__done-icon--desktop"
+              width="16"
+              height="16"
+              fill="none"
+            >
+              <use href="#done-icon-desktop"></use>
+            </svg>
+          </p>
+
+          <p class="service-table__value service-table__value--compare-second">
             <svg
               class="service-table__done-icon"
               width="12"
@@ -312,13 +570,44 @@
         </li>
         <li class="service-table__item">
           <p class="service-table__title">Заморозка</p>
-          <p class="service-table__value service-table__value--white">3 міс.</p>
+          <p
+            class="
+              service-table__value
+              service-table__value--white
+              service-table__value--compare-first
+            "
+          >
+            3 міс.
+          </p>
+          <p
+            class="
+              service-table__value
+              service-table__value--white
+              service-table__value--compare-second
+            "
+          >
+            3 міс.
+          </p>
         </li>
         <li class="service-table__item">
           <p class="service-table__title">Персональні тренування</p>
-          <p class="service-table__value service-table__value--mobile">3</p>
-          <p class="service-table__value service-table__value--desktop">
-            3 в подарунок
+          <p
+            class="
+              service-table__value
+              service-table__value--mobile
+              service-table__value--compare-first
+            "
+          >
+            3
+          </p>
+          <p
+            class="
+              service-table__value
+              service-table__value--mobile
+              service-table__value--compare-second
+            "
+          >
+            3
           </p>
         </li>
         <li class="service-table__item">
@@ -328,6 +617,7 @@
               service-table__value
               service-table__value--mobile
               service-table__value--white
+              service-table__value--compare-first
             "
           >
             1 хв
@@ -337,23 +627,107 @@
               service-table__value
               service-table__value--desktop
               service-table__value--white
+              service-table__value--compare-first
             "
           >
-            1 в подарунок
+            1 хвилина
+          </p>
+
+          <p
+            class="
+              service-table__value
+              service-table__value--mobile
+              service-table__value--white
+              service-table__value--compare-second
+            "
+          >
+            1 хв
+          </p>
+          <p
+            class="
+              service-table__value
+              service-table__value--desktop
+              service-table__value--white
+              service-table__value--compare-second
+            "
+          >
+            1 хвилина
           </p>
         </li>
         <li class="service-table__item">
           <p class="service-table__title">Безкоштовний паркінг</p>
-          <p class="service-table__value service-table__value--mobile">
+          <p
+            class="
+              service-table__value
+              service-table__value--mobile
+              service-table__value--compare-first
+            "
+          >
             180 хв
           </p>
-          <p class="service-table__value service-table__value--desktop">
-            180 хвилин безкоштовно
+          <p
+            class="
+              service-table__value
+              service-table__value--desktop
+              service-table__value--compare-first
+            "
+          >
+            180 хвилин
+          </p>
+
+          <p
+            class="
+              service-table__value
+              service-table__value--mobile
+              service-table__value--compare-second
+            "
+          >
+            180 хв
+          </p>
+          <p
+            class="
+              service-table__value
+              service-table__value--desktop
+              service-table__value--compare-second
+            "
+          >
+            180 хвилин
           </p>
         </li>
         <li class="service-table__item">
           <p class="service-table__title">Дитяча картка</p>
-          <p class="service-table__value service-table__value--white">
+          <p
+            class="
+              service-table__value
+              service-table__value--white
+              service-table__value--compare-first
+            "
+          >
+            <svg
+              class="service-table__done-icon"
+              width="12"
+              height="12"
+              fill="none"
+            >
+              <use href="#done-icon"></use>
+            </svg>
+            <svg
+              class="service-table__done-icon--desktop"
+              width="16"
+              height="16"
+              fill="none"
+            >
+              <use href="#done-icon-desktop"></use>
+            </svg>
+          </p>
+
+          <p
+            class="
+              service-table__value
+              service-table__value--white
+              service-table__value--compare-second
+            "
+          >
             <svg
               class="service-table__done-icon"
               width="12"
