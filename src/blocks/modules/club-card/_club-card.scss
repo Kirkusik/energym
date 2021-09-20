@@ -310,6 +310,12 @@
   height: 100%;
 }
 
+.compare-cards__link {
+  &--others {
+    display: none;
+  }
+}
+
 .compare-cards__monts {
   position: absolute;
   right: 197px;
@@ -467,10 +473,12 @@
   }
 }
 
-// .compare-cards__special-one-morning {
-//   display: none;
-//   padding-right: 0;
-// }
+.active {
+  display: block;
+}
 
+.invisible {
+  display: none;
+}
 
 @import "./modal/cards-modal";

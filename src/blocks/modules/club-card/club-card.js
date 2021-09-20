@@ -43,12 +43,19 @@ cards.menu.addEventListener("click", function (event) {
     el.classList.add("service-table__value--compare");
   });
 
+document.querySelector(".compare-cards__link--btn").classList.add("invisible");
+
   document
-    .querySelector(".compare-cards__link--btn")
-    .classList.add("invisible");
-  document
-    .querySelector(".compare-cards__special-one-morning")
-    .classList.add("active");
-  console.dir(event.target);
-  console.log(event.target.src);
+    .querySelector(".compare-cards")
+    .children[+event.target.getAttribute("data-tab-title")].classList.add(
+      "active"
+    );
+  // console.dir(event.target);
+  // console.log(event.target.src);
+  console.log(event.target.getAttribute("data-tab-title"));
+  console.log(
+    document.querySelector(".compare-cards").children[
+      +event.target.getAttribute("data-tab-title")
+    ]
+  );
 });
