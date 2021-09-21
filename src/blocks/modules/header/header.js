@@ -1,5 +1,4 @@
 "use strict";
-
 const menu = {
     navigation: document.querySelector(".menu-wrapper"),
     button: document.querySelector(".square-btn"),
@@ -33,11 +32,11 @@ const location = {
 const search = {
     btn: document.getElementById("search__btn"),
     form: document.getElementById("search"),
+    input: document.querySelector(".search__input"),
     activeClass: "search__input--active",
     activeBtnClass: "search__btn--active",
 };
 //---------to show/hide menu links on tablet and mb ---------
-
 //menu
 function addLinkClass(link) {
     link.classList.add(title.activeClass);
@@ -134,7 +133,6 @@ function onMenuClick(e) {
 
     return;
 }
-
 //---------to show/hide menu---------
 function toggleMenu(e) {
     e.preventDefault();
@@ -147,33 +145,67 @@ function toggleMenu(e) {
             document.querySelectorAll(".submenu__list-first--active")
         );
     }
+    menu.navigation.classList.contains("menu-wrapper--active") ?
+        document.body.classList.add("disable-scroll") :
+        document.body.classList.remove("disable-scroll");
+
 }
-function onBehindMenuTouch(e) {
-    if (
-        !e.target.closest(".menu-wrapper") &&
-        !e.target.closest(".menu__burger-button") &&
-        menu.navigation.classList.contains("menu-wrapper--active")
-    ) {
-        menu.navigation.classList.remove("menu-wrapper--active");
+
+//---------to show/hide menu, location and search forms in case click behind elements---------
+function hideHeaderElements(e) {
+    const tabletDesk = window.matchMedia("(max-width: 999px)");
+    const desktopDesk = window.matchMedia("(min-width: 1000px)");
+    if (tabletDesk.matches) {
+        //menu   
+        if (
+            !e.target.closest(".menu-wrapper") &&
+            !e.target.closest(".menu__burger-button") &&
+            menu.navigation.classList.contains("menu-wrapper--active")
+        ) {
+            menu.navigation.classList.remove("menu-wrapper--active");
+        }
+        //search
+        if (
+            !e.target.closest(".search__input") &&
+            !e.target.closest("#search__btn") &&
+            search.input.classList.contains(search.activeClass)
+        ) {
+            search.input.classList.remove(search.activeClass);
+        }
+        //location
+        if (
+            !e.target.closest(".location__btn") &&
+            !e.target.closest(".location") &&
+            location.box.classList.contains(location.activeClass)
+        ) {
+            location.box.classList.remove(location.activeClass);
+            location.box.classList.remove("location--selected");
+
+        }
+    }
+    if (desktopDesk.matches) {
+        if (
+            !e.target.closest(".location__list") &&
+            !e.target.closest(".location") &&
+            location.box.classList.contains("location--selected")
+        ) {
+            location.box.classList.remove("location--selected");
+        }
     }
 }
-
 //---------to show/hide location and search forms on mb and tablet---------
-
 function toggleForms(element, activeClass, prevEl, prevElClass) {
     if (prevEl.classList.contains(prevElClass)) {
         prevEl.classList.remove(prevElClass);
     }
     element.classList.toggle(activeClass);
 }
-
 //remove list in case hiding search form
 function removeLocationList(element, activeClass) {
     if (!element.classList.contains(activeClass)) {
         element.classList.remove("location--selected");
     }
 }
-
 function onSearchFormClick(element, activeClass, prevEl, prevElClass) {
     const tabletDesk = window.matchMedia("(max-width: 999px)");
     if (tabletDesk.matches) {
@@ -189,7 +221,6 @@ function onLocationFormClick(element, activeClass, prevEl, prevElClass) {
         removeLocationList(element, activeClass);
     }
 }
-
 //---------to show/hide location list on click---------
 (function selectList() {
     location.header.forEach((el) => {
@@ -198,32 +229,48 @@ function onLocationFormClick(element, activeClass, prevEl, prevElClass) {
         });
     });
 })();
-
 //---------select location item text---------
 function onLocationItemClick(e) {
+    const target = e.target.closest(".location__item")
     location.defaultItem.innerText =
-        e.target.closest(".location__item").innerText;
+        target.innerText;
+    if (target) {
+        location.box.classList.remove("location--selected");
+    }
+}
+//---------listeners---------
+if (menu.burgerButton) {
+    menu.burgerButton.addEventListener("click", (e) => toggleMenu(e));
+}
+if (menu.button) {
+    menu.button.addEventListener("click", (e) => toggleMenu(e));
+}
+if (menu.navigation) {
+    menu.navigation.addEventListener("click", onMenuClick);
+}
+if (location.btn) {
+    location.btn.addEventListener("click", () =>
+        onLocationFormClick(
+            location.box,
+            location.activeClass,
+            search.form,
+            search.activeClass
+        )
+    );
+}
+if (search.btn) {
+    search.btn.addEventListener("click", () =>
+        onSearchFormClick(
+            search.form,
+            search.activeClass,
+            location.box,
+            location.activeClass
+        )
+    );
+}
+if (location.list) {
+    location.list.addEventListener("click", onLocationItemClick);
 }
 
-menu.burgerButton.addEventListener("click", (e) => toggleMenu(e));
-menu.button.addEventListener("click", (e) => toggleMenu(e));
-menu.navigation.addEventListener("click", onMenuClick);
-location.btn.addEventListener("click", () =>
-    onLocationFormClick(
-        location.box,
-        location.activeClass,
-        search.form,
-        search.activeClass
-    )
-);
-search.btn.addEventListener("click", () =>
-    onSearchFormClick(
-        search.form,
-        search.activeClass,
-        location.box,
-        location.activeClass
-    )
-);
-location.list.addEventListener("click", onLocationItemClick);
-document.addEventListener("click", onBehindMenuTouch);
-document.addEventListener("touchstart", onBehindMenuTouch);
+document.addEventListener("click", hideHeaderElements);
+document.addEventListener("touchstart", hideHeaderElements);

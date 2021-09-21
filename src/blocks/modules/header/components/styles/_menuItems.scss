@@ -170,10 +170,12 @@
     &:last-child {
         align-self: center;
     }
-
-    //-----socal icons-----
-    &:first-child::before,
-    &:nth-child(2)::before {
+}
+.submenu__socials-link {
+    display: flex;
+    align-items: center;
+    &--facebook::before,
+    &--instagram::before {
         width: 24px;
         height: 24px;
         @include mq(tbLG, true) {
@@ -182,14 +184,14 @@
         }
     }
 
-    &:first-child::before {
+    &--facebook::before {
         content: url("../img/svg/facebook_desk.svg");
     }
 
-    &:nth-child(2)::before {
+    &--instagram::before {
         content: url("../img/svg/insta_desk.svg");
     }
-    &:last-child::before {
+    &--youtube::before {
         content: url("../img/svg/youtube_desk.svg");
         width: 24px;
         height: 18px;
@@ -198,10 +200,6 @@
             height: 25px;
         }
     }
-}
-.submenu__socials-link {
-    display: flex;
-    align-items: center;
 }
 .submenu__socials-ref {
     @include mq(tbLG, true) {

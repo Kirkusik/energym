@@ -12,7 +12,6 @@
     @include mq(tbLG, true) {
         grid-template-columns: 353px auto;
         grid-template-rows: 91px min-content;
-        padding-bottom: 100px;
     }
 
     @include mq(dt, true) {
