@@ -1,484 +1,525 @@
-.cards__container {
-  background: #faf7fb;
-  position: relative;
+@import "./modal/cards-modal";
 
-  &--modal-open {
-    overflow-x: hidden;
-    overflow-y: hidden;
-  }
+.cards__container {
+    background: #faf7fb;
+    position: relative;
+
+    &--modal-open {
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
 }
 
 .cards__grid {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  grid-template-areas:
-    "slgn slgn . . . chng chng  . . ."
-    "btn btn btn btn cmpr cmpr cmpr cmpr cmpr cmpr"
-    "btn btn btn btn cmpr cmpr cmpr cmpr cmpr cmpr"
-    "btn btn btn btn cmpr cmpr cmpr cmpr cmpr cmpr"
-    "btn btn btn btn . item item . . ."
-    ". . . . . item item  . . ."
-    ". . . . . item item  . . .";
-
-  @media (min-width: 320px) and (max-width: 575px) {
-    grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
     grid-template-areas:
-      "btn btn btn btn"
-      "slgn slgn chng chng"
-      ". item item ."
-      ". . cmpr cmpr";
-  }
+        "slgn slgn . . . chng chng  . . ."
+        "btn btn btn btn cmpr cmpr cmpr cmpr cmpr cmpr"
+        "btn btn btn btn cmpr cmpr cmpr cmpr cmpr cmpr"
+        "btn btn btn btn cmpr cmpr cmpr cmpr cmpr cmpr"
+        "btn btn btn btn . item item . . ."
+        ". . . . . item item  . . ."
+        ". . . . . item item  . . .";
 
-  @media (min-width: 1200px) {
-    grid-template-columns: 22% 39% 39%;
-    grid-template-areas:
-      "chng exp exp"
-      "slgn cmpr cmpr"
-      "btn cmpr cmpr"
-      "btn cmpr cmpr"
-      ". item item";
-  }
-  position: relative;
+    @media (min-width: 320px) and (max-width: 575px) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "btn btn btn btn"
+            "slgn slgn chng chng"
+            ". item item ."
+            ". . cmpr cmpr";
+    }
+
+    @media (min-width: 1200px) {
+        grid-template-columns: 22% 39% 39%;
+        grid-template-areas:
+            "chng exp exp"
+            "slgn cmpr cmpr"
+            "btn cmpr cmpr"
+            "btn cmpr cmpr"
+            ". item item";
+    }
+    position: relative;
 }
 
 .cards__button {
-  display: flex;
-  justify-content: center;
-  font-size: 15px;
-  line-height: 18px;
-  padding: 12px 0;
-  &:last-child {
-    margin-top: 12px;
-    background: #ffffff;
-  }
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    line-height: 18px;
+    padding: 12px 0;
+    &:last-child {
+        margin-top: 12px;
+        background: #ffffff;
+    }
 
-  @media (min-width: 320px) and (max-width: 575px) {
-    @include text(13px, 400, $primaryFont);
-    padding: 16px 0;
-    line-height: 16px;
-  }
+    @media (min-width: 320px) and (max-width: 575px) {
+        @include text(13px, 400, $primaryFont);
+        padding: 16px 0;
+        line-height: 16px;
+    }
 
-  @media (min-width: 1200px) {
-    @include text(18px, 400, $primaryFont);
-    padding: 23px 0;
-    line-height: 22px;
-  }
+    @media (min-width: 1200px) {
+        @include text(18px, 400, $primaryFont);
+        padding: 23px 0;
+        line-height: 22px;
+    }
 }
 
 .cards__order {
-  display: flex;
-  @include text(13px, 400, $primaryFont);
-  line-height: 16px;
+    display: flex;
+    @include text(13px, 400, $primaryFont);
+    line-height: 16px;
 }
 
 .cards-order__item {
-  padding-left: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.cards-grid__expression {
-  display: none;
-  @media (min-width: 1200px) {
-    display: block;
-    grid-area: exp;
-    @include text(18px, 400, $secondaryFont);
-    line-height: 22px;
-    color: #7a7979;
-    width: 779px;
-    margin: 0 auto;
-    padding-top: 37px;
-  }
-}
-
-.cards-grid__slogan {
-  grid-area: slgn;
-  @media (min-width: 1200px) {
-    padding-top: 15px;
-  }
-}
-
-.cards-grid__buttons {
-  grid-area: btn;
-  width: 79%;
-  @media (min-width: 320px) and (max-width: 575px) {
-    width: 100%;
-    padding-top: 24px;
-  }
-  @media (min-width: 1200px) {
-    width: 100%;
-  }
-}
-
-.cards-grid__change-btn {
-  grid-area: chng;
-  padding-top: 24px;
-  padding-bottom: 10px;
-  width: 120px;
-  display: flex;
-  justify-content: center;
-  @media (min-width: 320px) and (max-width: 575px) {
-    width: 100%;
-    justify-content: start;
-    padding-left: 9%;
-  }
-  @media (min-width: 991px) and (max-width: 1199px) {
-    width: 180px;
-  }
-  @media (min-width: 1200px) {
-    position: absolute;
-    top: 65px;
-    left: 603px;
-    z-index: 1;
-  }
-}
-
-.cards-grid__item-info {
-  grid-area: item;
-  @include text(17px, 400, $primaryFont);
-  line-height: 20px;
-  @media (min-width: 320px) and (max-width: 575px) {
-    font-size: 13px;
-    line-height: 16px;
+    padding-left: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-left: 40%;
-  }
+}
+
+.cards-grid__expression {
+    display: none;
+    @media (min-width: 1200px) {
+        display: block;
+        grid-area: exp;
+        @include text(18px, 400, $secondaryFont);
+        line-height: 22px;
+        color: #7a7979;
+        width: 779px;
+        margin: 0 auto;
+        padding-top: 37px;
+    }
+}
+
+.cards-grid__slogan {
+    grid-area: slgn;
+    @media (min-width: 1200px) {
+        padding-top: 15px;
+    }
+}
+
+.cards-grid__buttons {
+    grid-area: btn;
+    width: 79%;
+    @media (min-width: 320px) and (max-width: 575px) {
+        width: 100%;
+        padding-top: 24px;
+    }
+    @media (min-width: 1200px) {
+        width: 100%;
+    }
+}
+
+.cards-grid__change-btn {
+    grid-area: chng;
+    padding-top: 24px;
+    padding-bottom: 10px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    @media (min-width: 320px) and (max-width: 575px) {
+        width: 100%;
+        justify-content: start;
+        padding-left: 9%;
+    }
+    @media (min-width: 991px) and (max-width: 1199px) {
+        width: 180px;
+    }
+    @media (min-width: 1200px) {
+        position: absolute;
+        top: 65px;
+        left: 603px;
+        z-index: 1;
+    }
+}
+
+.cards-grid__item-info {
+    grid-area: item;
+    @include text(17px, 400, $primaryFont);
+    line-height: 20px;
+    @media (min-width: 320px) and (max-width: 575px) {
+        font-size: 13px;
+        line-height: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 40%;
+    }
 }
 
 .cards-order__slogan {
-  padding-top: 24px;
-  @include text(24px, 400, $primaryFont);
-  line-height: 29px;
-  color: #b694c0;
-  @media (min-width: 1200px) {
-    @include text(48px, 400, $primaryFont);
-    line-height: 15px;
-    padding-top: 15px;
-    padding-bottom: 23px;
-  }
+    padding-top: 24px;
+    @include text(24px, 400, $primaryFont);
+    line-height: 29px;
+    color: #b694c0;
+    @media (min-width: 1200px) {
+        @include text(48px, 400, $primaryFont);
+        line-height: 15px;
+        padding-top: 15px;
+        padding-bottom: 23px;
+    }
 }
 
 .cards-order__compare {
-  grid-area: cmpr;
-  display: flex;
-  justify-content: center;
-  @media (min-width: 320px) and (max-width: 575px) {
-    justify-content: space-between;
-  }
-  @media (min-width: 576px) and (max-width: 639px) {
-    padding-left: 56px;
-    justify-content: space-between;
-  }
-  @media (min-width: 640px) and (max-width: 767px) {
-    padding-left: 62px;
-    justify-content: space-between;
-  }
-  @media (min-width: 991px) and (max-width: 1199px) {
-    justify-content: flex-start;
-  }
-  @media (min-width: 1200px) {
+    grid-area: cmpr;
+    display: flex;
     justify-content: center;
-    padding-top: 15px;
-  }
+    @media (min-width: 320px) and (max-width: 575px) {
+        justify-content: space-between;
+    }
+    @media (min-width: 576px) and (max-width: 639px) {
+        padding-left: 56px;
+        justify-content: space-between;
+    }
+    @media (min-width: 640px) and (max-width: 767px) {
+        padding-left: 62px;
+        justify-content: space-between;
+    }
+    @media (min-width: 991px) and (max-width: 1199px) {
+        justify-content: flex-start;
+    }
+    @media (min-width: 1200px) {
+        justify-content: center;
+        padding-top: 15px;
+    }
 }
 
 .order-item__name {
-  grid-area: iname;
-  padding: 0 0 4px 0;
-  @media (min-width: 992px) and (max-width: 1199px) {
-    padding-top: 12px;
-  }
-  @media (min-width: 1200px) {
-    @include text(24px, 400, $primaryFont);
-    line-height: 29px;
-    width: 779px;
-    margin: 0 auto;
-    padding-top: 24px;
-  }
+    grid-area: iname;
+    padding: 0 0 4px 0;
+    @media (min-width: 992px) and (max-width: 1199px) {
+        padding-top: 12px;
+    }
+    @media (min-width: 1200px) {
+        @include text(24px, 400, $primaryFont);
+        line-height: 29px;
+        width: 779px;
+        margin: 0 auto;
+        padding-top: 24px;
+    }
 }
 
 .order-item__svg {
-  @media (min-width: 1200px) {
-    display: none;
-  }
+    @media (min-width: 1200px) {
+        display: none;
+    }
 }
 
 .order-item__svg--dstp {
-  display: none;
-  @media (min-width: 1200px) {
-    display: block;
-  }
+    display: none;
+    @media (min-width: 1200px) {
+        display: block;
+    }
 }
 
 .order-item__price {
-  grid-area: iprce;
-  font-size: 15px;
-  line-height: 18px;
-  color: #5c3668;
-  padding-bottom: 12px;
-  @media (min-width: 320px) and (max-width: 575px) {
-    @include text(9px, 400, $primaryFont);
-    line-height: 11px;
-  }
-  @media (min-width: 1200px) {
-    @include text(40px, 500, $secondaryFont);
-    line-height: 49px;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #ffffff;
-    color: transparent;
-    position: absolute;
-    top: 251px;
-    left: 452px;
-    z-index: 1;
-  }
+    grid-area: iprce;
+    font-size: 15px;
+    line-height: 18px;
+    color: #5c3668;
+    padding-bottom: 12px;
+    @media (min-width: 320px) and (max-width: 575px) {
+        @include text(9px, 400, $primaryFont);
+        line-height: 11px;
+    }
+    @media (min-width: 1200px) {
+        @include text(40px, 500, $secondaryFont);
+        line-height: 49px;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #ffffff;
+        color: transparent;
+        position: absolute;
+        top: 251px;
+        left: 452px;
+        z-index: 1;
+    }
 }
 
 .compare-cards__add-img {
-  display: none;
-  @media (min-width: 320px) and (max-width: 575px) {
-    display: block;
-  }
-  &--big {
-    display: block;
+    display: none;
     @media (min-width: 320px) and (max-width: 575px) {
-      display: none;
+        display: block;
     }
-  }
+    &--big {
+        display: block;
+        @media (min-width: 320px) and (max-width: 575px) {
+            display: none;
+        }
+    }
 }
 
 .compare-cards__btn {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  @include text(15px, 500, $secondaryFont);
-  line-height: 18px;
-  color: #5c3668;
-  padding: 0 18px 0 18px;
-  border: 2px solid #e5004f;
-  box-sizing: border-box;
-  backdrop-filter: blur(4px);
-  border-radius: 8px;
-  @media (min-width: 320px) and (max-width: 575px) {
-    @include text(9px, 500, $secondaryFont);
-    line-height: 11px;
-    padding: 6px 9px 6px 9px;
-  }
-  @media (min-width: 992px) and (max-width: 1199px) {
-    padding: 27px 49px 27px 49px;
-  }
-  @media (min-width: 1200px) {
-    // height: 76%;
-    flex-direction: row;
-    padding: 93px 84px 93px 84px;
-    // height: 100%;
-  }
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include text(15px, 500, $secondaryFont);
+    line-height: 18px;
+    color: #5c3668;
+    padding: 0 18px 0 18px;
+    border: 2px solid #e5004f;
+    box-sizing: border-box;
+    backdrop-filter: blur(4px);
+    border-radius: 8px;
+    @media (min-width: 320px) and (max-width: 575px) {
+        @include text(9px, 500, $secondaryFont);
+        line-height: 11px;
+        padding: 6px 9px 6px 9px;
+    }
+    @media (min-width: 992px) and (max-width: 1199px) {
+        padding: 27px 49px 27px 49px;
+    }
+    @media (min-width: 1200px) {
+        // height: 76%;
+        flex-direction: row;
+        padding: 93px 84px 93px 84px;
+        // height: 100%;
+    }
 }
 
 .compare-cards__text {
-  padding-top: 3px;
-  @media (min-width: 1200px) {
-    @include text(24px, 500, $secondaryFont);
-    line-height: 29px;
-    padding-left: 19px;
-  }
+    padding-top: 3px;
+    @media (min-width: 1200px) {
+        @include text(24px, 500, $secondaryFont);
+        line-height: 29px;
+        padding-left: 19px;
+    }
 }
 
 .compare-cards__current-pic {
-  padding-right: 55px;
-  @media (min-width: 320px) and (max-width: 575px) {
-    padding-right: 0;
-  }
-  @media (min-width: 576px) and (max-width: 639px) {
-    padding-right: 0;
-  }
-  @media (min-width: 991px) and (max-width: 1199px) {
-    padding-right: 83px;
-    padding-left: 98px;
-  }
+    padding-right: 55px;
+    @media (min-width: 320px) and (max-width: 575px) {
+        padding-right: 0;
+    }
+    @media (min-width: 576px) and (max-width: 639px) {
+        padding-right: 0;
+    }
+    @media (min-width: 991px) and (max-width: 1199px) {
+        padding-right: 83px;
+        padding-left: 98px;
+    }
 }
 
 .compare-cards__current {
-  // max-width: 100vh;
-  position: relative;
-  height: 100%;
+    // max-width: 100vh;
+    position: relative;
+    height: 100%;
 }
 
 .compare-cards__link {
-  &--others {
-    display: none;
-  }
+    &--others {
+        display: none;
+    }
 }
 
 .compare-cards__monts {
-  position: absolute;
-  right: 197px;
-  bottom: 61px;
-  color: #ffffff;
-  @include text(15px, 400, $primaryFont);
-  line-height: 18px;
-  @media (min-width: 320px) and (max-width: 575px) {
-    display: none;
-  }
-  @media (min-width: 576px) and (max-width: 639px) {
     position: absolute;
-    right: 165px;
+    right: 197px;
     bottom: 61px;
-  }
-  @media (min-width: 768px) and (max-width: 991px) {
-    right: 259px;
-    bottom: 61px;
-  }
-  @media (min-width: 991px) and (max-width: 1199px) {
-    right: 316px;
-    bottom: 71px;
-  }
-  @media (min-width: 1200px) {
-    display: none;
-  }
+    color: #ffffff;
+    @include text(15px, 400, $primaryFont);
+    line-height: 18px;
+    @media (min-width: 320px) and (max-width: 575px) {
+        display: none;
+    }
+    @media (min-width: 576px) and (max-width: 639px) {
+        position: absolute;
+        right: 165px;
+        bottom: 61px;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        right: 259px;
+        bottom: 61px;
+    }
+    @media (min-width: 991px) and (max-width: 1199px) {
+        right: 316px;
+        bottom: 71px;
+    }
+    @media (min-width: 1200px) {
+        display: none;
+    }
 }
 
 .cards-service__title {
-  padding-top: 20px;
-  padding-bottom: 24px;
-  @include text(17px, 400, $primaryFont);
-  line-height: 20px;
-  display: inline-block;
-  @media (min-width: 320px) and (max-width: 575px) {
-    position: absolute;
-    top: 290px;
-  }
-  @media (min-width: 1200px) {
-    padding-top: 50px;
-    padding-bottom: 63px;
-    @include text(24px, 400, $primaryFont);
-    line-height: 29px;
-  }
+    padding-top: 20px;
+    padding-bottom: 24px;
+    @include text(17px, 400, $primaryFont);
+    line-height: 20px;
+    display: inline-block;
+    @media (min-width: 320px) and (max-width: 575px) {
+        position: absolute;
+        top: 290px;
+    }
+    @media (min-width: 1200px) {
+        padding-top: 50px;
+        padding-bottom: 63px;
+        @include text(24px, 400, $primaryFont);
+        line-height: 29px;
+    }
 }
 
 .cards-service__table {
-  @include text(15px, 500, $secondaryFont);
-  line-height: 18px;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 100px;
-  @media (min-width: 320px) and (max-width: 575px) {
-    @include text(13px, 500, $secondaryFont);
-    line-height: 16px;
-    padding-top: 24px;
-    padding-bottom: 50px;
-  }
-  @media (min-width: 1200px) {
-    padding-top: 50px;
-    padding-bottom: 63px;
-    @include text(18px, 500, $secondaryFont);
-    line-height: 22px;
-    padding-bottom: 178px;
-  }
+    @include text(15px, 500, $secondaryFont);
+    line-height: 18px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 100px;
+    @media (min-width: 320px) and (max-width: 575px) {
+        @include text(13px, 500, $secondaryFont);
+        line-height: 16px;
+        padding-top: 24px;
+        padding-bottom: 50px;
+    }
+    @media (min-width: 1200px) {
+        padding-top: 50px;
+        padding-bottom: 63px;
+        @include text(18px, 500, $secondaryFont);
+        line-height: 22px;
+        padding-bottom: 178px;
+    }
 }
-
+// .cards-service {
+//     &--second:first-child() {
+//         @media (max-width: 993px) {
+//             display: flex;
+//             flex-direction: column;
+//         }
+//     }
+// }
 .service-table__item {
-  display: flex;
-  align-items: center;
-  &--first {
-    align-items: start;
-  }
+    display: flex;
+    align-items: center;
+    &--first {
+        align-items: start;
+    }
 }
 
 .service-table__title {
-  width: 50%;
-  @media (min-width: 1200px) {
-    width: 22%;
-  }
+    // padding: 11px 0 11px 0;
+    &--first {
+        @media (max-width: 993px) {
+            padding: 11px 0 37px 0;
+        }
+    }
 }
 
 .service-table__value {
-  padding: 11px 0 11px 48px;
-  width: 50%;
-  @media (min-width: 320px) and (max-width: 575px) {
-    padding: 8px 0 8px 32px;
-  }
-
-  @media (min-width: 1200px) {
-    width: 78%;
-    padding-left: 59px;
-  }
-
-  &--desktop {
-    display: none;
-    @media (min-width: 1200px) {
-      display: inline;
-    }
-  }
-
-  &--mobile {
-    @media (min-width: 1200px) {
-      display: none;
-    }
-  }
-
-  &--white {
-    background: #ffffff;
-  }
-  &--first {
-    padding: 0 0 12px 0;
-    font-weight: 400;
+    // padding: 11px 0 11px 48px;
+    padding-left: 45px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    min-height: 43px;
+    align-items: center;
     @media (min-width: 320px) and (max-width: 575px) {
-      @include text(9px, 400, $secondaryFont);
-      line-height: 11px;
-      padding: 0 0 12px 0;
+        padding: 8px 0 8px 32px;
+        font-weight: 400;
     }
-    @media (min-width: 1200px) {
-      padding-left: 48px;
-      display: block;
-    }
-  }
-  &--weekday {
-    padding-bottom: 8px;
-  }
 
-  &--compare {
-    width: 25%;
-
-    @media (min-width: 1200px) {
-      width: 39%;
+    &--desktop {
+        display: none;
+        @media (min-width: 1200px) {
+            display: flex;
+        }
     }
-  }
 
-  &--compare-second {
-    display: none;
-    @media (min-width: 1200px) {
-      display: none;
+    &--mobile {
+        @media (min-width: 1200px) {
+            display: none;
+        }
     }
-  }
+
+    &--white {
+        background: #ffffff;
+    }
+    &--first {
+        // padding: 11px 0 11px 48px;
+        font-weight: 400;
+
+        @media (min-width: 320px) and (max-width: 575px) {
+            @include text(9px, 400, $secondaryFont);
+            line-height: 11px;
+            padding: 0 0 12px 0;
+        }
+        @media (min-width: 1200px) {
+            padding-left: 48px;
+            display: flex;
+        }
+        @media (max-width: 993px) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-bottom: 5px;
+        }
+    }
+    &--weekday {
+        padding-right: 5px;
+        @media (max-width: 994px) {
+            padding-bottom: 8px;
+            padding-right: 0;
+        }
+    }
+
+    &--compare-second {
+        display: none;
+        @media (min-width: 1200px) {
+            display: none;
+        }
+    }
+    &--second {
+        @media (min-width: 320px) and (max-width: 575px) {
+            @include text(9px, 400, $secondaryFont);
+            line-height: 11px;
+            padding: 0 0 12px 0;
+        }
+        @media (max-width: 993px) {
+            display: flex;
+            flex-direction: column;
+        }
+
+        font-weight: 400;
+    }
 }
 
 .service-table__done-icon {
-  @media (min-width: 1200px) {
-    display: none;
-  }
-  &--desktop {
-    display: none;
     @media (min-width: 1200px) {
-      display: block;
+        display: none;
     }
-  }
+    &--desktop {
+        display: none;
+        @media (min-width: 1200px) {
+            display: block;
+        }
+    }
 }
 
 .active {
-  display: block;
+    display: block;
 }
 
 .invisible {
-  display: none;
+    display: none;
 }
 
-@import "./modal/cards-modal";
+.service-table-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr 0.7fr 0.7fr;
+    }
+}
+
+// grid containers for card titles ans 2 cards
+
+.cards-service--second,
+.cards-service--first,
+.cards-service__table-titles {
+    display: grid;
+    align-items: center;
+    grid-auto-rows: 42px;
+}
