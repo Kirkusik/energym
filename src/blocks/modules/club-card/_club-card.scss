@@ -373,7 +373,7 @@
     @media (min-width: 320px) and (max-width: 575px) {
         @include text(13px, 500, $secondaryFont);
         line-height: 16px;
-        padding-top: 24px;
+        padding-top: 44px;
         padding-bottom: 50px;
     }
     @media (min-width: 1200px) {
@@ -478,7 +478,7 @@
             padding: 0 0 12px 0;
         }
         @media (max-width: 993px) {
-            display: flex;
+            // display: flex;
             flex-direction: column;
         }
 
@@ -511,6 +511,9 @@
     grid-template-columns: 1fr 1fr 1fr;
     @media (max-width: 768px) {
         grid-template-columns: 1fr 0.7fr 0.7fr;
+    }
+    @media (max-width: 475px) {
+        grid-template-columns: 1fr 0.5fr 0.5fr;
     }
 }
 
