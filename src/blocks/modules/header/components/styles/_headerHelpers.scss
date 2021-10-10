@@ -27,12 +27,7 @@
     &:focus {
         outline: auto;
     }
-
-    &:hover {
-        background: clr(pink);
-    }
 }
-
 //extended classes at menuItems.sccs
 %subItemsList {
     @include mq(tbLG, true) {
