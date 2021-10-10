@@ -36,9 +36,10 @@ if (cards.closeBtn) {
 }
 
 cards.menu.addEventListener("click", function (event) {
-    closeModal();
-    changeCardImg(cardId, event)
-
+    if (event.target.closest(".cards-modal__card-img")) {
+        closeModal();
+        changeCardImg(cardId, event)
+    }
 });
 
 function changeCardImg(cardId, event) {
@@ -47,7 +48,7 @@ function changeCardImg(cardId, event) {
     } else if (cardId === 2) {
         document.querySelector(".compare-cards__btn").classList.add("invisible");
         document.querySelector(".compare-cards__second-pic").classList.add("active");
-        
+
         secondCardImg.setAttribute('src', event.target.getAttribute("src"));
 
         cards.secondItem.forEach((el) => {
