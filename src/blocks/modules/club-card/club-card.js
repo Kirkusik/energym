@@ -44,7 +44,6 @@ cards.menu.addEventListener("click", function (event) {
 function changeCardImg(cardId, event) {
     if (cardId === 1) {
         firstCardImg.setAttribute('src', event.target.getAttribute("src"));
-        console.log(firstCardImg);
     } else if (cardId === 2) {
         document.querySelector(".compare-cards__btn").classList.add("invisible");
         document.querySelector(".compare-cards__second-pic").classList.add("active");
