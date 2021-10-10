@@ -12,10 +12,6 @@ const cards = {
     ),
 };
 
-// cards.compareBtn.forEach((el) => {
-//     el.addEventListener("click", showModal);
-// });
-
 const compareCards = document.querySelector(".compare-cards");
 const firstCardImg = compareCards.querySelector('.compare-cards__link--first img');
 const secondCardImg = compareCards.querySelector('.compare-cards__link--second img');
@@ -46,20 +42,18 @@ cards.menu.addEventListener("click", function (event) {
 });
 
 function changeCardImg(cardId, event) {
-
     if (cardId === 1) {
         firstCardImg.setAttribute('src', event.target.getAttribute("src"));
         console.log(firstCardImg);
     } else if (cardId === 2) {
         document.querySelector(".compare-cards__btn").classList.add("invisible");
         document.querySelector(".compare-cards__second-pic").classList.add("active");
+        
+        secondCardImg.setAttribute('src', event.target.getAttribute("src"));
 
         cards.secondItem.forEach((el) => {
             el.classList.remove("service-table__value--compare-second");
         });
-
-        secondCardImg.setAttribute('src', event.target.getAttribute("src"));
-        console.log(secondCardImg);
     }
 }
 
