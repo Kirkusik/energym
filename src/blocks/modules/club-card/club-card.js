@@ -44,16 +44,10 @@ if (cards.closeBtn) {
 function changeCardImg(cardId) {
     cards.menu.addEventListener("click", function (event) {
         closeModal();
-        cards.secondItem.forEach((el) => {
-            el.classList.remove("service-table__value--compare-second");
-        });
-        cards.table.forEach((el) => {
-            el.classList.add("service-table__value--compare");
-        });
 
-        compareCards.children[+event.target.getAttribute("data-tab-title")].classList.add(
-            "active"
-        );
+        // cards.table.forEach((el) => {
+        //     el.classList.add("service-table__value--compare");
+        // });
 
         let cardImgSrc;
         if (cardId === 1) {
@@ -63,6 +57,10 @@ function changeCardImg(cardId) {
         } else if (cardId === 2) {
             document.querySelector(".compare-cards__btn").classList.add("invisible");
             document.querySelector(".compare-cards__second-pic").classList.add("active");
+
+            cards.secondItem.forEach((el) => {
+                el.classList.remove("service-table__value--compare-second");
+            });
 
             cardImgSrc = event.target.getAttribute("src");
             secondCardImg.setAttribute('src', cardImgSrc);
@@ -81,5 +79,4 @@ compareCards.addEventListener("click", (e) => {
     if (e.target.closest('.compare-cards__link--second')) {
         changeCardImg(2);
     }
-
 })
