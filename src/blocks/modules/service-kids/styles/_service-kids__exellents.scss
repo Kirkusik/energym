@@ -7,32 +7,7 @@
     row-gap: 32px;
     padding: 32px 12px;
     opacity: 0.95;
-    background-image: radial-gradient(
-        181.26% 158.02% at -48.36% 50%,
-        #f1c4ff 0%,
-        #717071 50%,
-        #ffa6c4 97.4%
-    );
-    &::before {
-        background: url(../img/service-kids/service-kids-exellent-bg-s.jpg)
-            no-repeat right;
-        background-size: cover;
-        opacity: 0.3;
 
-        @include mq(tb, true) {
-            background: url(../img/service-kids/service-kids-exellent-bg-m.jpg)
-                no-repeat right;
-        }
-        @include mq(tbLG, true) {
-            background: url(../img/service-kids/service-kids-exellent-bg-l.jpg)
-                no-repeat right;
-        }
-        @include mq(dt, true) {
-            background: url(../img/service-kids/service-kids-exellent-bg-xl.jpg)
-                no-repeat right;
-            opacity: 0.5;
-        }
-    }
     @include mq(tb, true) {
         grid-template-rows: repeat(3, auto);
         grid-template-columns: auto 294px;
@@ -80,19 +55,6 @@
     }
     @include mq(dt, true) {
         margin-bottom: 0;
-    }
-}
-
-.kids-exellents__item {
-    &:first-child::before {
-        content: url("../img/svg/kids-drive.svg");
-    }
-    &:nth-child(2n)::before {
-        content: url("../img/svg/kids-grace.svg");
-    }
-
-    &:last-child::before {
-        content: url("../img/svg/kids-goal.svg");
     }
 }
 

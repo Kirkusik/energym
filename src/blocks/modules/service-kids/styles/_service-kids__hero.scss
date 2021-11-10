@@ -1,24 +1,22 @@
-.kids-hero__wrapper {
+.service-hero__wrapper {
     background-color: clr(secondaryBG);
     @include mq(tb, true) {
         display: grid;
         grid-template-columns: 184px auto;
-        grid-template-rows: 61px min-content;
         grid-template-areas: "title info" "video video";
         align-items: center;
         background-color: transparent;
     }
 
     @include mq(tbLG, true) {
-        grid-template-columns: 353px auto;
-        grid-template-rows: 91px min-content;
+        grid-template-columns: minmax(353px, 50%) auto;
     }
 
     @include mq(dt, true) {
-        grid-template-rows: 136px min-content;
         padding-bottom: 0;
     }
 }
+
 .kids-hero__title {
     grid-area: title;
     &--part {

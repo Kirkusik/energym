@@ -4,8 +4,7 @@
 
 .container {
     width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
+
     margin-left: auto;
     margin-right: auto;
 
@@ -267,6 +266,10 @@
 }
 
 .styled-list {
+    padding-left: 40px;
+    margin-top: 40px;
+    margin-bottom: 1em;
+
     & li {
         @include pseudo(before, "", absolute) {
             @include mq(tb, true) {
@@ -303,7 +306,9 @@
     height: 100%;
     background-color: clr(purple50);
 }
-
+.video-cover {
+    object-fit: cover;
+}
 .video-btn {
     position: absolute;
     z-index: 1;
@@ -348,6 +353,12 @@
 
 //section title
 .section__title {
+    max-width: 90%;
+    padding: 16px;
+    font-size: rem(22);
+    line-height: 27px;
+    text-transform: uppercase;
+
     @include mq(tb, true) {
         max-width: 100%;
         padding: 16px 24px;
@@ -364,11 +375,6 @@
         font-size: rem(48);
         line-height: 58px;
     }
-    max-width: 90%;
-    padding: 16px;
-    font-size: rem(22);
-    line-height: 27px;
-    text-transform: uppercase;
 }
 //Video section
 //----schedule and cards wrapper----
@@ -379,8 +385,7 @@
     }
     @include mq(dt, true) {
         align-content: flex-end;
-        align-self: flex-end;
-        margin-bottom: 40px;
+        align-self: center;
     }
     display: grid;
     padding: 24px 12px;
@@ -514,18 +519,23 @@
 .exellent-section__wrapper {
     display: grid;
     position: relative;
-    background-color: clr(purple);
-    &:before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-    }
+    background-image: radial-gradient(
+        181.26% 158.02% at -48.36% 50%,
+        #f1c4ff 0%,
+        #717071 50%,
+        #ffa6c4 97.4%
+    );
 }
-
+.service-exellents__decor-img {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+}
 .exellent-section__title {
     @include text(22px, 400, $primaryFont);
     @include mq(tb, true) {

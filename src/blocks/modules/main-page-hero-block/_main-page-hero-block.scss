@@ -1,34 +1,24 @@
-.hero-inner {
+.hero {
     position: relative;
 
-    //getting dynamic height apr. 53% (190/350) img propotion
-    //decrease in 1 % becouse of white gap before facts section
-    @include pseudo($location: after) {
-        display: block;
-        padding-bottom: 51%;
-    }
-}
-// images
-.hero__bgi-left,
-.hero__bgi-right {
-    position: absolute;
-    top: 0;
-    width: 67%;
-    height: auto;
-}
+    & .container {
+        min-height: 300px;
+        background-size: cover;
+        position: relative;
 
-.hero__bgi-right {
-    z-index: -2;
-    right: 0;
-}
-.hero__bgi-left {
-    z-index: -1;
-    left: 0;
+        @include mq(tbLG, true) {
+            min-height: 450px;
+        }
+        @include mq(dtSM, true) {
+            min-height: 600px;
+        }
+    }
 }
 
 // title and links block
 .hero__info {
     position: absolute;
+    width: 100%;
     top: 0;
     left: 0;
     right: 0;
@@ -95,19 +85,19 @@
     margin-left: auto;
     margin-right: auto;
 
-    &--part {
-        white-space: nowrap;
-    }
     @include text(rem(22));
 
     @include mq(tb, true) {
         font-size: rem(24);
         line-height: 29px;
-        max-width: 522px;
+        max-width: 80%;
     }
     @include mq(tbLG, true) {
         font-size: rem(61);
         line-height: 74px;
+    }
+    @include mq(dtSM, true) {
+        max-width: 530px;
     }
 }
 
@@ -135,7 +125,7 @@
 .hero__contact {
     position: absolute;
     right: 0;
-    bottom: rem(8);
+    bottom: 0;
     padding: 0;
     width: 32px;
     background-color: clr(purple30);
@@ -153,13 +143,9 @@
     //prevents the button from moving in mob and tablet version
     @media (max-width: 768px) {
         width: 32px;
-        &:hover {
-            width: 32px;
-        }
     }
 
     @include mq(tb, true) {
-        bottom: rem(16);
         &::before {
             transform: scale(0.85);
         }
@@ -169,20 +155,14 @@
         padding: 19px;
         width: 40px;
         height: 40px;
-        bottom: rem(33);
         padding: 5px;
-        &:hover {
-            width: 40px;
-        }
     }
+
     @include mq(dt, true) {
         width: 70px;
         height: 70px;
-        bottom: rem(16);
         padding: 19px;
-        &:hover {
-            // width: 200px;
-        }
+
         &--text {
             display: block;
         }

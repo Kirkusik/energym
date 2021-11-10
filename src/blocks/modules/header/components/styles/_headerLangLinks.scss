@@ -9,11 +9,14 @@
 .header__lang-item {
     &:first-child {
         margin-right: 6px;
+        position: relative;
+
         &::after {
             content: "";
             position: absolute;
-            margin-left: 2px;
-            top: 7px;
+            right: -4px;
+            top: 50%;
+            transform: translateY(-50%);
             width: 2px;
             height: 13px;
             background-color: clr(purple);

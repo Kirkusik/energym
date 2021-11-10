@@ -1,5 +1,24 @@
-.trainers__container {
-    padding-bottom: 50px;
+.trainers {
+    &--service {
+        & .section-title__h2 {
+            margin-top: 40px;
+            @include mq(mb, true) {
+                margin-top: 80px;
+            }
+
+            @include mq(tbLG, true) {
+                margin-top: 120px;
+            }
+
+            @include mq(dtSM, true) {
+                margin-top: 160px;
+            }
+        }
+        & .container {
+            background-color: #faf7fb;
+            padding-bottom: 50px;
+        }
+    }
 }
 
 .trainers__header {
@@ -145,9 +164,6 @@
 }
 
 .trainers-card {
-    @include mq(tb, tb) {
-        width: auto;
-    }
     display: none;
     align-self: stretch;
     width: 100%;
@@ -155,16 +171,28 @@
     margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
+    color: #000;
+    font-family: $secondaryFont;
+    font-size: 16px;
+    line-height: 18px;
+
     @media (min-width: 576px) {
         width: 220px;
         margin-left: 29px;
         margin-right: 29px;
     }
+
+    @include mq(tb, tb) {
+        width: 180px;
+    }
     &--active {
         display: block;
     }
 }
-
+.trainers__link {
+    display: block;
+    color: inherit;
+}
 .trainers-card__img {
     @include mq(tb, tb) {
         height: 250px;
@@ -200,7 +228,7 @@
         line-height: 22px;
         margin-top: 5px;
     }
-    font-family: $secondaryFont;
+
     font-size: 16px;
     line-height: 18px;
     margin-top: 8px;
@@ -212,10 +240,34 @@
         line-height: 20px;
         margin-top: 5px;
     }
-    font-family: $secondaryFont;
-    font-size: 16px;
-    line-height: 18px;
+
     font-weight: 500;
     margin-top: 8px;
     color: clr(red);
+}
+
+// Trainers page
+.trainer__description-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    @include mq(tblg, false) {
+        flex-direction: column;
+    }
+}
+
+.trainer__photos {
+    display: grid;
+    grid-template-columns: 200px 200px;
+    grid-auto-rows: 150px;
+
+    margin-bottom: 45px;
+
+    & img {
+        max-width: 100%;
+        width: 100%;
+        max-height: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
